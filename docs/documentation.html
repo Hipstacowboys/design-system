@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="designsystemdocumentation">Design System Documentation</h1>
+
+<h2 id="projectoverview">Project Overview</h2>
+
+<p>Vue + SCSS design system built from Figma design system file. Source of truth is Figma, variables come from JSON token files.</p>
+
+<h2 id="keyinformation">Key Information</h2>
+
+<h3 id="technologystack">Technology Stack</h3>
+
+<ul>
+<li>Vue.js</li>
+<li>SCSS</li>
+<li>JSON token files for variables</li>
+<li>Phosphor Icons (@phosphor-icons/vue) for iconography</li>
+</ul>
+
+<h3 id="iconweightrules">Icon Weight Rules</h3>
+
+<ul>
+<li><strong>19px and smaller</strong>: Use <code>weight=&quot;bold&quot;</code></li>
+<li><strong>20px and above</strong>: Use <code>weight=&quot;regular&quot;</code></li>
+</ul>
+
+<h3 id="namingconvention">Naming Convention</h3>
+
+<ul>
+<li>Style prefix: <code>desys-</code></li>
+<li>Components: Separate .vue files</li>
+<li>Styles: <code>design-system.scss</code></li>
+</ul>
+
+<h3 id="componentstructure">Component Structure</h3>
+
+<ul>
+<li>Each variation (Size, Type) = separate component</li>
+<li>States: default, hover, clicked, disabled</li>
+<li>Display: Grid of all variations + compound component for state interactions</li>
+</ul>
+
+<h3 id="variablesystem">Variable System</h3>
+
+<h4 id="colors">Colors</h4>
+
+<ul>
+<li>Light/Dark mode tokens from JSON files</li>
+<li>CSS custom properties: <code>var(--desys-color-primary-solid)</code>, <code>var(--desys-color-gray-500)</code>, etc.</li>
+<li>Available in both light and dark themes</li>
+</ul>
+
+<h4 id="spacing">Spacing</h4>
+
+<ul>
+<li>Gutters (0&#8211;80px) and radiuses (0&#8211;24px, full) from JSON files</li>
+<li>CSS custom properties: <code>var(--desys-spacing-gutter-16)</code>, <code>var(--desys-radius-8)</code>, etc.</li>
+</ul>
+
+<h4 id="typography">Typography</h4>
+
+<p><strong>Structure:</strong></p>
+
+<ul>
+<li><code>_typography-tokens.scss</code> - Base token variables (font sizes, weights, line heights)</li>
+<li><code>_typography-mixins.scss</code> - Typography mixins for use in components</li>
+<li><code>_typography.scss</code> - Utility classes (for preview/documentation only)</li>
+</ul>
+
+<p><strong>Available Styles:</strong></p>
+
+<ul>
+<li>Headers: H1-H5 (regular 400 &amp; bold 700)</li>
+<li>Paragraphs: Large (18px), Medium (15px - multiline, one-line, bold), Small (13px - multiline, one-line, bold), Extra Small (10px bold)</li>
+<li>Buttons: Large (16px), Medium (15px), Small (13px) - all with medium weight (500)</li>
+</ul>
+
+<p><strong>Usage in Components:</strong></p>
+
+<pre><code class="scss">// Recommended: Use mixins (easier to read)
+@include desys-typography-paragraph-sm;
+
+// Or use individual token variables for customization
+font-size: $desys-font-size-sm;
+font-weight: $desys-font-weight-bold;
+line-height: $desys-line-height-sm;
+</code></pre>
+
+<p><strong>Important:</strong></p>
+
+<ul>
+<li>Colors are defined in components, not in base typography styles</li>
+<li>Utility classes (<code>.desys-h1-regular</code>, etc.) are for preview/documentation only</li>
+<li>Components should use mixins or token variables, not utility classes</li>
+<li>No hardcoded values - always use variables</li>
+</ul>
+
+<h3 id="previewenvironment">Preview Environment</h3>
+
+<ul>
+<li><strong>Vue Preview</strong>: <code>preview-vue.html</code> - Interactive preview using Vite dev server</li>
+<li><strong>Entry Point</strong>: <code>src/preview.js</code> mounts <code>PreviewApp.vue</code></li>
+<li><strong>Styles</strong>: Uses compiled <code>design-system.css</code> and <code>preview.css</code> (from Codekit)</li>
+<li><strong>Sections</strong>: Colors, Spacing, Typography tokens + Components showcase</li>
+<li><strong>Theme Toggle</strong>: Switch between light/dark modes</li>
+</ul>
+
+<h3 id="figmaintegration">Figma Integration</h3>
+
+<ul>
+<li>Track Figma node IDs in component files</li>
+<li>Reference node IDs when updating components</li>
+</ul>
+
+</body>
+</html>
+

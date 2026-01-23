@@ -1,0 +1,99 @@
+// Typography Styles
+// Utility classes for preview/documentation purposes
+// Components should use mixins from _typography-mixins.scss
+
+@import 'typography-mixins';
+
+// Header One
+.desys-h1-regular {
+  @include desys-typography-h1-regular;
+}
+
+.desys-h1-bold {
+  @include desys-typography-h1-bold;
+}
+
+// Header Two
+.desys-h2-regular {
+  @include desys-typography-h2-regular;
+}
+
+.desys-h2-bold {
+  @include desys-typography-h2-bold;
+}
+
+// Header Three
+.desys-h3-regular {
+  @include desys-typography-h3-regular;
+}
+
+.desys-h3-bold {
+  @include desys-typography-h3-bold;
+}
+
+// Header Four
+.desys-h4-regular {
+  @include desys-typography-h4-regular;
+}
+
+.desys-h4-bold {
+  @include desys-typography-h4-bold;
+}
+
+// Header Five
+.desys-h5-regular {
+  @include desys-typography-h5-regular;
+}
+
+.desys-h5-bold {
+  @include desys-typography-h5-bold;
+}
+
+// Paragraph Large
+.desys-paragraph-lg {
+  @include desys-typography-paragraph-lg;
+}
+
+// Paragraph Medium
+.desys-paragraph-md-multiline {
+  @include desys-typography-paragraph-md-multiline;
+}
+
+.desys-paragraph-md-one-line {
+  @include desys-typography-paragraph-md-one-line;
+}
+
+.desys-paragraph-md-bold {
+  @include desys-typography-paragraph-md-bold;
+}
+
+// Paragraph Small
+.desys-paragraph-sm-multiline {
+  @include desys-typography-paragraph-sm-multiline;
+}
+
+.desys-paragraph-sm-one-line {
+  @include desys-typography-paragraph-sm-one-line;
+}
+
+.desys-paragraph-sm-bold {
+  @include desys-typography-paragraph-sm-bold;
+}
+
+// Paragraph Extra Small
+.desys-paragraph-xs {
+  @include desys-typography-paragraph-xs;
+}
+
+// Button Typography (for preview/documentation)
+.desys-button-lg {
+  @include desys-typography-button-lg;
+}
+
+.desys-button-md {
+  @include desys-typography-button-md;
+}
+
+.desys-button-sm {
+  @include desys-typography-button-sm;
+}

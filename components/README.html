@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="components">Components</h1>
+
+<p>Each component in this directory follows this structure:</p>
+
+<h2 id="componentfilestructure">Component File Structure</h2>
+
+<ul>
+<li><code>ComponentName.vue</code> - Main component file</li>
+<li>Each variation (Size, Type) = separate component file</li>
+<li>Example: <code>ButtonSmall.vue</code>, <code>ButtonMedium.vue</code>, <code>ButtonLarge.vue</code></li>
+</ul>
+
+<h2 id="componenttemplate">Component Template</h2>
+
+<pre><code class="vue">&lt;template&gt;
+  &lt;!-- Component markup --&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  name: 'ComponentName',
+  // Component logic
+}
+&lt;/script&gt;
+
+&lt;style lang=&quot;scss&quot; scoped&gt;
+@import '../tokens/variables';
+
+.desys-component-name {
+  // Typography: Use mixins (recommended - easier to read)
+  @include desys-typography-paragraph-sm;
+  
+  // Or use individual token variables for customization
+  // font-size: $desys-font-size-sm;
+  // font-weight: $desys-font-weight-regular;
+  // line-height: $desys-line-height-sm;
+  
+  // Spacing: Use CSS custom properties
+  padding: var(--desys-spacing-gutter-16);
+  border-radius: var(--desys-radius-8);
+  
+  // Colors: Use CSS custom properties (components define colors)
+  color: var(--desys-color-gray-500);
+  background: var(--desys-color-white);
+}
+&lt;/style&gt;
+</code></pre>
+
+<h2 id="typographyusage">Typography Usage</h2>
+
+<p><strong>Available Mixins:</strong></p>
+
+<ul>
+<li>Headers: <code>@include desys-typography-h1-regular;</code>, <code>@include desys-typography-h1-bold;</code>, etc. (H1-H5)</li>
+<li>Paragraphs: <code>@include desys-typography-paragraph-lg;</code>, <code>@include desys-typography-paragraph-md-multiline;</code>, <code>@include desys-typography-paragraph-sm-bold;</code>, etc.</li>
+<li>Buttons: <code>@include desys-typography-button-lg;</code>, <code>@include desys-typography-button-md;</code>, <code>@include desys-typography-button-sm;</code></li>
+</ul>
+
+<p><strong>Available Token Variables:</strong></p>
+
+<ul>
+<li>Font sizes: <code>$desys-font-size-xs</code>, <code>$desys-font-size-sm</code>, <code>$desys-font-size-md</code>, <code>$desys-font-size-lg</code>, <code>$desys-font-size-h1</code> through <code>$desys-font-size-h5</code></li>
+<li>Font weights: <code>$desys-font-weight-regular</code> (400), <code>$desys-font-weight-medium</code> (500), <code>$desys-font-weight-bold</code> (700)</li>
+<li>Line heights: <code>$desys-line-height-sm</code>, <code>$desys-line-height-md</code>, <code>$desys-line-height-lg</code>, <code>$desys-line-height-h1</code> through <code>$desys-line-height-h5</code></li>
+<li>Font family: <code>$desys-font-family</code></li>
+</ul>
+
+<p><strong>Important:</strong> Do NOT use utility classes (<code>.desys-h1-regular</code>, etc.) in components. They are for preview/documentation only.</p>
+
+<h2 id="icons">Icons</h2>
+
+<p>We use <strong>Phosphor Icons</strong> for all iconography in the design system.</p>
+
+<p><strong>Installation:</strong> Already installed as <code>@phosphor-icons/vue</code></p>
+
+<p><strong>Icon Weight Rules:</strong></p>
+
+<ul>
+<li><strong>19px and smaller</strong>: Use <code>weight=&quot;bold&quot;</code></li>
+<li><strong>20px and above</strong>: Use <code>weight=&quot;regular&quot;</code></li>
+</ul>
+
+<p><strong>Usage in Components:</strong></p>
+
+<pre><code class="vue">&lt;script&gt;
+import { PhCheck, PhMinus, PhHeart } from '@phosphor-icons/vue';
+
+export default {
+  components: {
+    PhCheck,
+    PhMinus,
+    PhHeart
+  }
+}
+&lt;/script&gt;
+
+&lt;template&gt;
+  &lt;!-- Small icon (16px) - use bold --&gt;
+  &lt;PhCheck :size=&quot;16&quot; color=&quot;white&quot; weight=&quot;bold&quot; /&gt;
+  
+  &lt;!-- Large icon (24px) - use regular --&gt;
+  &lt;PhHeart :size=&quot;24&quot; color=&quot;red&quot; weight=&quot;regular&quot; /&gt;
+&lt;/template&gt;
+</code></pre>
+
+<p><strong>Available Props:</strong></p>
+
+<ul>
+<li><code>size</code>: number | string - Icon size (default: &#8220;1em&#8221;)</li>
+<li><code>color</code>: string - Icon color (default: &#8220;currentColor&#8221;)</li>
+<li><code>weight</code>: &#8220;thin&#8221; | &#8220;light&#8221; | &#8220;regular&#8221; | &#8220;bold&#8221; | &#8220;fill&#8221; | &#8220;duotone&#8221; - Icon weight</li>
+<li><code>mirrored</code>: boolean - Flip horizontally (for RTL)</li>
+</ul>
+
+<p><strong>Explore Icons:</strong> https://phosphoricons.com</p>
+
+<h2 id="figmatracking">Figma Tracking</h2>
+
+<p>Each component should include a comment with the Figma node ID:</p>
+
+<pre><code class="vue">&lt;!--
+  Figma Node ID: [node-id-here]
+  Component variations: [list variations]
+--&gt;
+</code></pre>
+
+</body>
+</html>
+

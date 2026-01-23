@@ -1,0 +1,39 @@
+// Dark Mode Color Tokens
+// Generated from Dark.tokens.json
+// Source: Figma Design System
+
+:root[data-theme="dark"] {
+  // Primary
+  --desys-color-primary-solid: #0E5842;
+
+  // Red Scale
+  --desys-color-red-100: #FFE4E9;
+  --desys-color-red-200: #FD3860;
+  --desys-color-red-300: #97001E;
+
+  // Blue Scale
+  --desys-color-blue-100: #D7E7FF;
+  --desys-color-blue-200: #2576F7;
+  --desys-color-blue-300: #050D3A;
+
+  // Green Scale
+  --desys-color-green-100: #C0F3E4;
+  --desys-color-green-200: #0FAF80;
+  --desys-color-green-300: #0E5842;
+
+  // Orange Scale
+  --desys-color-orange-100: #FFEBD2;
+  --desys-color-orange-200: #FF8C00;
+  --desys-color-orange-300: #854900;
+
+  // Gray Scale
+  --desys-color-gray-100: #FAFAFA;
+  --desys-color-gray-150: #ECECEC;
+  --desys-color-gray-200: #D1D1D1;
+  --desys-color-gray-300: #8D8D8D;
+  --desys-color-gray-350: #6F6F6F;
+  --desys-color-gray-400: #505050;
+  --desys-color-gray-500: #2A2A2A;
+  --desys-color-white: #FFFFFF;
+  --desys-color-black: #000000;
+}

@@ -1,0 +1,392 @@
+<!--
+  Figma Node ID: 13-9164
+  Component: Select
+  Sizes: small, medium
+  States: default, hover, selected, focused, disabled
+  Variations: with/without left icon
+  Dropdown: Figma Node ID: 13-9393
+-->
+<template>
+  <div class="desys-select-wrapper" ref="selectWrapper">
+    <button
+      :id="selectId"
+      :class="[
+        'desys-select',
+        `desys-select--${size}`,
+        {
+          'desys-select--has-left-icon': leftIcon,
+          'desys-select--disabled': disabled,
+          'desys-select--has-value': modelValue !== null && modelValue !== '',
+          'desys-select--open': isOpen
+        }
+      ]"
+      :disabled="disabled"
+      @click="toggleDropdown"
+      @blur="handleBlur"
+      type="button"
+    >
+      <component
+        v-if="leftIcon"
+        :is="leftIcon"
+        :class="['desys-select__icon', 'desys-select__icon--left']"
+        :size="iconSize"
+        :weight="iconWeight"
+      />
+      <span class="desys-select__text">
+        {{ displayText }}
+      </span>
+      <PhCaretDown
+        :class="['desys-select__icon', 'desys-select__icon--right', { 'desys-select__icon--rotated': isOpen }]"
+        :size="iconSize"
+        :weight="iconWeight"
+        color="currentColor"
+      />
+    </button>
+
+    <!-- Dropdown Menu -->
+    <Transition name="desys-select-dropdown">
+      <div
+        v-if="isOpen && !disabled"
+        class="desys-select-dropdown"
+        @mousedown.prevent
+      >
+        <button
+          v-for="option in options"
+          :key="option.value"
+          :class="[
+            'desys-select-dropdown__option',
+            {
+              'desys-select-dropdown__option--selected': modelValue === option.value,
+              'desys-select-dropdown__option--disabled': option.disabled
+            }
+          ]"
+          @click="selectOption(option)"
+          :disabled="option.disabled"
+          type="button"
+        >
+          <span class="desys-select-dropdown__option-text-left">{{ option.label }}</span>
+          <span v-if="option.rightText" class="desys-select-dropdown__option-text-right">{{ option.rightText }}</span>
+        </button>
+      </div>
+    </Transition>
+  </div>
+</template>
+
+<script>
+import { PhCaretDown } from '@phosphor-icons/vue';
+
+export default {
+  name: 'DesysSelect',
+  components: {
+    PhCaretDown
+  },
+  props: {
+    modelValue: {
+      type: [String, Number],
+      default: null
+    },
+    size: {
+      type: String,
+      default: 'medium',
+      validator: (value) => ['small', 'medium'].includes(value)
+    },
+    placeholder: {
+      type: String,
+      default: 'Select option...'
+    },
+    options: {
+      type: Array,
+      required: true,
+      default: () => []
+    },
+    leftIcon: {
+      type: [Object, String],
+      default: null
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    }
+  },
+  emits: ['update:modelValue', 'change', 'focus', 'blur'],
+  data() {
+    return {
+      isOpen: false
+    }
+  },
+  computed: {
+    selectId() {
+      return `select-${this._uid}`;
+    },
+    iconSize() {
+      return this.size === 'small' ? 16 : 16;
+    },
+    iconWeight() {
+      return this.iconSize <= 19 ? 'bold' : 'regular';
+    },
+    displayText() {
+      if (this.modelValue === null || this.modelValue === '') {
+        return this.placeholder;
+      }
+      const selectedOption = this.options.find(opt => opt.value === this.modelValue);
+      return selectedOption ? selectedOption.label : this.placeholder;
+    }
+  },
+  mounted() {
+    // Close dropdown when clicking outside
+    document.addEventListener('click', this.handleClickOutside);
+  },
+  beforeUnmount() {
+    document.removeEventListener('click', this.handleClickOutside);
+  },
+  methods: {
+    toggleDropdown() {
+      if (!this.disabled) {
+        this.isOpen = !this.isOpen;
+        if (this.isOpen) {
+          this.$emit('focus');
+        }
+      }
+    },
+    selectOption(option) {
+      if (!option.disabled) {
+        this.$emit('update:modelValue', option.value);
+        this.$emit('change', option.value);
+        this.isOpen = false;
+      }
+    },
+    handleBlur(event) {
+      // Delay to allow option click to register
+      setTimeout(() => {
+        if (!this.$refs.selectWrapper?.contains(document.activeElement)) {
+          this.isOpen = false;
+          this.$emit('blur', event);
+        }
+      }, 200);
+    },
+    handleClickOutside(event) {
+      if (this.isOpen && this.$refs.selectWrapper && !this.$refs.selectWrapper.contains(event.target)) {
+        this.isOpen = false;
+      }
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+@import '../tokens/variables';
+
+.desys-select-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+}
+
+.desys-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  border: 2px solid transparent;
+  background: var(--desys-color-white);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: $desys-font-family;
+  font-weight: $desys-font-weight-medium;
+  box-sizing: border-box;
+  outline: none;
+  color: var(--desys-color-gray-300);
+  box-shadow: 0 0 0 1px var(--desys-color-gray-200);
+  text-align: left;
+  display: flex;
+  align-items: center;
+
+  &:focus,
+  &.desys-select--open {
+    border-color: var(--desys-color-black);
+    box-shadow: 0px 0px 0px 4px rgba(0, 0, 0, 0.3), 0 0 0 1px var(--desys-color-black);
+  }
+
+  &:hover:not(.desys-select--disabled):not(:focus):not(.desys-select--open) {
+    box-shadow: 0 0 0 1px var(--desys-color-gray-300);
+  }
+
+  // Has value (selected option)
+  &--has-value {
+    color: var(--desys-color-black);
+  }
+
+  // Sizes
+  &--small {
+    padding: 8px 16px;
+    padding-right: 40px;
+    border-radius: var(--desys-radius-8);
+    @include desys-typography-button-sm;
+
+    &.desys-select--has-left-icon {
+      padding-left: 32px;
+    }
+  }
+
+  &--medium {
+    padding: 16px 20px;
+    padding-right: 40px;
+    border-radius: var(--desys-radius-12);
+    @include desys-typography-button-md;
+
+    &.desys-select--has-left-icon {
+      padding-left: 36px;
+    }
+  }
+
+  // Disabled state
+  &--disabled {
+    cursor: not-allowed;
+    background: var(--desys-color-gray-100) !important;
+    color: var(--desys-color-gray-200) !important;
+    box-shadow: 0 0 0 1px var(--desys-color-gray-200) !important;
+    border-color: transparent !important;
+    opacity: 0.5;
+  }
+
+  // Remove default arrow
+  &::-ms-expand {
+    display: none;
+  }
+
+  // Style option elements
+  option {
+    color: var(--desys-color-black);
+    background: var(--desys-color-white);
+  }
+
+  option:disabled {
+    color: var(--desys-color-gray-300);
+  }
+}
+
+.desys-select__text {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.desys-select__icon {
+  position: absolute;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1;
+  transition: transform 0.2s ease;
+
+  &--left {
+    left: var(--desys-spacing-gutter-12);
+    color: var(--desys-color-gray-300);
+  }
+
+  &--right {
+    right: var(--desys-spacing-gutter-12);
+    color: var(--desys-color-gray-300);
+
+    &--rotated {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+// Adjust right icon position based on size
+.desys-select-wrapper:has(.desys-select--small) .desys-select__icon--right {
+  right: var(--desys-spacing-gutter-16);
+}
+
+.desys-select-wrapper:has(.desys-select--medium) .desys-select__icon--right {
+  right: var(--desys-spacing-gutter-20);
+}
+
+// Dropdown Menu
+.desys-select-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 6px;
+  background: var(--desys-color-white);
+  border-radius: var(--desys-radius-24);
+  box-shadow: 0px 14px 30px rgba(0, 0, 0, 0.15);
+  padding: var(--desys-spacing-gutter-8);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.desys-select-dropdown__option {
+  width: 100%;
+  border: none;
+  background: var(--desys-color-white);
+  border-radius: var(--desys-radius-12);
+  padding: var(--desys-spacing-gutter-16);
+  gap: var(--desys-spacing-gutter-12);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  @include desys-typography-paragraph-md-multiline;
+  color: var(--desys-color-black);
+  text-align: left;
+  box-sizing: border-box;
+
+  &:hover:not(.desys-select-dropdown__option--disabled) {
+    background: var(--desys-color-gray-100);
+  }
+
+  &--selected {
+    // Selected state styling if needed
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    color: var(--desys-color-gray-200);
+  }
+}
+
+.desys-select-dropdown__option-text-left {
+  flex: 1;
+}
+
+.desys-select-dropdown__option-text-right {
+  color: var(--desys-color-gray-300);
+}
+
+// Dropdown transition
+.desys-select-dropdown-enter-active,
+.desys-select-dropdown-leave-active {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.desys-select-dropdown-enter-from {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.desys-select-dropdown-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+// Adjust padding when left icon is present
+.desys-select--small.desys-select--has-left-icon {
+  padding-left: 40px;
+}
+
+.desys-select--medium.desys-select--has-left-icon {
+  padding-left: 48px;
+}
+</style>

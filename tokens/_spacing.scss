@@ -1,0 +1,30 @@
+// Spacing Tokens
+// Gutters and radiuses from JSON token files
+// Generated from Mode 1.tokens.json
+// Source: Figma Design System
+
+:root {
+  // Gutter Spacing (in pixels)
+  --desys-spacing-gutter-0: 0px;
+  --desys-spacing-gutter-4: 4px;
+  --desys-spacing-gutter-8: 8px;
+  --desys-spacing-gutter-12: 12px;
+  --desys-spacing-gutter-16: 16px;
+  --desys-spacing-gutter-20: 20px;
+  --desys-spacing-gutter-24: 24px;
+  --desys-spacing-gutter-28: 28px;
+  --desys-spacing-gutter-32: 32px;
+  --desys-spacing-gutter-36: 36px;
+  --desys-spacing-gutter-40: 40px;
+  --desys-spacing-gutter-56: 56px;
+  --desys-spacing-gutter-72: 72px;
+  --desys-spacing-gutter-80: 80px;
+
+  // Border Radius (in pixels, except full which is percentage)
+  --desys-radius-0: 0px;
+  --desys-radius-8: 8px;
+  --desys-radius-12: 12px;
+  --desys-radius-16: 16px;
+  --desys-radius-24: 24px;
+  --desys-radius-full: 100px;
+}

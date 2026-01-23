@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="designsysteminstructions">Design System Instructions</h1>
+
+<h2 id="coreprinciples">Core Principles</h2>
+
+<ol>
+<li><strong>Update vital and key information from chat and update docs/documentation.md</strong></li>
+</ol>
+
+<ul>
+<li> Be minimalistic - only add truly important information</li>
+<li> Update when there are key decisions, patterns, or conventions established</li>
+</ul>
+
+<ol>
+<li><strong>Figma is the source of truth</strong></li>
+</ol>
+
+<ul>
+<li> All design specifications come from Figma design system file</li>
+<li> Track Figma node IDs for each component in component files</li>
+</ul>
+
+<ol>
+<li><strong>Variables from JSON files only</strong></li>
+</ol>
+
+<ul>
+<li> Use color tokens from JSON files (light/dark modes)</li>
+<li> Use spacing tokens (gutters, radiuses) from JSON files</li>
+<li> Typography tokens defined in <code>_typography-tokens.scss</code> (from Figma styles)</li>
+<li> Do not hardcode values - always use variables</li>
+</ul>
+
+<ol>
+<li><strong>Typography in Components</strong></li>
+</ol>
+
+<ul>
+<li> Use mixins: <code>@include desys-typography-paragraph-sm;</code></li>
+<li> Or use token variables: <code>font-size: $desys-font-size-sm;</code></li>
+<li> Do NOT use utility classes (<code>.desys-h1-regular</code>) in components</li>
+<li> Utility classes are for preview/documentation only</li>
+</ul>
+
+<ol>
+<li><strong>Component structure</strong></li>
+</ol>
+
+<ul>
+<li> Each component variation (Size, Type) = separate component</li>
+<li> States (default, hover, clicked, disabled) handled within components</li>
+<li> Show all variations in grid + one compound component for state interactions</li>
+<li> Store components as separate .vue files</li>
+<li> Styles in design-system.scss with desys- prefix</li>
+</ul>
+
+<ol>
+<li><strong>Reusability</strong></li>
+</ol>
+
+<ul>
+<li> Components use desys- prefix for styles</li>
+<li> Components are data-driven (push data to them, not hardcoded)</li>
+<li> Design system can be used across multiple projects</li>
+</ul>
+
+<ol>
+<li><strong>Icon Weight Rules</strong></li>
+</ol>
+
+<ul>
+<li> Icons 19px and smaller: Use <code>weight=&quot;bold&quot;</code></li>
+<li> Icons 20px and above: Use <code>weight=&quot;regular&quot;</code></li>
+</ul>
+
+</body>
+</html>
+

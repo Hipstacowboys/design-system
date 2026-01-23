@@ -1,0 +1,116 @@
+# Design System
+
+Vue + SCSS design system built from Figma design system file.
+
+## Setup
+
+### Compiling Styles with Codekit
+
+The design system uses **Codekit** to compile SCSS files:
+
+1. Open Codekit
+2. Add these files as source files:
+   - `design-system.scss` → output: `design-system.css`
+   - `preview.scss` → output: `preview.css`
+3. Codekit will watch and compile automatically
+
+### Vue Components with Vite
+
+For Vue components, use Vite:
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Start dev server:
+   ```bash
+   npm run dev
+   ```
+
+3. Open `preview-vue.html` in browser (Vite will serve it)
+
+### Preview
+
+- **`preview-vue.html`** - Vue.js preview (uses Vite to compile Vue components)
+
+## File Structure
+
+```
+design-system/
+├── components/          # Vue components
+│   └── Toggle.vue
+├── tokens/              # Design tokens
+│   ├── _colors.scss
+│   ├── _spacing.scss
+│   ├── _typography-tokens.scss
+│   ├── _typography-mixins.scss
+│   └── _typography.scss
+├── design-system.scss  # Main stylesheet (compile to design-system.css)
+├── preview.scss        # Preview styles (compile to preview.css)
+├── preview-vue.html    # Vue preview entry point
+└── src/
+    ├── preview.js      # Vue app entry point
+    └── PreviewApp.vue  # Main preview component
+```
+
+## Usage
+
+### In Components
+
+```vue
+<style lang="scss" scoped>
+@import '../tokens/variables';
+
+.desys-my-component {
+  @include desys-typography-paragraph-sm;
+  padding: var(--desys-spacing-gutter-16);
+  color: var(--desys-color-gray-500);
+}
+</style>
+```
+
+### No Inline Styles
+
+All styles should use classes, not inline styles. Use design system tokens and mixins.
+
+## Components
+
+See [COMPONENTS.md](./COMPONENTS.md) for complete component documentation.
+
+### Form Components
+- **Toggle** (15-10129) - Toggle switch with 6 states
+- **Toggle with Label** (15-10138) - Toggle with title and optional paragraph
+- **Checkbox** (15-10095) - Checkbox with 4 states
+- **Checkbox with Label** (15-10095) - Checkbox with title and optional paragraph
+- **Radio** (15-10163) - Radio button with multiple states
+- **Radio with Label** (15-10163) - Radio with title and optional paragraph
+
+### Button Components
+- **Button Primary** (13-9075) - Primary button, 3 sizes, 4 states
+- **Button Secondary** (13-9075) - Secondary button, 3 sizes, 4 states
+- **Button Line** (13-9075) - Line button, 3 sizes, 4 states
+- **Button Ghost** (13-9075) - Ghost button, 3 sizes, 4 states
+
+### Input Components
+- **Input** (13-9678) - Complete input with labels and message
+- **Input Field** (13-9414) - Input field with optional addons and icons
+- **Input Message** (13-9646) - Error and info messages
+- **Textarea** (13-9779) - Complete textarea with labels and character count
+- **Textarea Field** (13-9683) - Textarea field component
+
+### Select Components
+- **Select** (13-9164) - Select dropdown, 2 sizes, custom dropdown
+
+### Navigation Components
+- **Tab Simple** (16-10569) - Simple tab with underline
+- **Tabs Simple** (16-10618) - Container for simple tabs
+- **Tab** (16-10646) - Tab with card-like appearance
+- **Tabs** (16-10663) - Container for tabs
+- **Breadcrumb** (16-10583) - Individual breadcrumb item
+- **Breadcrumbs** (16-10602) - Breadcrumb navigation
+
+### Feedback Components
+- **Alert** (16-10369) - Alert with 4 types, optional actions
+- **Status** (15-10242) - Status indicator with colored dot
+- **Notification Badge** (16-10265) - Badge for notifications
