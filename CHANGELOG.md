@@ -16,6 +16,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - 
 
+## [1.1.3] - 2026-01-25
+
+### Added
+- 
+
+### Changed
+- **BREAKING**: Renamed design system prefix from `desys-` to `marks-` across all components, tokens, and styles
+  - All CSS custom properties now use `--marks-` prefix (e.g., `--marks-color-primary-solid`)
+  - All component class names now use `marks-` prefix (e.g., `.marks-button`)
+  - All SCSS variables and mixins now use `marks-` prefix (e.g., `$marks-font-weight-bold`)
+
+### Fixed
+-
+
+
 ## [1.1.2] - 2026-01-25
 
 ### Added
@@ -134,14 +149,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Component props documentation
 
 ### Features
-- All components use `desys-` prefix for styles
+- All components use `marks-` prefix for styles
 - Components are data-driven (props-based)
 - Support for Phosphor Icons with size/weight rules
 - Theme support (light/dark mode)
 - Responsive design patterns
 - Accessibility features (semantic HTML, ARIA attributes)
 
-[Unreleased]: https://github.com/Hipstacowboys/design-system/compare/v1.1.2...HEAD
+[Unreleased]: https://github.com/Hipstacowboys/design-system/compare/v1.1.3...HEAD
+[1.1.3]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.1.3
 [1.1.2]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.1.2
 [1.1.1]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.1.1
 [1.1.0]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.1.0
