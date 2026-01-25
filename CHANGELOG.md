@@ -16,6 +16,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - 
 
+## [1.1.2] - 2026-01-25
+
+### Added
+- 
+
+### Changed
+- CalendarDatepicker now uses ButtonLine component for navigation buttons instead of custom implementation
+
+### Fixed
+- Fixed CalendarDatepicker month title color in dark mode (now displays white)
+- Fixed CalendarDatepicker navigation button icons visibility (now properly passed via data() for prop binding)
+- Fixed CalendarDatepicker navigation buttons to use consistent hover styles matching other line buttons
+
+
 ## [1.1.1] - 2026-01-25
 
 ### Added
@@ -127,7 +141,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Responsive design patterns
 - Accessibility features (semantic HTML, ARIA attributes)
 
-[Unreleased]: https://github.com/Hipstacowboys/design-system/compare/v1.1.1...HEAD
+[Unreleased]: https://github.com/Hipstacowboys/design-system/compare/v1.1.2...HEAD
+[1.1.2]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.1.2
 [1.1.1]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.1.1
 [1.1.0]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.1.0
 [1.0.0]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.0.0
