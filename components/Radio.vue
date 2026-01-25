@@ -4,15 +4,15 @@
   States: unchecked, checked, hover (unchecked/checked), disabled (unchecked/checked)
 -->
 <template>
-  <div class="desys-radio-wrapper">
+  <div class="marks-radio-wrapper">
     <input
       :id="radioId"
       ref="input"
       type="radio"
       :class="[
-        'desys-radio',
+        'marks-radio',
         {
-          'desys-radio--disabled': disabled
+          'marks-radio--disabled': disabled
         }
       ]"
       :name="name"
@@ -23,14 +23,14 @@
     />
     <div
       v-if="modelValue === value"
-      class="desys-radio__dot"
+      class="marks-radio__dot"
     />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'DesysRadio',
+  name: 'marksRadio',
   props: {
     modelValue: {
       type: [String, Number, Boolean],
@@ -68,22 +68,22 @@ export default {
 <style lang="scss" scoped>
 @import '../tokens/variables';
 
-.desys-radio-wrapper {
+.marks-radio-wrapper {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-.desys-radio {
+.marks-radio {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   width: 24px;
   height: 24px;
-  border: 2px solid var(--desys-color-gray-200);
+  border: 2px solid var(--marks-color-gray-200);
   border-radius: 50%;
-  background: var(--desys-color-white);
+  background: var(--marks-color-white);
   cursor: pointer;
   position: relative;
   margin: 0;
@@ -92,34 +92,34 @@ export default {
   box-sizing: border-box;
 
   &:focus-visible {
-    outline: 2px solid var(--desys-color-primary-solid);
+    outline: 2px solid var(--marks-color-primary-solid);
     outline-offset: 2px;
   }
 
   // Checked state
   &:checked {
-    border-color: var(--desys-color-black);
+    border-color: var(--marks-color-black);
   }
 
   // Hover states
-  &:hover:not(.desys-radio--disabled):not(:checked) {
-    border-color: var(--desys-color-gray-300);
+  &:hover:not(.marks-radio--disabled):not(:checked) {
+    border-color: var(--marks-color-gray-300);
   }
 
-  &:hover:not(.desys-radio--disabled):checked {
-    border-color: var(--desys-color-gray-500);
+  &:hover:not(.marks-radio--disabled):checked {
+    border-color: var(--marks-color-gray-500);
   }
 
   // Disabled states
   &--disabled {
     cursor: not-allowed;
     opacity: 0.5;
-    background: var(--desys-color-gray-150);
-    border-color: var(--desys-color-gray-200);
+    background: var(--marks-color-gray-150);
+    border-color: var(--marks-color-gray-200);
   }
 }
 
-.desys-radio__dot {
+.marks-radio__dot {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -127,18 +127,18 @@ export default {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: var(--desys-color-black);
+  background: var(--marks-color-black);
   pointer-events: none;
   transition: background-color 0.2s ease;
 }
 
 // Hover state for checked radio - change dot color
-.desys-radio-wrapper:hover .desys-radio:checked:not(.desys-radio--disabled) ~ .desys-radio__dot {
-  background: var(--desys-color-gray-500);
+.marks-radio-wrapper:hover .marks-radio:checked:not(.marks-radio--disabled) ~ .marks-radio__dot {
+  background: var(--marks-color-gray-500);
 }
 
 // Disabled checked state
-.desys-radio--disabled:checked ~ .desys-radio__dot {
-  background: var(--desys-color-gray-200);
+.marks-radio--disabled:checked ~ .marks-radio__dot {
+  background: var(--marks-color-gray-200);
 }
 </style>

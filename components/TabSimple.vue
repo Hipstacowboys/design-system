@@ -6,10 +6,10 @@
 <template>
   <button
     :class="[
-      'desys-tab-simple',
+      'marks-tab-simple',
       {
-        'desys-tab-simple--active': active,
-        'desys-tab-simple--disabled': disabled
+        'marks-tab-simple--active': active,
+        'marks-tab-simple--disabled': disabled
       }
     ]"
     :disabled="disabled"
@@ -22,7 +22,7 @@
 
 <script>
 export default {
-  name: 'DesysTabSimple',
+  name: 'marksTabSimple',
   props: {
     active: {
       type: Boolean,
@@ -51,39 +51,39 @@ export default {
 <style lang="scss" scoped>
 @import '../tokens/variables';
 
-.desys-tab-simple {
+.marks-tab-simple {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 24px;
+  padding: var(--marks-spacing-gutter-12) var(--marks-spacing-gutter-24);
   border: none;
   background: transparent;
   cursor: pointer;
-  @include desys-typography-paragraph-md-multiline;
-  font-weight: $desys-font-weight-medium;
-  color: var(--desys-color-gray-400);
+  @include marks-typography-paragraph-md-multiline;
+  font-weight: $marks-font-weight-medium;
+  color: var(--marks-color-gray-400);
   border-bottom: 2px solid transparent;
   transition: all 0.2s ease;
   box-sizing: border-box;
 
-  &:hover:not(.desys-tab-simple--disabled):not(.desys-tab-simple--active) {
-    color: var(--desys-color-gray-300);
+  &:hover:not(.marks-tab-simple--disabled):not(.marks-tab-simple--active) {
+    color: var(--marks-color-gray-300);
   }
 
   // Active state
   &--active {
-    color: var(--desys-color-black);
-    border-bottom-color: var(--desys-color-black);
+    color: var(--marks-color-black);
+    border-bottom-color: var(--marks-color-black);
 
     &:hover {
-      border-bottom-color: var(--desys-color-gray-400);
+      border-bottom-color: var(--marks-color-gray-400);
     }
   }
 
   // Disabled state
   &--disabled {
     cursor: not-allowed;
-    color: var(--desys-color-gray-150);
+    color: var(--marks-color-gray-150);
   }
 }
 </style>

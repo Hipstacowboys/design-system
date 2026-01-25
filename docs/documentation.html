@@ -32,7 +32,7 @@
 <h3 id="namingconvention">Naming Convention</h3>
 
 <ul>
-<li>Style prefix: <code>desys-</code></li>
+<li>Style prefix: <code>marks-</code></li>
 <li>Components: Separate .vue files</li>
 <li>Styles: <code>design-system.scss</code></li>
 </ul>
@@ -51,7 +51,7 @@
 
 <ul>
 <li>Light/Dark mode tokens from JSON files</li>
-<li>CSS custom properties: <code>var(--desys-color-primary-solid)</code>, <code>var(--desys-color-gray-500)</code>, etc.</li>
+<li>CSS custom properties: <code>var(--marks-color-primary-solid)</code>, <code>var(--marks-color-gray-500)</code>, etc.</li>
 <li>Available in both light and dark themes</li>
 </ul>
 
@@ -59,7 +59,7 @@
 
 <ul>
 <li>Gutters (0&#8211;80px) and radiuses (0&#8211;24px, full) from JSON files</li>
-<li>CSS custom properties: <code>var(--desys-spacing-gutter-16)</code>, <code>var(--desys-radius-8)</code>, etc.</li>
+<li>CSS custom properties: <code>var(--marks-spacing-gutter-16)</code>, <code>var(--marks-radius-8)</code>, etc.</li>
 </ul>
 
 <h4 id="typography">Typography</h4>
@@ -83,19 +83,19 @@
 <p><strong>Usage in Components:</strong></p>
 
 <pre><code class="scss">// Recommended: Use mixins (easier to read)
-@include desys-typography-paragraph-sm;
+@include marks-typography-paragraph-sm;
 
 // Or use individual token variables for customization
-font-size: $desys-font-size-sm;
-font-weight: $desys-font-weight-bold;
-line-height: $desys-line-height-sm;
+font-size: $marks-font-size-sm;
+font-weight: $marks-font-weight-bold;
+line-height: $marks-line-height-sm;
 </code></pre>
 
 <p><strong>Important:</strong></p>
 
 <ul>
 <li>Colors are defined in components, not in base typography styles</li>
-<li>Utility classes (<code>.desys-h1-regular</code>, etc.) are for preview/documentation only</li>
+<li>Utility classes (<code>.marks-h1-regular</code>, etc.) are for preview/documentation only</li>
 <li>Components should use mixins or token variables, not utility classes</li>
 <li>No hardcoded values - always use variables</li>
 </ul>

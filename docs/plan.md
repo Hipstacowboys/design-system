@@ -14,7 +14,7 @@
 - ✅ Typography styles (H1-H5, regular & bold) - implemented
 - ✅ Paragraph styles (lg, md variants, sm variants, xs) - implemented
 - ✅ Typography system refactored to use mixins (tokens + mixins + utility classes)
-- ✅ Main design-system.scss file with desys- prefix system
+- ✅ Main design-system.scss file with marks- prefix system
 - ✅ Component structure and README created
 - ✅ All design tokens defined and ready for use
 - ✅ Vue preview environment set up (preview-vue.html with Vite)
@@ -64,8 +64,11 @@
 - ✅ **Tabs** (16-10663) - Container for tabs with card-like appearance
 - ✅ **Breadcrumb** (16-10583) - Individual breadcrumb item
 - ✅ **Breadcrumbs** (16-10602) - Breadcrumb navigation component
+- ✅ **Empty State** (16-10695) - Empty state with icon, title, description, and optional action button
+- ✅ **Notification Message** (16-10728) - Notification message component (single and inList types)
+- ✅ **Notification Dialog** (16-11051) - Dialog container for notifications with filter switch
 
 ## Notes
 - Design system will be reusable across multiple projects
 - Components are data-driven (accept props, not hardcoded)
-- All styles use desys- prefix
+- All styles use marks- prefix

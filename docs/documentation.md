@@ -16,7 +16,7 @@ Vue + SCSS design system built from Figma design system file. Source of truth is
 - **20px and above**: Use `weight="regular"`
 
 ### Naming Convention
-- Style prefix: `desys-`
+- Style prefix: `marks-`
 - Components: Separate .vue files
 - Styles: `design-system.scss`
 
@@ -29,12 +29,12 @@ Vue + SCSS design system built from Figma design system file. Source of truth is
 
 #### Colors
 - Light/Dark mode tokens from JSON files
-- CSS custom properties: `var(--desys-color-primary-solid)`, `var(--desys-color-gray-500)`, etc.
+- CSS custom properties: `var(--marks-color-primary-solid)`, `var(--marks-color-gray-500)`, etc.
 - Available in both light and dark themes
 
 #### Spacing
 - Gutters (0-80px) and radiuses (0-24px, full) from JSON files
-- CSS custom properties: `var(--desys-spacing-gutter-16)`, `var(--desys-radius-8)`, etc.
+- CSS custom properties: `var(--marks-spacing-gutter-16)`, `var(--marks-radius-8)`, etc.
 
 #### Typography
 **Structure:**
@@ -50,17 +50,17 @@ Vue + SCSS design system built from Figma design system file. Source of truth is
 **Usage in Components:**
 ```scss
 // Recommended: Use mixins (easier to read)
-@include desys-typography-paragraph-sm;
+@include marks-typography-paragraph-sm;
 
 // Or use individual token variables for customization
-font-size: $desys-font-size-sm;
-font-weight: $desys-font-weight-bold;
-line-height: $desys-line-height-sm;
+font-size: $marks-font-size-sm;
+font-weight: $marks-font-weight-bold;
+line-height: $marks-line-height-sm;
 ```
 
 **Important:**
 - Colors are defined in components, not in base typography styles
-- Utility classes (`.desys-h1-regular`, etc.) are for preview/documentation only
+- Utility classes (`.marks-h1-regular`, etc.) are for preview/documentation only
 - Components should use mixins or token variables, not utility classes
 - No hardcoded values - always use variables
 

@@ -4,7 +4,7 @@
   Uses: Tab Simple components
 -->
 <template>
-  <div class="desys-tabs-simple">
+  <div class="marks-tabs-simple">
     <TabSimple
       v-for="(tab, index) in tabs"
       :key="index"
@@ -22,7 +22,7 @@
 import TabSimple from './TabSimple.vue';
 
 export default {
-  name: 'DesysTabsSimple',
+  name: 'marksTabsSimple',
   components: {
     TabSimple
   },
@@ -56,10 +56,10 @@ export default {
 <style lang="scss" scoped>
 @import '../tokens/variables';
 
-.desys-tabs-simple {
+.marks-tabs-simple {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--desys-color-gray-150);
+  border-bottom: 1px solid var(--marks-color-gray-150);
   box-sizing: border-box;
   width: 100%;
 }

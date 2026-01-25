@@ -4,19 +4,19 @@
   Includes: Textarea Field, Input Label, Character Count
 -->
 <template>
-  <div class="desys-textarea">
+  <div class="marks-textarea">
     <!-- Labels (above textarea) -->
-    <div v-if="label || labelRight" class="desys-textarea__labels">
-      <label v-if="label" :for="textareaId" class="desys-textarea__label desys-textarea__label--left">
+    <div v-if="label || labelRight" class="marks-textarea__labels">
+      <label v-if="label" :for="textareaId" class="marks-textarea__label marks-textarea__label--left">
         {{ label }}
       </label>
-      <span v-if="labelRight" class="desys-textarea__label desys-textarea__label--right">
+      <span v-if="labelRight" class="marks-textarea__label marks-textarea__label--right">
         {{ labelRight }}
       </span>
     </div>
 
     <!-- Textarea Field -->
-    <div class="desys-textarea__field-wrapper">
+    <div class="marks-textarea__field-wrapper">
       <TextareaField
         :textarea-id="textareaId"
         :model-value="modelValue"
@@ -32,7 +32,7 @@
     </div>
 
     <!-- Character Count (below textarea) -->
-    <div v-if="maxLength" class="desys-textarea__character-count">
+    <div v-if="maxLength" class="marks-textarea__character-count">
       {{ characterCount }} / {{ maxLength }} characters
     </div>
   </div>
@@ -42,7 +42,7 @@
 import TextareaField from './TextareaField.vue';
 
 export default {
-  name: 'DesysTextarea',
+  name: 'marksTextarea',
   components: {
     TextareaField
   },
@@ -95,40 +95,40 @@ export default {
 <style lang="scss" scoped>
 @import '../tokens/variables';
 
-.desys-textarea {
+.marks-textarea {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.desys-textarea__labels {
+.marks-textarea__labels {
   display: flex;
   align-items: center;
-  gap: var(--desys-spacing-gutter-12);
-  margin-bottom: var(--desys-spacing-gutter-12);
+  gap: var(--marks-spacing-gutter-12);
+  margin-bottom: var(--marks-spacing-gutter-12);
 }
 
-.desys-textarea__label {
-  @include desys-typography-paragraph-md-multiline;
-  color: var(--desys-color-black);
+.marks-textarea__label {
+  @include marks-typography-paragraph-md-multiline;
+  color: var(--marks-color-black);
 
   &--left {
     flex: 1;
   }
 
   &--right {
-    color: var(--desys-color-gray-300);
+    color: var(--marks-color-gray-300);
     text-align: right;
   }
 }
 
-.desys-textarea__field-wrapper {
+.marks-textarea__field-wrapper {
   // Spacing handled by labels margin-bottom and character-count margin-top
 }
 
-.desys-textarea__character-count {
-  margin-top: var(--desys-spacing-gutter-8);
-  @include desys-typography-paragraph-sm-multiline;
-  color: var(--desys-color-gray-300);
+.marks-textarea__character-count {
+  margin-top: var(--marks-spacing-gutter-8);
+  @include marks-typography-paragraph-sm-multiline;
+  color: var(--marks-color-gray-300);
 }
 </style>

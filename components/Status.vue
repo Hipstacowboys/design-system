@@ -7,13 +7,13 @@
 <template>
   <div
     :class="[
-      'desys-status',
-      `desys-status--${variant}`,
-      `desys-status--${type}`
+      'marks-status',
+      `marks-status--${variant}`,
+      `marks-status--${type}`
     ]"
   >
-    <span class="desys-status__dot"></span>
-    <span class="desys-status__text">
+    <span class="marks-status__dot"></span>
+    <span class="marks-status__text">
       <slot>{{ label }}</slot>
     </span>
   </div>
@@ -21,7 +21,7 @@
 
 <script>
 export default {
-  name: 'DesysStatus',
+  name: 'marksStatus',
   props: {
     variant: {
       type: String,
@@ -44,13 +44,13 @@ export default {
 <style lang="scss" scoped>
 @import '../tokens/variables';
 
-.desys-status {
+.marks-status {
   display: inline-flex;
   align-items: center;
-  gap: var(--desys-spacing-gutter-8);
-  @include desys-typography-paragraph-sm-multiline;
-  font-weight: $desys-font-weight-medium;
-  color: var(--desys-color-black);
+  gap: var(--marks-spacing-gutter-8);
+  @include marks-typography-paragraph-sm-multiline;
+  font-weight: $marks-font-weight-medium;
+  color: var(--marks-color-black);
 
   // Default variant - just dot and text
   &--default {
@@ -59,38 +59,38 @@ export default {
 
   // Prominent variant - with background
   &--prominent {
-    background-color: var(--desys-color-gray-100);
+    background-color: var(--marks-color-gray-100);
     border-radius: 100px;
-    padding: 8px 12px;
+    padding: var(--marks-spacing-gutter-8) var(--marks-spacing-gutter-12);
   }
 
   // Status types - dot colors
   &--success {
-    .desys-status__dot {
-      background-color: var(--desys-color-green-200);
+    .marks-status__dot {
+      background-color: var(--marks-color-green-200);
     }
   }
 
   &--warning {
-    .desys-status__dot {
-      background-color: var(--desys-color-orange-200);
+    .marks-status__dot {
+      background-color: var(--marks-color-orange-200);
     }
   }
 
   &--info {
-    .desys-status__dot {
-      background-color: var(--desys-color-blue-200);
+    .marks-status__dot {
+      background-color: var(--marks-color-blue-200);
     }
   }
 
   &--error {
-    .desys-status__dot {
-      background-color: var(--desys-color-red-200);
+    .marks-status__dot {
+      background-color: var(--marks-color-red-200);
     }
   }
 }
 
-.desys-status__dot {
+.marks-status__dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
@@ -98,7 +98,7 @@ export default {
   display: inline-block;
 }
 
-.desys-status__text {
+.marks-status__text {
   white-space: nowrap;
 }
 </style>

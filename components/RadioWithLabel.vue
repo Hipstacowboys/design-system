@@ -4,7 +4,7 @@
   Variants: With title only, or with title and paragraph (optional)
 -->
 <template>
-  <label class="desys-radio-with-label" :class="{ 'desys-radio-with-label--has-paragraph': paragraph }">
+  <label class="marks-radio-with-label" :class="{ 'marks-radio-with-label--has-paragraph': paragraph }">
     <Radio
       :model-value="modelValue"
       :value="value"
@@ -12,9 +12,9 @@
       :disabled="disabled"
       @update:modelValue="$emit('update:modelValue', $event)"
     />
-    <span class="desys-radio-with-label__text">
-      <span class="desys-radio-with-label__title">{{ title }}</span>
-      <span v-if="paragraph" class="desys-radio-with-label__paragraph">{{ paragraph }}</span>
+    <span class="marks-radio-with-label__text">
+      <span class="marks-radio-with-label__title">{{ title }}</span>
+      <span v-if="paragraph" class="marks-radio-with-label__paragraph">{{ paragraph }}</span>
     </span>
   </label>
 </template>
@@ -23,7 +23,7 @@
 import Radio from './Radio.vue';
 
 export default {
-  name: 'DesysRadioWithLabel',
+  name: 'marksRadioWithLabel',
   components: {
     Radio
   },
@@ -60,10 +60,10 @@ export default {
 <style lang="scss" scoped>
 @import '../tokens/variables';
 
-.desys-radio-with-label {
+.marks-radio-with-label {
   display: flex;
   align-items: center;
-  gap: var(--desys-spacing-gutter-12);
+  gap: var(--marks-spacing-gutter-12);
   cursor: pointer;
 
   // When paragraph exists, align radio to top (with title)
@@ -74,20 +74,20 @@ export default {
   &__text {
     display: flex;
     flex-direction: column;
-    gap: var(--desys-spacing-gutter-4);
+    gap: var(--marks-spacing-gutter-4);
     cursor: pointer;
     flex: 1;
   }
 
   &__title {
-    @include desys-typography-paragraph-md-one-line;
-    color: var(--desys-color-gray-500);
+    @include marks-typography-paragraph-md-one-line;
+    color: var(--marks-color-gray-500);
     user-select: none;
   }
 
   &__paragraph {
-    @include desys-typography-paragraph-sm-multiline;
-    color: var(--desys-color-gray-300);
+    @include marks-typography-paragraph-sm-multiline;
+    color: var(--marks-color-gray-300);
     user-select: none;
   }
 }

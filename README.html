@@ -85,10 +85,10 @@
 <pre><code class="vue">&lt;style lang=&quot;scss&quot; scoped&gt;
 @import '../tokens/variables';
 
-.desys-my-component {
-  @include desys-typography-paragraph-sm;
-  padding: var(--desys-spacing-gutter-16);
-  color: var(--desys-color-gray-500);
+.marks-my-component {
+  @include marks-typography-paragraph-sm;
+  padding: var(--marks-spacing-gutter-16);
+  color: var(--marks-color-gray-500);
 }
 &lt;/style&gt;
 </code></pre>
@@ -97,9 +97,72 @@
 
 <p>All styles should use classes, not inline styles. Use design system tokens and mixins.</p>
 
+<h2 id="usinginotherprojects">Using in Other Projects</h2>
+
+<p>This design system is designed to be reusable across multiple projects. You can install it directly from GitHub as an npm package.</p>
+
+<h3 id="quickstartgithubinstallation">Quick Start (GitHub Installation)</h3>
+
+<ol>
+<li><strong>Install from GitHub:</strong></li>
+</ol>
+
+<pre><code class="```bash">   npm install git+https://github.com/Hipstacowboys/design-system.git
+
+</code></pre>
+
+<ol>
+<li><strong>Import components:</strong></li>
+</ol>
+
+<pre><code class="```javascript">   import { ButtonPrimary, Input, CalendarDatepicker } from '@hipstacowboys/design-system';
+
+</code></pre>
+
+<ol>
+<li><strong>Import tokens in SCSS:</strong></li>
+</ol>
+
+<pre><code class="```scss">   @import '@hipstacowboys/design-system/tokens/_variables';
+
+</code></pre>
+
+<ol>
+<li><strong>Update to latest version:</strong></li>
+</ol>
+
+<pre><code class="```bash">   npm update @hipstacowboys/design-system
+
+</code></pre>
+
+<p>See <a href="./docs/reuse-guide.md">docs/reuse-guide.md</a> for complete instructions.</p>
+
+<h2 id="documentation">Documentation</h2>
+
+<ul>
+<li><strong><a href="./COMPONENTS.md">COMPONENTS.md</a></strong> - Complete component reference with props, events, and usage examples</li>
+<li><strong><a href="./CHANGELOG.md">CHANGELOG.md</a></strong> - Version history and changes</li>
+<li><strong><a href="./docs/instructions.md">docs/instructions.md</a></strong> - Development guidelines and best practices</li>
+<li><strong><a href="./docs/reuse-guide.md">docs/reuse-guide.md</a></strong> - How to use in other projects</li>
+</ul>
+
+<h2 id="versioning">Versioning</h2>
+
+<p>This design system uses <a href="https://semver.org/">Semantic Versioning</a>. See <a href="./CHANGELOG.md">CHANGELOG.md</a> for version history.</p>
+
+<p><strong>Check current version:</strong></p>
+
+<pre><code class="bash">npm list @hipstacowboys/design-system
+</code></pre>
+
+<p><strong>Install specific version:</strong></p>
+
+<pre><code class="bash">npm install git+https://github.com/Hipstacowboys/design-system.git#v1.0.0
+</code></pre>
+
 <h2 id="components">Components</h2>
 
-<p>See <a href="./COMPONENTS.md">COMPONENTS.md</a> for complete component documentation.</p>
+<p>See <a href="./COMPONENTS.md">COMPONENTS.md</a> for complete component documentation with all available props, events, and usage examples.</p>
 
 <h3 id="formcomponents">Form Components</h3>
 
@@ -146,6 +209,14 @@
 <li><strong>Tabs</strong> (16&#8211;10663) - Container for tabs</li>
 <li><strong>Breadcrumb</strong> (16&#8211;10583) - Individual breadcrumb item</li>
 <li><strong>Breadcrumbs</strong> (16&#8211;10602) - Breadcrumb navigation</li>
+</ul>
+
+<h3 id="feedbackcomponents">Feedback Components</h3>
+
+<ul>
+<li><strong>Empty State</strong> (16&#8211;10695) - Empty state with icon, title, description, and optional action button</li>
+<li><strong>Notification Message</strong> (16&#8211;10728) - Notification message with icon, title, timestamp, content, optional actions</li>
+<li><strong>Notification Dialog</strong> (16&#8211;11051) - Dialog container for multiple notification messages with filter switch</li>
 </ul>
 
 <h3 id="feedbackcomponents">Feedback Components</h3>

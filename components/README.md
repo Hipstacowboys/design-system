@@ -23,22 +23,22 @@ export default {
 <style lang="scss" scoped>
 @import '../tokens/variables';
 
-.desys-component-name {
+.marks-component-name {
   // Typography: Use mixins (recommended - easier to read)
-  @include desys-typography-paragraph-sm;
+  @include marks-typography-paragraph-sm;
   
   // Or use individual token variables for customization
-  // font-size: $desys-font-size-sm;
-  // font-weight: $desys-font-weight-regular;
-  // line-height: $desys-line-height-sm;
+  // font-size: $marks-font-size-sm;
+  // font-weight: $marks-font-weight-regular;
+  // line-height: $marks-line-height-sm;
   
   // Spacing: Use CSS custom properties
-  padding: var(--desys-spacing-gutter-16);
-  border-radius: var(--desys-radius-8);
+  padding: var(--marks-spacing-gutter-16);
+  border-radius: var(--marks-radius-8);
   
   // Colors: Use CSS custom properties (components define colors)
-  color: var(--desys-color-gray-500);
-  background: var(--desys-color-white);
+  color: var(--marks-color-gray-500);
+  background: var(--marks-color-white);
 }
 </style>
 ```
@@ -46,17 +46,17 @@ export default {
 ## Typography Usage
 
 **Available Mixins:**
-- Headers: `@include desys-typography-h1-regular;`, `@include desys-typography-h1-bold;`, etc. (H1-H5)
-- Paragraphs: `@include desys-typography-paragraph-lg;`, `@include desys-typography-paragraph-md-multiline;`, `@include desys-typography-paragraph-sm-bold;`, etc.
-- Buttons: `@include desys-typography-button-lg;`, `@include desys-typography-button-md;`, `@include desys-typography-button-sm;`
+- Headers: `@include marks-typography-h1-regular;`, `@include marks-typography-h1-bold;`, etc. (H1-H5)
+- Paragraphs: `@include marks-typography-paragraph-lg;`, `@include marks-typography-paragraph-md-multiline;`, `@include marks-typography-paragraph-sm-bold;`, etc.
+- Buttons: `@include marks-typography-button-lg;`, `@include marks-typography-button-md;`, `@include marks-typography-button-sm;`
 
 **Available Token Variables:**
-- Font sizes: `$desys-font-size-xs`, `$desys-font-size-sm`, `$desys-font-size-md`, `$desys-font-size-lg`, `$desys-font-size-h1` through `$desys-font-size-h5`
-- Font weights: `$desys-font-weight-regular` (400), `$desys-font-weight-medium` (500), `$desys-font-weight-bold` (700)
-- Line heights: `$desys-line-height-sm`, `$desys-line-height-md`, `$desys-line-height-lg`, `$desys-line-height-h1` through `$desys-line-height-h5`
-- Font family: `$desys-font-family`
+- Font sizes: `$marks-font-size-xs`, `$marks-font-size-sm`, `$marks-font-size-md`, `$marks-font-size-lg`, `$marks-font-size-h1` through `$marks-font-size-h5`
+- Font weights: `$marks-font-weight-regular` (400), `$marks-font-weight-medium` (500), `$marks-font-weight-bold` (700)
+- Line heights: `$marks-line-height-sm`, `$marks-line-height-md`, `$marks-line-height-lg`, `$marks-line-height-h1` through `$marks-line-height-h5`
+- Font family: `$marks-font-family`
 
-**Important:** Do NOT use utility classes (`.desys-h1-regular`, etc.) in components. They are for preview/documentation only.
+**Important:** Do NOT use utility classes (`.marks-h1-regular`, etc.) in components. They are for preview/documentation only.
 
 ## Icons
 We use **Phosphor Icons** for all iconography in the design system.
@@ -87,6 +87,30 @@ export default {
   
   <!-- Large icon (24px) - use regular -->
   <PhHeart :size="24" color="red" weight="regular" />
+</template>
+```
+
+**Passing Icons as Props:**
+When passing icon components as props to other components (e.g., `:icon="PhBed"`), the icon must be available in the template scope. In parent components, add the icon to the `data()` section, not just the `components` section:
+
+```vue
+<script>
+import { PhBed } from '@phosphor-icons/vue';
+
+export default {
+  components: {
+    PhBed  // Register for direct use in template
+  },
+  data() {
+    return {
+      PhBed  // Add to data for prop binding
+    }
+  }
+}
+</script>
+
+<template>
+  <MyComponent :icon="PhBed" />
 </template>
 ```
 

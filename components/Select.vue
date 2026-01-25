@@ -7,17 +7,17 @@
   Dropdown: Figma Node ID: 13-9393
 -->
 <template>
-  <div class="desys-select-wrapper" ref="selectWrapper">
+  <div class="marks-select-wrapper" ref="selectWrapper">
     <button
       :id="selectId"
       :class="[
-        'desys-select',
-        `desys-select--${size}`,
+        'marks-select',
+        `marks-select--${size}`,
         {
-          'desys-select--has-left-icon': leftIcon,
-          'desys-select--disabled': disabled,
-          'desys-select--has-value': modelValue !== null && modelValue !== '',
-          'desys-select--open': isOpen
+          'marks-select--has-left-icon': leftIcon,
+          'marks-select--disabled': disabled,
+          'marks-select--has-value': modelValue !== null && modelValue !== '',
+          'marks-select--open': isOpen
         }
       ]"
       :disabled="disabled"
@@ -28,15 +28,15 @@
       <component
         v-if="leftIcon"
         :is="leftIcon"
-        :class="['desys-select__icon', 'desys-select__icon--left']"
+        :class="['marks-select__icon', 'marks-select__icon--left']"
         :size="iconSize"
         :weight="iconWeight"
       />
-      <span class="desys-select__text">
+      <span class="marks-select__text">
         {{ displayText }}
       </span>
       <PhCaretDown
-        :class="['desys-select__icon', 'desys-select__icon--right', { 'desys-select__icon--rotated': isOpen }]"
+        :class="['marks-select__icon', 'marks-select__icon--right', { 'marks-select__icon--rotated': isOpen }]"
         :size="iconSize"
         :weight="iconWeight"
         color="currentColor"
@@ -44,28 +44,28 @@
     </button>
 
     <!-- Dropdown Menu -->
-    <Transition name="desys-select-dropdown">
+    <Transition name="marks-select-dropdown">
       <div
         v-if="isOpen && !disabled"
-        class="desys-select-dropdown"
+        class="marks-select-dropdown"
         @mousedown.prevent
       >
         <button
           v-for="option in options"
           :key="option.value"
           :class="[
-            'desys-select-dropdown__option',
+            'marks-select-dropdown__option',
             {
-              'desys-select-dropdown__option--selected': modelValue === option.value,
-              'desys-select-dropdown__option--disabled': option.disabled
+              'marks-select-dropdown__option--selected': modelValue === option.value,
+              'marks-select-dropdown__option--disabled': option.disabled
             }
           ]"
           @click="selectOption(option)"
           :disabled="option.disabled"
           type="button"
         >
-          <span class="desys-select-dropdown__option-text-left">{{ option.label }}</span>
-          <span v-if="option.rightText" class="desys-select-dropdown__option-text-right">{{ option.rightText }}</span>
+          <span class="marks-select-dropdown__option-text-left">{{ option.label }}</span>
+          <span v-if="option.rightText" class="marks-select-dropdown__option-text-right">{{ option.rightText }}</span>
         </button>
       </div>
     </Transition>
@@ -76,7 +76,7 @@
 import { PhCaretDown } from '@phosphor-icons/vue';
 
 export default {
-  name: 'DesysSelect',
+  name: 'marksSelect',
   components: {
     PhCaretDown
   },
@@ -176,55 +176,55 @@ export default {
 <style lang="scss" scoped>
 @import '../tokens/variables';
 
-.desys-select-wrapper {
+.marks-select-wrapper {
   position: relative;
   display: inline-flex;
   align-items: center;
   width: 100%;
 }
 
-.desys-select {
+.marks-select {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   width: 100%;
   border: 2px solid transparent;
-  background: var(--desys-color-white);
+  background: var(--marks-color-white);
   cursor: pointer;
   transition: all 0.2s ease;
-  font-family: $desys-font-family;
-  font-weight: $desys-font-weight-medium;
+  font-family: $marks-font-family;
+  font-weight: $marks-font-weight-medium;
   box-sizing: border-box;
   outline: none;
-  color: var(--desys-color-gray-300);
-  box-shadow: 0 0 0 1px var(--desys-color-gray-200);
+  color: var(--marks-color-gray-300);
+  box-shadow: 0 0 0 1px var(--marks-color-gray-200);
   text-align: left;
   display: flex;
   align-items: center;
 
   &:focus,
-  &.desys-select--open {
-    border-color: var(--desys-color-black);
-    box-shadow: 0px 0px 0px 4px rgba(0, 0, 0, 0.3), 0 0 0 1px var(--desys-color-black);
+  &.marks-select--open {
+    border-color: var(--marks-color-black);
+    box-shadow: 0px 0px 0px 4px rgba(0, 0, 0, 0.3), 0 0 0 1px var(--marks-color-black);
   }
 
-  &:hover:not(.desys-select--disabled):not(:focus):not(.desys-select--open) {
-    box-shadow: 0 0 0 1px var(--desys-color-gray-300);
+  &:hover:not(.marks-select--disabled):not(:focus):not(.marks-select--open) {
+    box-shadow: 0 0 0 1px var(--marks-color-gray-300);
   }
 
   // Has value (selected option)
   &--has-value {
-    color: var(--desys-color-black);
+    color: var(--marks-color-black);
   }
 
   // Sizes
   &--small {
     padding: 8px 16px;
     padding-right: 40px;
-    border-radius: var(--desys-radius-8);
-    @include desys-typography-button-sm;
+    border-radius: var(--marks-radius-8);
+    @include marks-typography-button-sm;
 
-    &.desys-select--has-left-icon {
+    &.marks-select--has-left-icon {
       padding-left: 32px;
     }
   }
@@ -232,10 +232,10 @@ export default {
   &--medium {
     padding: 16px 20px;
     padding-right: 40px;
-    border-radius: var(--desys-radius-12);
-    @include desys-typography-button-md;
+    border-radius: var(--marks-radius-12);
+    @include marks-typography-button-md;
 
-    &.desys-select--has-left-icon {
+    &.marks-select--has-left-icon {
       padding-left: 36px;
     }
   }
@@ -243,9 +243,9 @@ export default {
   // Disabled state
   &--disabled {
     cursor: not-allowed;
-    background: var(--desys-color-gray-100) !important;
-    color: var(--desys-color-gray-200) !important;
-    box-shadow: 0 0 0 1px var(--desys-color-gray-200) !important;
+    background: var(--marks-color-gray-100) !important;
+    color: var(--marks-color-gray-200) !important;
+    box-shadow: 0 0 0 1px var(--marks-color-gray-200) !important;
     border-color: transparent !important;
     opacity: 0.5;
   }
@@ -257,23 +257,23 @@ export default {
 
   // Style option elements
   option {
-    color: var(--desys-color-black);
-    background: var(--desys-color-white);
+    color: var(--marks-color-black);
+    background: var(--marks-color-white);
   }
 
   option:disabled {
-    color: var(--desys-color-gray-300);
+    color: var(--marks-color-gray-300);
   }
 }
 
-.desys-select__text {
+.marks-select__text {
   flex: 1;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.desys-select__icon {
+.marks-select__icon {
   position: absolute;
   flex-shrink: 0;
   display: flex;
@@ -284,13 +284,13 @@ export default {
   transition: transform 0.2s ease;
 
   &--left {
-    left: var(--desys-spacing-gutter-12);
-    color: var(--desys-color-gray-300);
+    left: var(--marks-spacing-gutter-12);
+    color: var(--marks-color-gray-300);
   }
 
   &--right {
-    right: var(--desys-spacing-gutter-12);
-    color: var(--desys-color-gray-300);
+    right: var(--marks-spacing-gutter-12);
+    color: var(--marks-color-gray-300);
 
     &--rotated {
       transform: rotate(180deg);
@@ -299,25 +299,25 @@ export default {
 }
 
 // Adjust right icon position based on size
-.desys-select-wrapper:has(.desys-select--small) .desys-select__icon--right {
-  right: var(--desys-spacing-gutter-16);
+.marks-select-wrapper:has(.marks-select--small) .marks-select__icon--right {
+  right: var(--marks-spacing-gutter-16);
 }
 
-.desys-select-wrapper:has(.desys-select--medium) .desys-select__icon--right {
-  right: var(--desys-spacing-gutter-20);
+.marks-select-wrapper:has(.marks-select--medium) .marks-select__icon--right {
+  right: var(--marks-spacing-gutter-20);
 }
 
 // Dropdown Menu
-.desys-select-dropdown {
+.marks-select-dropdown {
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
   margin-top: 6px;
-  background: var(--desys-color-white);
-  border-radius: var(--desys-radius-24);
+  background: var(--marks-color-white);
+  border-radius: var(--marks-radius-24);
   box-shadow: 0px 14px 30px rgba(0, 0, 0, 0.15);
-  padding: var(--desys-spacing-gutter-8);
+  padding: var(--marks-spacing-gutter-8);
   z-index: 1000;
   display: flex;
   flex-direction: column;
@@ -327,24 +327,24 @@ export default {
   box-sizing: border-box;
 }
 
-.desys-select-dropdown__option {
+.marks-select-dropdown__option {
   width: 100%;
   border: none;
-  background: var(--desys-color-white);
-  border-radius: var(--desys-radius-12);
-  padding: var(--desys-spacing-gutter-16);
-  gap: var(--desys-spacing-gutter-12);
+  background: var(--marks-color-white);
+  border-radius: var(--marks-radius-12);
+  padding: var(--marks-spacing-gutter-16);
+  gap: var(--marks-spacing-gutter-12);
   display: flex;
   align-items: center;
   cursor: pointer;
   transition: background-color 0.2s ease;
-  @include desys-typography-paragraph-md-multiline;
-  color: var(--desys-color-black);
+  @include marks-typography-paragraph-md-multiline;
+  color: var(--marks-color-black);
   text-align: left;
   box-sizing: border-box;
 
-  &:hover:not(.desys-select-dropdown__option--disabled) {
-    background: var(--desys-color-gray-100);
+  &:hover:not(.marks-select-dropdown__option--disabled) {
+    background: var(--marks-color-gray-100);
   }
 
   &--selected {
@@ -353,40 +353,40 @@ export default {
 
   &--disabled {
     cursor: not-allowed;
-    color: var(--desys-color-gray-200);
+    color: var(--marks-color-gray-200);
   }
 }
 
-.desys-select-dropdown__option-text-left {
+.marks-select-dropdown__option-text-left {
   flex: 1;
 }
 
-.desys-select-dropdown__option-text-right {
-  color: var(--desys-color-gray-300);
+.marks-select-dropdown__option-text-right {
+  color: var(--marks-color-gray-300);
 }
 
 // Dropdown transition
-.desys-select-dropdown-enter-active,
-.desys-select-dropdown-leave-active {
+.marks-select-dropdown-enter-active,
+.marks-select-dropdown-leave-active {
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.desys-select-dropdown-enter-from {
+.marks-select-dropdown-enter-from {
   opacity: 0;
   transform: translateY(-8px);
 }
 
-.desys-select-dropdown-leave-to {
+.marks-select-dropdown-leave-to {
   opacity: 0;
   transform: translateY(-8px);
 }
 
 // Adjust padding when left icon is present
-.desys-select--small.desys-select--has-left-icon {
+.marks-select--small.marks-select--has-left-icon {
   padding-left: 40px;
 }
 
-.desys-select--medium.desys-select--has-left-icon {
+.marks-select--medium.marks-select--has-left-icon {
   padding-left: 48px;
 }
 </style>

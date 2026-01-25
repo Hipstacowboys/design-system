@@ -6,10 +6,10 @@
 <template>
   <button
     :class="[
-      'desys-tab',
+      'marks-tab',
       {
-        'desys-tab--active': active,
-        'desys-tab--disabled': disabled
+        'marks-tab--active': active,
+        'marks-tab--disabled': disabled
       }
     ]"
     :disabled="disabled"
@@ -22,7 +22,7 @@
 
 <script>
 export default {
-  name: 'DesysTab',
+  name: 'marksTab',
   props: {
     active: {
       type: Boolean,
@@ -51,18 +51,18 @@ export default {
 <style lang="scss" scoped>
 @import '../tokens/variables';
 
-.desys-tab {
+.marks-tab {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px 24px;
-  border: 1px solid var(--desys-color-gray-200);
+  border: 1px solid var(--marks-color-gray-200);
   background: transparent;
-  border-radius: var(--desys-radius-8) var(--desys-radius-8) 0 0;
+  border-radius: var(--marks-radius-8) var(--marks-radius-8) 0 0;
   cursor: pointer;
-  @include desys-typography-paragraph-md-multiline;
-  font-weight: $desys-font-weight-medium;
-  color: var(--desys-color-gray-300);
+  @include marks-typography-paragraph-md-multiline;
+  font-weight: $marks-font-weight-medium;
+  color: var(--marks-color-gray-300);
   transition: all 0.2s ease;
   box-sizing: border-box;
   margin-left: -1px;
@@ -70,7 +70,7 @@ export default {
 
   &:first-child {
     margin-left: 0;
-    border-top-left-radius: var(--desys-radius-8);
+    border-top-left-radius: var(--marks-radius-8);
   }
 
   &:not(:first-child) {
@@ -82,21 +82,21 @@ export default {
   }
 
   &:last-child {
-    border-top-right-radius: var(--desys-radius-8);
+    border-top-right-radius: var(--marks-radius-8);
   }
 
-  &:hover:not(.desys-tab--disabled):not(.desys-tab--active) {
-    color: var(--desys-color-gray-400);
+  &:hover:not(.marks-tab--disabled):not(.marks-tab--active) {
+    color: var(--marks-color-gray-400);
   }
 
   // Active state
   &--active {
-    background-color: var(--desys-color-white);
-    border-top: 1px solid var(--desys-color-gray-200);
-    border-right: 1px solid var(--desys-color-gray-200);
-    border-left: 1px solid var(--desys-color-gray-200);
-    border-bottom: 1px solid var(--desys-color-white);
-    color: var(--desys-color-black);
+    background-color: var(--marks-color-white);
+    border-top: 1px solid var(--marks-color-gray-200);
+    border-right: 1px solid var(--marks-color-gray-200);
+    border-left: 1px solid var(--marks-color-gray-200);
+    border-bottom: 1px solid var(--marks-color-white);
+    color: var(--marks-color-black);
     z-index: 1;
   }
 

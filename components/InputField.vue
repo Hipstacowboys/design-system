@@ -8,21 +8,21 @@
 <template>
   <div
     :class="[
-      'desys-input-field',
-      `desys-input-field--${size}`,
+      'marks-input-field',
+      `marks-input-field--${size}`,
       {
-        'desys-input-field--error': error,
-        'desys-input-field--disabled': disabled,
-        'desys-input-field--has-leading-addon': leadingAddon || leadingAddonSelect,
-        'desys-input-field--has-trailing-addon': trailingAddon || trailingAddonSelect,
-        'desys-input-field--has-left-icon': leftIcon,
-        'desys-input-field--has-right-icon': rightIcon
+        'marks-input-field--error': error,
+        'marks-input-field--disabled': disabled,
+        'marks-input-field--has-leading-addon': leadingAddon || leadingAddonSelect,
+        'marks-input-field--has-trailing-addon': trailingAddon || trailingAddonSelect,
+        'marks-input-field--has-left-icon': leftIcon,
+        'marks-input-field--has-right-icon': rightIcon
       }
     ]"
     @click="handleWrapperClick"
   >
     <!-- Leading Addon (Select) -->
-    <div v-if="leadingAddonSelect" class="desys-input-field__addon desys-input-field__addon--leading desys-input-field__addon--select">
+    <div v-if="leadingAddonSelect" class="marks-input-field__addon marks-input-field__addon--leading marks-input-field__addon--select">
       <Select
         :model-value="leadingAddonSelectValue"
         :options="leadingAddonSelectOptions"
@@ -32,7 +32,7 @@
     </div>
 
     <!-- Leading Addon (Text) -->
-    <div v-else-if="leadingAddon" class="desys-input-field__addon desys-input-field__addon--leading desys-input-field__addon--text">
+    <div v-else-if="leadingAddon" class="marks-input-field__addon marks-input-field__addon--leading marks-input-field__addon--text">
       {{ leadingAddon }}
     </div>
 
@@ -40,7 +40,7 @@
     <component
       v-if="leftIcon"
       :is="leftIcon"
-      :class="['desys-input-field__icon', 'desys-input-field__icon--left']"
+      :class="['marks-input-field__icon', 'marks-input-field__icon--left']"
       :size="iconSize"
       :weight="iconWeight"
     />
@@ -53,7 +53,7 @@
       :value="modelValue"
       :placeholder="placeholder"
       :disabled="disabled"
-      :class="['desys-input-field__input']"
+      :class="['marks-input-field__input']"
       @input="handleInput"
       @focus="handleFocus"
       @blur="handleBlur"
@@ -63,13 +63,13 @@
     <component
       v-if="rightIcon"
       :is="rightIcon"
-      :class="['desys-input-field__icon', 'desys-input-field__icon--right']"
+      :class="['marks-input-field__icon', 'marks-input-field__icon--right']"
       :size="iconSize"
       :weight="iconWeight"
     />
 
     <!-- Trailing Addon (Select) -->
-    <div v-if="trailingAddonSelect" class="desys-input-field__addon desys-input-field__addon--trailing desys-input-field__addon--select">
+    <div v-if="trailingAddonSelect" class="marks-input-field__addon marks-input-field__addon--trailing marks-input-field__addon--select">
       <Select
         :model-value="trailingAddonSelectValue"
         :options="trailingAddonSelectOptions"
@@ -79,7 +79,7 @@
     </div>
 
     <!-- Trailing Addon (Text) -->
-    <div v-else-if="trailingAddon" class="desys-input-field__addon desys-input-field__addon--trailing desys-input-field__addon--text">
+    <div v-else-if="trailingAddon" class="marks-input-field__addon marks-input-field__addon--trailing marks-input-field__addon--text">
       {{ trailingAddon }}
     </div>
   </div>
@@ -89,7 +89,7 @@
 import Select from './Select.vue';
 
 export default {
-  name: 'DesysInputField',
+  name: 'marksInputField',
   components: {
     Select
   },
@@ -188,9 +188,9 @@ export default {
       // Focus input when clicking on the wrapper or empty areas
       // Don't focus if clicking on interactive elements (addons, icons, select buttons)
       const target = event.target;
-      const isInteractive = target.closest('.desys-input-field__addon') || 
-                           target.closest('.desys-input-field__icon') ||
-                           target.closest('.desys-select') ||
+      const isInteractive = target.closest('.marks-input-field__addon') || 
+                           target.closest('.marks-input-field__icon') ||
+                           target.closest('.marks-select') ||
                            target.closest('button') ||
                            target.tagName === 'INPUT' ||
                            target.tagName === 'BUTTON';
@@ -206,116 +206,116 @@ export default {
 <style lang="scss" scoped>
 @import '../tokens/variables';
 
-.desys-input-field {
+.marks-input-field {
   position: relative;
   display: flex;
   align-items: center;
   width: 100%;
   border: 2px solid transparent;
-  background: var(--desys-color-white);
+  background: var(--marks-color-white);
   box-sizing: border-box;
-  box-shadow: 0 0 0 1px var(--desys-color-gray-200);
+  box-shadow: 0 0 0 1px var(--marks-color-gray-200);
   transition: all 0.2s ease;
   cursor: text;
 
   &:focus-within {
-    border-color: var(--desys-color-black);
-    box-shadow: 0px 0px 0px 4px rgba(0, 0, 0, 0.3), 0 0 0 1px var(--desys-color-black);
+    border-color: var(--marks-color-black);
+    box-shadow: 0px 0px 0px 4px rgba(0, 0, 0, 0.3), 0 0 0 1px var(--marks-color-black);
   }
 
-  &:hover:not(.desys-input-field--disabled):not(:focus-within) {
-    box-shadow: 0 0 0 1px var(--desys-color-gray-300);
+  &:hover:not(.marks-input-field--disabled):not(:focus-within) {
+    box-shadow: 0 0 0 1px var(--marks-color-gray-300);
   }
 
   // Make the wrapper clickable to focus input
-  &:not(.desys-input-field--disabled) {
+  &:not(.marks-input-field--disabled) {
     cursor: text;
   }
 
   // Sizes
   &--small {
-    border-radius: var(--desys-radius-8);
+    border-radius: var(--marks-radius-8);
     padding: 8px;
-    gap: var(--desys-spacing-gutter-8);
+    gap: var(--marks-spacing-gutter-8);
     
     // Small size select addon typography
-    .desys-input-field__addon--select :deep(.desys-select__text) {
-      @include desys-typography-paragraph-sm-one-line;
+    .marks-input-field__addon--select :deep(.marks-select__text) {
+      @include marks-typography-paragraph-sm-one-line;
     }
   }
 
   &--medium {
-    border-radius: var(--desys-radius-12);
+    border-radius: var(--marks-radius-12);
     padding: 16px;
-    gap: var(--desys-spacing-gutter-12);
+    gap: var(--marks-spacing-gutter-12);
   }
 
   // Error state
   &--error {
-    border-color: var(--desys-color-red-200) !important;
-    box-shadow: 0 0 0 1px var(--desys-color-red-200) !important;
-    color: var(--desys-color-red-200);
+    border-color: var(--marks-color-red-200) !important;
+    box-shadow: 0 0 0 1px var(--marks-color-red-200) !important;
+    color: var(--marks-color-red-200);
 
-    .desys-input-field__input {
-      color: var(--desys-color-red-200);
+    .marks-input-field__input {
+      color: var(--marks-color-red-200);
     }
 
     &:focus-within {
-      border-color: var(--desys-color-red-200) !important;
-      box-shadow: 0px 0px 0px 4px rgba(253, 56, 96, 0.3), 0 0 0 1px var(--desys-color-red-200) !important;
+      border-color: var(--marks-color-red-200) !important;
+      box-shadow: 0px 0px 0px 4px rgba(253, 56, 96, 0.3), 0 0 0 1px var(--marks-color-red-200) !important;
     }
   }
 
   // Disabled state
   &--disabled {
     cursor: not-allowed;
-    background: var(--desys-color-gray-100) !important;
-    box-shadow: 0 0 0 1px var(--desys-color-gray-200) !important;
+    background: var(--marks-color-gray-100) !important;
+    box-shadow: 0 0 0 1px var(--marks-color-gray-200) !important;
     border-color: transparent !important;
     opacity: 0.5;
   }
 }
 
-.desys-input-field__input {
+.marks-input-field__input {
   flex: 1;
   border: none;
   background: transparent;
   outline: none;
-  color: var(--desys-color-black);
+  color: var(--marks-color-black);
   min-width: 0;
   width: 100%;
   padding: 0;
   margin: 0;
 
   // Typography based on size
-  .desys-input-field--small & {
-    @include desys-typography-paragraph-sm-one-line;
+  .marks-input-field--small & {
+    @include marks-typography-paragraph-sm-one-line;
   }
 
-  .desys-input-field--medium & {
-    @include desys-typography-paragraph-md-one-line;
+  .marks-input-field--medium & {
+    @include marks-typography-paragraph-md-one-line;
   }
 
   &::placeholder {
-    color: var(--desys-color-gray-300);
+    color: var(--marks-color-gray-300);
   }
 
   &:disabled {
     cursor: not-allowed;
-    color: var(--desys-color-gray-200);
+    color: var(--marks-color-gray-200);
   }
 
-  .desys-input-field--error & {
-    color: var(--desys-color-red-200);
+  .marks-input-field--error & {
+    color: var(--marks-color-red-200);
   }
 }
 
-.desys-input-field__icon {
+.marks-input-field__icon {
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--desys-color-gray-300);
+  color: var(--marks-color-gray-300);
 
   &--left {
     order: 1;
@@ -326,7 +326,7 @@ export default {
   }
 }
 
-.desys-input-field__addon {
+.marks-input-field__addon {
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -340,20 +340,20 @@ export default {
   }
 
   &--text {
-    @include desys-typography-paragraph-md-multiline;
-    color: var(--desys-color-gray-500);
-    gap: var(--desys-spacing-gutter-8);
+    @include marks-typography-paragraph-md-multiline;
+    color: var(--marks-color-gray-500);
+    gap: var(--marks-spacing-gutter-8);
   }
 
   &--select {
     // Style Select to work as addon - keep functionality but remove outer styling
-    :deep(.desys-select-wrapper) {
+    :deep(.marks-select-wrapper) {
       width: auto;
       position: relative;
       display: inline-block;
     }
 
-    :deep(.desys-select) {
+    :deep(.marks-select) {
       border: none;
       box-shadow: none;
       background: transparent;
@@ -373,37 +373,37 @@ export default {
       
       // Keep focus state but adjust
       &:focus,
-      &.desys-select--open {
+      &.marks-select--open {
         border: none;
         box-shadow: none;
         background: transparent;
       }
     }
 
-    :deep(.desys-select__text) {
+    :deep(.marks-select__text) {
       padding: 0;
-      @include desys-typography-paragraph-md-one-line;
-      color: var(--desys-color-gray-500);
+      @include marks-typography-paragraph-md-one-line;
+      color: var(--marks-color-gray-500);
     }
 
     // Keep the caret icon visible and properly spaced
-    :deep(.desys-select__icon--right) {
+    :deep(.marks-select__icon--right) {
       display: flex !important;
       position: relative !important;
       right: auto !important;
       left: auto !important;
-      margin-left: var(--desys-spacing-gutter-8);
-      color: var(--desys-color-gray-500);
+      margin-left: var(--marks-spacing-gutter-8);
+      color: var(--marks-color-gray-500);
       pointer-events: auto;
     }
     
     // Ensure button is clickable
-    :deep(.desys-select) {
+    :deep(.marks-select) {
       pointer-events: auto;
     }
 
     // Ensure dropdown appears correctly positioned with minimum width
-    :deep(.desys-select-dropdown) {
+    :deep(.marks-select-dropdown) {
       position: absolute;
       z-index: 1000;
       top: 100%;
@@ -415,7 +415,7 @@ export default {
 }
 
 // Adjust input order
-.desys-input-field__input {
+.marks-input-field__input {
   order: 2;
 }
 </style>

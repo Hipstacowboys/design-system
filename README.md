@@ -62,10 +62,10 @@ design-system/
 <style lang="scss" scoped>
 @import '../tokens/variables';
 
-.desys-my-component {
-  @include desys-typography-paragraph-sm;
-  padding: var(--desys-spacing-gutter-16);
-  color: var(--desys-color-gray-500);
+.marks-my-component {
+  @include marks-typography-paragraph-sm;
+  padding: var(--marks-spacing-gutter-16);
+  color: var(--marks-color-gray-500);
 }
 </style>
 ```
@@ -74,9 +74,58 @@ design-system/
 
 All styles should use classes, not inline styles. Use design system tokens and mixins.
 
+## Using in Other Projects
+
+This design system is designed to be reusable across multiple projects. You can install it directly from GitHub as an npm package.
+
+### Quick Start (GitHub Installation)
+
+1. **Install from GitHub:**
+   ```bash
+   npm install git+https://github.com/Hipstacowboys/design-system.git
+   ```
+
+2. **Import components:**
+   ```javascript
+   import { ButtonPrimary, Input, CalendarDatepicker } from '@hipstacowboys/design-system';
+   ```
+
+3. **Import tokens in SCSS:**
+   ```scss
+   @import '@hipstacowboys/design-system/tokens/_variables';
+   ```
+
+4. **Update to latest version:**
+   ```bash
+   npm update @hipstacowboys/design-system
+   ```
+
+See [docs/reuse-guide.md](./docs/reuse-guide.md) for complete instructions.
+
+## Documentation
+
+- **[COMPONENTS.md](./COMPONENTS.md)** - Complete component reference with props, events, and usage examples
+- **[CHANGELOG.md](./CHANGELOG.md)** - Version history and changes
+- **[docs/instructions.md](./docs/instructions.md)** - Development guidelines and best practices
+- **[docs/reuse-guide.md](./docs/reuse-guide.md)** - How to use in other projects
+
+## Versioning
+
+This design system uses [Semantic Versioning](https://semver.org/). See [CHANGELOG.md](./CHANGELOG.md) for version history.
+
+**Check current version:**
+```bash
+npm list @hipstacowboys/design-system
+```
+
+**Install specific version:**
+```bash
+npm install git+https://github.com/Hipstacowboys/design-system.git#v1.0.0
+```
+
 ## Components
 
-See [COMPONENTS.md](./COMPONENTS.md) for complete component documentation.
+See [COMPONENTS.md](./COMPONENTS.md) for complete component documentation with all available props, events, and usage examples.
 
 ### Form Components
 - **Toggle** (15-10129) - Toggle switch with 6 states
@@ -109,6 +158,11 @@ See [COMPONENTS.md](./COMPONENTS.md) for complete component documentation.
 - **Tabs** (16-10663) - Container for tabs
 - **Breadcrumb** (16-10583) - Individual breadcrumb item
 - **Breadcrumbs** (16-10602) - Breadcrumb navigation
+
+### Feedback Components
+- **Empty State** (16-10695) - Empty state with icon, title, description, and optional action button
+- **Notification Message** (16-10728) - Notification message with icon, title, timestamp, content, optional actions
+- **Notification Dialog** (16-11051) - Dialog container for multiple notification messages with filter switch
 
 ### Feedback Components
 - **Alert** (16-10369) - Alert with 4 types, optional actions

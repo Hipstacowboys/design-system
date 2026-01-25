@@ -5,95 +5,95 @@
 @import 'typography-mixins';
 
 // Header One
-.desys-h1-regular {
-  @include desys-typography-h1-regular;
+.marks-h1-regular {
+  @include marks-typography-h1-regular;
 }
 
-.desys-h1-bold {
-  @include desys-typography-h1-bold;
+.marks-h1-bold {
+  @include marks-typography-h1-bold;
 }
 
 // Header Two
-.desys-h2-regular {
-  @include desys-typography-h2-regular;
+.marks-h2-regular {
+  @include marks-typography-h2-regular;
 }
 
-.desys-h2-bold {
-  @include desys-typography-h2-bold;
+.marks-h2-bold {
+  @include marks-typography-h2-bold;
 }
 
 // Header Three
-.desys-h3-regular {
-  @include desys-typography-h3-regular;
+.marks-h3-regular {
+  @include marks-typography-h3-regular;
 }
 
-.desys-h3-bold {
-  @include desys-typography-h3-bold;
+.marks-h3-bold {
+  @include marks-typography-h3-bold;
 }
 
 // Header Four
-.desys-h4-regular {
-  @include desys-typography-h4-regular;
+.marks-h4-regular {
+  @include marks-typography-h4-regular;
 }
 
-.desys-h4-bold {
-  @include desys-typography-h4-bold;
+.marks-h4-bold {
+  @include marks-typography-h4-bold;
 }
 
 // Header Five
-.desys-h5-regular {
-  @include desys-typography-h5-regular;
+.marks-h5-regular {
+  @include marks-typography-h5-regular;
 }
 
-.desys-h5-bold {
-  @include desys-typography-h5-bold;
+.marks-h5-bold {
+  @include marks-typography-h5-bold;
 }
 
 // Paragraph Large
-.desys-paragraph-lg {
-  @include desys-typography-paragraph-lg;
+.marks-paragraph-lg {
+  @include marks-typography-paragraph-lg;
 }
 
 // Paragraph Medium
-.desys-paragraph-md-multiline {
-  @include desys-typography-paragraph-md-multiline;
+.marks-paragraph-md-multiline {
+  @include marks-typography-paragraph-md-multiline;
 }
 
-.desys-paragraph-md-one-line {
-  @include desys-typography-paragraph-md-one-line;
+.marks-paragraph-md-one-line {
+  @include marks-typography-paragraph-md-one-line;
 }
 
-.desys-paragraph-md-bold {
-  @include desys-typography-paragraph-md-bold;
+.marks-paragraph-md-bold {
+  @include marks-typography-paragraph-md-bold;
 }
 
 // Paragraph Small
-.desys-paragraph-sm-multiline {
-  @include desys-typography-paragraph-sm-multiline;
+.marks-paragraph-sm-multiline {
+  @include marks-typography-paragraph-sm-multiline;
 }
 
-.desys-paragraph-sm-one-line {
-  @include desys-typography-paragraph-sm-one-line;
+.marks-paragraph-sm-one-line {
+  @include marks-typography-paragraph-sm-one-line;
 }
 
-.desys-paragraph-sm-bold {
-  @include desys-typography-paragraph-sm-bold;
+.marks-paragraph-sm-bold {
+  @include marks-typography-paragraph-sm-bold;
 }
 
 // Paragraph Extra Small
-.desys-paragraph-xs {
-  @include desys-typography-paragraph-xs;
+.marks-paragraph-xs {
+  @include marks-typography-paragraph-xs;
 }
 
 // Button Typography (for preview/documentation)
-.desys-button-lg {
-  @include desys-typography-button-lg;
+.marks-button-lg {
+  @include marks-typography-button-lg;
 }
 
-.desys-button-md {
-  @include desys-typography-button-md;
+.marks-button-md {
+  @include marks-typography-button-md;
 }
 
-.desys-button-sm {
-  @include desys-typography-button-sm;
+.marks-button-sm {
+  @include marks-typography-button-sm;
 }

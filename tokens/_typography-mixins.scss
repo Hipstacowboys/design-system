@@ -5,171 +5,187 @@
 @import 'typography-tokens';
 
 // Header One
-@mixin desys-typography-h1-regular {
-  font-size: $desys-font-size-h1;
-  font-family: $desys-font-family;
-  font-weight: $desys-font-weight-regular;
-  line-height: $desys-line-height-h1;
+@mixin marks-typography-h1-regular {
+  font-size: $marks-font-size-h1;
+  font-family: $marks-font-family;
+  font-weight: $marks-font-weight-regular;
+  line-height: $marks-line-height-h1;
   word-wrap: break-word;
 }
 
-@mixin desys-typography-h1-bold {
-  font-size: $desys-font-size-h1;
-  font-family: $desys-font-family;
-  font-weight: $desys-font-weight-bold;
-  line-height: $desys-line-height-h1;
+@mixin marks-typography-h1-bold {
+  font-size: $marks-font-size-h1;
+  font-family: $marks-font-family;
+  font-weight: $marks-font-weight-bold;
+  line-height: $marks-line-height-h1;
   word-wrap: break-word;
 }
 
 // Header Two
-@mixin desys-typography-h2-regular {
-  font-size: $desys-font-size-h2;
-  font-family: $desys-font-family;
-  font-weight: $desys-font-weight-regular;
-  line-height: $desys-line-height-h2;
+@mixin marks-typography-h2-regular {
+  font-size: $marks-font-size-h2;
+  font-family: $marks-font-family;
+  font-weight: $marks-font-weight-regular;
+  line-height: $marks-line-height-h2;
   word-wrap: break-word;
 }
 
-@mixin desys-typography-h2-bold {
-  font-size: $desys-font-size-h2;
-  font-family: $desys-font-family;
-  font-weight: $desys-font-weight-bold;
-  line-height: $desys-line-height-h2;
+@mixin marks-typography-h2-bold {
+  font-size: $marks-font-size-h2;
+  font-family: $marks-font-family;
+  font-weight: $marks-font-weight-bold;
+  line-height: $marks-line-height-h2;
   word-wrap: break-word;
 }
 
 // Header Three
-@mixin desys-typography-h3-regular {
-  font-size: $desys-font-size-h3;
-  font-family: $desys-font-family;
-  font-weight: $desys-font-weight-regular;
-  line-height: $desys-line-height-h3;
+@mixin marks-typography-h3-regular {
+  font-size: $marks-font-size-h3;
+  font-family: $marks-font-family;
+  font-weight: $marks-font-weight-regular;
+  line-height: $marks-line-height-h3;
   word-wrap: break-word;
 }
 
-@mixin desys-typography-h3-bold {
-  font-size: $desys-font-size-h3;
-  font-family: $desys-font-family;
-  font-weight: $desys-font-weight-bold;
-  line-height: $desys-line-height-h3;
+@mixin marks-typography-h3-bold {
+  font-size: $marks-font-size-h3;
+  font-family: $marks-font-family;
+  font-weight: $marks-font-weight-bold;
+  line-height: $marks-line-height-h3;
   word-wrap: break-word;
 }
 
 // Header Four
-@mixin desys-typography-h4-regular {
-  font-size: $desys-font-size-h4;
-  font-family: $desys-font-family;
-  font-weight: $desys-font-weight-regular;
-  line-height: $desys-line-height-h4;
+@mixin marks-typography-h4-regular {
+  font-size: $marks-font-size-h4;
+  font-family: $marks-font-family;
+  font-weight: $marks-font-weight-regular;
+  line-height: $marks-line-height-h4;
   word-wrap: break-word;
 }
 
-@mixin desys-typography-h4-bold {
-  font-size: $desys-font-size-h4;
-  font-family: $desys-font-family;
-  font-weight: $desys-font-weight-bold;
-  line-height: $desys-line-height-h4;
+@mixin marks-typography-h4-bold {
+  font-size: $marks-font-size-h4;
+  font-family: $marks-font-family;
+  font-weight: $marks-font-weight-bold;
+  line-height: $marks-line-height-h4;
   word-wrap: break-word;
 }
 
 // Header Five
-@mixin desys-typography-h5-regular {
-  font-size: $desys-font-size-h5;
-  font-family: $desys-font-family;
-  font-weight: $desys-font-weight-regular;
-  line-height: $desys-line-height-h5;
+@mixin marks-typography-h5-regular {
+  font-size: $marks-font-size-h5;
+  font-family: $marks-font-family;
+  font-weight: $marks-font-weight-regular;
+  line-height: $marks-line-height-h5;
   word-wrap: break-word;
 }
 
-@mixin desys-typography-h5-bold {
-  font-size: $desys-font-size-h5;
-  font-family: $desys-font-family;
-  font-weight: $desys-font-weight-bold;
-  line-height: $desys-line-height-h5;
+@mixin marks-typography-h5-bold {
+  font-size: $marks-font-size-h5;
+  font-family: $marks-font-family;
+  font-weight: $marks-font-weight-bold;
+  line-height: $marks-line-height-h5;
   word-wrap: break-word;
 }
 
 // Paragraph Large
-@mixin desys-typography-paragraph-lg {
-  font-size: $desys-font-size-lg;
-  font-family: $desys-font-family;
-  font-weight: $desys-font-weight-regular;
-  line-height: $desys-line-height-lg;
+@mixin marks-typography-paragraph-lg {
+  font-size: $marks-font-size-lg;
+  font-family: $marks-font-family;
+  font-weight: $marks-font-weight-regular;
+  line-height: $marks-line-height-lg;
   word-wrap: break-word;
 }
 
 // Paragraph Medium
-@mixin desys-typography-paragraph-md-multiline {
-  font-size: $desys-font-size-md;
-  font-family: $desys-font-family;
-  font-weight: $desys-font-weight-regular;
-  line-height: $desys-line-height-md;
+@mixin marks-typography-paragraph-md-multiline {
+  font-size: $marks-font-size-md;
+  font-family: $marks-font-family;
+  font-weight: $marks-font-weight-regular;
+  line-height: $marks-line-height-md;
   word-wrap: break-word;
 }
 
-@mixin desys-typography-paragraph-md-one-line {
-  font-size: $desys-font-size-md;
-  font-family: $desys-font-family;
-  font-weight: $desys-font-weight-regular;
+@mixin marks-typography-paragraph-md-one-line {
+  font-size: $marks-font-size-md;
+  font-family: $marks-font-family;
+  font-weight: $marks-font-weight-regular;
   word-wrap: break-word;
 }
 
-@mixin desys-typography-paragraph-md-bold {
-  font-size: $desys-font-size-md;
-  font-family: $desys-font-family;
-  font-weight: $desys-font-weight-bold;
+@mixin marks-typography-paragraph-md-bold {
+  font-size: $marks-font-size-md;
+  font-family: $marks-font-family;
+  font-weight: $marks-font-weight-bold;
   word-wrap: break-word;
 }
 
 // Paragraph Small
-@mixin desys-typography-paragraph-sm-multiline {
-  font-size: $desys-font-size-sm;
-  font-family: $desys-font-family;
-  font-weight: $desys-font-weight-regular;
-  line-height: $desys-line-height-sm;
+@mixin marks-typography-paragraph-sm-multiline {
+  font-size: $marks-font-size-sm;
+  font-family: $marks-font-family;
+  font-weight: $marks-font-weight-regular;
+  line-height: $marks-line-height-sm;
   word-wrap: break-word;
 }
 
-@mixin desys-typography-paragraph-sm-one-line {
-  font-size: $desys-font-size-sm;
-  font-family: $desys-font-family;
-  font-weight: $desys-font-weight-regular;
+@mixin marks-typography-paragraph-sm-one-line {
+  font-size: $marks-font-size-sm;
+  font-family: $marks-font-family;
+  font-weight: $marks-font-weight-regular;
   word-wrap: break-word;
 }
 
-@mixin desys-typography-paragraph-sm-bold {
-  font-size: $desys-font-size-sm;
-  font-family: $desys-font-family;
-  font-weight: $desys-font-weight-bold;
+@mixin marks-typography-paragraph-sm-bold {
+  font-size: $marks-font-size-sm;
+  font-family: $marks-font-family;
+  font-weight: $marks-font-weight-bold;
   word-wrap: break-word;
 }
 
 // Paragraph Extra Small
-@mixin desys-typography-paragraph-xs {
-  font-size: $desys-font-size-xs;
-  font-family: $desys-font-family;
-  font-weight: $desys-font-weight-bold;
+@mixin marks-typography-paragraph-xs {
+  font-size: $marks-font-size-xs;
+  font-family: $marks-font-family;
+  font-weight: $marks-font-weight-bold;
+  word-wrap: break-word;
+}
+
+@mixin marks-typography-paragraph-xs-multiline {
+  font-size: $marks-font-size-xs;
+  font-family: $marks-font-family;
+  font-weight: $marks-font-weight-regular;
+  line-height: 150%;
+  word-wrap: break-word;
+}
+
+@mixin marks-typography-paragraph-xs-one-line {
+  font-size: $marks-font-size-xs;
+  font-family: $marks-font-family;
+  font-weight: $marks-font-weight-regular;
+  line-height: normal;
   word-wrap: break-word;
 }
 
 // Button Typography
-@mixin desys-typography-button-lg {
-  font-size: $desys-font-size-base;
-  font-family: $desys-font-family;
-  font-weight: $desys-font-weight-medium;
+@mixin marks-typography-button-lg {
+  font-size: $marks-font-size-base;
+  font-family: $marks-font-family;
+  font-weight: $marks-font-weight-medium;
   word-wrap: break-word;
 }
 
-@mixin desys-typography-button-md {
-  font-size: $desys-font-size-md;
-  font-family: $desys-font-family;
-  font-weight: $desys-font-weight-medium;
+@mixin marks-typography-button-md {
+  font-size: $marks-font-size-md;
+  font-family: $marks-font-family;
+  font-weight: $marks-font-weight-medium;
   word-wrap: break-word;
 }
 
-@mixin desys-typography-button-sm {
-  font-size: $desys-font-size-sm;
-  font-family: $desys-font-family;
-  font-weight: $desys-font-weight-medium;
+@mixin marks-typography-button-sm {
+  font-size: $marks-font-size-sm;
+  font-family: $marks-font-family;
+  font-weight: $marks-font-weight-medium;
   word-wrap: break-word;
 }

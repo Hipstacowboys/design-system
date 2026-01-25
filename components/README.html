@@ -33,22 +33,22 @@ export default {
 &lt;style lang=&quot;scss&quot; scoped&gt;
 @import '../tokens/variables';
 
-.desys-component-name {
+.marks-component-name {
   // Typography: Use mixins (recommended - easier to read)
-  @include desys-typography-paragraph-sm;
+  @include marks-typography-paragraph-sm;
   
   // Or use individual token variables for customization
-  // font-size: $desys-font-size-sm;
-  // font-weight: $desys-font-weight-regular;
-  // line-height: $desys-line-height-sm;
+  // font-size: $marks-font-size-sm;
+  // font-weight: $marks-font-weight-regular;
+  // line-height: $marks-line-height-sm;
   
   // Spacing: Use CSS custom properties
-  padding: var(--desys-spacing-gutter-16);
-  border-radius: var(--desys-radius-8);
+  padding: var(--marks-spacing-gutter-16);
+  border-radius: var(--marks-radius-8);
   
   // Colors: Use CSS custom properties (components define colors)
-  color: var(--desys-color-gray-500);
-  background: var(--desys-color-white);
+  color: var(--marks-color-gray-500);
+  background: var(--marks-color-white);
 }
 &lt;/style&gt;
 </code></pre>
@@ -58,21 +58,21 @@ export default {
 <p><strong>Available Mixins:</strong></p>
 
 <ul>
-<li>Headers: <code>@include desys-typography-h1-regular;</code>, <code>@include desys-typography-h1-bold;</code>, etc. (H1-H5)</li>
-<li>Paragraphs: <code>@include desys-typography-paragraph-lg;</code>, <code>@include desys-typography-paragraph-md-multiline;</code>, <code>@include desys-typography-paragraph-sm-bold;</code>, etc.</li>
-<li>Buttons: <code>@include desys-typography-button-lg;</code>, <code>@include desys-typography-button-md;</code>, <code>@include desys-typography-button-sm;</code></li>
+<li>Headers: <code>@include marks-typography-h1-regular;</code>, <code>@include marks-typography-h1-bold;</code>, etc. (H1-H5)</li>
+<li>Paragraphs: <code>@include marks-typography-paragraph-lg;</code>, <code>@include marks-typography-paragraph-md-multiline;</code>, <code>@include marks-typography-paragraph-sm-bold;</code>, etc.</li>
+<li>Buttons: <code>@include marks-typography-button-lg;</code>, <code>@include marks-typography-button-md;</code>, <code>@include marks-typography-button-sm;</code></li>
 </ul>
 
 <p><strong>Available Token Variables:</strong></p>
 
 <ul>
-<li>Font sizes: <code>$desys-font-size-xs</code>, <code>$desys-font-size-sm</code>, <code>$desys-font-size-md</code>, <code>$desys-font-size-lg</code>, <code>$desys-font-size-h1</code> through <code>$desys-font-size-h5</code></li>
-<li>Font weights: <code>$desys-font-weight-regular</code> (400), <code>$desys-font-weight-medium</code> (500), <code>$desys-font-weight-bold</code> (700)</li>
-<li>Line heights: <code>$desys-line-height-sm</code>, <code>$desys-line-height-md</code>, <code>$desys-line-height-lg</code>, <code>$desys-line-height-h1</code> through <code>$desys-line-height-h5</code></li>
-<li>Font family: <code>$desys-font-family</code></li>
+<li>Font sizes: <code>$marks-font-size-xs</code>, <code>$marks-font-size-sm</code>, <code>$marks-font-size-md</code>, <code>$marks-font-size-lg</code>, <code>$marks-font-size-h1</code> through <code>$marks-font-size-h5</code></li>
+<li>Font weights: <code>$marks-font-weight-regular</code> (400), <code>$marks-font-weight-medium</code> (500), <code>$marks-font-weight-bold</code> (700)</li>
+<li>Line heights: <code>$marks-line-height-sm</code>, <code>$marks-line-height-md</code>, <code>$marks-line-height-lg</code>, <code>$marks-line-height-h1</code> through <code>$marks-line-height-h5</code></li>
+<li>Font family: <code>$marks-font-family</code></li>
 </ul>
 
-<p><strong>Important:</strong> Do NOT use utility classes (<code>.desys-h1-regular</code>, etc.) in components. They are for preview/documentation only.</p>
+<p><strong>Important:</strong> Do NOT use utility classes (<code>.marks-h1-regular</code>, etc.) in components. They are for preview/documentation only.</p>
 
 <h2 id="icons">Icons</h2>
 
@@ -107,6 +107,29 @@ export default {
   
   &lt;!-- Large icon (24px) - use regular --&gt;
   &lt;PhHeart :size=&quot;24&quot; color=&quot;red&quot; weight=&quot;regular&quot; /&gt;
+&lt;/template&gt;
+</code></pre>
+
+<p><strong>Passing Icons as Props:</strong>
+When passing icon components as props to other components (e.g., <code>:icon=&quot;PhBed&quot;</code>), the icon must be available in the template scope. In parent components, add the icon to the <code>data()</code> section, not just the <code>components</code> section:</p>
+
+<pre><code class="vue">&lt;script&gt;
+import { PhBed } from '@phosphor-icons/vue';
+
+export default {
+  components: {
+    PhBed  // Register for direct use in template
+  },
+  data() {
+    return {
+      PhBed  // Add to data for prop binding
+    }
+  }
+}
+&lt;/script&gt;
+
+&lt;template&gt;
+  &lt;MyComponent :icon=&quot;PhBed&quot; /&gt;
 &lt;/template&gt;
 </code></pre>
 

@@ -8,12 +8,12 @@
 <template>
   <button
     :class="[
-      'desys-button',
-      'desys-button--ghost',
-      `desys-button--${size}`,
+      'marks-button',
+      'marks-button--ghost',
+      `marks-button--${size}`,
       {
-        'desys-button--icon-only': iconOnly,
-        'desys-button--disabled': disabled
+        'marks-button--icon-only': iconOnly,
+        'marks-button--disabled': disabled
       }
     ]"
     :disabled="disabled"
@@ -23,17 +23,17 @@
     <component
       v-if="leftIcon"
       :is="leftIcon"
-      :class="['desys-button__icon', 'desys-button__icon--left']"
+      :class="['marks-button__icon', 'marks-button__icon--left']"
       :size="iconSize"
       :weight="iconWeight"
     />
-    <span v-if="!iconOnly" class="desys-button__text">
+    <span v-if="!iconOnly" class="marks-button__text">
       <slot>{{ text }}</slot>
     </span>
     <component
       v-if="rightIcon"
       :is="rightIcon"
-      :class="['desys-button__icon', 'desys-button__icon--right']"
+      :class="['marks-button__icon', 'marks-button__icon--right']"
       :size="iconSize"
       :weight="iconWeight"
     />
@@ -42,7 +42,7 @@
 
 <script>
 export default {
-  name: 'DesysButtonGhost',
+  name: 'marksButtonGhost',
   props: {
     size: {
       type: String,
@@ -97,7 +97,7 @@ export default {
 <style lang="scss" scoped>
 @import '../tokens/variables';
 
-.desys-button {
+.marks-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -105,26 +105,26 @@ export default {
   background: transparent;
   cursor: pointer;
   transition: all 0.2s ease;
-  font-family: $desys-font-family;
-  font-weight: $desys-font-weight-medium;
+  font-family: $marks-font-family;
+  font-weight: $marks-font-weight-medium;
   box-sizing: border-box;
   outline: none;
-  color: var(--desys-color-gray-500);
+  color: var(--marks-color-gray-500);
 
   &:focus-visible {
-    outline: 2px solid var(--desys-color-primary-solid);
+    outline: 2px solid var(--marks-color-primary-solid);
     outline-offset: 2px;
   }
 
   // Ghost button base styles
   &--ghost {
-    &:hover:not(.desys-button--disabled) {
-      border: 1px solid var(--desys-color-gray-200);
+    &:hover:not(.marks-button--disabled) {
+      border: 1px solid var(--marks-color-gray-200);
     }
 
-    &:active:not(.desys-button--disabled) {
-      background: var(--desys-color-gray-100);
-      border: 1px solid var(--desys-color-gray-200);
+    &:active:not(.marks-button--disabled) {
+      background: var(--marks-color-gray-100);
+      border: 1px solid var(--marks-color-gray-200);
       box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05) inset;
     }
   }
@@ -132,11 +132,11 @@ export default {
   // Sizes
   &--small {
     padding: 8px 16px;
-    border-radius: var(--desys-radius-8);
-    gap: var(--desys-spacing-gutter-8);
-    @include desys-typography-button-sm;
+    border-radius: var(--marks-radius-8);
+    gap: var(--marks-spacing-gutter-8);
+    @include marks-typography-button-sm;
 
-    &.desys-button--icon-only {
+    &.marks-button--icon-only {
       padding: 8px;
       min-width: 32px;
       min-height: 32px;
@@ -145,11 +145,11 @@ export default {
 
   &--medium {
     padding: 16px 24px;
-    border-radius: var(--desys-radius-12);
-    gap: var(--desys-spacing-gutter-12);
-    @include desys-typography-button-md;
+    border-radius: var(--marks-radius-12);
+    gap: var(--marks-spacing-gutter-12);
+    @include marks-typography-button-md;
 
-    &.desys-button--icon-only {
+    &.marks-button--icon-only {
       padding: 16px;
       min-width: 50px;
       min-height: 50px;
@@ -158,11 +158,11 @@ export default {
 
   &--large {
     padding: 20px 28px;
-    border-radius: var(--desys-radius-16);
-    gap: var(--desys-spacing-gutter-12);
-    @include desys-typography-button-lg;
+    border-radius: var(--marks-radius-16);
+    gap: var(--marks-spacing-gutter-12);
+    @include marks-typography-button-lg;
 
-    &.desys-button--icon-only {
+    &.marks-button--icon-only {
       padding: 20px;
       min-width: 50px;
       min-height: 50px;
@@ -172,7 +172,7 @@ export default {
   // Disabled state
   &--disabled {
     cursor: not-allowed;
-    color: var(--desys-color-gray-200) !important;
+    color: var(--marks-color-gray-200) !important;
     background: transparent !important;
     border: none !important;
   }

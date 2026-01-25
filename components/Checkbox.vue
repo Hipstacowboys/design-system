@@ -4,16 +4,16 @@
   States: unchecked, checked, indeterminate, disabled (unchecked/checked/indeterminate)
 -->
 <template>
-  <div class="desys-checkbox-wrapper">
+  <div class="marks-checkbox-wrapper">
     <input
       :id="checkboxId"
       ref="input"
       type="checkbox"
       :class="[
-        'desys-checkbox',
+        'marks-checkbox',
         {
-          'desys-checkbox--indeterminate': indeterminate && !modelValue,
-          'desys-checkbox--disabled': disabled
+          'marks-checkbox--indeterminate': indeterminate && !modelValue,
+          'marks-checkbox--disabled': disabled
         }
       ]"
       :checked="modelValue"
@@ -23,14 +23,14 @@
     />
     <PhCheck
       v-if="modelValue"
-      :class="['desys-checkbox__icon', 'desys-checkbox__icon--check']"
+      :class="['marks-checkbox__icon', 'marks-checkbox__icon--check']"
       :size="16"
       color="white"
       weight="bold"
     />
     <PhMinus
       v-else-if="indeterminate && !modelValue"
-      :class="['desys-checkbox__icon', 'desys-checkbox__icon--minus']"
+      :class="['marks-checkbox__icon', 'marks-checkbox__icon--minus']"
       :size="12"
       color="white"
       weight="bold"
@@ -42,7 +42,7 @@
 import { PhCheck, PhMinus } from '@phosphor-icons/vue';
 
 export default {
-  name: 'DesysCheckbox',
+  name: 'marksCheckbox',
   components: {
     PhCheck,
     PhMinus
@@ -105,22 +105,22 @@ export default {
 <style lang="scss" scoped>
 @import '../tokens/variables';
 
-.desys-checkbox-wrapper {
+.marks-checkbox-wrapper {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-.desys-checkbox {
+.marks-checkbox {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   width: 24px;
   height: 24px;
-  border: 2px solid var(--desys-color-gray-200);
+  border: 2px solid var(--marks-color-gray-200);
   border-radius: 6px;
-  background: var(--desys-color-white);
+  background: var(--marks-color-white);
   cursor: pointer;
   position: relative;
   margin: 0;
@@ -129,26 +129,26 @@ export default {
   box-sizing: border-box;
 
   &:focus-visible {
-    outline: 2px solid var(--desys-color-primary-solid);
+    outline: 2px solid var(--marks-color-primary-solid);
     outline-offset: 2px;
   }
 
   // Checked state
   &:checked {
-    background: var(--desys-color-black);
-    border: 2px solid var(--desys-color-black);
+    background: var(--marks-color-primary-solid);
+    border: 2px solid var(--marks-color-primary-solid);
   }
 
   // Indeterminate state
   &--indeterminate {
-    background: var(--desys-color-black);
-    border-color: var(--desys-color-black);
+    background: var(--marks-color-primary-solid);
+    border-color: var(--marks-color-primary-solid);
   }
 
   // Hover states
-  &:hover:not(.desys-checkbox--disabled):not(:checked):not(&--indeterminate) {
-    border-color: var(--desys-color-gray-300);
-    background-color: var(--desys-color-white);
+  &:hover:not(.marks-checkbox--disabled):not(:checked):not(&--indeterminate) {
+    border-color: var(--marks-color-gray-300);
+    background-color: var(--marks-color-white);
   }
 
   // Disabled states
@@ -158,7 +158,7 @@ export default {
   }
 }
 
-.desys-checkbox__icon {
+.marks-checkbox__icon {
   position: absolute;
   left: 50%;
   top: 50%;

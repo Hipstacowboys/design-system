@@ -5,19 +5,19 @@
   Sizes: small, medium
 -->
 <template>
-  <div class="desys-input">
+  <div class="marks-input">
     <!-- Labels (above input) -->
-    <div v-if="label || labelRight" class="desys-input__labels">
-      <label v-if="label" :for="inputId" class="desys-input__label desys-input__label--left">
+    <div v-if="label || labelRight" class="marks-input__labels">
+      <label v-if="label" :for="inputId" class="marks-input__label marks-input__label--left">
         {{ label }}
       </label>
-      <span v-if="labelRight" class="desys-input__label desys-input__label--right">
+      <span v-if="labelRight" class="marks-input__label marks-input__label--right">
         {{ labelRight }}
       </span>
     </div>
 
     <!-- Input Field -->
-    <div class="desys-input__field-wrapper">
+    <div class="marks-input__field-wrapper">
       <InputField
         :input-id="inputId"
         :model-value="modelValue"
@@ -50,7 +50,7 @@
       v-if="message"
       :type="messageType || 'info'"
       :message="message"
-      class="desys-input__message"
+      class="marks-input__message"
     />
   </div>
 </template>
@@ -60,7 +60,7 @@ import InputField from './InputField.vue';
 import InputMessage from './InputMessage.vue';
 
 export default {
-  name: 'DesysInput',
+  name: 'marksInput',
   components: {
     InputField,
     InputMessage
@@ -161,38 +161,38 @@ export default {
 <style lang="scss" scoped>
 @import '../tokens/variables';
 
-.desys-input {
+.marks-input {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.desys-input__labels {
+.marks-input__labels {
   display: flex;
   align-items: center;
-  gap: var(--desys-spacing-gutter-12);
-  margin-bottom: var(--desys-spacing-gutter-12);
+  gap: var(--marks-spacing-gutter-12);
+  margin-bottom: var(--marks-spacing-gutter-12);
 }
 
-.desys-input__label {
-  @include desys-typography-paragraph-md-multiline;
-  color: var(--desys-color-black);
+.marks-input__label {
+  @include marks-typography-paragraph-md-multiline;
+  color: var(--marks-color-black);
 
   &--left {
     flex: 1;
   }
 
   &--right {
-    color: var(--desys-color-gray-300);
+    color: var(--marks-color-gray-300);
     text-align: right;
   }
 }
 
-.desys-input__field-wrapper {
+.marks-input__field-wrapper {
   // Spacing handled by labels margin-bottom and message margin-top
 }
 
-.desys-input__message {
-  margin-top: var(--desys-spacing-gutter-4);
+.marks-input__message {
+  margin-top: var(--marks-spacing-gutter-4);
 }
 </style>

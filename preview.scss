@@ -14,10 +14,10 @@
 // Left Navigation
 .preview-nav {
   width: 240px;
-  background: var(--desys-color-white);
-  border-right: 1px solid var(--desys-color-gray-200);
+  background: var(--marks-color-white);
+  border-right: 1px solid var(--marks-color-gray-200);
   overflow-y: auto;
-  padding: var(--desys-spacing-gutter-24);
+  padding: var(--marks-spacing-gutter-24);
 }
 
 .preview-nav h2 {
@@ -25,9 +25,9 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--desys-color-gray-400);
-  margin-bottom: var(--desys-spacing-gutter-16);
-  margin-top: var(--desys-spacing-gutter-24);
+  color: var(--marks-color-gray-400);
+  margin-bottom: var(--marks-spacing-gutter-16);
+  margin-top: var(--marks-spacing-gutter-24);
 }
 
 .preview-nav h2:first-child {
@@ -39,58 +39,58 @@
 }
 
 .preview-nav li {
-  margin-bottom: var(--desys-spacing-gutter-4);
+  margin-bottom: var(--marks-spacing-gutter-4);
 }
 
 .preview-nav a {
   display: block;
-  padding: var(--desys-spacing-gutter-8) var(--desys-spacing-gutter-12);
-  color: var(--desys-color-gray-500);
+  padding: var(--marks-spacing-gutter-8) var(--marks-spacing-gutter-12);
+  color: var(--marks-color-gray-500);
   text-decoration: none;
-  border-radius: var(--desys-radius-8);
+  border-radius: var(--marks-radius-8);
   font-size: 14px;
   transition: background-color 0.15s;
 }
 
 .preview-nav a:hover {
-  background: var(--desys-color-gray-100);
+  background: var(--marks-color-gray-100);
 }
 
 .preview-nav a.active {
-  background: var(--desys-color-primary-solid);
-  color: var(--desys-color-white);
+  background: var(--marks-color-primary-solid);
+  color: var(--marks-color-white);
 }
 
 // Right Content
 .preview-content {
   flex: 1;
   overflow-y: auto;
-  padding: var(--desys-spacing-gutter-40);
+  padding: var(--marks-spacing-gutter-40);
 }
 
 .preview-section {
-  margin-bottom: var(--desys-spacing-gutter-56);
+  margin-bottom: var(--marks-spacing-gutter-56);
 }
 
 .preview-section h1 {
   font-size: 32px;
   font-weight: 600;
-  color: var(--desys-color-gray-500);
-  margin-bottom: var(--desys-spacing-gutter-8);
+  color: var(--marks-color-gray-500);
+  margin-bottom: var(--marks-spacing-gutter-8);
 }
 
 .preview-section p {
-  color: var(--desys-color-gray-400);
-  margin-bottom: var(--desys-spacing-gutter-32);
+  color: var(--marks-color-gray-400);
+  margin-bottom: var(--marks-spacing-gutter-32);
   font-size: 16px;
 }
 
 .preview-section h2 {
   font-size: 20px;
   font-weight: 600;
-  color: var(--desys-color-gray-500);
-  margin-bottom: var(--desys-spacing-gutter-16);
-  margin-top: var(--desys-spacing-gutter-32);
+  color: var(--marks-color-gray-500);
+  margin-bottom: var(--marks-spacing-gutter-16);
+  margin-top: var(--marks-spacing-gutter-32);
 }
 
 .preview-section h2:first-of-type {
@@ -101,20 +101,20 @@
 .token-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: var(--desys-spacing-gutter-16);
-  margin-bottom: var(--desys-spacing-gutter-32);
+  gap: var(--marks-spacing-gutter-16);
+  margin-bottom: var(--marks-spacing-gutter-32);
 }
 
 .token-card {
-  background: var(--desys-color-white);
-  border: 1px solid var(--desys-color-gray-200);
-  border-radius: var(--desys-radius-12);
-  padding: var(--desys-spacing-gutter-16);
+  background: var(--marks-color-white);
+  border: 1px solid var(--marks-color-gray-200);
+  border-radius: var(--marks-radius-12);
+  padding: var(--marks-spacing-gutter-16);
   overflow: hidden;
 }
 
 .token-card-header {
-  margin-bottom: var(--desys-spacing-gutter-12);
+  margin-bottom: var(--marks-spacing-gutter-12);
 }
 
 .token-card-name {
@@ -122,14 +122,14 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--desys-color-gray-400);
-  margin-bottom: var(--desys-spacing-gutter-4);
+  color: var(--marks-color-gray-400);
+  margin-bottom: var(--marks-spacing-gutter-4);
 }
 
 .token-card-value {
   font-size: 14px;
   font-family: 'Monaco', 'Menlo', monospace;
-  color: var(--desys-color-gray-500);
+  color: var(--marks-color-gray-500);
   word-break: break-all;
 }
 
@@ -137,33 +137,33 @@
 .color-sample {
   width: 100%;
   height: 80px;
-  border-radius: var(--desys-radius-8);
-  margin-bottom: var(--desys-spacing-gutter-12);
-  border: 1px solid var(--desys-color-gray-200);
+  border-radius: var(--marks-radius-8);
+  margin-bottom: var(--marks-spacing-gutter-12);
+  border: 1px solid var(--marks-color-gray-200);
 }
 
 // Spacing Token Display
 .spacing-sample {
-  background: var(--desys-color-primary-solid);
+  background: var(--marks-color-primary-solid);
   opacity: 0.2;
-  margin-bottom: var(--desys-spacing-gutter-12);
-  border-radius: var(--desys-radius-4);
+  margin-bottom: var(--marks-spacing-gutter-12);
+  border-radius: var(--marks-radius-4);
 }
 
 .spacing-sample-label {
   font-size: 11px;
-  color: var(--desys-color-gray-400);
+  color: var(--marks-color-gray-400);
   text-align: center;
-  padding: var(--desys-spacing-gutter-4) 0;
+  padding: var(--marks-spacing-gutter-4) 0;
 }
 
 // Radius Token Display
 .radius-sample {
   width: 100%;
   height: 60px;
-  background: var(--desys-color-primary-solid);
+  background: var(--marks-color-primary-solid);
   opacity: 0.2;
-  margin-bottom: var(--desys-spacing-gutter-12);
+  margin-bottom: var(--marks-spacing-gutter-12);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -171,26 +171,26 @@
 
 .radius-sample-label {
   font-size: 11px;
-  color: var(--desys-color-gray-400);
+  color: var(--marks-color-gray-400);
 }
 
 // Theme Toggle
 .theme-toggle {
   position: fixed;
-  top: var(--desys-spacing-gutter-16);
-  right: var(--desys-spacing-gutter-16);
-  padding: var(--desys-spacing-gutter-8) var(--desys-spacing-gutter-16);
-  background: var(--desys-color-white);
-  border: 1px solid var(--desys-color-gray-200);
-  border-radius: var(--desys-radius-8);
+  top: var(--marks-spacing-gutter-16);
+  right: var(--marks-spacing-gutter-16);
+  padding: var(--marks-spacing-gutter-8) var(--marks-spacing-gutter-16);
+  background: var(--marks-color-white);
+  border: 1px solid var(--marks-color-gray-200);
+  border-radius: var(--marks-radius-8);
   cursor: pointer;
   font-size: 14px;
-  color: var(--desys-color-gray-500);
+  color: var(--marks-color-gray-500);
   z-index: 100;
 }
 
 .theme-toggle:hover {
-  background: var(--desys-color-gray-100);
+  background: var(--marks-color-gray-100);
 }
 
 // Hidden sections
@@ -202,19 +202,19 @@
 .component-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: var(--desys-spacing-gutter-24);
-  margin-bottom: var(--desys-spacing-gutter-32);
+  gap: var(--marks-spacing-gutter-24);
+  margin-bottom: var(--marks-spacing-gutter-32);
 }
 
 .component-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--desys-spacing-gutter-12);
-  padding: var(--desys-spacing-gutter-16);
-  background: var(--desys-color-white);
-  border: 1px solid var(--desys-color-gray-200);
-  border-radius: var(--desys-radius-12);
+  gap: var(--marks-spacing-gutter-12);
+  padding: var(--marks-spacing-gutter-16);
+  background: var(--marks-color-white);
+  border: 1px solid var(--marks-color-gray-200);
+  border-radius: var(--marks-radius-12);
 }
 
 .component-label {
@@ -222,7 +222,7 @@
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--desys-color-gray-400);
+  color: var(--marks-color-gray-400);
   text-align: center;
 }
 
@@ -230,16 +230,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--desys-spacing-gutter-16);
-  padding: var(--desys-spacing-gutter-24);
-  background: var(--desys-color-white);
-  border: 1px solid var(--desys-color-gray-200);
-  border-radius: var(--desys-radius-12);
+  gap: var(--marks-spacing-gutter-16);
+  padding: var(--marks-spacing-gutter-24);
+  background: var(--marks-color-white);
+  border: 1px solid var(--marks-color-gray-200);
+  border-radius: var(--marks-radius-12);
 }
 
 .component-status {
   font-size: 14px;
-  color: var(--desys-color-gray-400);
+  color: var(--marks-color-gray-400);
 }
 
 .toggle-container {
@@ -250,7 +250,7 @@
 }
 
 // Toggle Component Styles (for static preview only - Vue components have their own styles)
-.desys-toggle {
+.marks-toggle {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -262,60 +262,60 @@
   transition: all 0.2s ease;
 }
 
-.desys-toggle:focus-visible {
-  outline: 2px solid var(--desys-color-primary-solid);
+.marks-toggle:focus-visible {
+  outline: 2px solid var(--marks-color-primary-solid);
   outline-offset: 2px;
-  border-radius: var(--desys-radius-8);
+  border-radius: var(--marks-radius-8);
 }
 
-.desys-toggle__track {
+.marks-toggle__track {
   position: relative;
   width: 44px;
   height: 24px;
-  background: var(--desys-color-gray-200);
-  border-radius: var(--desys-radius-full);
+  background: var(--marks-color-gray-200);
+  border-radius: var(--marks-radius-full);
   transition: background-color 0.2s ease;
 }
 
-.desys-toggle__thumb {
+.marks-toggle__thumb {
   position: absolute;
   top: 2px;
   left: 2px;
   width: 20px;
   height: 20px;
-  background: var(--desys-color-white);
-  border-radius: var(--desys-radius-full);
+  background: var(--marks-color-white);
+  border-radius: var(--marks-radius-full);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.desys-toggle--on .desys-toggle__track {
-  background: var(--desys-color-primary-solid);
+.marks-toggle--on .marks-toggle__track {
+  background: var(--marks-color-primary-solid);
 }
 
-.desys-toggle--on .desys-toggle__thumb {
+.marks-toggle--on .marks-toggle__thumb {
   transform: translateX(20px);
 }
 
-.desys-toggle--hover-off:hover .desys-toggle__track {
-  background: var(--desys-color-gray-300);
+.marks-toggle--hover-off:hover .marks-toggle__track {
+  background: var(--marks-color-gray-300);
 }
 
-.desys-toggle--hover-on:hover .desys-toggle__track {
-  background: var(--desys-color-green-300);
+.marks-toggle--hover-on:hover .marks-toggle__track {
+  background: var(--marks-color-green-300);
 }
 
-.desys-toggle--disabled {
+.marks-toggle--disabled {
   cursor: not-allowed;
   opacity: 0.5;
 }
 
-.desys-toggle--disabled .desys-toggle__track {
-  background: var(--desys-color-gray-200);
+.marks-toggle--disabled .marks-toggle__track {
+  background: var(--marks-color-gray-200);
 }
 
-.desys-toggle--disabled.desys-toggle--on .desys-toggle__track {
-  background: var(--desys-color-gray-300);
+.marks-toggle--disabled.marks-toggle--on .marks-toggle__track {
+  background: var(--marks-color-gray-300);
 }
 
 // Base reset and body styles
@@ -327,69 +327,69 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  background: var(--desys-color-gray-100);
-  color: var(--desys-color-gray-500);
+  background: var(--marks-color-gray-100);
+  color: var(--marks-color-gray-500);
   line-height: 1.5;
 }
 
 // Color sample classes (to replace inline styles)
-.color-sample-primary { background: var(--desys-color-primary-solid); }
-.color-sample-red-100 { background: var(--desys-color-red-100); }
-.color-sample-red-200 { background: var(--desys-color-red-200); }
-.color-sample-red-300 { background: var(--desys-color-red-300); }
-.color-sample-blue-100 { background: var(--desys-color-blue-100); }
-.color-sample-blue-200 { background: var(--desys-color-blue-200); }
-.color-sample-blue-300 { background: var(--desys-color-blue-300); }
-.color-sample-green-100 { background: var(--desys-color-green-100); }
-.color-sample-green-200 { background: var(--desys-color-green-200); }
-.color-sample-green-300 { background: var(--desys-color-green-300); }
-.color-sample-orange-100 { background: var(--desys-color-orange-100); }
-.color-sample-orange-200 { background: var(--desys-color-orange-200); }
-.color-sample-orange-300 { background: var(--desys-color-orange-300); }
+.color-sample-primary { background: var(--marks-color-primary-solid); }
+.color-sample-red-100 { background: var(--marks-color-red-100); }
+.color-sample-red-200 { background: var(--marks-color-red-200); }
+.color-sample-red-300 { background: var(--marks-color-red-300); }
+.color-sample-blue-100 { background: var(--marks-color-blue-100); }
+.color-sample-blue-200 { background: var(--marks-color-blue-200); }
+.color-sample-blue-300 { background: var(--marks-color-blue-300); }
+.color-sample-green-100 { background: var(--marks-color-green-100); }
+.color-sample-green-200 { background: var(--marks-color-green-200); }
+.color-sample-green-300 { background: var(--marks-color-green-300); }
+.color-sample-orange-100 { background: var(--marks-color-orange-100); }
+.color-sample-orange-200 { background: var(--marks-color-orange-200); }
+.color-sample-orange-300 { background: var(--marks-color-orange-300); }
 .color-sample-gray-100 { 
-  background: var(--desys-color-gray-100); 
-  border: 1px solid var(--desys-color-gray-200); 
+  background: var(--marks-color-gray-100); 
+  border: 1px solid var(--marks-color-gray-200); 
 }
-.color-sample-gray-150 { background: var(--desys-color-gray-150); }
-.color-sample-gray-200 { background: var(--desys-color-gray-200); }
-.color-sample-gray-300 { background: var(--desys-color-gray-300); }
-.color-sample-gray-350 { background: var(--desys-color-gray-350); }
-.color-sample-gray-400 { background: var(--desys-color-gray-400); }
-.color-sample-gray-500 { background: var(--desys-color-gray-500); }
+.color-sample-gray-150 { background: var(--marks-color-gray-150); }
+.color-sample-gray-200 { background: var(--marks-color-gray-200); }
+.color-sample-gray-300 { background: var(--marks-color-gray-300); }
+.color-sample-gray-350 { background: var(--marks-color-gray-350); }
+.color-sample-gray-400 { background: var(--marks-color-gray-400); }
+.color-sample-gray-500 { background: var(--marks-color-gray-500); }
 .color-sample-white { 
-  background: var(--desys-color-white); 
-  border: 1px solid var(--desys-color-gray-200); 
+  background: var(--marks-color-white); 
+  border: 1px solid var(--marks-color-gray-200); 
 }
-.color-sample-black { background: var(--desys-color-black); }
+.color-sample-black { background: var(--marks-color-black); }
 
 // Spacing sample classes
-.spacing-sample-0 { height: var(--desys-spacing-gutter-0); }
-.spacing-sample-4 { height: var(--desys-spacing-gutter-4); }
-.spacing-sample-8 { height: var(--desys-spacing-gutter-8); }
-.spacing-sample-12 { height: var(--desys-spacing-gutter-12); }
-.spacing-sample-16 { height: var(--desys-spacing-gutter-16); }
-.spacing-sample-20 { height: var(--desys-spacing-gutter-20); }
-.spacing-sample-24 { height: var(--desys-spacing-gutter-24); }
-.spacing-sample-28 { height: var(--desys-spacing-gutter-28); }
-.spacing-sample-32 { height: var(--desys-spacing-gutter-32); }
-.spacing-sample-36 { height: var(--desys-spacing-gutter-36); }
-.spacing-sample-40 { height: var(--desys-spacing-gutter-40); }
-.spacing-sample-56 { height: var(--desys-spacing-gutter-56); }
-.spacing-sample-72 { height: var(--desys-spacing-gutter-72); }
-.spacing-sample-80 { height: var(--desys-spacing-gutter-80); }
+.spacing-sample-0 { height: var(--marks-spacing-gutter-0); }
+.spacing-sample-4 { height: var(--marks-spacing-gutter-4); }
+.spacing-sample-8 { height: var(--marks-spacing-gutter-8); }
+.spacing-sample-12 { height: var(--marks-spacing-gutter-12); }
+.spacing-sample-16 { height: var(--marks-spacing-gutter-16); }
+.spacing-sample-20 { height: var(--marks-spacing-gutter-20); }
+.spacing-sample-24 { height: var(--marks-spacing-gutter-24); }
+.spacing-sample-28 { height: var(--marks-spacing-gutter-28); }
+.spacing-sample-32 { height: var(--marks-spacing-gutter-32); }
+.spacing-sample-36 { height: var(--marks-spacing-gutter-36); }
+.spacing-sample-40 { height: var(--marks-spacing-gutter-40); }
+.spacing-sample-56 { height: var(--marks-spacing-gutter-56); }
+.spacing-sample-72 { height: var(--marks-spacing-gutter-72); }
+.spacing-sample-80 { height: var(--marks-spacing-gutter-80); }
 
 // Radius sample classes
-.radius-sample-0 { border-radius: var(--desys-radius-0); }
-.radius-sample-8 { border-radius: var(--desys-radius-8); }
-.radius-sample-12 { border-radius: var(--desys-radius-12); }
-.radius-sample-16 { border-radius: var(--desys-radius-16); }
-.radius-sample-24 { border-radius: var(--desys-radius-24); }
-.radius-sample-full { border-radius: var(--desys-radius-full); }
+.radius-sample-0 { border-radius: var(--marks-radius-0); }
+.radius-sample-8 { border-radius: var(--marks-radius-8); }
+.radius-sample-12 { border-radius: var(--marks-radius-12); }
+.radius-sample-16 { border-radius: var(--marks-radius-16); }
+.radius-sample-24 { border-radius: var(--marks-radius-24); }
+.radius-sample-full { border-radius: var(--marks-radius-full); }
 
 // Typography sample classes
 .typography-sample {
   color: #000000;
-  margin-bottom: var(--desys-spacing-gutter-12);
+  margin-bottom: var(--marks-spacing-gutter-12);
 }
 
 .typography-sample-text {

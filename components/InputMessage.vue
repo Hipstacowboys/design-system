@@ -7,18 +7,18 @@
   <div
     v-if="hasMessage"
     :class="[
-      'desys-input-message',
-      `desys-input-message--${type}`
+      'marks-input-message',
+      `marks-input-message--${type}`
     ]"
   >
     <component
       :is="iconComponent"
-      :class="'desys-input-message__icon'"
+      :class="'marks-input-message__icon'"
       :size="16"
       :weight="'bold'"
       color="currentColor"
     />
-    <span class="desys-input-message__text">
+    <span class="marks-input-message__text">
       <slot>{{ message }}</slot>
     </span>
   </div>
@@ -28,7 +28,7 @@
 import { PhWarningCircle, PhInfo } from '@phosphor-icons/vue';
 
 export default {
-  name: 'DesysInputMessage',
+  name: 'marksInputMessage',
   components: {
     PhWarningCircle,
     PhInfo
@@ -58,18 +58,18 @@ export default {
 <style lang="scss" scoped>
 @import '../tokens/variables';
 
-.desys-input-message {
+.marks-input-message {
   display: flex;
   align-items: center;
-  gap: var(--desys-spacing-gutter-8);
-  @include desys-typography-paragraph-sm-multiline;
+  gap: var(--marks-spacing-gutter-8);
+  @include marks-typography-paragraph-sm-multiline;
 
   &--error {
-    color: var(--desys-color-red-200);
+    color: var(--marks-color-red-200);
   }
 
   &--info {
-    color: var(--desys-color-gray-300);
+    color: var(--marks-color-gray-300);
   }
 
   &__icon {

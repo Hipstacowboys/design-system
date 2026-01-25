@@ -6,10 +6,10 @@
 <template>
   <button
     :class="[
-      'desys-toggle',
+      'marks-toggle',
       {
-        'desys-toggle--on': modelValue,
-        'desys-toggle--disabled': disabled
+        'marks-toggle--on': modelValue,
+        'marks-toggle--disabled': disabled
       }
     ]"
     :disabled="disabled"
@@ -19,15 +19,15 @@
     :aria-checked="modelValue"
     :aria-disabled="disabled"
   >
-    <span class="desys-toggle__track">
-      <span class="desys-toggle__thumb"></span>
+    <span class="marks-toggle__track">
+      <span class="marks-toggle__thumb"></span>
     </span>
   </button>
 </template>
 
 <script>
 export default {
-  name: 'DesysToggle',
+  name: 'marksToggle',
   props: {
     modelValue: {
       type: Boolean,
@@ -52,7 +52,7 @@ export default {
 <style lang="scss" scoped>
 @import '../tokens/variables';
 
-.desys-toggle {
+.marks-toggle {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -64,17 +64,17 @@ export default {
   transition: all 0.2s ease;
 
   &:focus-visible {
-    outline: 2px solid var(--desys-color-primary-solid);
+    outline: 2px solid var(--marks-color-primary-solid);
     outline-offset: 2px;
-    border-radius: var(--desys-radius-8);
+    border-radius: var(--marks-radius-8);
   }
 
   &__track {
     position: relative;
     width: 44px;
     height: 24px;
-    background: var(--desys-color-gray-200);
-    border-radius: var(--desys-radius-full);
+    background: var(--marks-color-gray-200);
+    border-radius: var(--marks-radius-full);
     transition: background-color 0.2s ease;
   }
 
@@ -84,31 +84,31 @@ export default {
     left: 2px;
     width: 20px;
     height: 20px;
-    background: var(--desys-color-white);
-    border-radius: var(--desys-radius-full);
+    background: var(--marks-color-white);
+    border-radius: var(--marks-radius-full);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   // On state
   &--on {
-    .desys-toggle__track {
-      background: var(--desys-color-primary-solid);
+    .marks-toggle__track {
+      background: var(--marks-color-primary-solid);
     }
 
-    .desys-toggle__thumb {
+    .marks-toggle__thumb {
       transform: translateX(20px);
     }
   }
 
   // Hover states
-  &:hover:not(.desys-toggle--disabled) {
-    .desys-toggle__track {
-      background: var(--desys-color-gray-300);
+  &:hover:not(.marks-toggle--disabled) {
+    .marks-toggle__track {
+      background: var(--marks-color-gray-300);
     }
 
-    &.desys-toggle--on .desys-toggle__track {
-      background: var(--desys-color-green-300);
+    &.marks-toggle--on .marks-toggle__track {
+      background: var(--marks-color-green-300);
     }
   }
 
@@ -117,12 +117,12 @@ export default {
     cursor: not-allowed;
     opacity: 0.5;
 
-    .desys-toggle__track {
-      background: var(--desys-color-gray-200);
+    .marks-toggle__track {
+      background: var(--marks-color-gray-200);
     }
 
-    &.desys-toggle--on .desys-toggle__track {
-      background: var(--desys-color-gray-300);
+    &.marks-toggle--on .marks-toggle__track {
+      background: var(--marks-color-gray-300);
     }
   }
 }

@@ -9,6 +9,33 @@
   ],
   "creatorBuild" : "34335",
   "files" : {
+    "\/.npmignore" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/.npmignore",
+      "oF" : 0
+    },
+    "\/CHANGELOG.md" : {
+      "cB" : 0,
+      "cS" : 0,
+      "eF" : 1,
+      "eL" : 1,
+      "ema" : 1,
+      "eSQ" : 1,
+      "ft" : 4096,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/CHANGELOG.html",
+      "oF" : 0,
+      "oFM" : 0,
+      "oS" : 0,
+      "pHT" : 0,
+      "pME" : 1,
+      "rFN" : 0,
+      "uCM" : 0
+    },
     "\/COMPONENTS.md" : {
       "cB" : 0,
       "cS" : 0,
@@ -34,6 +61,30 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/components\/Alert.vue",
+      "oF" : 0
+    },
+    "\/components\/BigSwitch.vue" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/components\/BigSwitch.vue",
+      "oF" : 0
+    },
+    "\/components\/Booking.vue" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/components\/Booking.vue",
+      "oF" : 0
+    },
+    "\/components\/BookingInCalendar.vue" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/components\/BookingInCalendar.vue",
       "oF" : 0
     },
     "\/components\/Breadcrumb.vue" : {
@@ -84,6 +135,38 @@
       "oAP" : "\/components\/ButtonSecondary.vue",
       "oF" : 0
     },
+    "\/components\/Calendar.vue" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/components\/Calendar.vue",
+      "oF" : 0
+    },
+    "\/components\/CalendarDatepicker.vue" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/components\/CalendarDatepicker.vue",
+      "oF" : 0
+    },
+    "\/components\/CalendarDay.vue" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/components\/CalendarDay.vue",
+      "oF" : 0
+    },
+    "\/components\/CardWithCounter.vue" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/components\/CardWithCounter.vue",
+      "oF" : 0
+    },
     "\/components\/Checkbox.vue" : {
       "cB" : 0,
       "ft" : 8192,
@@ -98,6 +181,30 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/components\/CheckboxWithLabel.vue",
+      "oF" : 0
+    },
+    "\/components\/Dropdown.vue" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/components\/Dropdown.vue",
+      "oF" : 0
+    },
+    "\/components\/EmptyState.vue" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/components\/EmptyState.vue",
+      "oF" : 0
+    },
+    "\/components\/HorizontalSwitch.vue" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/components\/HorizontalSwitch.vue",
       "oF" : 0
     },
     "\/components\/Input.vue" : {
@@ -124,12 +231,52 @@
       "oAP" : "\/components\/InputMessage.vue",
       "oF" : 0
     },
+    "\/components\/NavbarItem.vue" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/components\/NavbarItem.vue",
+      "oF" : 0
+    },
+    "\/components\/NavbarSide.vue" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/components\/NavbarSide.vue",
+      "oF" : 0
+    },
     "\/components\/NotificationBadge.vue" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/components\/NotificationBadge.vue",
+      "oF" : 0
+    },
+    "\/components\/NotificationDialog.vue" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/components\/NotificationDialog.vue",
+      "oF" : 0
+    },
+    "\/components\/NotificationMessage.vue" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/components\/NotificationMessage.vue",
+      "oF" : 0
+    },
+    "\/components\/Place.vue" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/components\/Place.vue",
       "oF" : 0
     },
     "\/components\/Radio.vue" : {
@@ -146,14 +293,6 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/components\/RadioWithLabel.vue",
-      "oF" : 0
-    },
-    "\/components\/README.html" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/components\/README.html",
       "oF" : 0
     },
     "\/components\/README.md" : {
@@ -181,6 +320,22 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/components\/Select.vue",
+      "oF" : 0
+    },
+    "\/components\/SmallSwitch.vue" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/components\/SmallSwitch.vue",
+      "oF" : 0
+    },
+    "\/components\/SmallSwitchOption.vue" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/components\/SmallSwitchOption.vue",
       "oF" : 0
     },
     "\/components\/Status.vue" : {
@@ -255,6 +410,30 @@
       "oAP" : "\/components\/ToggleWithLabel.vue",
       "oF" : 0
     },
+    "\/components\/Tooltip.vue" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/components\/Tooltip.vue",
+      "oF" : 0
+    },
+    "\/components\/WeekPricingDay.vue" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/components\/WeekPricingDay.vue",
+      "oF" : 0
+    },
+    "\/components\/Widget.vue" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/components\/Widget.vue",
+      "oF" : 0
+    },
     "\/design-system.css" : {
       "aP" : 1,
       "bl" : 0,
@@ -282,14 +461,6 @@
       "pg" : 0,
       "sct" : 0
     },
-    "\/docs\/documentation.html" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/docs\/documentation.html",
-      "oF" : 0
-    },
     "\/docs\/documentation.md" : {
       "cB" : 0,
       "cS" : 0,
@@ -308,14 +479,6 @@
       "pME" : 1,
       "rFN" : 0,
       "uCM" : 0
-    },
-    "\/docs\/instructions.html" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/docs\/instructions.html",
-      "oF" : 0
     },
     "\/docs\/instructions.md" : {
       "cB" : 0,
@@ -336,14 +499,6 @@
       "rFN" : 0,
       "uCM" : 0
     },
-    "\/docs\/plan.html" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/docs\/plan.html",
-      "oF" : 0
-    },
     "\/docs\/plan.md" : {
       "cB" : 0,
       "cS" : 0,
@@ -362,6 +517,36 @@
       "pME" : 1,
       "rFN" : 0,
       "uCM" : 0
+    },
+    "\/docs\/reuse-guide.md" : {
+      "cB" : 0,
+      "cS" : 0,
+      "eF" : 1,
+      "eL" : 1,
+      "ema" : 1,
+      "eSQ" : 1,
+      "ft" : 4096,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/docs\/reuse-guide.html",
+      "oF" : 0,
+      "oFM" : 0,
+      "oS" : 0,
+      "pHT" : 0,
+      "pME" : 1,
+      "rFN" : 0,
+      "uCM" : 0
+    },
+    "\/index.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/index-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
     },
     "\/node_modules" : {
       "ft" : 65536,
@@ -420,14 +605,6 @@
       "pg" : 0,
       "sct" : 0
     },
-    "\/README.html" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/README.html",
-      "oF" : 0
-    },
     "\/README.md" : {
       "cB" : 0,
       "cS" : 0,
@@ -446,6 +623,17 @@
       "pME" : 1,
       "rFN" : 0,
       "uCM" : 0
+    },
+    "\/scripts\/release.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/scripts\/release-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
     },
     "\/src\/preview-min.js" : {
       "bF" : 0,

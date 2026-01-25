@@ -6,9 +6,9 @@
 <template>
   <span
     :class="[
-      'desys-breadcrumb',
+      'marks-breadcrumb',
       {
-        'desys-breadcrumb--active': active
+        'marks-breadcrumb--active': active
       }
     ]"
   >
@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: 'DesysBreadcrumb',
+  name: 'marksBreadcrumb',
   props: {
     active: {
       type: Boolean,
@@ -35,15 +35,15 @@ export default {
 <style lang="scss" scoped>
 @import '../tokens/variables';
 
-.desys-breadcrumb {
-  @include desys-typography-paragraph-sm-multiline;
-  color: var(--desys-color-gray-400);
+.marks-breadcrumb {
+  @include marks-typography-paragraph-sm-multiline;
+  color: var(--marks-color-gray-400);
   white-space: nowrap;
 
   // Active state
   &--active {
-    color: var(--desys-color-black);
-    font-weight: $desys-font-weight-medium;
+    color: var(--marks-color-black);
+    font-weight: $marks-font-weight-medium;
   }
 }
 </style>

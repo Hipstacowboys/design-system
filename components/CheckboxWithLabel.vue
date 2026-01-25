@@ -4,16 +4,16 @@
   Variants: With title only, or with title and paragraph (optional)
 -->
 <template>
-  <label class="desys-checkbox-with-label" :class="{ 'desys-checkbox-with-label--has-paragraph': paragraph }">
+  <label class="marks-checkbox-with-label" :class="{ 'marks-checkbox-with-label--has-paragraph': paragraph }">
     <Checkbox
       :model-value="modelValue"
       :indeterminate="indeterminate"
       :disabled="disabled"
       @update:modelValue="$emit('update:modelValue', $event)"
     />
-    <span class="desys-checkbox-with-label__text">
-      <span class="desys-checkbox-with-label__title">{{ title }}</span>
-      <span v-if="paragraph" class="desys-checkbox-with-label__paragraph">{{ paragraph }}</span>
+    <span class="marks-checkbox-with-label__text">
+      <span class="marks-checkbox-with-label__title">{{ title }}</span>
+      <span v-if="paragraph" class="marks-checkbox-with-label__paragraph">{{ paragraph }}</span>
     </span>
   </label>
 </template>
@@ -22,7 +22,7 @@
 import Checkbox from './Checkbox.vue';
 
 export default {
-  name: 'DesysCheckboxWithLabel',
+  name: 'marksCheckboxWithLabel',
   components: {
     Checkbox
   },
@@ -55,10 +55,10 @@ export default {
 <style lang="scss" scoped>
 @import '../tokens/variables';
 
-.desys-checkbox-with-label {
+.marks-checkbox-with-label {
   display: flex;
   align-items: center;
-  gap: var(--desys-spacing-gutter-12);
+  gap: var(--marks-spacing-gutter-12);
   cursor: pointer;
 
   // When paragraph exists, align checkbox to top (with title)
@@ -69,20 +69,20 @@ export default {
   &__text {
     display: flex;
     flex-direction: column;
-    gap: var(--desys-spacing-gutter-4);
+    gap: var(--marks-spacing-gutter-4);
     cursor: pointer;
     flex: 1;
   }
 
   &__title {
-    @include desys-typography-paragraph-md-one-line;
-    color: var(--desys-color-gray-500);
+    @include marks-typography-paragraph-md-one-line;
+    color: var(--marks-color-gray-500);
     user-select: none;
   }
 
   &__paragraph {
-    @include desys-typography-paragraph-sm-multiline;
-    color: var(--desys-color-gray-300);
+    @include marks-typography-paragraph-sm-multiline;
+    color: var(--marks-color-gray-300);
     user-select: none;
   }
 }

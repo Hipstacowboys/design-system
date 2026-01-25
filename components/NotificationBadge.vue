@@ -6,11 +6,11 @@
 <template>
   <div
     :class="[
-      'desys-notification-badge',
-      `desys-notification-badge--${type}`
+      'marks-notification-badge',
+      `marks-notification-badge--${type}`
     ]"
   >
-    <span v-if="type !== 'simple'" class="desys-notification-badge__text">
+    <span v-if="type !== 'simple'" class="marks-notification-badge__text">
       {{ displayValue }}
     </span>
   </div>
@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: 'DesysNotificationBadge',
+  name: 'marksNotificationBadge',
   props: {
     type: {
       type: String,
@@ -48,12 +48,12 @@ export default {
 <style lang="scss" scoped>
 @import '../tokens/variables';
 
-.desys-notification-badge {
+.marks-notification-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--desys-color-red-200);
-  color: var(--desys-color-white);
+  background-color: var(--marks-color-red-200);
+  color: var(--marks-color-white);
   box-sizing: border-box;
   flex-shrink: 0;
 
@@ -62,7 +62,7 @@ export default {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    border: 2px solid var(--desys-color-white);
+    border: 2px solid var(--marks-color-white);
     padding: 0;
   }
 
@@ -72,8 +72,8 @@ export default {
     height: 18px;
     border-radius: 9px;
     padding: 3px 6px;
-    @include desys-typography-paragraph-xs;
-    font-weight: $desys-font-weight-bold;
+    @include marks-typography-paragraph-xs;
+    font-weight: $marks-font-weight-bold;
     line-height: 1;
   }
 
@@ -83,8 +83,8 @@ export default {
     height: 18px;
     border-radius: 9px;
     padding: 3px 6px;
-    @include desys-typography-paragraph-xs;
-    font-weight: $desys-font-weight-bold;
+    @include marks-typography-paragraph-xs;
+    font-weight: $marks-font-weight-bold;
     line-height: 1;
   }
 
