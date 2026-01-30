@@ -2,7 +2,7 @@
 // Utility classes for preview/documentation purposes
 // Components should use mixins from _typography-mixins.scss
 
-@import 'typography-mixins';
+@use 'typography-mixins' as *;
 
 // Header One
 .marks-h1-regular {

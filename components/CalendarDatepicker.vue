@@ -197,7 +197,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../tokens/variables';
+@use '../tokens/variables' as *;
 
 .marks-calendar-datepicker {
   width: 100%;
@@ -422,7 +422,7 @@ export default {
 </style>
 
 <style lang="scss">
-@import '../tokens/variables';
+@use '../tokens/variables' as *;
 
 // Dark mode support - global styles to override scoped styles
 // Using attribute selector with higher specificity

@@ -33,7 +33,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../tokens/variables';
+@use '../tokens/variables' as *;
 
 .marks-breadcrumb {
   @include marks-typography-paragraph-sm-multiline;

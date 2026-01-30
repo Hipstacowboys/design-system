@@ -2,7 +2,7 @@
 // Use these mixins in components for typography styles
 // Source: Figma design system
 
-@import 'typography-tokens';
+@use 'typography-tokens' as *;
 
 // Header One
 @mixin marks-typography-h1-regular {

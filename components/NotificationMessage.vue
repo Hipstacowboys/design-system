@@ -98,7 +98,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../tokens/variables';
+@use '../tokens/variables' as *;
 
 .marks-notification-message {
   display: flex;

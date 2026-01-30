@@ -49,7 +49,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../tokens/variables';
+@use '../tokens/variables' as *;
 
 .marks-tab {
   display: flex;

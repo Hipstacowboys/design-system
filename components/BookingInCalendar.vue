@@ -152,7 +152,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../tokens/variables';
+@use '../tokens/variables' as *;
 
 .marks-booking-in-calendar {
   border-radius: 100px;

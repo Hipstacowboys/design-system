@@ -16,6 +16,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - 
 
+## [1.1.5] - 2026-01-30
+
+### Added
+- 
+
+### Changed
+- Migrated Sass from `@import` to `@use`/`@forward` across tokens, design-system.scss, preview.scss, and all Vue components to eliminate Sass deprecation warnings
+
+### Fixed
+- Fixed "Undefined mixin" errors when using design system with Vite by adding `@forward` for typography-tokens and typography-mixins in `tokens/_variables.scss` so components that `@use` the variables file receive mixins and variables
+
+
 ## [1.1.4] - 2026-01-25
 
 ### Added
@@ -168,7 +180,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Responsive design patterns
 - Accessibility features (semantic HTML, ARIA attributes)
 
-[Unreleased]: https://github.com/Hipstacowboys/design-system/compare/v1.1.4...HEAD
+[Unreleased]: https://github.com/Hipstacowboys/design-system/compare/v1.1.5...HEAD
+[1.1.5]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.1.5
 [1.1.4]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.1.4
 [1.1.3]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.1.3
 [1.1.2]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.1.2

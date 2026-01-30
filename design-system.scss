@@ -2,7 +2,7 @@
 // Main stylesheet with marks- prefix for all design system classes
 // Compiled through Codekit to design-system.css
 
-@import 'tokens/variables';
+@use 'tokens/variables' as *;
 
 // Base styles will be added here as components are created
 // All classes use marks- prefix

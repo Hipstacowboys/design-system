@@ -23,14 +23,32 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 <h3 id="changed">Changed</h3>
 
 <ul>
-<li></li>
+<li>Migrated Sass from <code>@import</code> to <code>@use</code>/<code>@forward</code> across tokens, design-system.scss, preview.scss, and all Vue components to eliminate Sass deprecation warnings</li>
 </ul>
 
 <h3 id="fixed">Fixed</h3>
 
 <ul>
+<li>Fixed &#8220;Undefined mixin&#8221; errors when using design system with Vite by adding <code>@forward</code> for typography-tokens and typography-mixins in <code>tokens/_variables.scss</code> so components that <code>@use</code> the variables file receive mixins and variables</li>
+</ul>
+
+<h2 id="1.1.4-2026-01-25"><a href="https://github.com/Hipstacowboys/design-system/releases/tag/v1.1.4">1.1.4</a> - 2026&#8211;01&#8211;25</h2>
+
+<h3 id="added">Added</h3>
+
+<ul>
 <li></li>
 </ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+<li></li>
+</ul>
+
+<h3 id="fixed">Fixed</h3>
+
+<p>-</p>
 
 <h2 id="1.1.3-2026-01-25"><a href="https://github.com/Hipstacowboys/design-system/releases/tag/v1.1.3">1.1.3</a> - 2026&#8211;01&#8211;25</h2>
 

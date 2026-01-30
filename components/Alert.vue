@@ -107,7 +107,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../tokens/variables';
+@use '../tokens/variables' as *;
 
 .marks-alert {
   position: relative;
@@ -227,7 +227,7 @@ export default {
 </style>
 
 <style lang="scss">
-@import '../tokens/variables';
+@use '../tokens/variables' as *;
 
 :root[data-theme="dark"] .marks-alert__title {
   color: var(--marks-color-white);

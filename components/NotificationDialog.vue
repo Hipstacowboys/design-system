@@ -101,7 +101,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../tokens/variables';
+@use '../tokens/variables' as *;
 
 .marks-notification-dialog {
   box-shadow: 0px 14px 30px rgba(0, 0, 0, 0.15);

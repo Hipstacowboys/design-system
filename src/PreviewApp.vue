@@ -3295,11 +3295,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../tokens/variables';
+@use '../tokens/variables' as *;
 </style>
 
 <style lang="scss">
-@import '../tokens/variables';
+@use '../tokens/variables' as *;
 
 .theme-toggle {
   position: fixed;

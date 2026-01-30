@@ -17,6 +17,14 @@
       "oAP" : "\/.npmignore",
       "oF" : 0
     },
+    "\/CHANGELOG.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/CHANGELOG.html",
+      "oF" : 0
+    },
     "\/CHANGELOG.md" : {
       "cB" : 0,
       "cS" : 0,
@@ -35,6 +43,14 @@
       "pME" : 1,
       "rFN" : 0,
       "uCM" : 0
+    },
+    "\/COMPONENTS.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/COMPONENTS.html",
+      "oF" : 0
     },
     "\/COMPONENTS.md" : {
       "cB" : 0,
@@ -295,6 +311,14 @@
       "oAP" : "\/components\/RadioWithLabel.vue",
       "oF" : 0
     },
+    "\/components\/README.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/components\/README.html",
+      "oF" : 0
+    },
     "\/components\/README.md" : {
       "cB" : 0,
       "cS" : 0,
@@ -461,6 +485,14 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/docs\/documentation.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/docs\/documentation.html",
+      "oF" : 0
+    },
     "\/docs\/documentation.md" : {
       "cB" : 0,
       "cS" : 0,
@@ -479,6 +511,14 @@
       "pME" : 1,
       "rFN" : 0,
       "uCM" : 0
+    },
+    "\/docs\/instructions.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/docs\/instructions.html",
+      "oF" : 0
     },
     "\/docs\/instructions.md" : {
       "cB" : 0,
@@ -499,6 +539,14 @@
       "rFN" : 0,
       "uCM" : 0
     },
+    "\/docs\/plan.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/docs\/plan.html",
+      "oF" : 0
+    },
     "\/docs\/plan.md" : {
       "cB" : 0,
       "cS" : 0,
@@ -517,6 +565,14 @@
       "pME" : 1,
       "rFN" : 0,
       "uCM" : 0
+    },
+    "\/docs\/reuse-guide.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/docs\/reuse-guide.html",
+      "oF" : 0
     },
     "\/docs\/reuse-guide.md" : {
       "cB" : 0,
@@ -605,6 +661,14 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/README.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/README.html",
+      "oF" : 0
+    },
     "\/README.md" : {
       "cB" : 0,
       "cS" : 0,
@@ -623,6 +687,17 @@
       "pME" : 1,
       "rFN" : 0,
       "uCM" : 0
+    },
+    "\/scripts\/release-min.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/scripts\/release-min-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
     },
     "\/scripts\/release.js" : {
       "bF" : 0,
@@ -663,6 +738,22 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/src\/PreviewApp.vue",
+      "oF" : 0
+    },
+    "\/stdout" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/stdout",
+      "oF" : 0
+    },
+    "\/stdout.map" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/stdout.map",
       "oF" : 0
     },
     "\/tokens\/_colors.scss" : {

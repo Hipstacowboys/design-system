@@ -2,7 +2,7 @@
 // Compiled by Codekit to preview.css
 // This file contains all preview-specific styles (no duplication with design-system.scss)
 
-@import 'design-system';
+@use 'design-system' as *;
 
 // Preview Page Layout
 .preview-container {

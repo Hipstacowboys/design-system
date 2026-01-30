@@ -1,8 +1,14 @@
 // Design System Variables
 // Main entry point for all design tokens
+// Uses @use/@forward to avoid Sass deprecation warnings (prefer over @import)
+// @forward makes mixins and variables available to files that @use this file
 
-@import 'colors';
-@import 'spacing';
-@import 'typography-tokens';
-@import 'typography-mixins';
-@import 'typography';
+@use 'colors';
+@use 'spacing';
+@use 'typography-tokens' as *;
+@use 'typography-mixins' as *;
+@use 'typography';
+
+// Re-export so components that @use 'variables' as * get mixins and token variables
+@forward 'typography-tokens';
+@forward 'typography-mixins';
