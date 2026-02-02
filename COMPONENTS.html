@@ -181,8 +181,8 @@
 <li><strong>Description</strong>: Select dropdown component</li>
 <li><strong>Sizes</strong>: small, medium</li>
 <li><strong>States</strong>: default, hover, selected, focused, disabled</li>
-<li><strong>Variations</strong>: with/without left icon</li>
-<li><strong>Props</strong>: <code>modelValue</code>, <code>options</code> (Array), <code>size</code> (String), <code>placeholder</code> (String), <code>leftIcon</code>, <code>disabled</code> (Boolean)</li>
+<li><strong>Variations</strong>: with/without left icon, with/without optional flag (e.g. libs/country-flags)</li>
+<li><strong>Props</strong>: <code>modelValue</code>, <code>options</code> (Array), <code>size</code> (String), <code>placeholder</code> (String), <code>leftIcon</code>, <code>flag</code> (String, optional – URL/path to flag image), <code>flagAlt</code> (String, optional – alt text for flag), <code>disabled</code> (Boolean)</li>
 </ul>
 
 <h2 id="navigationcomponents">Navigation Components</h2>
@@ -371,6 +371,19 @@
 <li><strong>Props</strong>: <code>title</code> (String), <code>filter</code> (String), <code>messages</code> (Array)</li>
 <li><strong>Slots</strong>: <code>title</code>, default slot for custom notification messages</li>
 <li><strong>Events</strong>: <code>update:filter</code>, <code>action</code> - Emitted when action button is clicked</li>
+</ul>
+
+<h2 id="datadisplaycomponents">Data Display Components</h2>
+
+<h3 id="table">Table</h3>
+
+<ul>
+<li><strong>File</strong>: <code>Table.vue</code></li>
+<li><strong>Description</strong>: Card-style data table with optional header (title, supporting text, actions), sortable column headers, and rows. Composes Checkbox, ButtonGhost, ButtonSecondary, ButtonPrimary, and Status.</li>
+<li><strong>Features</strong>: optional card header with title and supporting text, slot for header action buttons, column-major layout, optional selectable rows (checkbox column), row action column (ellipsis button), status column type</li>
+<li><strong>Props</strong>: <code>headerTitle</code> (String), <code>headerSupportingText</code> (String), <code>columns</code> (Array – <code>{ id, label, type?: 'text'|'bold'|'status'|'checkbox'|'actions', sortable?: boolean, width?: string }</code>), <code>rows</code> (Array), <code>selectable</code> (Boolean), <code>modelValue</code> (Array – selected row indices)</li>
+<li><strong>Slots</strong>: <code>header-actions</code> (header button group), <code>cell-{columnId}</code> (custom cell content – receives <code>row</code>, <code>rowIndex</code>, <code>column</code>)</li>
+<li><strong>Events</strong>: <code>update:modelValue</code> (selected row indices), <code>row-action</code> (payload: <code>{ row, rowIndex }</code> when row actions button is clicked)</li>
 </ul>
 
 <h2 id="usageexamples">Usage Examples</h2>

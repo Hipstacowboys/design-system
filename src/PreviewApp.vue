@@ -41,6 +41,7 @@
         <li><a href="#booking-in-calendar" class="nav-link" :class="{ active: activeSection === 'booking-in-calendar' }" @click.prevent="setSection('booking-in-calendar')">Booking in Calendar</a></li>
         <li><a href="#calendar" class="nav-link" :class="{ active: activeSection === 'calendar' }" @click.prevent="setSection('calendar')">Calendar</a></li>
         <li><a href="#calendar-datepicker" class="nav-link" :class="{ active: activeSection === 'calendar-datepicker' }" @click.prevent="setSection('calendar-datepicker')">Calendar Datepicker</a></li>
+        <li><a href="#table" class="nav-link" :class="{ active: activeSection === 'table' }" @click.prevent="setSection('table')">Table</a></li>
       </ul>
     </nav>
 
@@ -1468,129 +1469,178 @@
       <!-- Select Component Section -->
       <section v-show="activeSection === 'select'" id="select" class="preview-section">
         <h1>Select</h1>
-        <p>Select dropdown component with 2 sizes (small, medium), optional left icon, and multiple states.</p>
+        <p>Select dropdown component with 2 sizes (small, medium), optional left icon, optional flag (e.g. libs/country-flags), and multiple states.</p>
         <p><strong>Figma Node ID:</strong> 13-9164</p>
 
-        <h2>Size: Medium</h2>
-        <div class="component-grid">
-          <div class="component-card">
-            <div class="component-label">Default</div>
-            <div class="toggle-container" style="width: 300px;">
-              <Select
-                size="medium"
-                :options="selectOptions"
-                placeholder="Select option..."
-              />
+        <div class="select-preview-columns">
+          <div class="select-preview-column">
+            <h2>Size: Small</h2>
+            <div class="select-preview-states">
+              <div class="component-card">
+                <div class="component-label">Default</div>
+                <div class="toggle-container" style="width: 226px;">
+                  <Select
+                    size="small"
+                    :options="selectOptions"
+                    placeholder="Select option..."
+                  />
+                </div>
+              </div>
+              <div class="component-card">
+                <div class="component-label">Hover</div>
+                <div class="toggle-container" style="width: 226px;">
+                  <Select
+                    size="small"
+                    :options="selectOptions"
+                    placeholder="Select option..."
+                    class="hover-demo"
+                  />
+                </div>
+              </div>
+              <div class="component-card">
+                <div class="component-label">Selected</div>
+                <div class="toggle-container" style="width: 226px;">
+                  <Select
+                    size="small"
+                    :options="selectOptions"
+                    v-model="selectValueSmall"
+                    placeholder="Select option..."
+                  />
+                </div>
+              </div>
+              <div class="component-card">
+                <div class="component-label">Disabled</div>
+                <div class="toggle-container" style="width: 226px;">
+                  <Select
+                    size="small"
+                    :options="selectOptions"
+                    placeholder="Select option..."
+                    :disabled="true"
+                  />
+                </div>
+              </div>
+              <div class="component-card">
+                <div class="component-label">With Left Icon</div>
+                <div class="toggle-container" style="width: 226px;">
+                  <Select
+                    size="small"
+                    :options="selectOptions"
+                    placeholder="Select option..."
+                    :left-icon="PhArrowLeft"
+                  />
+                </div>
+              </div>
+              <div class="component-card">
+                <div class="component-label">With Flag</div>
+                <div class="toggle-container" style="width: 226px;">
+                  <Select
+                    size="small"
+                    :options="selectOptions"
+                    placeholder="Select option..."
+                    :flag="flagCzUrl"
+                    flag-alt="Czech Republic"
+                  />
+                </div>
+              </div>
+              <div class="component-card">
+                <div class="component-label">With Left Icon + Flag</div>
+                <div class="toggle-container" style="width: 226px;">
+                  <Select
+                    size="small"
+                    :options="selectOptions"
+                    v-model="selectValueSmall"
+                    placeholder="Select option..."
+                    :left-icon="PhArrowLeft"
+                    :flag="flagCzUrl"
+                    flag-alt="Czech Republic"
+                  />
+                </div>
+              </div>
             </div>
           </div>
-
-          <div class="component-card">
-            <div class="component-label">Hover</div>
-            <div class="toggle-container" style="width: 300px;">
-              <Select
-                size="medium"
-                :options="selectOptions"
-                placeholder="Select option..."
-                class="hover-demo"
-              />
-            </div>
-          </div>
-
-          <div class="component-card">
-            <div class="component-label">Selected</div>
-            <div class="toggle-container" style="width: 300px;">
-              <Select
-                size="medium"
-                :options="selectOptions"
-                v-model="selectValueMedium"
-                placeholder="Select option..."
-              />
-            </div>
-          </div>
-
-          <div class="component-card">
-            <div class="component-label">Disabled</div>
-            <div class="toggle-container" style="width: 300px;">
-              <Select
-                size="medium"
-                :options="selectOptions"
-                placeholder="Select option..."
-                :disabled="true"
-              />
-            </div>
-          </div>
-
-          <div class="component-card">
-            <div class="component-label">With Left Icon</div>
-            <div class="toggle-container" style="width: 300px;">
-              <Select
-                size="medium"
-                :options="selectOptions"
-                placeholder="Select option..."
-                :left-icon="PhArrowLeft"
-              />
-            </div>
-          </div>
-        </div>
-
-        <h2>Size: Small</h2>
-        <div class="component-grid">
-          <div class="component-card">
-            <div class="component-label">Default</div>
-            <div class="toggle-container" style="width: 226px;">
-              <Select
-                size="small"
-                :options="selectOptions"
-                placeholder="Select option..."
-              />
-            </div>
-          </div>
-
-          <div class="component-card">
-            <div class="component-label">Hover</div>
-            <div class="toggle-container" style="width: 226px;">
-              <Select
-                size="small"
-                :options="selectOptions"
-                placeholder="Select option..."
-                class="hover-demo"
-              />
-            </div>
-          </div>
-
-          <div class="component-card">
-            <div class="component-label">Selected</div>
-            <div class="toggle-container" style="width: 226px;">
-              <Select
-                size="small"
-                :options="selectOptions"
-                v-model="selectValueSmall"
-                placeholder="Select option..."
-              />
-            </div>
-          </div>
-
-          <div class="component-card">
-            <div class="component-label">Disabled</div>
-            <div class="toggle-container" style="width: 226px;">
-              <Select
-                size="small"
-                :options="selectOptions"
-                placeholder="Select option..."
-                :disabled="true"
-              />
-            </div>
-          </div>
-
-          <div class="component-card">
-            <div class="component-label">With Left Icon</div>
-            <div class="toggle-container" style="width: 226px;">
-              <Select
-                size="small"
-                :options="selectOptions"
-                placeholder="Select option..."
-                :left-icon="PhArrowLeft"
-              />
+          <div class="select-preview-column">
+            <h2>Size: Medium</h2>
+            <div class="select-preview-states">
+              <div class="component-card">
+                <div class="component-label">Default</div>
+                <div class="toggle-container" style="width: 300px;">
+                  <Select
+                    size="medium"
+                    :options="selectOptions"
+                    placeholder="Select option..."
+                  />
+                </div>
+              </div>
+              <div class="component-card">
+                <div class="component-label">Hover</div>
+                <div class="toggle-container" style="width: 300px;">
+                  <Select
+                    size="medium"
+                    :options="selectOptions"
+                    placeholder="Select option..."
+                    class="hover-demo"
+                  />
+                </div>
+              </div>
+              <div class="component-card">
+                <div class="component-label">Selected</div>
+                <div class="toggle-container" style="width: 300px;">
+                  <Select
+                    size="medium"
+                    :options="selectOptions"
+                    v-model="selectValueMedium"
+                    placeholder="Select option..."
+                  />
+                </div>
+              </div>
+              <div class="component-card">
+                <div class="component-label">Disabled</div>
+                <div class="toggle-container" style="width: 300px;">
+                  <Select
+                    size="medium"
+                    :options="selectOptions"
+                    placeholder="Select option..."
+                    :disabled="true"
+                  />
+                </div>
+              </div>
+              <div class="component-card">
+                <div class="component-label">With Left Icon</div>
+                <div class="toggle-container" style="width: 300px;">
+                  <Select
+                    size="medium"
+                    :options="selectOptions"
+                    placeholder="Select option..."
+                    :left-icon="PhArrowLeft"
+                  />
+                </div>
+              </div>
+              <div class="component-card">
+                <div class="component-label">With Flag</div>
+                <div class="toggle-container" style="width: 300px;">
+                  <Select
+                    size="medium"
+                    :options="selectOptions"
+                    placeholder="Select option..."
+                    :flag="flagCzUrl"
+                    flag-alt="Czech Republic"
+                  />
+                </div>
+              </div>
+              <div class="component-card">
+                <div class="component-label">With Left Icon + Flag</div>
+                <div class="toggle-container" style="width: 300px;">
+                  <Select
+                    size="medium"
+                    :options="selectOptions"
+                    v-model="selectValueMedium"
+                    placeholder="Select option..."
+                    :left-icon="PhArrowLeft"
+                    :flag="flagCzUrl"
+                    flag-alt="Czech Republic"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1619,6 +1669,20 @@
             />
           </div>
           <div class="component-status">Selected: {{ interactiveSelectWithIcon || 'None' }}</div>
+        </div>
+
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+          <div class="toggle-container" style="width: 300px;">
+            <Select
+              size="medium"
+              :options="selectOptions"
+              v-model="interactiveSelectWithFlag"
+              placeholder="Select an option..."
+              :flag="flagCzUrl"
+              flag-alt="Czech Republic"
+            />
+          </div>
+          <div class="component-status">Selected: {{ interactiveSelectWithFlag || 'None' }}</div>
         </div>
       </section>
 
@@ -2930,6 +2994,35 @@
           </div>
         </div>
       </section>
+
+      <!-- Table Component Section -->
+      <section v-show="activeSection === 'table'" id="table" class="preview-section">
+        <h1>Table</h1>
+        <p>Card-style data table with optional header (title, supporting text, actions), sortable column headers, and rows. Composes Checkbox, ButtonGhost, ButtonSecondary, ButtonPrimary, and Status.</p>
+        
+        <h2>With header and actions</h2>
+        <div class="component-interactive" style="width: 100%; overflow: auto;">
+          <Table
+            v-model="tableSelectedRows"
+            header-title="Headline"
+            header-supporting-text="A descriptive body text comes here"
+            :columns="tableColumns"
+            :rows="tableRows"
+            selectable
+            @row-action="handleTableRowAction"
+          >
+            <template #header-actions>
+              <ButtonGhost size="medium" text="Delete" :left-icon="PhTrash" />
+              <ButtonGhost size="medium" text="Filter" :left-icon="PhFunnelSimple" />
+              <ButtonSecondary size="medium" text="Export" :left-icon="PhDownloadSimple" />
+              <ButtonPrimary size="medium" text="Add new" :left-icon="PhPlus" />
+            </template>
+          </Table>
+          <div class="component-status" style="margin-top: var(--marks-spacing-gutter-16);">
+            Selected rows: {{ tableSelectedRows.length ? tableSelectedRows.join(', ') : 'None' }}
+          </div>
+        </div>
+      </section>
     </main>
   </div>
 
@@ -2939,7 +3032,7 @@
 
 
 <script>
-import { PhArrowLeft, PhArrowRight, PhWarningCircle, PhBed, PhCalendar, PhHouse, PhBookOpen, PhAppWindow, PhGear, PhChatCircle, PhSignOut } from '@phosphor-icons/vue';
+import { PhArrowLeft, PhArrowRight, PhWarningCircle, PhBed, PhCalendar, PhHouse, PhBookOpen, PhAppWindow, PhGear, PhChatCircle, PhSignOut, PhTrash, PhFunnelSimple, PhDownloadSimple, PhPlus } from '@phosphor-icons/vue';
 
 export default {
   name: 'PreviewApp',
@@ -2954,7 +3047,11 @@ export default {
     PhAppWindow,
     PhGear,
     PhChatCircle,
-    PhSignOut
+    PhSignOut,
+    PhTrash,
+    PhFunnelSimple,
+    PhDownloadSimple,
+    PhPlus
   },
   data() {
     return {
@@ -2973,6 +3070,8 @@ export default {
       selectValueSmall: 'option1',
       interactiveSelect: null,
       interactiveSelectWithIcon: null,
+      interactiveSelectWithFlag: null,
+      flagCzUrl: new URL('../libs/country-flags/cz.svg', import.meta.url).href,
       selectOptions: [
         { value: 'option1', label: 'Option 1', rightText: '16' },
         { value: 'option2', label: 'Option 2', rightText: '12' },
@@ -3251,7 +3350,25 @@ export default {
         { dayNumber: 2, price: '99.00', currency: 'CZK', isNextMonth: true },
         { dayNumber: 3, price: '99.00', currency: 'CZK', isNextMonth: true }
       ],
-      selectedDate: null
+      selectedDate: null,
+      tableSelectedRows: [],
+      tableColumns: [
+        { id: 'name', label: 'Column heading', type: 'bold', sortable: true },
+        { id: 'col2', label: 'Column heading', sortable: true },
+        { id: 'col3', label: 'Column heading', sortable: true },
+        { id: 'col4', label: 'Column heading', sortable: true },
+        { id: 'col5', label: 'Column heading', sortable: true },
+        { id: 'status', label: 'Column heading', type: 'status', sortable: true },
+        { id: 'col7', label: 'Column heading', sortable: true }
+      ],
+      tableRows: [
+        { name: 'Bold text column', col2: 'Regular text column', col3: 'Regular text column', col4: 'Regular text column', col5: 'Regular text column', status: { type: 'success', label: 'Available' }, col7: 'Regular text column' },
+        { name: 'Bold text column', col2: 'Regular text column', col3: 'Regular text column', col4: 'Regular text column', col5: 'Regular text column', status: { type: 'success', label: 'Available' }, col7: 'Regular text column' },
+        { name: 'Bold text column', col2: 'Regular text column', col3: 'Regular text column', col4: 'Regular text column', col5: 'Regular text column', status: { type: 'success', label: 'Available' }, col7: 'Regular text column' },
+        { name: 'Bold text column', col2: 'Regular text column', col3: 'Regular text column', col4: 'Regular text column', col5: 'Regular text column', status: { type: 'success', label: 'Available' }, col7: 'Regular text column' },
+        { name: 'Bold text column', col2: 'Regular text column', col3: 'Regular text column', col4: 'Regular text column', col5: 'Regular text column', status: { type: 'success', label: 'Available' }, col7: 'Regular text column' },
+        { name: 'Bold text column', col2: 'Regular text column', col3: 'Regular text column', col4: 'Regular text column', col5: 'Regular text column', status: { type: 'success', label: 'Available' }, col7: 'Regular text column' }
+      ]
     }
   },
   mounted() {
@@ -3282,6 +3399,9 @@ export default {
     },
     handleDateChange(date) {
       console.log('Date selected:', date);
+    },
+    handleTableRowAction({ row, rowIndex }) {
+      console.log('Table row action:', rowIndex, row);
     },
     toggleTheme() {
       this.currentTheme = this.currentTheme === 'light' ? 'dark' : 'light';

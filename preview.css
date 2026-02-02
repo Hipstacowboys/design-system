@@ -426,6 +426,25 @@
   margin-bottom: var(--marks-spacing-gutter-32);
 }
 
+/* Select preview: two columns (sizes), states horizontally stacked */
+.select-preview-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--marks-spacing-gutter-32);
+  margin-bottom: var(--marks-spacing-gutter-32);
+}
+
+.select-preview-column h2 {
+  margin-top: 0;
+  margin-bottom: var(--marks-spacing-gutter-16);
+}
+
+.select-preview-states {
+  display: flex;
+  flex-direction: column;
+  gap: var(--marks-spacing-gutter-16);
+}
+
 .component-card {
   display: flex;
   flex-direction: column;

@@ -3,7 +3,7 @@
   Component: Select
   Sizes: small, medium
   States: default, hover, selected, focused, disabled
-  Variations: with/without left icon
+  Variations: with/without left icon, with/without optional flag (e.g. libs/country-flags)
   Dropdown: Figma Node ID: 13-9393
 -->
 <template>
@@ -15,6 +15,7 @@
         `marks-select--${size}`,
         {
           'marks-select--has-left-icon': leftIcon,
+          'marks-select--has-flag': flag,
           'marks-select--disabled': disabled,
           'marks-select--has-value': modelValue !== null && modelValue !== '',
           'marks-select--open': isOpen
@@ -31,6 +32,12 @@
         :class="['marks-select__icon', 'marks-select__icon--left']"
         :size="iconSize"
         :weight="iconWeight"
+      />
+      <img
+        v-if="flag"
+        :src="flag"
+        :alt="flagAlt"
+        class="marks-select__flag"
       />
       <span class="marks-select__text">
         {{ displayText }}
@@ -102,6 +109,16 @@ export default {
     leftIcon: {
       type: [Object, String],
       default: null
+    },
+    /** Optional flag image source (e.g. URL to libs/country-flags/xx.svg). Same pattern as optional left icon. */
+    flag: {
+      type: String,
+      default: null
+    },
+    /** Alt text for the flag image (used when flag is set). */
+    flagAlt: {
+      type: String,
+      default: ''
     },
     disabled: {
       type: Boolean,
@@ -227,6 +244,14 @@ export default {
     &.marks-select--has-left-icon {
       padding-left: 32px;
     }
+
+    &.marks-select--has-flag {
+      padding-left: 40px;
+    }
+
+    &.marks-select--has-left-icon.marks-select--has-flag {
+      padding-left: 56px;
+    }
   }
 
   &--medium {
@@ -237,6 +262,14 @@ export default {
 
     &.marks-select--has-left-icon {
       padding-left: 36px;
+    }
+
+    &.marks-select--has-flag {
+      padding-left: 48px;
+    }
+
+    &.marks-select--has-left-icon.marks-select--has-flag {
+      padding-left: 64px;
     }
   }
 
@@ -295,6 +328,30 @@ export default {
     &--rotated {
       transform: rotate(180deg);
     }
+  }
+}
+
+.marks-select__flag {
+  position: absolute;
+  left: var(--marks-spacing-gutter-12);
+  width: 20px;
+  height: 14px;
+  object-fit: cover;
+  flex-shrink: 0;
+  pointer-events: none;
+  border-radius: 2px;
+  z-index: 1;
+
+  .marks-select--has-left-icon & {
+    left: 36px;
+  }
+
+  .marks-select--small.marks-select--has-left-icon & {
+    left: 32px;
+  }
+
+  .marks-select--disabled & {
+    opacity: 0.5;
   }
 }
 
@@ -381,12 +438,5 @@ export default {
   transform: translateY(-8px);
 }
 
-// Adjust padding when left icon is present
-.marks-select--small.marks-select--has-left-icon {
-  padding-left: 40px;
-}
-
-.marks-select--medium.marks-select--has-left-icon {
-  padding-left: 48px;
-}
+// Padding when left icon and/or flag are present (handled in size modifiers above)
 </style>

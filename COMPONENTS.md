@@ -127,8 +127,8 @@ Complete list of all components in the design system.
 - **Description**: Select dropdown component
 - **Sizes**: small, medium
 - **States**: default, hover, selected, focused, disabled
-- **Variations**: with/without left icon
-- **Props**: `modelValue`, `options` (Array), `size` (String), `placeholder` (String), `leftIcon`, `disabled` (Boolean)
+- **Variations**: with/without left icon, with/without optional flag (e.g. libs/country-flags)
+- **Props**: `modelValue`, `options` (Array), `size` (String), `placeholder` (String), `leftIcon`, `flag` (String, optional – URL/path to flag image), `flagAlt` (String, optional – alt text for flag), `disabled` (Boolean)
 
 ## Navigation Components
 
@@ -274,6 +274,16 @@ Complete list of all components in the design system.
 - **Props**: `title` (String), `filter` (String), `messages` (Array)
 - **Slots**: `title`, default slot for custom notification messages
 - **Events**: `update:filter`, `action` - Emitted when action button is clicked
+
+## Data Display Components
+
+### Table
+- **File**: `Table.vue`
+- **Description**: Card-style data table with optional header (title, supporting text, actions), sortable column headers, and rows. Composes Checkbox, ButtonGhost, ButtonSecondary, ButtonPrimary, and Status.
+- **Features**: optional card header with title and supporting text, slot for header action buttons, column-major layout, optional selectable rows (checkbox column), row action column (ellipsis button), status column type
+- **Props**: `headerTitle` (String), `headerSupportingText` (String), `columns` (Array – `{ id, label, type?: 'text'|'bold'|'status'|'checkbox'|'actions', sortable?: boolean, width?: string }`), `rows` (Array), `selectable` (Boolean), `modelValue` (Array – selected row indices)
+- **Slots**: `header-actions` (header button group), `cell-{columnId}` (custom cell content – receives `row`, `rowIndex`, `column`)
+- **Events**: `update:modelValue` (selected row indices), `row-action` (payload: `{ row, rowIndex }` when row actions button is clicked)
 
 ## Usage Examples
 
