@@ -4,7 +4,7 @@
   Features: logo, sections with labels, navbar items
 -->
 <template>
-  <div class="marks-navbar-side">
+  <div class="marks-navbar-side" :class="`marks-navbar-side--${theme}`">
     <!-- Logo -->
     <div v-if="logo || $slots.logo" class="marks-navbar-side__logo">
       <slot name="logo">
@@ -29,6 +29,7 @@
             :icon="item.icon"
             :label="item.label"
             :active="item.active || (modelValue !== null && modelValue === item.value)"
+            :theme="theme"
             @click="handleItemClick(item)"
           />
         </div>
@@ -42,6 +43,7 @@
           :icon="item.icon"
           :label="item.label"
           :active="item.active || (modelValue !== null && modelValue === item.value)"
+          :theme="theme"
           @click="handleItemClick(item)"
         />
       </div>
@@ -78,6 +80,11 @@ export default {
     modelValue: {
       type: [String, Number],
       default: null
+    },
+    theme: {
+      type: String,
+      default: 'light',
+      validator: (value) => ['light', 'dark'].includes(value)
     }
   },
   emits: ['update:modelValue', 'item-click'],
@@ -96,7 +103,6 @@ export default {
 @use '../tokens/variables' as *;
 
 .marks-navbar-side {
-  background-color: var(--marks-color-black);
   width: 284px;
   display: flex;
   flex-direction: column;
@@ -104,6 +110,16 @@ export default {
   padding: var(--marks-spacing-gutter-32) var(--marks-spacing-gutter-24);
   box-sizing: border-box;
   gap: 47px;
+
+  // Light theme (default) - uses white background
+  &--light {
+    background-color: var(--marks-color-white);
+  }
+
+  // Dark theme - uses white variable (which is black in dark column due to variable swap)
+  &--dark {
+    background-color: var(--marks-color-white);
+  }
 }
 
 .marks-navbar-side__logo {
@@ -147,7 +163,14 @@ export default {
   position: relative;
   @include marks-typography-paragraph-sm-multiline;
   font-weight: $marks-font-weight-medium;
-  color: #8d8d8d;
+
+  .marks-navbar-side--dark & {
+    color: #8d8d8d;
+  }
+
+  .marks-navbar-side--light & {
+    color: var(--marks-color-gray-350);
+  }
 }
 
 .marks-navbar-side__items {

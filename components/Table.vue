@@ -17,66 +17,91 @@
       </div>
     </header>
     <div class="marks-table__body">
-      <template v-for="(col, colIndex) in displayColumns" :key="col.id || colIndex">
-        <div
-          :class="['marks-table__column', { 'marks-table__column--checkbox': col.type === 'checkbox', 'marks-table__column--actions': col.type === 'actions' }]"
-          :style="col.width ? { width: col.width, flex: 'none' } : undefined"
-        >
-          <div class="marks-table__header-cell">
-            <template v-if="col.type === 'checkbox'">
-              <Checkbox
-                :model-value="isAllSelected"
-                :indeterminate="isIndeterminate"
-                @update:model-value="toggleSelectAll"
-              />
-            </template>
-            <template v-else-if="col.type === 'actions'">
-              <!-- empty header for actions column -->
-            </template>
-            <template v-else>
-              <span class="marks-table__header-label">{{ col.label }}</span>
-              <component
-                v-if="col.sortable && sortIcon"
-                :is="sortIcon"
-                class="marks-table__sort-icon"
-                :size="16"
-                weight="bold"
-              />
-            </template>
-          </div>
-          <template v-for="(row, rowIndex) in rows" :key="rowIndex">
-            <div class="marks-table__cell">
+      <table class="marks-table__table">
+        <thead>
+          <tr class="marks-table__row marks-table__row--header">
+            <th
+              v-for="(col, colIndex) in displayColumns"
+              :key="col.id || colIndex"
+              :class="[
+                'marks-table__header-cell',
+                {
+                  'marks-table__header-cell--checkbox': col.type === 'checkbox',
+                  'marks-table__header-cell--actions': col.type === 'actions'
+                }
+              ]"
+              :style="col.width ? { width: col.width } : undefined"
+              scope="col"
+            >
               <template v-if="col.type === 'checkbox'">
                 <Checkbox
-                  :model-value="isRowSelected(rowIndex)"
-                  @update:model-value="(v) => setRowSelected(rowIndex, v)"
+                  :model-value="isAllSelected"
+                  :indeterminate="isIndeterminate"
+                  @update:model-value="toggleSelectAll"
                 />
               </template>
               <template v-else-if="col.type === 'actions'">
-                <ButtonSecondary
-                  size="small"
-                  :icon-only="true"
-                  :left-icon="actionsIcon"
-                  @click="$emit('row-action', { row, rowIndex })"
-                />
-              </template>
-              <template v-else-if="col.type === 'status'">
-                <Status
-                  variant="prominent"
-                  :type="getStatusType(row[col.id])"
-                  :label="getStatusLabel(row[col.id])"
-                />
-              </template>
-              <template v-else-if="$slots[`cell-${col.id}`]">
-                <slot :name="`cell-${col.id}`" :row="row" :row-index="rowIndex" :column="col" />
+                <!-- empty header for actions column -->
               </template>
               <template v-else>
-                <span :class="{ 'marks-table__cell--bold': col.type === 'bold' }">{{ row[col.id] }}</span>
+                <span class="marks-table__header-label">{{ col.label }}</span>
               </template>
-            </div>
-          </template>
-        </div>
-      </template>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            v-for="(row, rowIndex) in rows"
+            :key="rowIndex"
+            class="marks-table__row"
+          >
+            <td
+              v-for="(col, colIndex) in displayColumns"
+              :key="col.id || colIndex"
+              :class="[
+                'marks-table__cell',
+                {
+                  'marks-table__cell--checkbox': col.type === 'checkbox',
+                  'marks-table__cell--actions': col.type === 'actions',
+                  'marks-table__cell--bold': col.type === 'bold',
+                  'marks-table__cell--truncate': col.truncate
+                }
+              ]"
+              :style="col.width ? { width: col.width } : undefined"
+            >
+              <div class="marks-table__cell-inner">
+                <template v-if="col.type === 'checkbox'">
+                  <Checkbox
+                    :model-value="isRowSelected(rowIndex)"
+                    @update:model-value="(v) => setRowSelected(rowIndex, v)"
+                  />
+                </template>
+                <template v-else-if="col.type === 'actions'">
+                  <ButtonSecondary
+                    size="small"
+                    :icon-only="true"
+                    :left-icon="actionsIcon"
+                    @click="$emit('row-action', { row, rowIndex })"
+                  />
+                </template>
+                <template v-else-if="col.type === 'status'">
+                  <Status
+                    variant="default"
+                    :type="getStatusType(row[col.id])"
+                    :label="getStatusLabel(row[col.id])"
+                  />
+                </template>
+                <template v-else-if="$slots[`cell-${col.id}`]">
+                  <slot :name="`cell-${col.id}`" :row="row" :row-index="rowIndex" :column="col" />
+                </template>
+                <template v-else>
+                  {{ row[col.id] }}
+                </template>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </template>
@@ -85,7 +110,7 @@
 import Checkbox from './Checkbox.vue';
 import ButtonSecondary from './ButtonSecondary.vue';
 import Status from './Status.vue';
-import { PhCaretDown, PhDotsThreeVertical } from '@phosphor-icons/vue';
+import { PhDotsThreeVertical } from '@phosphor-icons/vue';
 
 export default {
   name: 'marksTable',
@@ -125,7 +150,6 @@ export default {
   emits: ['update:modelValue', 'row-action'],
   data() {
     return {
-      sortIcon: PhCaretDown,
       actionsIcon: PhDotsThreeVertical
     };
   },
@@ -238,49 +262,38 @@ export default {
 
 .marks-table__body {
   align-self: stretch;
-  display: flex;
-  align-items: flex-start;
   background-color: var(--marks-color-white);
 }
 
-.marks-table__column {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  min-width: 0;
+.marks-table__table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
 
-  &--checkbox {
-    flex: none;
-    width: 66px;
-  }
-
-  &--actions {
-    flex: none;
-    width: 72px;
-  }
+.marks-table__row--header {
+  background-color: var(--marks-color-gray-100);
 }
 
 .marks-table__header-cell {
-  align-self: stretch;
   min-height: 44px;
-  background-color: var(--marks-color-gray-100);
   border-bottom: 1px solid var(--marks-color-gray-200);
   box-sizing: border-box;
-  display: flex;
-  align-items: center;
   padding: var(--marks-spacing-gutter-12) var(--marks-spacing-gutter-24);
   @include marks-typography-paragraph-sm-one-line;
   color: var(--marks-color-gray-350);
+}
 
-  .marks-table__column--checkbox & {
-    justify-content: center;
-    padding: var(--marks-spacing-gutter-12) var(--marks-spacing-gutter-24);
-  }
+.marks-table__header-cell--checkbox {
+  text-align: center;
+  padding: var(--marks-spacing-gutter-12) var(--marks-spacing-gutter-16);
+  width: 66px;
+}
 
-  .marks-table__column--actions & {
-    padding: var(--marks-spacing-gutter-12) var(--marks-spacing-gutter-24);
-  }
+.marks-table__header-cell--actions {
+  text-align: center;
+  padding: var(--marks-spacing-gutter-12) var(--marks-spacing-gutter-16);
+  width: 72px;
 }
 
 .marks-table__header-label {
@@ -289,34 +302,50 @@ export default {
   gap: var(--marks-spacing-gutter-4);
 }
 
-.marks-table__sort-icon {
-  flex-shrink: 0;
-  color: var(--marks-color-black);
-}
-
 .marks-table__cell {
-  align-self: stretch;
   min-height: 44px;
   border-bottom: 1px solid var(--marks-color-gray-200);
   box-sizing: border-box;
+  padding: var(--marks-spacing-gutter-8) var(--marks-spacing-gutter-24);
+  vertical-align: top;
+  @include marks-typography-paragraph-sm-multiline;
+  color: var(--marks-color-gray-300);
+}
+
+.marks-table__cell-inner {
+  min-height: 34px;
   display: flex;
   align-items: center;
-  padding: 0 var(--marks-spacing-gutter-24);
-  @include marks-typography-paragraph-md-one-line;
-  color: var(--marks-color-black);
+  width: 100%;
+}
 
-  .marks-table__column--checkbox & {
-    justify-content: center;
-    padding: 0 var(--marks-spacing-gutter-16);
-  }
+.marks-table__cell--checkbox {
+  padding: var(--marks-spacing-gutter-8) var(--marks-spacing-gutter-16);
+  width: 66px;
+}
 
-  .marks-table__column--actions & {
-    justify-content: center;
-    padding: 0 var(--marks-spacing-gutter-16);
-  }
+.marks-table__cell--actions {
+  padding: var(--marks-spacing-gutter-8) var(--marks-spacing-gutter-8);
+  width: 72px;
+}
+
+.marks-table__cell--checkbox .marks-table__cell-inner,
+.marks-table__cell--actions .marks-table__cell-inner {
+  justify-content: center;
 }
 
 .marks-table__cell--bold {
-  font-weight: $marks-font-weight-bold;
+  @include marks-typography-paragraph-md-bold;
+  color: var(--marks-color-black);
+}
+
+.marks-table__cell--truncate .marks-table__cell-inner {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.marks-table__row:last-child .marks-table__cell {
+  border-bottom: none;
 }
 </style>

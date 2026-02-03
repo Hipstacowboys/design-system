@@ -2756,6 +2756,7 @@
             :sections="navbarSections"
             :bottom-items="navbarBottomItems"
             v-model="navbarActiveItem"
+            :theme="currentTheme"
           />
         </div>
       </section>
@@ -3017,12 +3018,19 @@
               <ButtonSecondary size="medium" text="Export" :left-icon="PhDownloadSimple" />
               <ButtonPrimary size="medium" text="Add new" :left-icon="PhPlus" />
             </template>
+            <template #cell-col2="{ row }">
+              <div style="display: flex; align-items: center; gap: var(--marks-spacing-gutter-8); width: 100%; min-width: 0;">
+                <span style="flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ row.col2 }}</span>
+                <ButtonSecondary size="small" text="Copy" style="flex-shrink: 0;" />
+              </div>
+            </template>
           </Table>
           <div class="component-status" style="margin-top: var(--marks-spacing-gutter-16);">
             Selected rows: {{ tableSelectedRows.length ? tableSelectedRows.join(', ') : 'None' }}
           </div>
         </div>
       </section>
+
     </main>
   </div>
 
@@ -3354,20 +3362,17 @@ export default {
       tableSelectedRows: [],
       tableColumns: [
         { id: 'name', label: 'Column heading', type: 'bold', sortable: true },
-        { id: 'col2', label: 'Column heading', sortable: true },
+        { id: 'col2', label: 'Column heading', sortable: true, truncate: true },
         { id: 'col3', label: 'Column heading', sortable: true },
-        { id: 'col4', label: 'Column heading', sortable: true },
-        { id: 'col5', label: 'Column heading', sortable: true },
-        { id: 'status', label: 'Column heading', type: 'status', sortable: true },
-        { id: 'col7', label: 'Column heading', sortable: true }
+        { id: 'status', label: 'Column heading', type: 'status', sortable: true }
       ],
       tableRows: [
-        { name: 'Bold text column', col2: 'Regular text column', col3: 'Regular text column', col4: 'Regular text column', col5: 'Regular text column', status: { type: 'success', label: 'Available' }, col7: 'Regular text column' },
-        { name: 'Bold text column', col2: 'Regular text column', col3: 'Regular text column', col4: 'Regular text column', col5: 'Regular text column', status: { type: 'success', label: 'Available' }, col7: 'Regular text column' },
-        { name: 'Bold text column', col2: 'Regular text column', col3: 'Regular text column', col4: 'Regular text column', col5: 'Regular text column', status: { type: 'success', label: 'Available' }, col7: 'Regular text column' },
-        { name: 'Bold text column', col2: 'Regular text column', col3: 'Regular text column', col4: 'Regular text column', col5: 'Regular text column', status: { type: 'success', label: 'Available' }, col7: 'Regular text column' },
-        { name: 'Bold text column', col2: 'Regular text column', col3: 'Regular text column', col4: 'Regular text column', col5: 'Regular text column', status: { type: 'success', label: 'Available' }, col7: 'Regular text column' },
-        { name: 'Bold text column', col2: 'Regular text column', col3: 'Regular text column', col4: 'Regular text column', col5: 'Regular text column', status: { type: 'success', label: 'Available' }, col7: 'Regular text column' }
+        { name: 'Bold text column', col2: 'https://very-long-url-example.com/path/to/resource/with/many/segments/that-will-definitely-overflow', col3: 'Regular text column', status: { type: 'success', label: 'Available' } },
+        { name: 'Bold text column', col2: 'https://another-example-domain.com/api/v1/users/12345/orders/67890/details/items', col3: 'Regular text column', status: { type: 'success', label: 'Available' } },
+        { name: 'Bold text column', col2: 'Regular text column', col3: 'Regular text column', status: { type: 'success', label: 'Available' } },
+        { name: 'Bold text column', col2: 'Regular text column', col3: 'Regular text column', status: { type: 'success', label: 'Available' } },
+        { name: 'Bold text column', col2: 'Regular text column', col3: 'Regular text column', status: { type: 'success', label: 'Available' } },
+        { name: 'Bold text column', col2: 'Regular text column', col3: 'Regular text column', status: { type: 'success', label: 'Available' } }
       ]
     }
   },

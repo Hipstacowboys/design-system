@@ -8,6 +8,7 @@
   <div
     :class="[
       'marks-navbar-item',
+      `marks-navbar-item--${theme}`,
       {
         'marks-navbar-item--active': active,
         'marks-navbar-item--hover': hover
@@ -48,6 +49,11 @@ export default {
     active: {
       type: Boolean,
       default: false
+    },
+    theme: {
+      type: String,
+      default: 'light',
+      validator: (value) => ['light', 'dark'].includes(value)
     }
   },
   emits: ['click'],
@@ -70,7 +76,6 @@ export default {
 .marks-navbar-item {
   align-self: stretch;
   border-radius: var(--marks-radius-16);
-  background-color: var(--marks-color-black);
   display: flex;
   align-items: center;
   padding: 4px;
@@ -78,15 +83,35 @@ export default {
   cursor: pointer;
   transition: background-color 0.2s ease;
   @include marks-typography-paragraph-md-multiline;
-  color: #ececec;
 
-  &--hover:not(&--active) {
-    background-color: #2a2a2a;
+  // Dark theme - uses white variable (which is black in dark mode due to variable swap)
+  &--dark {
+    background-color: var(--marks-color-white);
+    color: var(--marks-color-gray-400);
+
+    &.marks-navbar-item--hover:not(.marks-navbar-item--active) {
+      background-color: var(--marks-color-gray-100);
+    }
+
+    &.marks-navbar-item--active {
+      background-color: var(--marks-color-gray-100);
+      color: var(--marks-color-black);
+    }
   }
 
-  &--active {
-    background-color: #2a2a2a;
-    color: var(--marks-color-white);
+  // Light theme
+  &--light {
+    background-color: var(--marks-color-white);
+    color: var(--marks-color-gray-500);
+
+    &.marks-navbar-item--hover:not(.marks-navbar-item--active) {
+      background-color: var(--marks-color-gray-100);
+    }
+
+    &.marks-navbar-item--active {
+      background-color: var(--marks-color-gray-100);
+      color: var(--marks-color-black);
+    }
   }
 }
 
@@ -94,7 +119,6 @@ export default {
   height: 44px;
   width: 44px;
   border-radius: var(--marks-radius-12);
-  background-color: var(--marks-color-black);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -102,9 +126,22 @@ export default {
   box-sizing: border-box;
   flex-shrink: 0;
 
-  &--active {
-    background-color: var(--marks-color-green-300);
-    border: 1px solid #2a2a2a;
+  .marks-navbar-item--light & {
+    background-color: var(--marks-color-white);
+
+    &--active {
+      background-color: var(--marks-color-green-300);
+      border: 1px solid var(--marks-color-gray-200);
+    }
+  }
+
+  .marks-navbar-item--dark & {
+    background-color: var(--marks-color-white);
+
+    &--active {
+      background-color: var(--marks-color-green-300);
+      border: 1px solid var(--marks-color-gray-100);
+    }
   }
 }
 
@@ -117,6 +154,10 @@ export default {
   align-items: center;
   justify-content: center;
   color: currentColor;
+
+  .marks-navbar-item--light.marks-navbar-item--active & {
+    color: var(--marks-color-white);
+  }
 }
 
 .marks-navbar-item__label {

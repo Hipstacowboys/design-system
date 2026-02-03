@@ -16,6 +16,45 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - 
 
+## [1.2.0] - 2026-02-03
+
+### Added
+- New standalone comparison page (`comparison.html`) with two-column light/dark mode comparison view
+- Table component text truncation support with `truncate` prop for columns (displays ellipsis for long text)
+- Table component custom cell slot support for advanced cell content (e.g., truncated URLs with action buttons)
+- NavbarSide component `theme` prop support (light/dark)
+- NavbarItem component `theme` prop support (light/dark)
+- BookingInCalendar component `theme` prop support (light/dark)
+
+### Changed
+- **BREAKING**: Table component refactored from div-based layout to semantic HTML (`<table>`, `<thead>`, `<tbody>`, `<tr>`, `<th>`, `<td>`) for better accessibility and native table behavior
+- Table component cell styling: min-height 44px, paragraph-sm typography, gray-300 text color
+- Table component status cells now use `variant="default"` (slimmer style without background)
+- Table component action cell padding changed to 8px vertical and horizontal
+- Table component cell alignment: cells use `vertical-align: top` for multi-line content, inner wrapper uses flex center for single-line content
+- Table component checkbox and action columns now have fixed widths (66px and 72px respectively)
+- Table component header cells: removed sort SVG icon
+- Table component last row: removed bottom border
+- Removed Light/Dark Comparison section from preview-vue page (moved to standalone comparison.html)
+- NavbarItem dark mode colors now use CSS variables instead of hardcoded values for better theme consistency
+- CalendarDay component: removed min-width constraints for month and year variants
+- BookingInCalendar component: status badge now circular (44px × 44px) with white text in both themes
+- BookingInCalendar component: pax text color now theme-aware (black in light mode, white in dark mode)
+- BookingInCalendar component: dark mode now uses correct CSS variables (e.g., red-300 for month variant background)
+
+### Fixed
+- Fixed Table component row height to dynamically adjust based on cell content (multi-line text support)
+- Fixed Table component cell content vertical alignment (centered for single-line, top-aligned for multi-line)
+- Fixed Table component column width calculation (removed flex display from header cells to allow native table layout)
+- Fixed Table component to remove third column (URL column) from default configuration
+- Fixed Radio and RadioWithLabel components to display 3 options each in comparison view
+- Fixed NavbarSide dark mode colors to match original design using CSS variables
+- Fixed NavbarItem active icon color in light mode (now white as per design)
+- Fixed BookingInCalendar dark mode background colors to use appropriate CSS variables
+- Fixed component alignment in comparison view (right-aligned in light column, left-aligned in dark column)
+- Fixed component widths in comparison view (Small Switch 420px, Tabs 500px, Tabs Simple 450px, Navbar 300px, Calendar maxWidth 870px, Place and Widget 400px)
+
+
 ## [1.1.5] - 2026-01-30
 
 ### Added
@@ -180,7 +219,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Responsive design patterns
 - Accessibility features (semantic HTML, ARIA attributes)
 
-[Unreleased]: https://github.com/Hipstacowboys/design-system/compare/v1.1.5...HEAD
+[Unreleased]: https://github.com/Hipstacowboys/design-system/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.2.0
 [1.1.5]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.1.5
 [1.1.4]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.1.4
 [1.1.3]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.1.3

@@ -17,19 +17,46 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 <h3 id="added">Added</h3>
 
 <ul>
-<li></li>
+<li>New standalone comparison page (<code>comparison.html</code>) with two-column light/dark mode comparison view</li>
+<li>Table component text truncation support with <code>truncate</code> prop for columns (displays ellipsis for long text)</li>
+<li>Table component custom cell slot support for advanced cell content (e.g., truncated URLs with action buttons)</li>
+<li>NavbarSide component <code>theme</code> prop support (light/dark)</li>
+<li>NavbarItem component <code>theme</code> prop support (light/dark)</li>
+<li>BookingInCalendar component <code>theme</code> prop support (light/dark)</li>
 </ul>
 
 <h3 id="changed">Changed</h3>
 
 <ul>
-<li></li>
+<li><strong>BREAKING</strong>: Table component refactored from div-based layout to semantic HTML (<code>&lt;table&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code>, <code>&lt;td&gt;</code>) for better accessibility and native table behavior</li>
+<li>Table component cell styling: min-height 44px, paragraph-sm typography, gray-300 text color</li>
+<li>Table component status cells now use <code>variant=&quot;default&quot;</code> (slimmer style without background)</li>
+<li>Table component action cell padding changed to 8px vertical and horizontal</li>
+<li>Table component cell alignment: cells use <code>vertical-align: top</code> for multi-line content, inner wrapper uses flex center for single-line content</li>
+<li>Table component checkbox and action columns now have fixed widths (66px and 72px respectively)</li>
+<li>Table component header cells: removed sort SVG icon</li>
+<li>Table component last row: removed bottom border</li>
+<li>Removed Light/Dark Comparison section from preview-vue page (moved to standalone comparison.html)</li>
+<li>NavbarItem dark mode colors now use CSS variables instead of hardcoded values for better theme consistency</li>
+<li>CalendarDay component: removed min-width constraints for month and year variants</li>
+<li>BookingInCalendar component: status badge now circular (44px × 44px) with white text in both themes</li>
+<li>BookingInCalendar component: pax text color now theme-aware (black in light mode, white in dark mode)</li>
+<li>BookingInCalendar component: dark mode now uses correct CSS variables (e.g., red-300 for month variant background)</li>
 </ul>
 
 <h3 id="fixed">Fixed</h3>
 
 <ul>
-<li></li>
+<li>Fixed Table component row height to dynamically adjust based on cell content (multi-line text support)</li>
+<li>Fixed Table component cell content vertical alignment (centered for single-line, top-aligned for multi-line)</li>
+<li>Fixed Table component column width calculation (removed flex display from header cells to allow native table layout)</li>
+<li>Fixed Table component to remove third column (URL column) from default configuration</li>
+<li>Fixed Radio and RadioWithLabel components to display 3 options each in comparison view</li>
+<li>Fixed NavbarSide dark mode colors to match original design using CSS variables</li>
+<li>Fixed NavbarItem active icon color in light mode (now white as per design)</li>
+<li>Fixed BookingInCalendar dark mode background colors to use appropriate CSS variables</li>
+<li>Fixed component alignment in comparison view (right-aligned in light column, left-aligned in dark column)</li>
+<li>Fixed component widths in comparison view (Small Switch 420px, Tabs 500px, Tabs Simple 450px, Navbar 300px, Calendar maxWidth 870px, Place and Widget 400px)</li>
 </ul>
 
 <h2 id="1.1.5-2026-01-30"><a href="https://github.com/Hipstacowboys/design-system/releases/tag/v1.1.5">1.1.5</a> - 2026&#8211;01&#8211;30</h2>

@@ -22,7 +22,8 @@
     :class="[
       'marks-booking-in-calendar',
       `marks-booking-in-calendar--${type}`,
-      `marks-booking-in-calendar--${variant}`
+      `marks-booking-in-calendar--${variant}`,
+      `marks-booking-in-calendar--${theme}`
     ]"
     :style="containerStyle"
   >
@@ -125,15 +126,20 @@ export default {
     },
     statusBadgeColor: {
       type: String,
-      default: '#fd3860'
+      default: 'var(--marks-color-red-200)'
     },
     sourceBadgeColor: {
       type: String,
-      default: '#fd3860'
+      default: 'var(--marks-color-red-200)'
     },
     backgroundColor: {
       type: String,
       default: null
+    },
+    theme: {
+      type: String,
+      default: 'light',
+      validator: (value) => ['light', 'dark'].includes(value)
     }
   },
   computed: {
@@ -142,8 +148,14 @@ export default {
       if (this.backgroundColor) {
         style.backgroundColor = this.backgroundColor;
       } else {
-        // Default colors based on variant
-        style.backgroundColor = this.variant === 'month' ? '#ffe4e9' : '#fd3860';
+        // Use CSS variables that adapt to theme
+        // Light mode: red-100 for month, red-200 for year
+        // Dark mode: red-300 for month, red-200 for year
+        if (this.theme === 'dark') {
+          style.backgroundColor = this.variant === 'month' ? 'var(--marks-color-red-300)' : 'var(--marks-color-red-200)';
+        } else {
+          style.backgroundColor = this.variant === 'month' ? 'var(--marks-color-red-100)' : 'var(--marks-color-red-200)';
+        }
       }
       return style;
     }
@@ -204,16 +216,24 @@ export default {
 }
 
 .marks-booking-in-calendar__status-badge {
-  border-radius: 100px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  padding: var(--marks-spacing-gutter-8) var(--marks-spacing-gutter-12);
+  justify-content: center;
+  padding: 0;
+  flex-shrink: 0;
 }
 
 .marks-booking-in-calendar__status-text {
   position: relative;
   @include marks-typography-button-md;
-  color: var(--marks-color-white);
+  
+  .marks-booking-in-calendar--light &,
+  .marks-booking-in-calendar--dark & {
+    color: var(--marks-color-white);
+  }
 }
 
 .marks-booking-in-calendar__customer-info {
@@ -234,7 +254,14 @@ export default {
 .marks-booking-in-calendar__pax {
   position: relative;
   @include marks-typography-paragraph-sm-multiline;
-  color: #505050;
+  
+  .marks-booking-in-calendar--light & {
+    color: var(--marks-color-black);
+  }
+  
+  .marks-booking-in-calendar--dark & {
+    color: var(--marks-color-black); // In dark column, --marks-color-black is white due to variable swap
+  }
 }
 
 .marks-booking-in-calendar__source-badge {

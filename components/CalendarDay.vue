@@ -131,7 +131,6 @@ export default {
 
   // Month variant
   &--month {
-    min-width: 120px;
     min-height: 120px;
     padding: var(--marks-spacing-gutter-16);
     gap: var(--marks-spacing-gutter-16);
@@ -139,7 +138,6 @@ export default {
 
   // Year variant
   &--year {
-    min-width: 45px;
     min-height: 65px;
     padding: var(--marks-spacing-gutter-8);
     gap: var(--marks-spacing-gutter-4);

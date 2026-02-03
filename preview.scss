@@ -399,3 +399,73 @@ body {
 .token-grid-single {
   grid-template-columns: 1fr;
 }
+
+// Comparison View Styles
+.preview-section--comparison {
+  margin: calc(-1 * var(--marks-spacing-gutter-40));
+  padding: 0;
+  max-width: none;
+  width: calc(100% + 2 * var(--marks-spacing-gutter-40));
+}
+
+.comparison-header {
+  background: var(--marks-color-white);
+  border-bottom: 1px solid var(--marks-color-gray-200);
+}
+
+.comparison-container {
+  display: flex;
+  width: 100%;
+  min-height: calc(100vh - 120px);
+  margin: 0;
+  padding: 0;
+}
+
+.comparison-column {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  
+  &--light {
+    background: var(--marks-color-white);
+  }
+  
+  &--dark {
+    background: var(--marks-color-gray-500);
+  }
+}
+
+.comparison-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.comparison-component {
+  width: 100%;
+  min-height: 100px;
+}
+
+.comparison-divider {
+  width: 100%;
+  border: none;
+  border-top: 1px solid var(--marks-color-gray-200);
+  margin: 0;
+}
+
+.comparison-column--dark .comparison-divider {
+  border-top-color: var(--marks-color-gray-400);
+}
+
+.comparison-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--marks-color-gray-500);
+  padding: var(--marks-spacing-gutter-16) var(--marks-spacing-gutter-24);
+  margin: 0;
+}
+
+.comparison-column--dark .comparison-title {
+  color: var(--marks-color-gray-200);
+}
