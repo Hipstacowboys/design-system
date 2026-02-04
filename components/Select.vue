@@ -82,6 +82,8 @@
 <script>
 import { PhCaretDown } from '@phosphor-icons/vue';
 
+let selectIdCounter = 0;
+
 export default {
   name: 'marksSelect',
   components: {
@@ -128,12 +130,13 @@ export default {
   emits: ['update:modelValue', 'change', 'focus', 'blur'],
   data() {
     return {
-      isOpen: false
+      isOpen: false,
+      uniqueId: ++selectIdCounter
     }
   },
   computed: {
     selectId() {
-      return `select-${this._uid}`;
+      return `select-${this.uniqueId}`;
     },
     iconSize() {
       return this.size === 'small' ? 16 : 16;

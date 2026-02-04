@@ -153,6 +153,7 @@
 </template>
 
 <script>
+import { markRaw } from 'vue';
 import { PhDotsThree, PhArrowRight } from '@phosphor-icons/vue';
 import ButtonSecondary from './ButtonSecondary.vue';
 import ButtonLine from './ButtonLine.vue';
@@ -202,15 +203,15 @@ export default {
     },
     actionIcon: {
       type: [Object, String],
-      default: () => PhArrowRight
+      default: () => markRaw(PhArrowRight)
     }
   },
   emits: ['action-click'],
   data() {
     return {
       hover: false,
-      PhDotsThree,
-      PhArrowRight,
+      PhDotsThree: markRaw(PhDotsThree),
+      PhArrowRight: markRaw(PhArrowRight),
       isMobileLayout: false,
       resizeObserver: null
     }

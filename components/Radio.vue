@@ -29,6 +29,8 @@
 </template>
 
 <script>
+let radioIdCounter = 0;
+
 export default {
   name: 'marksRadio',
   props: {
@@ -50,9 +52,14 @@ export default {
     }
   },
   emits: ['update:modelValue'],
+  data() {
+    return {
+      generatedRadioId: ++radioIdCounter
+    }
+  },
   computed: {
     radioId() {
-      return `radio-${this._uid}`;
+      return `radio-${this.generatedRadioId}`;
     }
   },
   methods: {

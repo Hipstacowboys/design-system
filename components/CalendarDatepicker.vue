@@ -79,6 +79,7 @@
 </template>
 
 <script>
+import { markRaw } from 'vue';
 import CalendarDay from './CalendarDay.vue';
 import ButtonLine from './ButtonLine.vue';
 import { PhCaretLeft, PhCaretRight } from '@phosphor-icons/vue';
@@ -106,9 +107,9 @@ export default {
         'January', 'February', 'March', 'April', 'May', 'June',
         'July', 'August', 'September', 'October', 'November', 'December'
       ],
-      // Icons must be in data() to be passed as props
-      PhCaretLeft,
-      PhCaretRight
+      // Icons must be in data() to be passed as props – keep them non-reactive
+      PhCaretLeft: markRaw(PhCaretLeft),
+      PhCaretRight: markRaw(PhCaretRight)
     }
   },
   computed: {

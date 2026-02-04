@@ -59,6 +59,8 @@
 import InputField from './InputField.vue';
 import InputMessage from './InputMessage.vue';
 
+let inputIdCounter = 0;
+
 export default {
   name: 'marksInput',
   components: {
@@ -150,9 +152,14 @@ export default {
     }
   },
   emits: ['update:modelValue', 'update:leadingAddonSelectValue', 'update:trailingAddonSelectValue', 'input', 'focus', 'blur'],
+  data() {
+    return {
+      generatedInputId: ++inputIdCounter
+    }
+  },
   computed: {
     inputId() {
-      return `input-${this._uid}`;
+      return `input-${this.generatedInputId}`;
     }
   }
 }

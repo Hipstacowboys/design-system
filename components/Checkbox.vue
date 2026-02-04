@@ -41,6 +41,8 @@
 <script>
 import { PhCheck, PhMinus } from '@phosphor-icons/vue';
 
+let checkboxIdCounter = 0;
+
 export default {
   name: 'marksCheckbox',
   components: {
@@ -62,9 +64,14 @@ export default {
     }
   },
   emits: ['update:modelValue'],
+  data() {
+    return {
+      generatedCheckboxId: ++checkboxIdCounter
+    }
+  },
   computed: {
     checkboxId() {
-      return `checkbox-${this._uid}`;
+      return `checkbox-${this.generatedCheckboxId}`;
     }
   },
   mounted() {

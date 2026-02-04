@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - 
 
-## [1.2.3] - 2026-02-04
+## [1.2.4] - 2026-02-04
 
 ### Added
 - 
@@ -26,6 +26,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 -
+
+
+## [1.2.3] - 2026-02-04
+
+### Added
+- Safer internal ID handling for `Checkbox`, `Radio`, `Input`, and `Textarea` components (per-instance generated IDs instead of relying on Vue’s private `_uid`)
+
+### Changed
+- Preview page now treats all Phosphor icon components used as props or slot data as non-reactive (`markRaw`) to avoid unnecessary reactivity overhead in examples
+
+### Fixed
+- Resolved Vue warnings about “Property `_uid` was accessed during render but is not defined on instance” by removing `_uid` from public API usage in form components
+- Resolved remaining “Component that was made a reactive object” warnings for icons used in `Booking`, `Place`, `Widget`, `CalendarDatepicker`, and preview-only examples
 
 
 ## [1.2.2] - 2026-02-04
@@ -258,7 +271,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Responsive design patterns
 - Accessibility features (semantic HTML, ARIA attributes)
 
-[Unreleased]: https://github.com/Hipstacowboys/design-system/compare/v1.2.3...HEAD
+[Unreleased]: https://github.com/Hipstacowboys/design-system/compare/v1.2.4...HEAD
+[1.2.4]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.2.4
 [1.2.3]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.2.3
 [1.2.2]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.2.2
 [1.2.1]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.2.1

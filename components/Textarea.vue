@@ -41,6 +41,8 @@
 <script>
 import TextareaField from './TextareaField.vue';
 
+let textareaIdCounter = 0;
+
 export default {
   name: 'marksTextarea',
   components: {
@@ -81,9 +83,14 @@ export default {
     }
   },
   emits: ['update:modelValue', 'input', 'focus', 'blur'],
+  data() {
+    return {
+      generatedTextareaId: ++textareaIdCounter
+    }
+  },
   computed: {
     textareaId() {
-      return `textarea-${this._uid}`;
+      return `textarea-${this.generatedTextareaId}`;
     },
     characterCount() {
       return String(this.modelValue || '').length;

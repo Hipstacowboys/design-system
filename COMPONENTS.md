@@ -280,9 +280,18 @@ Complete list of all components in the design system.
 ### Table
 - **File**: `Table.vue`
 - **Description**: Card-style data table with optional header (title, supporting text, actions), sortable column headers, and rows. Composes Checkbox, ButtonGhost, ButtonSecondary, ButtonPrimary, and Status.
-- **Features**: optional card header with title and supporting text, slot for header action buttons, column-major layout, optional selectable rows (checkbox column), row action column (ellipsis button), status column type
-- **Props**: `headerTitle` (String), `headerSupportingText` (String), `columns` (Array – `{ id, label, type?: 'text'|'bold'|'status'|'checkbox'|'actions', sortable?: boolean, width?: string }`), `rows` (Array), `selectable` (Boolean), `modelValue` (Array – selected row indices)
-- **Slots**: `header-actions` (header button group), `cell-{columnId}` (custom cell content – receives `row`, `rowIndex`, `column`)
+- **Features**: optional card header with title and supporting text, slot for header action buttons, column-major layout, optional selectable rows (checkbox column), row action column (ellipsis button), status column type, text truncation support, and customizable actions column
+- **Props**: 
+  - `headerTitle` (String) – Header title text
+  - `headerSupportingText` (String) – Header supporting text
+  - `columns` (Array) – `{ id, label, type?: 'text'|'bold'|'status'|'checkbox'|'actions', sortable?: boolean, width?: string, truncate?: boolean }`
+  - `rows` (Array) – Row data objects
+  - `selectable` (Boolean) – Adds a checkbox selection column when true
+  - `modelValue` (Array) – Selected row indices when `selectable` is true
+- **Slots**: 
+  - `header-actions` – Header button group
+  - `cell-{columnId}` – Custom cell content (receives `row`, `rowIndex`, `column`)
+  - `cell-actions` – Custom content specifically for the actions column (receives `row`, `rowIndex`, `column`)
 - **Events**: `update:modelValue` (selected row indices), `row-action` (payload: `{ row, rowIndex }` when row actions button is clicked)
 
 ## Usage Examples

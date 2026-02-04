@@ -32,6 +32,27 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 <li></li>
 </ul>
 
+<h2 id="1.2.3-2026-02-04"><a href="https://github.com/Hipstacowboys/design-system/releases/tag/v1.2.3">1.2.3</a> - 2026&#8211;02&#8211;04</h2>
+
+<h3 id="added">Added</h3>
+
+<ul>
+<li>Safer internal ID handling for <code>Checkbox</code>, <code>Radio</code>, <code>Input</code>, and <code>Textarea</code> components (per-instance generated IDs instead of relying on Vue’s private <code>_uid</code>)</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+<li>Preview page now treats all Phosphor icon components used as props or slot data as non-reactive (<code>markRaw</code>) to avoid unnecessary reactivity overhead in examples</li>
+</ul>
+
+<h3 id="fixed">Fixed</h3>
+
+<ul>
+<li>Resolved Vue warnings about “Property <code>_uid</code> was accessed during render but is not defined on instance” by removing <code>_uid</code> from public API usage in form components</li>
+<li>Resolved remaining “Component that was made a reactive object” warnings for icons used in <code>Booking</code>, <code>Place</code>, <code>Widget</code>, <code>CalendarDatepicker</code>, and preview-only examples</li>
+</ul>
+
 <h2 id="1.2.2-2026-02-04"><a href="https://github.com/Hipstacowboys/design-system/releases/tag/v1.2.2">1.2.2</a> - 2026&#8211;02&#8211;04</h2>
 
 <h3 id="added">Added</h3>

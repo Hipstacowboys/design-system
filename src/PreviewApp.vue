@@ -3046,6 +3046,7 @@
 
 
 <script>
+import { markRaw } from 'vue';
 import { PhArrowLeft, PhArrowRight, PhWarningCircle, PhBed, PhCalendar, PhHouse, PhBookOpen, PhAppWindow, PhGear, PhChatCircle, PhSignOut, PhTrash, PhFunnelSimple, PhDownloadSimple, PhPlus } from '@phosphor-icons/vue';
 
 export default {
@@ -3177,7 +3178,7 @@ export default {
           description: 'Prompt: Create 3D character dancing',
           new: true,
           actions: {
-            primary: { text: 'Primary Button', leftIcon: PhArrowLeft },
+            primary: { text: 'Primary Button', leftIcon: markRaw(PhArrowLeft) },
             secondary: { text: 'Secondary Button' }
           }
         },
@@ -3248,27 +3249,27 @@ export default {
         {
           label: 'Your setup',
           items: [
-            { icon: PhCalendar, label: 'Calendar', value: 'calendar' },
-            { icon: PhHouse, label: 'Places', value: 'places' },
-            { icon: PhBookOpen, label: 'Bookings', value: 'bookings' }
+            { icon: markRaw(PhCalendar), label: 'Calendar', value: 'calendar' },
+            { icon: markRaw(PhHouse), label: 'Places', value: 'places' },
+            { icon: markRaw(PhBookOpen), label: 'Bookings', value: 'bookings' }
           ]
         },
         {
           label: 'Your setup',
           items: [
-            { icon: PhAppWindow, label: 'Widgets', value: 'widgets' }
+            { icon: markRaw(PhAppWindow), label: 'Widgets', value: 'widgets' }
           ]
         },
         {
           label: 'Your setup',
           items: [
-            { icon: PhGear, label: 'Settings', value: 'settings' }
+            { icon: markRaw(PhGear), label: 'Settings', value: 'settings' }
           ]
         }
       ],
       navbarBottomItems: [
-        { icon: PhChatCircle, label: 'Feedback', value: 'feedback' },
-        { icon: PhSignOut, label: 'Log out', value: 'logout' }
+        { icon: markRaw(PhChatCircle), label: 'Feedback', value: 'feedback' },
+        { icon: markRaw(PhSignOut), label: 'Log out', value: 'logout' }
       ],
       horizontalSwitchValue: 'month',
       horizontalSwitchOptions: [
@@ -3282,16 +3283,22 @@ export default {
         { label: 'Week view', value: 'week' },
         { label: 'Month view', value: 'month' }
       ],
-      PhArrowLeft,
-      PhArrowRight,
-      PhBed,
-      PhCalendar,
-      PhHouse,
-      PhBookOpen,
-      PhAppWindow,
-      PhGear,
-      PhChatCircle,
-      PhSignOut,
+      // Icon components used as props in preview – keep them non-reactive
+      PhArrowLeft: markRaw(PhArrowLeft),
+      PhArrowRight: markRaw(PhArrowRight),
+      PhBed: markRaw(PhBed),
+      PhCalendar: markRaw(PhCalendar),
+      PhHouse: markRaw(PhHouse),
+      PhBookOpen: markRaw(PhBookOpen),
+      PhAppWindow: markRaw(PhAppWindow),
+      PhGear: markRaw(PhGear),
+      PhChatCircle: markRaw(PhChatCircle),
+      PhSignOut: markRaw(PhSignOut),
+      PhWarningCircle: markRaw(PhWarningCircle),
+      PhTrash: markRaw(PhTrash),
+      PhFunnelSimple: markRaw(PhFunnelSimple),
+      PhDownloadSimple: markRaw(PhDownloadSimple),
+      PhPlus: markRaw(PhPlus),
       currentTheme: 'light',
       calendarDays: [
         // Week 1

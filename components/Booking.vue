@@ -248,6 +248,7 @@
 </template>
 
 <script>
+import { markRaw } from 'vue';
 import { PhDotsThree, PhArrowRight, PhCheck } from '@phosphor-icons/vue';
 import Status from './Status.vue';
 import ButtonSecondary from './ButtonSecondary.vue';
@@ -329,7 +330,7 @@ export default {
     },
     actionIcon: {
       type: [Object, String],
-      default: () => PhArrowRight
+      default: () => markRaw(PhArrowRight)
     },
     minimal: {
       type: Boolean,
@@ -340,9 +341,9 @@ export default {
   data() {
     return {
       hover: false,
-      PhDotsThree,
-      PhArrowRight,
-      PhCheck,
+      PhDotsThree: markRaw(PhDotsThree),
+      PhArrowRight: markRaw(PhArrowRight),
+      PhCheck: markRaw(PhCheck),
       isMobileLayout: false,
       resizeObserver: null,
       statusOptions: ['Pending', 'Confirmed', 'Payment details sent', 'Paid']
