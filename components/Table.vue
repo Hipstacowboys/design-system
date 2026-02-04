@@ -233,7 +233,7 @@ export default {
   border-radius: var(--marks-radius-8);
   background-color: var(--marks-color-white);
   border: 1px solid var(--marks-color-gray-200);
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -246,6 +246,8 @@ export default {
   align-self: stretch;
   background-color: var(--marks-color-white);
   border-bottom: 1px solid var(--marks-color-gray-200);
+  border-top-left-radius: var(--marks-radius-8);
+  border-top-right-radius: var(--marks-radius-8);
 }
 
 .marks-table__header-inner {

@@ -16,13 +16,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - 
 
-## [1.2.4] - 2026-02-04
+## [1.2.5] - 2026-02-04
 
 ### Added
 - 
 
 ### Changed
 - 
+
+### Fixed
+-
+
+
+## [1.2.4] - 2026-02-04
+
+### Added
+- 
+
+### Changed
+- Table card container (`.marks-table`) now uses `overflow: visible` so dropdowns and other content in table cells can extend beyond the card boundary without being clipped
+- Table header now has top-left and top-right border-radius of 8px to visually match the table card radius when content overflows
 
 ### Fixed
 -
@@ -271,7 +284,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Responsive design patterns
 - Accessibility features (semantic HTML, ARIA attributes)
 
-[Unreleased]: https://github.com/Hipstacowboys/design-system/compare/v1.2.4...HEAD
+[Unreleased]: https://github.com/Hipstacowboys/design-system/compare/v1.2.5...HEAD
+[1.2.5]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.2.5
 [1.2.4]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.2.4
 [1.2.3]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.2.3
 [1.2.2]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.2.2
