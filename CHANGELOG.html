@@ -17,6 +17,45 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 <h3 id="added">Added</h3>
 
 <ul>
+<li></li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+<li></li>
+</ul>
+
+<h3 id="fixed">Fixed</h3>
+
+<ul>
+<li></li>
+</ul>
+
+<h2 id="1.2.1-2026-02-04"><a href="https://github.com/Hipstacowboys/design-system/releases/tag/v1.2.1">1.2.1</a> - 2026&#8211;02&#8211;04</h2>
+
+<h3 id="added">Added</h3>
+
+<p>-</p>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+<li>NavbarSide <code>theme</code> prop now sets a local <code>data-theme</code> attribute so each navbar instance can render independently in light or dark mode</li>
+<li>Color token selectors now target <code>[data-theme=&quot;light&quot;]</code> / <code>[data-theme=&quot;dark&quot;]</code> in addition to the root, enabling scoped theming per component</li>
+</ul>
+
+<h3 id="fixed">Fixed</h3>
+
+<ul>
+<li> Fixed NavbarSide dark mode not applying correctly when used in apps that do not set <code>data-theme=&quot;dark&quot;</code> on <code>:root</code></li>
+</ul>
+
+<h2 id="1.2.0-2026-02-03"><a href="https://github.com/Hipstacowboys/design-system/releases/tag/v1.2.0">1.2.0</a> - 2026&#8211;02&#8211;03</h2>
+
+<h3 id="added">Added</h3>
+
+<ul>
 <li>New standalone comparison page (<code>comparison.html</code>) with two-column light/dark mode comparison view</li>
 <li>Table component text truncation support with <code>truncate</code> prop for columns (displays ellipsis for long text)</li>
 <li>Table component custom cell slot support for advanced cell content (e.g., truncated URLs with action buttons)</li>
@@ -42,7 +81,7 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 <li>BookingInCalendar component: status badge now circular (44px × 44px) with white text in both themes</li>
 <li>BookingInCalendar component: pax text color now theme-aware (black in light mode, white in dark mode)</li>
 <li>BookingInCalendar component: dark mode now uses correct CSS variables (e.g., red-300 for month variant background)</li>
-<li><strong>BREAKING</strong>: Renamed spacing CSS custom properties from <code>--marks-spacing-gutter-x</code> to <code>--marks-spacing-x</code> across tokens, styles, and documentation</li>
+<li> <strong>BREAKING</strong>: Renamed spacing CSS custom properties from <code>--marks-spacing-gutter-x</code> to <code>--marks-spacing-x</code> across tokens, styles, and documentation</li>
 </ul>
 
 <h3 id="fixed">Fixed</h3>

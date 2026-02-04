@@ -4,7 +4,11 @@
   Features: logo, sections with labels, navbar items
 -->
 <template>
-  <div class="marks-navbar-side" :class="`marks-navbar-side--${theme}`">
+  <div
+    class="marks-navbar-side"
+    :class="`marks-navbar-side--${theme}`"
+    :data-theme="theme"
+  >
     <!-- Logo -->
     <div v-if="logo || $slots.logo" class="marks-navbar-side__logo">
       <slot name="logo">

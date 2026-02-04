@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - 
 
-## [1.2.1] - 2026-02-04
+## [1.2.2] - 2026-02-04
 
 ### Added
 - 
@@ -26,6 +26,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 -
+
+
+## [1.2.1] - 2026-02-04
+
+### Added
+-
+
+### Changed
+- NavbarSide `theme` prop now sets a local `data-theme` attribute so each navbar instance can render independently in light or dark mode
+- Color token selectors now target `[data-theme="light"]` / `[data-theme="dark"]` in addition to the root, enabling scoped theming per component
+
+### Fixed
+ - Fixed NavbarSide dark mode not applying correctly when used in apps that do not set `data-theme="dark"` on `:root`
 
 
 ## [1.2.0] - 2026-02-03
@@ -232,7 +245,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Responsive design patterns
 - Accessibility features (semantic HTML, ARIA attributes)
 
-[Unreleased]: https://github.com/Hipstacowboys/design-system/compare/v1.2.1...HEAD
+[Unreleased]: https://github.com/Hipstacowboys/design-system/compare/v1.2.2...HEAD
+[1.2.2]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.2.2
 [1.2.1]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.2.1
 [1.2.0]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.2.0
 [1.1.5]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.1.5
