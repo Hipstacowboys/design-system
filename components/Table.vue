@@ -230,8 +230,8 @@ export default {
 .marks-table__header-inner {
   display: flex;
   align-items: center;
-  padding: var(--marks-spacing-gutter-20) var(--marks-spacing-gutter-24) var(--marks-spacing-gutter-20);
-  gap: var(--marks-spacing-gutter-16);
+  padding: var(--marks-spacing-20) var(--marks-spacing-24) var(--marks-spacing-20);
+  gap: var(--marks-spacing-16);
 }
 
 .marks-table__header-text {
@@ -239,7 +239,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--marks-spacing-gutter-8);
+  gap: var(--marks-spacing-8);
 }
 
 .marks-table__title {
@@ -257,7 +257,7 @@ export default {
 .marks-table__actions {
   display: flex;
   align-items: center;
-  gap: var(--marks-spacing-gutter-8);
+  gap: var(--marks-spacing-8);
 }
 
 .marks-table__body {
@@ -279,34 +279,34 @@ export default {
   min-height: 44px;
   border-bottom: 1px solid var(--marks-color-gray-200);
   box-sizing: border-box;
-  padding: var(--marks-spacing-gutter-12) var(--marks-spacing-gutter-24);
+  padding: var(--marks-spacing-12) var(--marks-spacing-24);
   @include marks-typography-paragraph-sm-one-line;
   color: var(--marks-color-gray-350);
 }
 
 .marks-table__header-cell--checkbox {
   text-align: center;
-  padding: var(--marks-spacing-gutter-12) var(--marks-spacing-gutter-16);
+  padding: var(--marks-spacing-12) var(--marks-spacing-16);
   width: 66px;
 }
 
 .marks-table__header-cell--actions {
   text-align: center;
-  padding: var(--marks-spacing-gutter-12) var(--marks-spacing-gutter-16);
+  padding: var(--marks-spacing-12) var(--marks-spacing-16);
   width: 72px;
 }
 
 .marks-table__header-label {
   display: inline-flex;
   align-items: center;
-  gap: var(--marks-spacing-gutter-4);
+  gap: var(--marks-spacing-4);
 }
 
 .marks-table__cell {
   min-height: 44px;
   border-bottom: 1px solid var(--marks-color-gray-200);
   box-sizing: border-box;
-  padding: var(--marks-spacing-gutter-8) var(--marks-spacing-gutter-24);
+  padding: var(--marks-spacing-8) var(--marks-spacing-24);
   vertical-align: top;
   @include marks-typography-paragraph-sm-multiline;
   color: var(--marks-color-gray-300);
@@ -320,12 +320,12 @@ export default {
 }
 
 .marks-table__cell--checkbox {
-  padding: var(--marks-spacing-gutter-8) var(--marks-spacing-gutter-16);
+  padding: var(--marks-spacing-8) var(--marks-spacing-16);
   width: 66px;
 }
 
 .marks-table__cell--actions {
-  padding: var(--marks-spacing-gutter-8) var(--marks-spacing-gutter-8);
+  padding: var(--marks-spacing-8) var(--marks-spacing-8);
   width: 72px;
 }
 

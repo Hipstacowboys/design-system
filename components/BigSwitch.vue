@@ -187,7 +187,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--marks-spacing-gutter-12);
+  gap: var(--marks-spacing-12);
   flex: 1;
   z-index: 1;
   min-width: 0;

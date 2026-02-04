@@ -133,7 +133,7 @@ export default {
   &--small {
     padding: 8px 16px;
     border-radius: var(--marks-radius-8);
-    gap: var(--marks-spacing-gutter-8);
+    gap: var(--marks-spacing-8);
     @include marks-typography-button-sm;
 
     &.marks-button--icon-only {
@@ -146,7 +146,7 @@ export default {
   &--medium {
     padding: 16px 24px;
     border-radius: var(--marks-radius-12);
-    gap: var(--marks-spacing-gutter-12);
+    gap: var(--marks-spacing-12);
     @include marks-typography-button-md;
 
     &.marks-button--icon-only {
@@ -159,7 +159,7 @@ export default {
   &--large {
     padding: 20px 28px;
     border-radius: var(--marks-radius-16);
-    gap: var(--marks-spacing-gutter-12);
+    gap: var(--marks-spacing-12);
     @include marks-typography-button-lg;
 
     &.marks-button--icon-only {

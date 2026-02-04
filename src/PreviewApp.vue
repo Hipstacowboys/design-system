@@ -244,7 +244,7 @@
             </div>
             <div class="token-card-header">
               <div class="token-card-name">Gutter 0</div>
-              <div class="token-card-value">--marks-spacing-gutter-0</div>
+              <div class="token-card-value">--marks-spacing-0</div>
             </div>
           </div>
           <div class="token-card">
@@ -253,7 +253,7 @@
             </div>
             <div class="token-card-header">
               <div class="token-card-name">Gutter 4</div>
-              <div class="token-card-value">--marks-spacing-gutter-4</div>
+              <div class="token-card-value">--marks-spacing-4</div>
             </div>
           </div>
           <div class="token-card">
@@ -262,7 +262,7 @@
             </div>
             <div class="token-card-header">
               <div class="token-card-name">Gutter 8</div>
-              <div class="token-card-value">--marks-spacing-gutter-8</div>
+              <div class="token-card-value">--marks-spacing-8</div>
             </div>
           </div>
           <div class="token-card">
@@ -271,7 +271,7 @@
             </div>
             <div class="token-card-header">
               <div class="token-card-name">Gutter 12</div>
-              <div class="token-card-value">--marks-spacing-gutter-12</div>
+              <div class="token-card-value">--marks-spacing-12</div>
             </div>
           </div>
           <div class="token-card">
@@ -280,7 +280,7 @@
             </div>
             <div class="token-card-header">
               <div class="token-card-name">Gutter 16</div>
-              <div class="token-card-value">--marks-spacing-gutter-16</div>
+              <div class="token-card-value">--marks-spacing-16</div>
             </div>
           </div>
           <div class="token-card">
@@ -289,7 +289,7 @@
             </div>
             <div class="token-card-header">
               <div class="token-card-name">Gutter 20</div>
-              <div class="token-card-value">--marks-spacing-gutter-20</div>
+              <div class="token-card-value">--marks-spacing-20</div>
             </div>
           </div>
           <div class="token-card">
@@ -298,7 +298,7 @@
             </div>
             <div class="token-card-header">
               <div class="token-card-name">Gutter 24</div>
-              <div class="token-card-value">--marks-spacing-gutter-24</div>
+              <div class="token-card-value">--marks-spacing-24</div>
             </div>
           </div>
           <div class="token-card">
@@ -307,7 +307,7 @@
             </div>
             <div class="token-card-header">
               <div class="token-card-name">Gutter 28</div>
-              <div class="token-card-value">--marks-spacing-gutter-28</div>
+              <div class="token-card-value">--marks-spacing-28</div>
             </div>
           </div>
           <div class="token-card">
@@ -316,7 +316,7 @@
             </div>
             <div class="token-card-header">
               <div class="token-card-name">Gutter 32</div>
-              <div class="token-card-value">--marks-spacing-gutter-32</div>
+              <div class="token-card-value">--marks-spacing-32</div>
             </div>
           </div>
           <div class="token-card">
@@ -325,7 +325,7 @@
             </div>
             <div class="token-card-header">
               <div class="token-card-name">Gutter 36</div>
-              <div class="token-card-value">--marks-spacing-gutter-36</div>
+              <div class="token-card-value">--marks-spacing-36</div>
             </div>
           </div>
           <div class="token-card">
@@ -334,7 +334,7 @@
             </div>
             <div class="token-card-header">
               <div class="token-card-name">Gutter 40</div>
-              <div class="token-card-value">--marks-spacing-gutter-40</div>
+              <div class="token-card-value">--marks-spacing-40</div>
             </div>
           </div>
           <div class="token-card">
@@ -343,7 +343,7 @@
             </div>
             <div class="token-card-header">
               <div class="token-card-name">Gutter 56</div>
-              <div class="token-card-value">--marks-spacing-gutter-56</div>
+              <div class="token-card-value">--marks-spacing-56</div>
             </div>
           </div>
           <div class="token-card">
@@ -352,7 +352,7 @@
             </div>
             <div class="token-card-header">
               <div class="token-card-name">Gutter 72</div>
-              <div class="token-card-value">--marks-spacing-gutter-72</div>
+              <div class="token-card-value">--marks-spacing-72</div>
             </div>
           </div>
           <div class="token-card">
@@ -361,7 +361,7 @@
             </div>
             <div class="token-card-header">
               <div class="token-card-name">Gutter 80</div>
-              <div class="token-card-value">--marks-spacing-gutter-80</div>
+              <div class="token-card-value">--marks-spacing-80</div>
             </div>
           </div>
         </div>
@@ -814,7 +814,7 @@
           <div class="component-status">Status: {{ interactiveToggleTitle ? 'On' : 'Off' }}</div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container">
             <ToggleWithLabel
               v-model="interactiveToggleTitleParagraph"
@@ -980,7 +980,7 @@
           <div class="component-status">Status: {{ interactiveCheckboxTitle ? 'Checked' : 'Unchecked' }}</div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container">
             <CheckboxWithLabel
               v-model="interactiveCheckboxTitleParagraph"
@@ -1031,7 +1031,7 @@
 
         <h2>Interactive Example</h2>
         <div class="component-interactive">
-          <div class="toggle-container" style="display: flex; gap: var(--marks-spacing-gutter-16);">
+          <div class="toggle-container" style="display: flex; gap: var(--marks-spacing-16);">
             <Radio v-model="interactiveRadio" value="option1" name="interactive-radio" />
             <Radio v-model="interactiveRadio" value="option2" name="interactive-radio" />
             <Radio v-model="interactiveRadio" value="option3" name="interactive-radio" />
@@ -1136,7 +1136,7 @@
 
         <h2>Interactive Examples</h2>
         <div class="component-interactive">
-          <div class="toggle-container" style="display: flex; flex-direction: column; gap: var(--marks-spacing-gutter-12);">
+          <div class="toggle-container" style="display: flex; flex-direction: column; gap: var(--marks-spacing-12);">
             <RadioWithLabel v-model="interactiveRadioTitle" value="option1" name="interactive-radio-title" title="Option 1" />
             <RadioWithLabel v-model="interactiveRadioTitle" value="option2" name="interactive-radio-title" title="Option 2" />
             <RadioWithLabel v-model="interactiveRadioTitle" value="option3" name="interactive-radio-title" title="Option 3" />
@@ -1144,8 +1144,8 @@
           <div class="component-status">Selected: {{ interactiveRadioTitle || 'None' }}</div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
-          <div class="toggle-container" style="display: flex; flex-direction: column; gap: var(--marks-spacing-gutter-12);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
+          <div class="toggle-container" style="display: flex; flex-direction: column; gap: var(--marks-spacing-12);">
             <RadioWithLabel
               v-model="interactiveRadioTitleParagraph"
               value="option1"
@@ -1448,7 +1448,7 @@
 
         <h2>Interactive Examples</h2>
         <div class="component-interactive">
-          <div class="toggle-container" style="display: flex; gap: var(--marks-spacing-gutter-12); flex-wrap: wrap;">
+          <div class="toggle-container" style="display: flex; gap: var(--marks-spacing-12); flex-wrap: wrap;">
             <ButtonPrimary size="medium" text="Click Me" @click="handleButtonClick('Primary')" />
             <ButtonSecondary size="medium" text="Click Me" @click="handleButtonClick('Secondary')" />
             <ButtonLine size="medium" text="Click Me" @click="handleButtonClick('Line')" />
@@ -1457,8 +1457,8 @@
           <div class="component-status">Last clicked: {{ lastClickedButton || 'None' }}</div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
-          <div class="toggle-container" style="display: flex; gap: var(--marks-spacing-gutter-12); flex-wrap: wrap;">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
+          <div class="toggle-container" style="display: flex; gap: var(--marks-spacing-12); flex-wrap: wrap;">
             <ButtonPrimary size="medium" text="With Left Icon" :left-icon="PhArrowLeft" @click="handleButtonClick('Primary with icon')" />
             <ButtonPrimary size="medium" text="With Right Icon" :right-icon="PhArrowRight" @click="handleButtonClick('Primary with icon')" />
             <ButtonPrimary size="medium" text="Both Icons" :left-icon="PhArrowLeft" :right-icon="PhArrowRight" @click="handleButtonClick('Primary both icons')" />
@@ -1658,7 +1658,7 @@
           <div class="component-status">Selected: {{ interactiveSelect || 'None' }}</div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 300px;">
             <Select
               size="medium"
@@ -1671,7 +1671,7 @@
           <div class="component-status">Selected: {{ interactiveSelectWithIcon || 'None' }}</div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 300px;">
             <Select
               size="medium"
@@ -1702,7 +1702,7 @@
           </div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 375px;">
             <Input
               size="medium"
@@ -1713,7 +1713,7 @@
           </div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 375px;">
             <Input
               size="medium"
@@ -1724,7 +1724,7 @@
           <div class="component-status">Value: {{ inputValueMedium || '(empty)' }}</div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 375px;">
             <Input
               size="medium"
@@ -1738,7 +1738,7 @@
           <div class="component-status">Value: {{ inputValueError || '(empty)' }}</div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 375px;">
             <Input
               size="medium"
@@ -1748,7 +1748,7 @@
           </div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 375px;">
             <Input
               size="medium"
@@ -1758,7 +1758,7 @@
           </div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 375px;">
             <Input
               size="medium"
@@ -1768,7 +1768,7 @@
           </div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 375px;">
             <Input
               size="medium"
@@ -1783,7 +1783,7 @@
           <div class="component-status">Amount: {{ inputWithCurrency || '(empty)' }}, Currency: {{ selectedCurrency || 'None' }}</div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 375px;">
             <Input
               size="medium"
@@ -1798,7 +1798,7 @@
           <div class="component-status">Phone: {{ inputWithCountryCode || '(empty)' }}, Country Code: {{ selectedCountryCode || 'None' }}</div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 375px;">
             <Input
               size="medium"
@@ -1827,7 +1827,7 @@
           </div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 283px;">
             <Input
               size="small"
@@ -1838,7 +1838,7 @@
           <div class="component-status">Value: {{ inputValueSmall || '(empty)' }}</div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 283px;">
             <Input
               size="small"
@@ -1852,7 +1852,7 @@
           <div class="component-status">Value: {{ inputValueSmallError || '(empty)' }}</div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 283px;">
             <Input
               size="small"
@@ -1878,7 +1878,7 @@
           <div class="component-status">Value: {{ interactiveInput || '(empty)' }}</div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 375px;">
             <Input
               size="medium"
@@ -1908,7 +1908,7 @@
           </div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 391px;">
             <Textarea
               label="Message"
@@ -1918,7 +1918,7 @@
           </div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 391px;">
             <Textarea
               v-model="textareaValue"
@@ -1928,7 +1928,7 @@
           <div class="component-status">Value: {{ textareaValue || '(empty)' }}</div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 391px;">
             <Textarea
               v-model="textareaValueError"
@@ -1939,7 +1939,7 @@
           <div class="component-status">Value: {{ textareaValueError || '(empty)' }}</div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 391px;">
             <Textarea
               placeholder="Placeholder"
@@ -1948,7 +1948,7 @@
           </div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 391px;">
             <Textarea
               label="Message"
@@ -1976,7 +1976,7 @@
           </div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="display: flex; align-items: center; gap: 20px; padding: 20px;">
             <div style="display: flex; align-items: center; gap: 8px;">
               <span>Messages</span>
@@ -1993,7 +1993,7 @@
           </div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="display: flex; align-items: center; gap: 20px; padding: 20px;">
             <div style="display: flex; align-items: center; gap: 8px;">
               <span>Large number</span>
@@ -2024,7 +2024,7 @@
         </div>
 
         <h2>Prominent Variant</h2>
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="display: flex; flex-direction: column; gap: 20px; padding: 20px;">
             <Status variant="prominent" type="success" label="Available" />
             <Status variant="prominent" type="warning" label="Maintenance" />
@@ -2034,7 +2034,7 @@
         </div>
 
         <h2>Use Cases</h2>
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="display: flex; flex-direction: column; gap: 16px; padding: 20px;">
             <div style="display: flex; align-items: center; gap: 12px;">
               <span>Room 101:</span>
@@ -2079,7 +2079,7 @@
           </div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 418px;">
             <Alert
               type="warning"
@@ -2096,7 +2096,7 @@
           </div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 418px;">
             <Alert
               type="error"
@@ -2113,7 +2113,7 @@
           </div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 418px;">
             <Alert
               type="info"
@@ -2131,7 +2131,7 @@
         </div>
 
         <h2>Without Actions</h2>
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 418px;">
             <Alert
               type="success"
@@ -2144,7 +2144,7 @@
         </div>
 
         <h2>Without Close Button</h2>
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 418px;">
             <Alert
               type="info"
@@ -2171,7 +2171,7 @@
         </div>
 
         <h2>Tabs Simple</h2>
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 630px; padding: 20px;">
             <TabsSimple
               v-model="activeTab"
@@ -2181,7 +2181,7 @@
           <div class="component-status">Active tab: {{ activeTab || 'None' }}</div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 630px; padding: 20px;">
             <TabsSimple
               v-model="activeTab2"
@@ -2192,7 +2192,7 @@
         </div>
 
         <h2>Tab States</h2>
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="display: flex; align-items: center; gap: 0; padding: 20px; border-bottom: 1px solid var(--marks-color-gray-200); padding-left: 16px;">
             <Tab :active="true" label="General pricing" />
             <Tab label="General pricing" />
@@ -2200,7 +2200,7 @@
         </div>
 
         <h2>Tabs</h2>
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 843px; padding: 20px;">
             <Tabs
               v-model="activeTab3"
@@ -2210,7 +2210,7 @@
           <div class="component-status">Active tab: {{ activeTab3 || 'None' }}</div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 843px; padding: 20px;">
             <Tabs
               v-model="activeTab4"
@@ -2236,19 +2236,19 @@
         </div>
 
         <h2>Breadcrumbs</h2>
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="padding: 20px;">
             <Breadcrumbs :items="breadcrumbItems1" />
           </div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="padding: 20px;">
             <Breadcrumbs :items="breadcrumbItems2" />
           </div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="padding: 20px;">
             <Breadcrumbs :items="breadcrumbItems3" />
           </div>
@@ -2272,7 +2272,7 @@
           </div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 342px; padding: 20px;">
             <EmptyState
               :icon="PhWarningCircle"
@@ -2286,7 +2286,7 @@
           </div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 342px; padding: 20px;">
             <EmptyState
               title="All caught up!"
@@ -2322,7 +2322,7 @@
         </div>
 
         <h2>Notification Message - In List</h2>
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 529px; padding: 20px; background: var(--marks-color-white); border-radius: var(--marks-radius-24); box-shadow: 0px 14px 30px rgba(0, 0, 0, 0.15);">
             <NotificationMessage
               type="inList"
@@ -2341,7 +2341,7 @@
         </div>
 
         <h2>Notification Dialog</h2>
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 529px; padding: 20px;">
             <NotificationDialog
               v-model:filter="notificationFilter"
@@ -2370,7 +2370,7 @@
           </div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 100%; max-width: 400px; padding: 20px;">
             <BigSwitch
               v-model="bigSwitchValue"
@@ -2381,7 +2381,7 @@
           </div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 100%; max-width: 400px; padding: 20px;">
             <BigSwitch
               v-model="bigSwitchValue"
@@ -2394,7 +2394,7 @@
         </div>
 
         <h2>Interactive Example</h2>
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 100%; max-width: 400px; padding: 20px; display: flex; flex-direction: column; gap: 16px;">
             <BigSwitch
               v-model="bigSwitchValue2"
@@ -2437,7 +2437,7 @@
         </div>
 
         <h2>Interactive Example</h2>
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 100%; max-width: 400px; padding: 20px;">
             <SmallSwitch
               v-model="smallSwitchValue2"
@@ -2467,7 +2467,7 @@
           <div class="component-status">Count: {{ cardWithCounterValue }}</div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 100%; max-width: 250px; padding: 20px;">
             <CardWithCounter
               v-model="cardWithCounterValue2"
@@ -2479,7 +2479,7 @@
           <div class="component-status">Count: {{ cardWithCounterValue2 }}</div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 100%; max-width: 250px; padding: 20px;">
             <CardWithCounter
               v-model="cardWithCounterValue3"
@@ -2522,7 +2522,7 @@
 
         <h2>Mobile Layout</h2>
         <p>Resize the browser window to see the mobile layout (below 830px).</p>
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 100%; max-width: 400px; padding: 20px;">
             <Place
               customer-name="Hanusova Chalupa"
@@ -2572,7 +2572,7 @@
 
         <h2>Mobile Layout</h2>
         <p>Resize the browser window to see the mobile layout (below 830px).</p>
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 100%; max-width: 400px; padding: 20px;">
             <Widget
               widget-name="My first widget"
@@ -2628,7 +2628,7 @@
 
         <h2>Mobile Layout</h2>
         <p>Resize the browser window to see the mobile layout (below 830px).</p>
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 100%; max-width: 400px; padding: 20px;">
             <Booking
               v-model="bookingStatus"
@@ -2656,7 +2656,7 @@
 
         <h2>Minimal Layout</h2>
         <p>Compact view for special use cases.</p>
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div class="toggle-container" style="width: 100%; max-width: 400px; padding: 20px;">
             <Booking
               :minimal="true"
@@ -2702,7 +2702,7 @@
         </div>
 
         <h2>Horizontal Type</h2>
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <div style="display: flex; flex-direction: column; gap: 16px; max-width: 400px;">
             <WeekPricingDay
               v-model="weekPricingDay3"
@@ -2751,7 +2751,7 @@
         </div>
 
         <h2>Navbar Side</h2>
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <NavbarSide
             :sections="navbarSections"
             :bottom-items="navbarBottomItems"
@@ -2776,7 +2776,7 @@
           <div class="component-status">Selected: {{ horizontalSwitchValue }}</div>
         </div>
 
-        <div class="component-interactive" style="margin-top: var(--marks-spacing-gutter-24);">
+        <div class="component-interactive" style="margin-top: var(--marks-spacing-24);">
           <HorizontalSwitch
             v-model="horizontalSwitchValue2"
             :options="horizontalSwitchOptions2"
@@ -2990,7 +2990,7 @@
             v-model="selectedDate"
             @change="handleDateChange"
           />
-          <div class="component-status" style="margin-top: var(--marks-spacing-gutter-16);">
+          <div class="component-status" style="margin-top: var(--marks-spacing-16);">
             Selected date: {{ selectedDate ? selectedDate.toLocaleDateString() : 'None' }}
           </div>
         </div>
@@ -3019,13 +3019,13 @@
               <ButtonPrimary size="medium" text="Add new" :left-icon="PhPlus" />
             </template>
             <template #cell-col2="{ row }">
-              <div style="display: flex; align-items: center; gap: var(--marks-spacing-gutter-8); width: 100%; min-width: 0;">
+              <div style="display: flex; align-items: center; gap: var(--marks-spacing-8); width: 100%; min-width: 0;">
                 <span style="flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ row.col2 }}</span>
                 <ButtonSecondary size="small" text="Copy" style="flex-shrink: 0;" />
               </div>
             </template>
           </Table>
-          <div class="component-status" style="margin-top: var(--marks-spacing-gutter-16);">
+          <div class="component-status" style="margin-top: var(--marks-spacing-16);">
             Selected rows: {{ tableSelectedRows.length ? tableSelectedRows.join(', ') : 'None' }}
           </div>
         </div>
@@ -3431,7 +3431,7 @@ export default {
   top: 20px;
   right: 20px;
   z-index: 1000;
-  padding: var(--marks-spacing-gutter-12) var(--marks-spacing-gutter-16);
+  padding: var(--marks-spacing-12) var(--marks-spacing-16);
   background: var(--marks-color-white);
   border: 1px solid var(--marks-color-gray-200);
   border-radius: var(--marks-radius-8);

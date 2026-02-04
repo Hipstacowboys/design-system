@@ -47,7 +47,7 @@ export default {
 .marks-status {
   display: inline-flex;
   align-items: center;
-  gap: var(--marks-spacing-gutter-8);
+  gap: var(--marks-spacing-8);
   @include marks-typography-paragraph-sm-multiline;
   font-weight: $marks-font-weight-medium;
   color: var(--marks-color-black);
@@ -61,7 +61,7 @@ export default {
   &--prominent {
     background-color: var(--marks-color-gray-100);
     border-radius: 100px;
-    padding: var(--marks-spacing-gutter-8) var(--marks-spacing-gutter-12);
+    padding: var(--marks-spacing-8) var(--marks-spacing-12);
   }
 
   // Status types - dot colors

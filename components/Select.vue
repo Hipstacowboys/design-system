@@ -317,12 +317,12 @@ export default {
   transition: transform 0.2s ease;
 
   &--left {
-    left: var(--marks-spacing-gutter-12);
+    left: var(--marks-spacing-12);
     color: var(--marks-color-gray-300);
   }
 
   &--right {
-    right: var(--marks-spacing-gutter-12);
+    right: var(--marks-spacing-12);
     color: var(--marks-color-gray-300);
 
     &--rotated {
@@ -333,7 +333,7 @@ export default {
 
 .marks-select__flag {
   position: absolute;
-  left: var(--marks-spacing-gutter-12);
+  left: var(--marks-spacing-12);
   width: 20px;
   height: 14px;
   object-fit: cover;
@@ -357,11 +357,11 @@ export default {
 
 // Adjust right icon position based on size
 .marks-select-wrapper:has(.marks-select--small) .marks-select__icon--right {
-  right: var(--marks-spacing-gutter-16);
+  right: var(--marks-spacing-16);
 }
 
 .marks-select-wrapper:has(.marks-select--medium) .marks-select__icon--right {
-  right: var(--marks-spacing-gutter-20);
+  right: var(--marks-spacing-20);
 }
 
 // Dropdown Menu
@@ -374,7 +374,7 @@ export default {
   background: var(--marks-color-white);
   border-radius: var(--marks-radius-24);
   box-shadow: 0px 14px 30px rgba(0, 0, 0, 0.15);
-  padding: var(--marks-spacing-gutter-8);
+  padding: var(--marks-spacing-8);
   z-index: 1000;
   display: flex;
   flex-direction: column;
@@ -389,8 +389,8 @@ export default {
   border: none;
   background: var(--marks-color-white);
   border-radius: var(--marks-radius-12);
-  padding: var(--marks-spacing-gutter-16);
-  gap: var(--marks-spacing-gutter-12);
+  padding: var(--marks-spacing-16);
+  gap: var(--marks-spacing-12);
   display: flex;
   align-items: center;
   cursor: pointer;

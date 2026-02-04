@@ -60,7 +60,7 @@ export default {
 .marks-toggle-with-label {
   display: flex;
   align-items: center;
-  gap: var(--marks-spacing-gutter-12);
+  gap: var(--marks-spacing-12);
   cursor: pointer;
 
   // When paragraph exists, align toggle to top (with title)
@@ -71,7 +71,7 @@ export default {
   &__text {
     display: flex;
     flex-direction: column;
-    gap: var(--marks-spacing-gutter-4);
+    gap: var(--marks-spacing-4);
     cursor: pointer;
     flex: 1;
   }

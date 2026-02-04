@@ -224,8 +224,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--marks-spacing-gutter-12) var(--marks-spacing-gutter-16);
-  gap: var(--marks-spacing-gutter-20);
+  padding: var(--marks-spacing-12) var(--marks-spacing-16);
+  gap: var(--marks-spacing-20);
 }
 
 .marks-calendar-datepicker__month-name {
@@ -237,15 +237,15 @@ export default {
 .marks-calendar-datepicker__month-switches {
   display: flex;
   align-items: center;
-  gap: var(--marks-spacing-gutter-4);
+  gap: var(--marks-spacing-4);
 }
 
 .marks-calendar-datepicker__weekdays {
   align-self: stretch;
   display: flex;
   align-items: center;
-  padding: var(--marks-spacing-gutter-8) var(--marks-spacing-gutter-12);
-  gap: var(--marks-spacing-gutter-28);
+  padding: var(--marks-spacing-8) var(--marks-spacing-12);
+  gap: var(--marks-spacing-28);
   @include marks-typography-paragraph-sm-multiline;
   color: var(--marks-color-gray-350);
 }

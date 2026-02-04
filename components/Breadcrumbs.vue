@@ -53,7 +53,7 @@ export default {
 .marks-breadcrumbs {
   display: flex;
   align-items: center;
-  gap: var(--marks-spacing-gutter-8);
+  gap: var(--marks-spacing-8);
   flex-wrap: wrap;
 }
 

@@ -52,20 +52,20 @@
 }
 
 :root {
-  --marks-spacing-gutter-0: 0px;
-  --marks-spacing-gutter-4: 4px;
-  --marks-spacing-gutter-8: 8px;
-  --marks-spacing-gutter-12: 12px;
-  --marks-spacing-gutter-16: 16px;
-  --marks-spacing-gutter-20: 20px;
-  --marks-spacing-gutter-24: 24px;
-  --marks-spacing-gutter-28: 28px;
-  --marks-spacing-gutter-32: 32px;
-  --marks-spacing-gutter-36: 36px;
-  --marks-spacing-gutter-40: 40px;
-  --marks-spacing-gutter-56: 56px;
-  --marks-spacing-gutter-72: 72px;
-  --marks-spacing-gutter-80: 80px;
+  --marks-spacing-0: 0px;
+  --marks-spacing-4: 4px;
+  --marks-spacing-8: 8px;
+  --marks-spacing-12: 12px;
+  --marks-spacing-16: 16px;
+  --marks-spacing-20: 20px;
+  --marks-spacing-24: 24px;
+  --marks-spacing-28: 28px;
+  --marks-spacing-32: 32px;
+  --marks-spacing-36: 36px;
+  --marks-spacing-40: 40px;
+  --marks-spacing-56: 56px;
+  --marks-spacing-72: 72px;
+  --marks-spacing-80: 80px;
   --marks-radius-0: 0px;
   --marks-radius-8: 8px;
   --marks-radius-12: 12px;

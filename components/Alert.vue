@@ -113,10 +113,10 @@ export default {
   position: relative;
   display: flex;
   align-items: flex-start;
-  gap: var(--marks-spacing-gutter-12);
+  gap: var(--marks-spacing-12);
   border-radius: var(--marks-radius-16);
   border: 1px solid var(--marks-color-gray-150);
-  padding: var(--marks-spacing-gutter-16);
+  padding: var(--marks-spacing-16);
   background: var(--marks-color-white);
   box-sizing: border-box;
 
@@ -161,7 +161,7 @@ export default {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: var(--marks-spacing-gutter-20);
+  gap: var(--marks-spacing-20);
   padding-top: 4px;
   min-width: 0;
 }
@@ -169,7 +169,7 @@ export default {
 .marks-alert__text-content {
   display: flex;
   flex-direction: column;
-  gap: var(--marks-spacing-gutter-12);
+  gap: var(--marks-spacing-12);
   align-self: stretch;
 }
 
@@ -188,7 +188,7 @@ export default {
 .marks-alert__actions {
   display: flex;
   align-items: flex-start;
-  gap: var(--marks-spacing-gutter-12);
+  gap: var(--marks-spacing-12);
 }
 
 .marks-alert__close {

@@ -421,8 +421,8 @@ export default {
 .marks-booking__desktop {
   display: flex;
   align-items: center;
-  padding: var(--marks-spacing-gutter-20) var(--marks-spacing-gutter-24);
-  gap: var(--marks-spacing-gutter-32);
+  padding: var(--marks-spacing-20) var(--marks-spacing-24);
+  gap: var(--marks-spacing-32);
 }
 
 .marks-booking__mobile {
@@ -430,8 +430,8 @@ export default {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: var(--marks-spacing-gutter-16) 0;
-  gap: var(--marks-spacing-gutter-16);
+  padding: var(--marks-spacing-16) 0;
+  gap: var(--marks-spacing-16);
   width: 100%;
   box-sizing: border-box;
 }
@@ -441,8 +441,8 @@ export default {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: var(--marks-spacing-gutter-8);
-  gap: var(--marks-spacing-gutter-8);
+  padding: var(--marks-spacing-8);
+  gap: var(--marks-spacing-8);
   width: 100%;
   box-sizing: border-box;
 }
@@ -453,7 +453,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--marks-spacing-gutter-4);
+  gap: var(--marks-spacing-4);
 }
 
 .marks-booking__customer-details {
@@ -483,7 +483,7 @@ export default {
 .marks-booking__nights {
   display: flex;
   align-items: center;
-  gap: var(--marks-spacing-gutter-8);
+  gap: var(--marks-spacing-8);
 }
 
 .marks-booking__status-container {
@@ -501,7 +501,7 @@ export default {
   border-radius: 100px;
   display: flex;
   align-items: center;
-  padding: var(--marks-spacing-gutter-8) var(--marks-spacing-gutter-12);
+  padding: var(--marks-spacing-8) var(--marks-spacing-12);
   color: var(--marks-color-white);
 }
 
@@ -515,7 +515,7 @@ export default {
 .marks-booking__actions {
   display: flex;
   align-items: center;
-  gap: var(--marks-spacing-gutter-8);
+  gap: var(--marks-spacing-8);
   margin-left: auto;
 }
 
@@ -541,7 +541,7 @@ export default {
     align-self: stretch;
     display: flex;
     align-items: center;
-    padding: 0 var(--marks-spacing-gutter-16);
+    padding: 0 var(--marks-spacing-16);
     width: 100%;
     box-sizing: border-box;
   }
@@ -552,14 +552,14 @@ export default {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    gap: var(--marks-spacing-gutter-4);
+    gap: var(--marks-spacing-4);
   }
 
   .marks-booking__nights-mobile {
     align-self: stretch;
     display: flex;
     align-items: center;
-    gap: var(--marks-spacing-gutter-8);
+    gap: var(--marks-spacing-8);
   }
 
   .marks-booking__status-container-mobile {
@@ -574,8 +574,8 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: var(--marks-spacing-gutter-20) var(--marks-spacing-gutter-16);
-    gap: var(--marks-spacing-gutter-4);
+    padding: var(--marks-spacing-20) var(--marks-spacing-16);
+    gap: var(--marks-spacing-4);
     width: 100%;
     box-sizing: border-box;
   }
@@ -584,8 +584,8 @@ export default {
     align-self: stretch;
     display: flex;
     align-items: center;
-    padding: 0 var(--marks-spacing-gutter-16);
-    gap: var(--marks-spacing-gutter-16);
+    padding: 0 var(--marks-spacing-16);
+    gap: var(--marks-spacing-16);
     width: 100%;
     box-sizing: border-box;
   }
@@ -595,13 +595,13 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--marks-spacing-gutter-4);
+    gap: var(--marks-spacing-4);
   }
 
   .marks-booking__action-mobile {
     display: flex;
     align-items: center;
-    gap: var(--marks-spacing-gutter-8);
+    gap: var(--marks-spacing-8);
   }
 }
 
@@ -628,7 +628,7 @@ export default {
     flex: 1;
     display: flex;
     align-items: center;
-    gap: var(--marks-spacing-gutter-8);
+    gap: var(--marks-spacing-8);
   }
 
   .marks-booking__date-minimal {
@@ -664,7 +664,7 @@ export default {
     flex: 1;
     display: flex;
     align-items: center;
-    gap: var(--marks-spacing-gutter-8);
+    gap: var(--marks-spacing-8);
   }
 
   .marks-booking__status-container-minimal {
@@ -676,7 +676,7 @@ export default {
     align-self: stretch;
     display: flex;
     align-items: center;
-    gap: var(--marks-spacing-gutter-16);
+    gap: var(--marks-spacing-16);
   }
 
   .marks-booking__date-range-minimal {
@@ -691,7 +691,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding: 0 var(--marks-spacing-gutter-12) 0 0;
+    padding: 0 var(--marks-spacing-12) 0 0;
   }
 }
 </style>

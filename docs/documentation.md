@@ -34,7 +34,7 @@ Vue + SCSS design system built from Figma design system file. Source of truth is
 
 #### Spacing
 - Gutters (0-80px) and radiuses (0-24px, full) from JSON files
-- CSS custom properties: `var(--marks-spacing-gutter-16)`, `var(--marks-radius-8)`, etc.
+- CSS custom properties: `var(--marks-spacing-16)`, `var(--marks-radius-8)`, etc.
 
 #### Typography
 **Structure:**

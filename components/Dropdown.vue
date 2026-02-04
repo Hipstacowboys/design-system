@@ -67,7 +67,7 @@ export default {
   background: var(--marks-color-white);
   border-radius: var(--marks-radius-24);
   box-shadow: 0px 14px 30px rgba(0, 0, 0, 0.15);
-  padding: var(--marks-spacing-gutter-8);
+  padding: var(--marks-spacing-8);
   z-index: 1000;
   display: flex;
   flex-direction: column;
@@ -82,8 +82,8 @@ export default {
   border: none;
   background: var(--marks-color-white);
   border-radius: var(--marks-radius-12);
-  padding: var(--marks-spacing-gutter-16);
-  gap: var(--marks-spacing-gutter-12);
+  padding: var(--marks-spacing-16);
+  gap: var(--marks-spacing-12);
   display: flex;
   align-items: center;
   cursor: pointer;

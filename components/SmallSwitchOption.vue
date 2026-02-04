@@ -96,7 +96,7 @@ export default {
   display: flex;
   align-items: center;
   background-color: var(--marks-color-white);
-  padding: var(--marks-spacing-gutter-20);
+  padding: var(--marks-spacing-20);
   cursor: pointer;
   transition: background-color 0.2s ease;
   box-sizing: border-box;
@@ -128,7 +128,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--marks-spacing-gutter-8);
+  gap: var(--marks-spacing-8);
   flex: 1;
   z-index: 0;
   min-width: 0;

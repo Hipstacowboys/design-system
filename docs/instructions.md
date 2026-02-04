@@ -98,7 +98,7 @@ export default {
 
 .marks-component-name {
   @include marks-typography-paragraph-md-multiline;
-  padding: var(--marks-spacing-gutter-16);
+  padding: var(--marks-spacing-16);
   border-radius: var(--marks-radius-12);
   color: var(--marks-color-gray-500);
   background: var(--marks-color-white);
@@ -179,9 +179,9 @@ Colors support light/dark mode automatically when theme is set on root element.
 
 ```scss
 .my-component {
-  padding: var(--marks-spacing-gutter-16);
-  margin: var(--marks-spacing-gutter-24);
-  gap: var(--marks-spacing-gutter-8);
+  padding: var(--marks-spacing-16);
+  margin: var(--marks-spacing-24);
+  gap: var(--marks-spacing-8);
 }
 ```
 

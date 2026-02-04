@@ -33,7 +33,7 @@ export default {
   // line-height: $marks-line-height-sm;
   
   // Spacing: Use CSS custom properties
-  padding: var(--marks-spacing-gutter-16);
+  padding: var(--marks-spacing-16);
   border-radius: var(--marks-radius-8);
   
   // Colors: Use CSS custom properties (components define colors)

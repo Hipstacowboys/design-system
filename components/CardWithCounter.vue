@@ -141,14 +141,14 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--marks-spacing-gutter-16);
+  gap: var(--marks-spacing-16);
   border-radius: var(--marks-radius-16);
   background-color: var(--marks-color-white);
   // Use outline for default state (doesn't affect layout)
   border: 2px solid transparent;
   outline: 1px solid var(--marks-color-gray-200);
   outline-offset: -1px;
-  padding: var(--marks-spacing-gutter-28);
+  padding: var(--marks-spacing-28);
   box-sizing: border-box;
   transition: background-color 0.2s ease, border-color 0.2s ease, outline-color 0.2s ease, box-shadow 0.2s ease;
   width: 100%;
@@ -200,7 +200,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--marks-spacing-gutter-8);
+  gap: var(--marks-spacing-8);
   flex-shrink: 0;
   z-index: 1;
   width: 100%;
@@ -234,7 +234,7 @@ export default {
 .marks-count-with-counter__button-container {
   display: flex;
   align-items: center;
-  gap: var(--marks-spacing-gutter-16);
+  gap: var(--marks-spacing-16);
   flex-shrink: 0;
   z-index: 2;
 }

@@ -116,7 +116,7 @@ export default {
 .marks-notification-dialog__header {
   display: flex;
   align-items: center;
-  padding: var(--marks-spacing-gutter-24);
+  padding: var(--marks-spacing-24);
   border-bottom: 1px solid var(--marks-color-gray-150);
 }
 
@@ -130,7 +130,7 @@ export default {
 .marks-notification-dialog__switch {
   display: flex;
   align-items: center;
-  gap: var(--marks-spacing-gutter-16);
+  gap: var(--marks-spacing-16);
 }
 
 .marks-notification-dialog__switch-option {

@@ -335,8 +335,8 @@ export default {
 .marks-place__desktop {
   display: flex;
   align-items: center;
-  padding: var(--marks-spacing-gutter-8) var(--marks-spacing-gutter-24) var(--marks-spacing-gutter-8) var(--marks-spacing-gutter-8);
-  gap: var(--marks-spacing-gutter-24);
+  padding: var(--marks-spacing-8) var(--marks-spacing-24) var(--marks-spacing-8) var(--marks-spacing-8);
+  gap: var(--marks-spacing-24);
 }
 
 .marks-place__mobile {
@@ -344,8 +344,8 @@ export default {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: var(--marks-spacing-gutter-16) 0;
-  gap: var(--marks-spacing-gutter-16);
+  padding: var(--marks-spacing-16) 0;
+  gap: var(--marks-spacing-16);
   width: 100%;
   box-sizing: border-box;
 }
@@ -356,8 +356,8 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: var(--marks-spacing-gutter-4) 0;
-  gap: var(--marks-spacing-gutter-4);
+  padding: var(--marks-spacing-4) 0;
+  gap: var(--marks-spacing-4);
 }
 
 .marks-place__customer-details {
@@ -393,7 +393,7 @@ export default {
 .marks-place__actions {
   display: flex;
   align-items: center;
-  gap: var(--marks-spacing-gutter-8);
+  gap: var(--marks-spacing-8);
   margin-left: auto;
 }
 
@@ -418,7 +418,7 @@ export default {
   .marks-place__image {
     display: block;
     align-self: stretch;
-    padding: 0 var(--marks-spacing-gutter-16);
+    padding: 0 var(--marks-spacing-16);
     width: 100%;
     box-sizing: border-box;
 
@@ -437,8 +437,8 @@ export default {
     align-self: stretch;
     display: flex;
     align-items: center;
-    padding: 0 var(--marks-spacing-gutter-16);
-    gap: var(--marks-spacing-gutter-16);
+    padding: 0 var(--marks-spacing-16);
+    gap: var(--marks-spacing-16);
     width: 100%;
     box-sizing: border-box;
   }
@@ -449,7 +449,7 @@ export default {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    gap: var(--marks-spacing-gutter-4);
+    gap: var(--marks-spacing-4);
   }
 
   .marks-place__status-container-mobile {
@@ -464,8 +464,8 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: var(--marks-spacing-gutter-20) var(--marks-spacing-gutter-16);
-    gap: var(--marks-spacing-gutter-4);
+    padding: var(--marks-spacing-20) var(--marks-spacing-16);
+    gap: var(--marks-spacing-4);
     width: 100%;
     box-sizing: border-box;
   }
@@ -474,8 +474,8 @@ export default {
     align-self: stretch;
     display: flex;
     align-items: center;
-    padding: 0 var(--marks-spacing-gutter-16);
-    gap: var(--marks-spacing-gutter-16);
+    padding: 0 var(--marks-spacing-16);
+    gap: var(--marks-spacing-16);
     width: 100%;
     box-sizing: border-box;
   }
@@ -485,13 +485,13 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--marks-spacing-gutter-4);
+    gap: var(--marks-spacing-4);
   }
 
   .marks-place__actions-mobile {
     display: flex;
     align-items: center;
-    gap: var(--marks-spacing-gutter-8);
+    gap: var(--marks-spacing-8);
     text-align: center;
   }
 
@@ -499,7 +499,7 @@ export default {
     align-self: stretch;
     display: flex;
     align-items: center;
-    gap: var(--marks-spacing-gutter-4);
+    gap: var(--marks-spacing-4);
   }
 }
 </style>

@@ -16,6 +16,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - 
 
+## [1.2.1] - 2026-02-04
+
+### Added
+- 
+
+### Changed
+- 
+
+### Fixed
+-
+
+
 ## [1.2.0] - 2026-02-03
 
 ### Added
@@ -41,6 +53,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - BookingInCalendar component: status badge now circular (44px × 44px) with white text in both themes
 - BookingInCalendar component: pax text color now theme-aware (black in light mode, white in dark mode)
 - BookingInCalendar component: dark mode now uses correct CSS variables (e.g., red-300 for month variant background)
+ - **BREAKING**: Renamed spacing CSS custom properties from `--marks-spacing-gutter-x` to `--marks-spacing-x` across tokens, styles, and documentation
 
 ### Fixed
 - Fixed Table component row height to dynamically adjust based on cell content (multi-line text support)
@@ -219,7 +232,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Responsive design patterns
 - Accessibility features (semantic HTML, ARIA attributes)
 
-[Unreleased]: https://github.com/Hipstacowboys/design-system/compare/v1.2.0...HEAD
+[Unreleased]: https://github.com/Hipstacowboys/design-system/compare/v1.2.1...HEAD
+[1.2.1]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.2.1
 [1.2.0]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.2.0
 [1.1.5]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.1.5
 [1.1.4]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.1.4

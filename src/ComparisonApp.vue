@@ -14,7 +14,7 @@
           class="comparison-item"
         >
           <h3 class="comparison-title">{{ item.title }}</h3>
-          <div class="comparison-component" :style="item.wrapperStyle || { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-gutter-24)', width: '100%' }">
+          <div class="comparison-component" :style="item.wrapperStyle || { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-24)', width: '100%' }">
             <div v-if="item.innerStyle" :style="item.innerStyle">
               <template v-if="item.isGroup && (item.id === 'radio' || item.id === 'radio-with-label')">
                 <component
@@ -90,7 +90,7 @@
           class="comparison-item"
         >
           <h3 class="comparison-title">{{ item.title }}</h3>
-          <div class="comparison-component" :style="item.wrapperStyle ? { ...item.wrapperStyle, justifyContent: 'flex-start' } : { display: 'flex', justifyContent: 'flex-start', padding: 'var(--marks-spacing-gutter-24)', width: '100%' }">
+          <div class="comparison-component" :style="item.wrapperStyle ? { ...item.wrapperStyle, justifyContent: 'flex-start' } : { display: 'flex', justifyContent: 'flex-start', padding: 'var(--marks-spacing-24)', width: '100%' }">
             <div v-if="item.innerStyle" :style="item.innerStyle">
               <template v-if="item.isGroup && (item.id === 'radio' || item.id === 'radio-with-label')">
                 <component
@@ -505,7 +505,7 @@ export default {
           props: { size: 'medium', options: this.selectOptions, placeholder: 'Select an option...' },
           modelValue: this.interactiveSelect,
           onUpdate: (val) => { this.interactiveSelect = val; },
-          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-gutter-24)', width: '100%' },
+          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-24)', width: '100%' },
           innerStyle: { width: '300px' }
         },
         {
@@ -515,7 +515,7 @@ export default {
           props: { size: 'medium', placeholder: 'Placeholder' },
           modelValue: this.inputValueMedium,
           onUpdate: (val) => { this.inputValueMedium = val; },
-          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-gutter-24)', width: '100%' },
+          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-24)', width: '100%' },
           innerStyle: { width: '375px' }
         },
         {
@@ -525,7 +525,7 @@ export default {
           props: { placeholder: 'Placeholder' },
           modelValue: this.textareaValue,
           onUpdate: (val) => { this.textareaValue = val; },
-          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-gutter-24)', width: '100%' },
+          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-24)', width: '100%' },
           innerStyle: { width: '391px' }
         },
         {
@@ -571,8 +571,8 @@ export default {
             { value: 'option2', name: 'radio-group-1' },
             { value: 'option3', name: 'radio-group-1' }
           ],
-          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-gutter-24)', width: '100%' },
-          innerStyle: { display: 'flex', flexDirection: 'column', gap: 'var(--marks-spacing-gutter-8)' }
+          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-24)', width: '100%' },
+          innerStyle: { display: 'flex', flexDirection: 'column', gap: 'var(--marks-spacing-8)' }
         },
         {
           id: 'radio-with-label',
@@ -587,8 +587,8 @@ export default {
             { title: 'Option 2', value: 'option2', name: 'radio-group-2' },
             { title: 'Option 3', value: 'option3', name: 'radio-group-2' }
           ],
-          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-gutter-24)', width: '100%' },
-          innerStyle: { display: 'flex', flexDirection: 'column', gap: 'var(--marks-spacing-gutter-8)' }
+          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-24)', width: '100%' },
+          innerStyle: { display: 'flex', flexDirection: 'column', gap: 'var(--marks-spacing-8)' }
         },
         {
           id: 'status',
@@ -601,7 +601,7 @@ export default {
           title: 'Alert',
           component: Alert,
           props: { type: 'info', title: 'Booking successfuly saved', description: 'This is multilne context. This is multilne context. This is multilne context.', closable: true },
-          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-gutter-24)', width: '100%' },
+          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-24)', width: '100%' },
           innerStyle: { width: '418px' }
         },
         {
@@ -615,7 +615,7 @@ export default {
           title: 'Empty State',
           component: EmptyState,
           props: { title: 'No bookings yet', message: 'When you receive bookings, they will appear here.' },
-          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-gutter-24)', width: '100%' }
+          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-24)', width: '100%' }
         },
         {
           id: 'table',
@@ -630,7 +630,7 @@ export default {
           },
           modelValue: this.tableSelectedRows,
           onUpdate: (val) => { this.tableSelectedRows = val; },
-          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-gutter-24)', width: '100%' }
+          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-24)', width: '100%' }
         },
         {
           id: 'big-switch',
@@ -639,7 +639,7 @@ export default {
           props: { value: 'whole-place', title: 'Whole place', description: 'Lorem ipsum dolor sit amet, consectetur.' },
           modelValue: this.bigSwitchValue,
           onUpdate: (val) => { this.bigSwitchValue = val; },
-          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-gutter-24)', width: '100%' },
+          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-24)', width: '100%' },
           innerStyle: { width: '400px' }
         },
         {
@@ -649,7 +649,7 @@ export default {
           props: { options: this.smallSwitchOptions },
           modelValue: this.smallSwitchValue,
           onUpdate: (val) => { this.smallSwitchValue = val; },
-          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-gutter-24)', width: '100%' },
+          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-24)', width: '100%' },
           innerStyle: { width: '420px' }
         },
         {
@@ -665,7 +665,7 @@ export default {
           props: { tabs: this.tabsOptions },
           modelValue: this.activeTab,
           onUpdate: (val) => { this.activeTab = val; },
-          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-gutter-24)', width: '100%' },
+          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-24)', width: '100%' },
           innerStyle: { width: '450px' }
         },
         {
@@ -675,7 +675,7 @@ export default {
           props: { tabs: this.tabsOptions },
           modelValue: this.activeTab,
           onUpdate: (val) => { this.activeTab = val; },
-          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-gutter-24)', width: '100%' },
+          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-24)', width: '100%' },
           innerStyle: { width: '500px' }
         },
         {
@@ -685,7 +685,7 @@ export default {
           props: { messages: this.notificationMessages },
           modelValue: this.notificationFilter,
           onUpdate: (val) => { this.notificationFilter = val; },
-          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-gutter-24)', width: '100%' },
+          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-24)', width: '100%' },
           innerStyle: { width: '529px' }
         },
         {
@@ -703,7 +703,7 @@ export default {
           props: { icon: PhBed, title: 'Double bed', description: 'Lorem ipsum dolor sit' },
           modelValue: this.cardWithCounterValue,
           onUpdate: (val) => { this.cardWithCounterValue = val; },
-          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-gutter-24)', width: '100%' },
+          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-24)', width: '100%' },
           innerStyle: { width: '250px' }
         },
         {
@@ -735,7 +735,7 @@ export default {
           },
           modelValue: this.bookingStatus,
           onUpdate: (val) => { this.bookingStatus = val; },
-          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-gutter-24)', width: '100%' },
+          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-24)', width: '100%' },
           innerStyle: { width: '400px' }
         },
         {
@@ -754,7 +754,7 @@ export default {
             sourceBadgeColor: 'var(--marks-color-red-200)',
             theme: 'light'
           },
-          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-gutter-24)', width: '100%' },
+          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-24)', width: '100%' },
           innerStyle: { width: '600px' }
         },
         {
@@ -762,7 +762,7 @@ export default {
           title: 'Calendar',
           component: Calendar,
           props: { variant: 'month', days: this.calendarDays },
-          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-gutter-24)', width: '100%' },
+          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-24)', width: '100%' },
           innerStyle: { width: '870px' }
         },
         {
@@ -772,7 +772,7 @@ export default {
           props: {},
           modelValue: this.selectedDate,
           onUpdate: (val) => { this.selectedDate = val; },
-          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-gutter-24)', width: '100%' },
+          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-24)', width: '100%' },
           innerStyle: { width: '400px' }
         },
         {
@@ -789,7 +789,7 @@ export default {
             statusType: 'success',
             statusLabel: 'Synced'
           },
-          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-gutter-24)', width: '100%' },
+          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-24)', width: '100%' },
           innerStyle: { width: '400px' }
         },
         {
@@ -806,7 +806,7 @@ export default {
             theme: 'Light mode',
             themeSubtitle: 'Transparent'
           },
-          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-gutter-24)', width: '100%' },
+          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-24)', width: '100%' },
           innerStyle: { width: '400px' }
         },
         {
@@ -820,7 +820,7 @@ export default {
           },
           modelValue: this.navbarActiveItem,
           onUpdate: (val) => { this.navbarActiveItem = val; },
-          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-gutter-24)', width: '100%' },
+          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-24)', width: '100%' },
           innerStyle: { width: '300px' }
         },
         {
@@ -833,7 +833,7 @@ export default {
             bottomLeft: '10 people',
             bottomRight: 'Airbnb'
           },
-          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-gutter-24)', width: '100%' },
+          wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-24)', width: '100%' },
           innerStyle: { width: '200px' }
         }
       ];
@@ -860,13 +860,13 @@ export default {
 .comparison-header {
   background: var(--marks-color-white);
   border-bottom: 1px solid var(--marks-color-gray-200);
-  padding: var(--marks-spacing-gutter-40);
+  padding: var(--marks-spacing-40);
   
   h1 {
     font-size: 32px;
     font-weight: 600;
     color: var(--marks-color-gray-500);
-    margin-bottom: var(--marks-spacing-gutter-8);
+    margin-bottom: var(--marks-spacing-8);
   }
   
   p {
@@ -975,7 +975,7 @@ export default {
 
 .comparison-title {
   position: absolute;
-  top: var(--marks-spacing-gutter-16);
+  top: var(--marks-spacing-16);
   font-size: 16px;
   font-weight: 600;
   color: var(--marks-color-gray-500);
@@ -984,11 +984,11 @@ export default {
 }
 
 .comparison-column--light .comparison-title {
-  left: var(--marks-spacing-gutter-24);
+  left: var(--marks-spacing-24);
 }
 
 .comparison-column--dark .comparison-title {
-  right: var(--marks-spacing-gutter-24);
+  right: var(--marks-spacing-24);
   color: var(--marks-color-gray-200);
 }
 </style>

@@ -17,7 +17,7 @@
   background: var(--marks-color-white);
   border-right: 1px solid var(--marks-color-gray-200);
   overflow-y: auto;
-  padding: var(--marks-spacing-gutter-24);
+  padding: var(--marks-spacing-24);
 }
 
 .preview-nav h2 {
@@ -26,8 +26,8 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--marks-color-gray-400);
-  margin-bottom: var(--marks-spacing-gutter-16);
-  margin-top: var(--marks-spacing-gutter-24);
+  margin-bottom: var(--marks-spacing-16);
+  margin-top: var(--marks-spacing-24);
 }
 
 .preview-nav h2:first-child {
@@ -39,12 +39,12 @@
 }
 
 .preview-nav li {
-  margin-bottom: var(--marks-spacing-gutter-4);
+  margin-bottom: var(--marks-spacing-4);
 }
 
 .preview-nav a {
   display: block;
-  padding: var(--marks-spacing-gutter-8) var(--marks-spacing-gutter-12);
+  padding: var(--marks-spacing-8) var(--marks-spacing-12);
   color: var(--marks-color-gray-500);
   text-decoration: none;
   border-radius: var(--marks-radius-8);
@@ -65,23 +65,23 @@
 .preview-content {
   flex: 1;
   overflow-y: auto;
-  padding: var(--marks-spacing-gutter-40);
+  padding: var(--marks-spacing-40);
 }
 
 .preview-section {
-  margin-bottom: var(--marks-spacing-gutter-56);
+  margin-bottom: var(--marks-spacing-56);
 }
 
 .preview-section h1 {
   font-size: 32px;
   font-weight: 600;
   color: var(--marks-color-gray-500);
-  margin-bottom: var(--marks-spacing-gutter-8);
+  margin-bottom: var(--marks-spacing-8);
 }
 
 .preview-section p {
   color: var(--marks-color-gray-400);
-  margin-bottom: var(--marks-spacing-gutter-32);
+  margin-bottom: var(--marks-spacing-32);
   font-size: 16px;
 }
 
@@ -89,8 +89,8 @@
   font-size: 20px;
   font-weight: 600;
   color: var(--marks-color-gray-500);
-  margin-bottom: var(--marks-spacing-gutter-16);
-  margin-top: var(--marks-spacing-gutter-32);
+  margin-bottom: var(--marks-spacing-16);
+  margin-top: var(--marks-spacing-32);
 }
 
 .preview-section h2:first-of-type {
@@ -101,20 +101,20 @@
 .token-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: var(--marks-spacing-gutter-16);
-  margin-bottom: var(--marks-spacing-gutter-32);
+  gap: var(--marks-spacing-16);
+  margin-bottom: var(--marks-spacing-32);
 }
 
 .token-card {
   background: var(--marks-color-white);
   border: 1px solid var(--marks-color-gray-200);
   border-radius: var(--marks-radius-12);
-  padding: var(--marks-spacing-gutter-16);
+  padding: var(--marks-spacing-16);
   overflow: hidden;
 }
 
 .token-card-header {
-  margin-bottom: var(--marks-spacing-gutter-12);
+  margin-bottom: var(--marks-spacing-12);
 }
 
 .token-card-name {
@@ -123,7 +123,7 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--marks-color-gray-400);
-  margin-bottom: var(--marks-spacing-gutter-4);
+  margin-bottom: var(--marks-spacing-4);
 }
 
 .token-card-value {
@@ -138,7 +138,7 @@
   width: 100%;
   height: 80px;
   border-radius: var(--marks-radius-8);
-  margin-bottom: var(--marks-spacing-gutter-12);
+  margin-bottom: var(--marks-spacing-12);
   border: 1px solid var(--marks-color-gray-200);
 }
 
@@ -146,7 +146,7 @@
 .spacing-sample {
   background: var(--marks-color-primary-solid);
   opacity: 0.2;
-  margin-bottom: var(--marks-spacing-gutter-12);
+  margin-bottom: var(--marks-spacing-12);
   border-radius: var(--marks-radius-4);
 }
 
@@ -154,7 +154,7 @@
   font-size: 11px;
   color: var(--marks-color-gray-400);
   text-align: center;
-  padding: var(--marks-spacing-gutter-4) 0;
+  padding: var(--marks-spacing-4) 0;
 }
 
 // Radius Token Display
@@ -163,7 +163,7 @@
   height: 60px;
   background: var(--marks-color-primary-solid);
   opacity: 0.2;
-  margin-bottom: var(--marks-spacing-gutter-12);
+  margin-bottom: var(--marks-spacing-12);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -177,9 +177,9 @@
 // Theme Toggle
 .theme-toggle {
   position: fixed;
-  top: var(--marks-spacing-gutter-16);
-  right: var(--marks-spacing-gutter-16);
-  padding: var(--marks-spacing-gutter-8) var(--marks-spacing-gutter-16);
+  top: var(--marks-spacing-16);
+  right: var(--marks-spacing-16);
+  padding: var(--marks-spacing-8) var(--marks-spacing-16);
   background: var(--marks-color-white);
   border: 1px solid var(--marks-color-gray-200);
   border-radius: var(--marks-radius-8);
@@ -202,16 +202,16 @@
 .component-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: var(--marks-spacing-gutter-24);
-  margin-bottom: var(--marks-spacing-gutter-32);
+  gap: var(--marks-spacing-24);
+  margin-bottom: var(--marks-spacing-32);
 }
 
 .component-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--marks-spacing-gutter-12);
-  padding: var(--marks-spacing-gutter-16);
+  gap: var(--marks-spacing-12);
+  padding: var(--marks-spacing-16);
   background: var(--marks-color-white);
   border: 1px solid var(--marks-color-gray-200);
   border-radius: var(--marks-radius-12);
@@ -230,8 +230,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--marks-spacing-gutter-16);
-  padding: var(--marks-spacing-gutter-24);
+  gap: var(--marks-spacing-16);
+  padding: var(--marks-spacing-24);
   background: var(--marks-color-white);
   border: 1px solid var(--marks-color-gray-200);
   border-radius: var(--marks-radius-12);
@@ -363,20 +363,20 @@ body {
 .color-sample-black { background: var(--marks-color-black); }
 
 // Spacing sample classes
-.spacing-sample-0 { height: var(--marks-spacing-gutter-0); }
-.spacing-sample-4 { height: var(--marks-spacing-gutter-4); }
-.spacing-sample-8 { height: var(--marks-spacing-gutter-8); }
-.spacing-sample-12 { height: var(--marks-spacing-gutter-12); }
-.spacing-sample-16 { height: var(--marks-spacing-gutter-16); }
-.spacing-sample-20 { height: var(--marks-spacing-gutter-20); }
-.spacing-sample-24 { height: var(--marks-spacing-gutter-24); }
-.spacing-sample-28 { height: var(--marks-spacing-gutter-28); }
-.spacing-sample-32 { height: var(--marks-spacing-gutter-32); }
-.spacing-sample-36 { height: var(--marks-spacing-gutter-36); }
-.spacing-sample-40 { height: var(--marks-spacing-gutter-40); }
-.spacing-sample-56 { height: var(--marks-spacing-gutter-56); }
-.spacing-sample-72 { height: var(--marks-spacing-gutter-72); }
-.spacing-sample-80 { height: var(--marks-spacing-gutter-80); }
+.spacing-sample-0 { height: var(--marks-spacing-0); }
+.spacing-sample-4 { height: var(--marks-spacing-4); }
+.spacing-sample-8 { height: var(--marks-spacing-8); }
+.spacing-sample-12 { height: var(--marks-spacing-12); }
+.spacing-sample-16 { height: var(--marks-spacing-16); }
+.spacing-sample-20 { height: var(--marks-spacing-20); }
+.spacing-sample-24 { height: var(--marks-spacing-24); }
+.spacing-sample-28 { height: var(--marks-spacing-28); }
+.spacing-sample-32 { height: var(--marks-spacing-32); }
+.spacing-sample-36 { height: var(--marks-spacing-36); }
+.spacing-sample-40 { height: var(--marks-spacing-40); }
+.spacing-sample-56 { height: var(--marks-spacing-56); }
+.spacing-sample-72 { height: var(--marks-spacing-72); }
+.spacing-sample-80 { height: var(--marks-spacing-80); }
 
 // Radius sample classes
 .radius-sample-0 { border-radius: var(--marks-radius-0); }
@@ -389,7 +389,7 @@ body {
 // Typography sample classes
 .typography-sample {
   color: #000000;
-  margin-bottom: var(--marks-spacing-gutter-12);
+  margin-bottom: var(--marks-spacing-12);
 }
 
 .typography-sample-text {
@@ -402,10 +402,10 @@ body {
 
 // Comparison View Styles
 .preview-section--comparison {
-  margin: calc(-1 * var(--marks-spacing-gutter-40));
+  margin: calc(-1 * var(--marks-spacing-40));
   padding: 0;
   max-width: none;
-  width: calc(100% + 2 * var(--marks-spacing-gutter-40));
+  width: calc(100% + 2 * var(--marks-spacing-40));
 }
 
 .comparison-header {
@@ -462,7 +462,7 @@ body {
   font-size: 16px;
   font-weight: 600;
   color: var(--marks-color-gray-500);
-  padding: var(--marks-spacing-gutter-16) var(--marks-spacing-gutter-24);
+  padding: var(--marks-spacing-16) var(--marks-spacing-24);
   margin: 0;
 }
 

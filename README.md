@@ -64,7 +64,7 @@ design-system/
 
 .marks-my-component {
   @include marks-typography-paragraph-sm;
-  padding: var(--marks-spacing-gutter-16);
+  padding: var(--marks-spacing-16);
   color: var(--marks-color-gray-500);
 }
 </style>

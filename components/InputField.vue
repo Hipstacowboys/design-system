@@ -236,7 +236,7 @@ export default {
   &--small {
     border-radius: var(--marks-radius-8);
     padding: 8px;
-    gap: var(--marks-spacing-gutter-8);
+    gap: var(--marks-spacing-8);
     
     // Small size select addon typography
     .marks-input-field__addon--select :deep(.marks-select__text) {
@@ -247,7 +247,7 @@ export default {
   &--medium {
     border-radius: var(--marks-radius-12);
     padding: 16px;
-    gap: var(--marks-spacing-gutter-12);
+    gap: var(--marks-spacing-12);
   }
 
   // Error state
@@ -342,7 +342,7 @@ export default {
   &--text {
     @include marks-typography-paragraph-md-multiline;
     color: var(--marks-color-gray-500);
-    gap: var(--marks-spacing-gutter-8);
+    gap: var(--marks-spacing-8);
   }
 
   &--select {
@@ -392,7 +392,7 @@ export default {
       position: relative !important;
       right: auto !important;
       left: auto !important;
-      margin-left: var(--marks-spacing-gutter-8);
+      margin-left: var(--marks-spacing-8);
       color: var(--marks-color-gray-500);
       pointer-events: auto;
     }

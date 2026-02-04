@@ -132,15 +132,15 @@ export default {
   // Month variant
   &--month {
     min-height: 120px;
-    padding: var(--marks-spacing-gutter-16);
-    gap: var(--marks-spacing-gutter-16);
+    padding: var(--marks-spacing-16);
+    gap: var(--marks-spacing-16);
   }
 
   // Year variant
   &--year {
     min-height: 65px;
-    padding: var(--marks-spacing-gutter-8);
-    gap: var(--marks-spacing-gutter-4);
+    padding: var(--marks-spacing-8);
+    gap: var(--marks-spacing-4);
   }
 
   // Hover state
@@ -207,7 +207,7 @@ export default {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-end;
-  gap: var(--marks-spacing-gutter-4);
+  gap: var(--marks-spacing-4);
   font-size: 16px;
 
   .marks-calendar-day--year & {

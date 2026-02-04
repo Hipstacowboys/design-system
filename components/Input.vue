@@ -170,8 +170,8 @@ export default {
 .marks-input__labels {
   display: flex;
   align-items: center;
-  gap: var(--marks-spacing-gutter-12);
-  margin-bottom: var(--marks-spacing-gutter-12);
+  gap: var(--marks-spacing-12);
+  margin-bottom: var(--marks-spacing-12);
 }
 
 .marks-input__label {
@@ -193,6 +193,6 @@ export default {
 }
 
 .marks-input__message {
-  margin-top: var(--marks-spacing-gutter-4);
+  margin-top: var(--marks-spacing-4);
 }
 </style>

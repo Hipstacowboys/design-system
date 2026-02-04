@@ -61,8 +61,8 @@ export default {
   background-color: var(--marks-color-gray-150);
   display: flex;
   align-items: center;
-  padding: var(--marks-spacing-gutter-8);
-  gap: var(--marks-spacing-gutter-4);
+  padding: var(--marks-spacing-8);
+  gap: var(--marks-spacing-4);
 }
 
 // Override button styles to match design and prevent layout jumps

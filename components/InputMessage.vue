@@ -61,7 +61,7 @@ export default {
 .marks-input-message {
   display: flex;
   align-items: center;
-  gap: var(--marks-spacing-gutter-8);
+  gap: var(--marks-spacing-8);
   @include marks-typography-paragraph-sm-multiline;
 
   &--error {

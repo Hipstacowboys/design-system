@@ -55,7 +55,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--marks-spacing-gutter-12) var(--marks-spacing-gutter-24);
+  padding: var(--marks-spacing-12) var(--marks-spacing-24);
   border: none;
   background: transparent;
   cursor: pointer;

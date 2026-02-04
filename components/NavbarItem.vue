@@ -79,7 +79,7 @@ export default {
   display: flex;
   align-items: center;
   padding: 4px;
-  gap: var(--marks-spacing-gutter-16);
+  gap: var(--marks-spacing-16);
   cursor: pointer;
   transition: background-color 0.2s ease;
   @include marks-typography-paragraph-md-multiline;
@@ -122,7 +122,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--marks-spacing-gutter-12);
+  padding: var(--marks-spacing-12);
   box-sizing: border-box;
   flex-shrink: 0;
 

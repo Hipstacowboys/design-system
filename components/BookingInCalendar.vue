@@ -170,9 +170,9 @@ export default {
   border-radius: 100px;
   display: flex;
   align-items: center;
-  padding: var(--marks-spacing-gutter-4) var(--marks-spacing-gutter-12) var(--marks-spacing-gutter-4) var(--marks-spacing-gutter-4);
+  padding: var(--marks-spacing-4) var(--marks-spacing-12) var(--marks-spacing-4) var(--marks-spacing-4);
   box-sizing: border-box;
-  gap: var(--marks-spacing-gutter-8);
+  gap: var(--marks-spacing-8);
 
   // Month variant
   &--month {
@@ -206,13 +206,13 @@ export default {
   flex: 1;
   display: flex;
   align-items: center;
-  gap: var(--marks-spacing-gutter-8);
+  gap: var(--marks-spacing-8);
 }
 
 .marks-booking-in-calendar__right-section {
   display: flex;
   align-items: center;
-  gap: var(--marks-spacing-gutter-8);
+  gap: var(--marks-spacing-8);
 }
 
 .marks-booking-in-calendar__status-badge {
@@ -239,7 +239,7 @@ export default {
 .marks-booking-in-calendar__customer-info {
   display: flex;
   align-items: center;
-  gap: var(--marks-spacing-gutter-8);
+  gap: var(--marks-spacing-8);
   font-size: 16px;
   color: var(--marks-color-black);
 }
@@ -268,7 +268,7 @@ export default {
   border-radius: 100px;
   display: flex;
   align-items: center;
-  padding: var(--marks-spacing-gutter-8) var(--marks-spacing-gutter-12);
+  padding: var(--marks-spacing-8) var(--marks-spacing-12);
 }
 
 .marks-booking-in-calendar__source-text {
@@ -305,7 +305,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--marks-spacing-gutter-8) var(--marks-spacing-gutter-12);
+  padding: var(--marks-spacing-8) var(--marks-spacing-12);
   box-sizing: border-box;
 }
 

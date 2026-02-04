@@ -68,7 +68,7 @@ export default {
 }
 
 .marks-tabs__left-border {
-  width: var(--marks-spacing-gutter-16);
+  width: var(--marks-spacing-16);
   border-bottom: 1px solid var(--marks-color-gray-200);
   flex-shrink: 0;
   height: 100%;

@@ -79,7 +79,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--marks-spacing-gutter-28);
+  gap: var(--marks-spacing-28);
   text-align: center;
   width: 100%;
 }
@@ -103,7 +103,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--marks-spacing-gutter-8);
+  gap: var(--marks-spacing-8);
   width: 100%;
 }
 

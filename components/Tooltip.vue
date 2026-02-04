@@ -147,7 +147,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: var(--marks-spacing-gutter-8) var(--marks-spacing-gutter-12);
+  padding: var(--marks-spacing-8) var(--marks-spacing-12);
   isolation: isolate;
   position: relative;
 }
@@ -163,7 +163,7 @@ export default {
   align-self: stretch;
   display: flex;
   align-items: center;
-  gap: var(--marks-spacing-gutter-8);
+  gap: var(--marks-spacing-8);
   z-index: 0;
   flex-shrink: 0;
 }
@@ -171,7 +171,7 @@ export default {
 .marks-tooltip__bottom {
   display: flex;
   align-items: center;
-  gap: var(--marks-spacing-gutter-8);
+  gap: var(--marks-spacing-8);
   z-index: 1;
   flex-shrink: 0;
   @include marks-typography-paragraph-sm-multiline;

@@ -104,8 +104,8 @@ export default {
 .marks-textarea__labels {
   display: flex;
   align-items: center;
-  gap: var(--marks-spacing-gutter-12);
-  margin-bottom: var(--marks-spacing-gutter-12);
+  gap: var(--marks-spacing-12);
+  margin-bottom: var(--marks-spacing-12);
 }
 
 .marks-textarea__label {
@@ -127,7 +127,7 @@ export default {
 }
 
 .marks-textarea__character-count {
-  margin-top: var(--marks-spacing-gutter-8);
+  margin-top: var(--marks-spacing-8);
   @include marks-typography-paragraph-sm-multiline;
   color: var(--marks-color-gray-300);
 }

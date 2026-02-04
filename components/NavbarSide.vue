@@ -107,7 +107,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: var(--marks-spacing-gutter-32) var(--marks-spacing-gutter-24);
+  padding: var(--marks-spacing-32) var(--marks-spacing-24);
   box-sizing: border-box;
   gap: 47px;
 
@@ -139,7 +139,7 @@ export default {
   flex-direction: column;
   align-items: flex-start;
   padding: 30px 0 0;
-  gap: var(--marks-spacing-gutter-32);
+  gap: var(--marks-spacing-32);
 }
 
 .marks-navbar-side__section {
@@ -147,7 +147,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--marks-spacing-gutter-8);
+  gap: var(--marks-spacing-8);
 }
 
 .marks-navbar-side__section-label {
@@ -155,7 +155,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 var(--marks-spacing-gutter-12);
+  padding: 0 var(--marks-spacing-12);
 }
 
 .marks-navbar-side__section-label-text {
@@ -178,7 +178,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--marks-spacing-gutter-4);
+  gap: var(--marks-spacing-4);
 }
 
 .marks-navbar-side__bottom-items {
@@ -186,6 +186,6 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--marks-spacing-gutter-4);
+  gap: var(--marks-spacing-4);
 }
 </style>

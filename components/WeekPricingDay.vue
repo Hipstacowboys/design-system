@@ -201,16 +201,16 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: var(--marks-spacing-gutter-16) var(--marks-spacing-gutter-8) var(--marks-spacing-gutter-8);
-    gap: var(--marks-spacing-gutter-16);
+    padding: var(--marks-spacing-16) var(--marks-spacing-8) var(--marks-spacing-8);
+    gap: var(--marks-spacing-16);
     width: 112px;
   }
 
   &--horizontal {
     display: flex;
     align-items: center;
-    padding: var(--marks-spacing-gutter-8);
-    gap: var(--marks-spacing-gutter-16);
+    padding: var(--marks-spacing-8);
+    gap: var(--marks-spacing-16);
     width: 100%;
     min-width: 289px;
   }
@@ -221,7 +221,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 var(--marks-spacing-gutter-8);
+  padding: 0 var(--marks-spacing-8);
   flex-shrink: 0;
   z-index: 0;
 }
@@ -230,7 +230,7 @@ export default {
   flex: 1;
   display: flex;
   align-items: center;
-  padding: 0 var(--marks-spacing-gutter-16);
+  padding: 0 var(--marks-spacing-16);
   gap: 10px;
 }
 
@@ -259,7 +259,7 @@ export default {
 
 // Override ButtonSecondary padding for this component
 :deep(.marks-button--secondary.marks-button--medium) {
-  padding: var(--marks-spacing-gutter-16) var(--marks-spacing-gutter-16) !important;
+  padding: var(--marks-spacing-16) var(--marks-spacing-16) !important;
 }
 
 .marks-week-pricing-day__input-container {

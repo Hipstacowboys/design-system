@@ -103,7 +103,7 @@ export default {
 .marks-notification-message {
   display: flex;
   align-items: flex-start;
-  gap: var(--marks-spacing-gutter-12);
+  gap: var(--marks-spacing-12);
   box-sizing: border-box;
 
   // Single type - standalone with shadow
@@ -112,14 +112,14 @@ export default {
     border-radius: var(--marks-radius-16);
     background-color: var(--marks-color-white);
     border: 1px solid var(--marks-color-gray-150);
-    padding: var(--marks-spacing-gutter-16);
+    padding: var(--marks-spacing-16);
   }
 
   // InList type - in dialog with borders
   &--inList {
     border-top: 1px solid var(--marks-color-gray-150);
     border-bottom: 1px solid var(--marks-color-gray-150);
-    padding: 24px var(--marks-spacing-gutter-16);
+    padding: 24px var(--marks-spacing-16);
     margin-top: -1px;
     position: relative;
   }
@@ -144,21 +144,21 @@ export default {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: var(--marks-spacing-gutter-20);
+  gap: var(--marks-spacing-20);
   min-width: 0;
 }
 
 .marks-notification-message__text-content {
   display: flex;
   flex-direction: column;
-  gap: var(--marks-spacing-gutter-8);
+  gap: var(--marks-spacing-8);
   align-self: stretch;
 }
 
 .marks-notification-message__header {
   display: flex;
   align-items: center;
-  gap: var(--marks-spacing-gutter-8);
+  gap: var(--marks-spacing-8);
 }
 
 .marks-notification-message__title {
@@ -177,7 +177,7 @@ export default {
 .marks-notification-message__body {
   display: flex;
   flex-direction: column;
-  gap: var(--marks-spacing-gutter-8);
+  gap: var(--marks-spacing-8);
   width: 100%;
 }
 
@@ -195,7 +195,7 @@ export default {
 .marks-notification-message__actions {
   display: flex;
   align-items: flex-start;
-  gap: var(--marks-spacing-gutter-12);
+  gap: var(--marks-spacing-12);
 }
 
 .marks-notification-message__new-indicator {
