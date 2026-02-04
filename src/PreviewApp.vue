@@ -3019,9 +3019,15 @@
               <ButtonPrimary size="medium" text="Add new" :left-icon="PhPlus" />
             </template>
             <template #cell-col2="{ row }">
-              <div style="display: flex; align-items: center; gap: var(--marks-spacing-8); width: 100%; min-width: 0;">
-                <span style="flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ row.col2 }}</span>
-                <ButtonSecondary size="small" text="Copy" style="flex-shrink: 0;" />
+              <div class="marks-table__cell-with-action">
+                <span class="marks-table__cell-with-action-text">
+                  {{ row.col2 }}
+                </span>
+                <ButtonSecondary
+                  size="small"
+                  text="Copy"
+                  class="marks-table__cell-with-action-button"
+                />
               </div>
             </template>
           </Table>

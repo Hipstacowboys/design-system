@@ -77,12 +77,31 @@
                   />
                 </template>
                 <template v-else-if="col.type === 'actions'">
-                  <ButtonSecondary
-                    size="small"
-                    :icon-only="true"
-                    :left-icon="actionsIcon"
-                    @click="$emit('row-action', { row, rowIndex })"
-                  />
+                  <!-- Custom actions cell slot (per-column or generic), with fallback to default button -->
+                  <template v-if="$slots[`cell-${col.id}`] || $slots['cell-actions']">
+                    <slot
+                      v-if="$slots[`cell-${col.id}`]"
+                      :name="`cell-${col.id}`"
+                      :row="row"
+                      :row-index="rowIndex"
+                      :column="col"
+                    />
+                    <slot
+                      v-else
+                      name="cell-actions"
+                      :row="row"
+                      :row-index="rowIndex"
+                      :column="col"
+                    />
+                  </template>
+                  <template v-else>
+                    <ButtonSecondary
+                      size="small"
+                      :icon-only="true"
+                      :left-icon="actionsIcon"
+                      @click="$emit('row-action', { row, rowIndex })"
+                    />
+                  </template>
                 </template>
                 <template v-else-if="col.type === 'status'">
                   <Status
@@ -107,6 +126,7 @@
 </template>
 
 <script>
+import { markRaw } from 'vue';
 import Checkbox from './Checkbox.vue';
 import ButtonSecondary from './ButtonSecondary.vue';
 import Status from './Status.vue';
@@ -150,7 +170,8 @@ export default {
   emits: ['update:modelValue', 'row-action'],
   data() {
     return {
-      actionsIcon: PhDotsThreeVertical
+      // Mark icon component as raw so Vue doesn't try to make it reactive
+      actionsIcon: markRaw(PhDotsThreeVertical)
     };
   },
   computed: {

@@ -6,3 +6,34 @@
 
 // Base styles will be added here as components are created
 // All classes use marks- prefix
+
+// -----------------------------------------------------------------------------
+// Table helpers
+// -----------------------------------------------------------------------------
+// Helper layout for table cells that contain long, truncated text + an action
+// button in the same cell. The button is absolutely positioned at the right
+// edge so it stays visible while the text truncates with an ellipsis.
+
+.marks-table__cell-with-action {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+
+.marks-table__cell-with-action-text {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  // Reserve space on the right side for the fixed-width action button
+  padding-right: 56px;
+}
+
+.marks-table__cell-with-action-button {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  // Ensure the button sits above text and doesn't get clipped
+  z-index: 1;
+}

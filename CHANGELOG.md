@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - 
 
-## [1.2.2] - 2026-02-04
+## [1.2.3] - 2026-02-04
 
 ### Added
 - 
@@ -26,6 +26,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 -
+
+
+## [1.2.2] - 2026-02-04
+
+### Added
+- Global helper classes for table cells combining long, truncated text with a fixed-position action button (`.marks-table__cell-with-action*`)
+- Updated table preview example showing URL + “Copy” button using the new helper layout
+
+### Changed
+- Table actions column now supports scoped slots (`cell-{id}` or `cell-actions`) to fully customize per-row actions content, with a fallback to the built-in three-dots button
+
+### Fixed
+- Resolved Vue warnings about “Component that was made a reactive object” by wrapping internal Phosphor icon components in `markRaw` within `WeekPricingDay` and `Table`
 
 
 ## [1.2.1] - 2026-02-04
@@ -245,7 +258,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Responsive design patterns
 - Accessibility features (semantic HTML, ARIA attributes)
 
-[Unreleased]: https://github.com/Hipstacowboys/design-system/compare/v1.2.2...HEAD
+[Unreleased]: https://github.com/Hipstacowboys/design-system/compare/v1.2.3...HEAD
+[1.2.3]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.2.3
 [1.2.2]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.2.2
 [1.2.1]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.2.1
 [1.2.0]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.2.0

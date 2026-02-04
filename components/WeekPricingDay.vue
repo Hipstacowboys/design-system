@@ -83,6 +83,7 @@
 </template>
 
 <script>
+import { markRaw } from 'vue';
 import { PhPlus, PhCheckCircle } from '@phosphor-icons/vue';
 import ButtonSecondary from './ButtonSecondary.vue';
 import InputField from './InputField.vue';
@@ -113,8 +114,9 @@ export default {
   emits: ['update:modelValue', 'change'],
   data() {
     return {
-      PhPlus,
-      PhCheckCircle,
+      // Mark icon components as raw so Vue doesn't try to make them reactive
+      PhPlus: markRaw(PhPlus),
+      PhCheckCircle: markRaw(PhCheckCircle),
       inputValue: this.modelValue !== null ? String(this.modelValue) : '',
       showInput: this.modelValue !== null && this.modelValue !== '' && this.modelValue !== '0' && Number(this.modelValue) !== 0,
       isFocused: false

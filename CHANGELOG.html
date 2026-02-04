@@ -32,6 +32,27 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 <li></li>
 </ul>
 
+<h2 id="1.2.2-2026-02-04"><a href="https://github.com/Hipstacowboys/design-system/releases/tag/v1.2.2">1.2.2</a> - 2026&#8211;02&#8211;04</h2>
+
+<h3 id="added">Added</h3>
+
+<ul>
+<li>Global helper classes for table cells combining long, truncated text with a fixed-position action button (<code>.marks-table__cell-with-action*</code>)</li>
+<li>Updated table preview example showing URL + “Copy” button using the new helper layout</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+<li>Table actions column now supports scoped slots (<code>cell-{id}</code> or <code>cell-actions</code>) to fully customize per-row actions content, with a fallback to the built-in three-dots button</li>
+</ul>
+
+<h3 id="fixed">Fixed</h3>
+
+<ul>
+<li>Resolved Vue warnings about “Component that was made a reactive object” by wrapping internal Phosphor icon components in <code>markRaw</code> within <code>WeekPricingDay</code> and <code>Table</code></li>
+</ul>
+
 <h2 id="1.2.1-2026-02-04"><a href="https://github.com/Hipstacowboys/design-system/releases/tag/v1.2.1">1.2.1</a> - 2026&#8211;02&#8211;04</h2>
 
 <h3 id="added">Added</h3>

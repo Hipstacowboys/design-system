@@ -234,6 +234,28 @@
   word-wrap: break-word;
 }
 
+.marks-table__cell-with-action {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+
+.marks-table__cell-with-action-text {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-right: 56px;
+}
+
+.marks-table__cell-with-action-button {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
 .preview-container {
   display: flex;
   height: 100vh;
