@@ -1200,9 +1200,21 @@
             </div>
           </div>
           <div class="component-card">
-            <div class="component-label">Loading</div>
+            <div class="component-label">Loading (spinner only)</div>
             <div class="toggle-container">
-              <ButtonPrimary size="small" text="Primary Button" :loading="true" />
+              <ButtonPrimary size="small" text="Primary Button" :loading="true" loading-icon-position="only" />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Loading (text + left)</div>
+            <div class="toggle-container">
+              <ButtonPrimary size="small" text="Primary Button" :loading="true" loading-icon-position="left" />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Loading (text + right)</div>
+            <div class="toggle-container">
+              <ButtonPrimary size="small" text="Primary Button" :loading="true" loading-icon-position="right" />
             </div>
           </div>
         </div>
@@ -1228,9 +1240,21 @@
             </div>
           </div>
           <div class="component-card">
-            <div class="component-label">Loading</div>
+            <div class="component-label">Loading (spinner only)</div>
             <div class="toggle-container">
-              <ButtonPrimary size="medium" text="Primary Button" :loading="true" />
+              <ButtonPrimary size="medium" text="Primary Button" :loading="true" loading-icon-position="only" />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Loading (text + left)</div>
+            <div class="toggle-container">
+              <ButtonPrimary size="medium" text="Primary Button" :loading="true" loading-icon-position="left" />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Loading (text + right)</div>
+            <div class="toggle-container">
+              <ButtonPrimary size="medium" text="Primary Button" :loading="true" loading-icon-position="right" />
             </div>
           </div>
         </div>
@@ -1256,9 +1280,21 @@
             </div>
           </div>
           <div class="component-card">
-            <div class="component-label">Loading</div>
+            <div class="component-label">Loading (spinner only)</div>
             <div class="toggle-container">
-              <ButtonPrimary size="large" text="Primary Button" :loading="true" />
+              <ButtonPrimary size="large" text="Primary Button" :loading="true" loading-icon-position="only" />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Loading (text + left)</div>
+            <div class="toggle-container">
+              <ButtonPrimary size="large" text="Primary Button" :loading="true" loading-icon-position="left" />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Loading (text + right)</div>
+            <div class="toggle-container">
+              <ButtonPrimary size="large" text="Primary Button" :loading="true" loading-icon-position="right" />
             </div>
           </div>
         </div>
@@ -1285,9 +1321,21 @@
             </div>
           </div>
           <div class="component-card">
-            <div class="component-label">Loading</div>
+            <div class="component-label">Loading (spinner only)</div>
             <div class="toggle-container">
-              <ButtonSecondary size="small" text="Secondary Button" :loading="true" />
+              <ButtonSecondary size="small" text="Secondary Button" :loading="true" loading-icon-position="only" />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Loading (text + left)</div>
+            <div class="toggle-container">
+              <ButtonSecondary size="small" text="Secondary Button" :loading="true" loading-icon-position="left" />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Loading (text + right)</div>
+            <div class="toggle-container">
+              <ButtonSecondary size="small" text="Secondary Button" :loading="true" loading-icon-position="right" />
             </div>
           </div>
         </div>
@@ -1313,9 +1361,21 @@
             </div>
           </div>
           <div class="component-card">
-            <div class="component-label">Loading</div>
+            <div class="component-label">Loading (spinner only)</div>
             <div class="toggle-container">
-              <ButtonSecondary size="medium" text="Secondary Button" :loading="true" />
+              <ButtonSecondary size="medium" text="Secondary Button" :loading="true" loading-icon-position="only" />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Loading (text + left)</div>
+            <div class="toggle-container">
+              <ButtonSecondary size="medium" text="Secondary Button" :loading="true" loading-icon-position="left" />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Loading (text + right)</div>
+            <div class="toggle-container">
+              <ButtonSecondary size="medium" text="Secondary Button" :loading="true" loading-icon-position="right" />
             </div>
           </div>
         </div>
@@ -1341,9 +1401,21 @@
             </div>
           </div>
           <div class="component-card">
-            <div class="component-label">Loading</div>
+            <div class="component-label">Loading (spinner only)</div>
             <div class="toggle-container">
-              <ButtonSecondary size="large" text="Secondary Button" :loading="true" />
+              <ButtonSecondary size="large" text="Secondary Button" :loading="true" loading-icon-position="only" />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Loading (text + left)</div>
+            <div class="toggle-container">
+              <ButtonSecondary size="large" text="Secondary Button" :loading="true" loading-icon-position="left" />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Loading (text + right)</div>
+            <div class="toggle-container">
+              <ButtonSecondary size="large" text="Secondary Button" :loading="true" loading-icon-position="right" />
             </div>
           </div>
         </div>
@@ -1370,9 +1442,21 @@
             </div>
           </div>
           <div class="component-card">
-            <div class="component-label">Loading</div>
+            <div class="component-label">Loading (spinner only)</div>
             <div class="toggle-container">
-              <ButtonLine size="small" text="Secondary Button" :loading="true" />
+              <ButtonLine size="small" text="Secondary Button" :loading="true" loading-icon-position="only" />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Loading (text + left)</div>
+            <div class="toggle-container">
+              <ButtonLine size="small" text="Secondary Button" :loading="true" loading-icon-position="left" />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Loading (text + right)</div>
+            <div class="toggle-container">
+              <ButtonLine size="small" text="Secondary Button" :loading="true" loading-icon-position="right" />
             </div>
           </div>
         </div>
@@ -1398,9 +1482,21 @@
             </div>
           </div>
           <div class="component-card">
-            <div class="component-label">Loading</div>
+            <div class="component-label">Loading (spinner only)</div>
             <div class="toggle-container">
-              <ButtonLine size="medium" text="Secondary Button" :loading="true" />
+              <ButtonLine size="medium" text="Secondary Button" :loading="true" loading-icon-position="only" />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Loading (text + left)</div>
+            <div class="toggle-container">
+              <ButtonLine size="medium" text="Secondary Button" :loading="true" loading-icon-position="left" />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Loading (text + right)</div>
+            <div class="toggle-container">
+              <ButtonLine size="medium" text="Secondary Button" :loading="true" loading-icon-position="right" />
             </div>
           </div>
         </div>
@@ -1426,9 +1522,21 @@
             </div>
           </div>
           <div class="component-card">
-            <div class="component-label">Loading</div>
+            <div class="component-label">Loading (spinner only)</div>
             <div class="toggle-container">
-              <ButtonLine size="large" text="Secondary Button" :loading="true" />
+              <ButtonLine size="large" text="Secondary Button" :loading="true" loading-icon-position="only" />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Loading (text + left)</div>
+            <div class="toggle-container">
+              <ButtonLine size="large" text="Secondary Button" :loading="true" loading-icon-position="left" />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Loading (text + right)</div>
+            <div class="toggle-container">
+              <ButtonLine size="large" text="Secondary Button" :loading="true" loading-icon-position="right" />
             </div>
           </div>
         </div>
@@ -1455,9 +1563,21 @@
             </div>
           </div>
           <div class="component-card">
-            <div class="component-label">Loading</div>
+            <div class="component-label">Loading (spinner only)</div>
             <div class="toggle-container">
-              <ButtonGhost size="small" text="Secondary Button" :loading="true" />
+              <ButtonGhost size="small" text="Secondary Button" :loading="true" loading-icon-position="only" />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Loading (text + left)</div>
+            <div class="toggle-container">
+              <ButtonGhost size="small" text="Secondary Button" :loading="true" loading-icon-position="left" />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Loading (text + right)</div>
+            <div class="toggle-container">
+              <ButtonGhost size="small" text="Secondary Button" :loading="true" loading-icon-position="right" />
             </div>
           </div>
         </div>
@@ -1483,9 +1603,21 @@
             </div>
           </div>
           <div class="component-card">
-            <div class="component-label">Loading</div>
+            <div class="component-label">Loading (spinner only)</div>
             <div class="toggle-container">
-              <ButtonGhost size="medium" text="Secondary Button" :loading="true" />
+              <ButtonGhost size="medium" text="Secondary Button" :loading="true" loading-icon-position="only" />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Loading (text + left)</div>
+            <div class="toggle-container">
+              <ButtonGhost size="medium" text="Secondary Button" :loading="true" loading-icon-position="left" />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Loading (text + right)</div>
+            <div class="toggle-container">
+              <ButtonGhost size="medium" text="Secondary Button" :loading="true" loading-icon-position="right" />
             </div>
           </div>
         </div>
@@ -1511,9 +1643,21 @@
             </div>
           </div>
           <div class="component-card">
-            <div class="component-label">Loading</div>
+            <div class="component-label">Loading (spinner only)</div>
             <div class="toggle-container">
-              <ButtonGhost size="large" text="Secondary Button" :loading="true" />
+              <ButtonGhost size="large" text="Secondary Button" :loading="true" loading-icon-position="only" />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Loading (text + left)</div>
+            <div class="toggle-container">
+              <ButtonGhost size="large" text="Secondary Button" :loading="true" loading-icon-position="left" />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Loading (text + right)</div>
+            <div class="toggle-container">
+              <ButtonGhost size="large" text="Secondary Button" :loading="true" loading-icon-position="right" />
             </div>
           </div>
         </div>

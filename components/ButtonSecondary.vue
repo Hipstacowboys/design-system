@@ -12,7 +12,7 @@
       'marks-button--secondary',
       `marks-button--${size}`,
       {
-        'marks-button--icon-only': iconOnly || loading,
+        'marks-button--icon-only': iconOnly || (loading && loadingIconPosition === 'only'),
         'marks-button--disabled': disabled,
         'marks-button--loading': loading
       }
@@ -22,11 +22,29 @@
     type="button"
   >
     <template v-if="loading">
-      <PhCircleNotch
-        :class="['marks-button__icon', 'marks-button__icon--spin']"
-        :size="iconSize"
-        :weight="iconWeight"
-      />
+      <template v-if="loadingIconPosition === 'left'">
+        <span :class="['marks-button__icon', 'marks-button__icon--left', 'marks-button__icon--spin']" :style="{ width: iconSize + 'px', height: iconSize + 'px' }">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13" fill="none" :width="iconSize" :height="iconSize" aria-hidden="true">
+            <path d="M11.6992 8.75987C12.1243 8.94447 12.3237 9.44233 12.086 9.84011C11.5923 10.6661 10.9195 11.3754 10.1132 11.9134C9.07336 12.6072 7.85557 12.9867 6.60564 13.0063C5.35571 13.0259 4.12661 12.6849 3.06548 12.024C2.00436 11.3632 1.15618 10.4105 0.622483 9.28009C0.0887886 8.14965 -0.107802 6.88936 0.0562472 5.65008C0.220296 4.41081 0.738033 3.24508 1.54747 2.29244C2.35691 1.3398 3.42376 0.640638 4.62028 0.278644C5.54802 -0.0020326 6.52324 -0.0707829 7.47476 0.0729221C7.93298 0.142126 8.19065 0.61249 8.06306 1.058V1.058C7.93548 1.5035 7.47026 1.75334 7.0094 1.70476C6.37212 1.63759 5.72495 1.69773 5.10624 1.88492C4.21847 2.1535 3.42691 2.67226 2.82634 3.37907C2.22577 4.08589 1.84163 4.95082 1.71991 5.87031C1.59819 6.7898 1.74405 7.72489 2.14003 8.56363C2.53601 9.40237 3.16533 10.1092 3.95264 10.5995C4.73995 11.0899 5.6519 11.3429 6.5793 11.3283C7.50669 11.3138 8.41025 11.0322 9.18178 10.5174C9.71948 10.1587 10.1772 9.69719 10.5303 9.16244C10.7856 8.77573 11.2742 8.57528 11.6992 8.75987V8.75987Z" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="marks-button__text"><slot>{{ text }}</slot></span>
+      </template>
+      <template v-else-if="loadingIconPosition === 'right'">
+        <span class="marks-button__text"><slot>{{ text }}</slot></span>
+        <span :class="['marks-button__icon', 'marks-button__icon--right', 'marks-button__icon--spin']" :style="{ width: iconSize + 'px', height: iconSize + 'px' }">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13" fill="none" :width="iconSize" :height="iconSize" aria-hidden="true">
+            <path d="M11.6992 8.75987C12.1243 8.94447 12.3237 9.44233 12.086 9.84011C11.5923 10.6661 10.9195 11.3754 10.1132 11.9134C9.07336 12.6072 7.85557 12.9867 6.60564 13.0063C5.35571 13.0259 4.12661 12.6849 3.06548 12.024C2.00436 11.3632 1.15618 10.4105 0.622483 9.28009C0.0887886 8.14965 -0.107802 6.88936 0.0562472 5.65008C0.220296 4.41081 0.738033 3.24508 1.54747 2.29244C2.35691 1.3398 3.42376 0.640638 4.62028 0.278644C5.54802 -0.0020326 6.52324 -0.0707829 7.47476 0.0729221C7.93298 0.142126 8.19065 0.61249 8.06306 1.058V1.058C7.93548 1.5035 7.47026 1.75334 7.0094 1.70476C6.37212 1.63759 5.72495 1.69773 5.10624 1.88492C4.21847 2.1535 3.42691 2.67226 2.82634 3.37907C2.22577 4.08589 1.84163 4.95082 1.71991 5.87031C1.59819 6.7898 1.74405 7.72489 2.14003 8.56363C2.53601 9.40237 3.16533 10.1092 3.95264 10.5995C4.73995 11.0899 5.6519 11.3429 6.5793 11.3283C7.50669 11.3138 8.41025 11.0322 9.18178 10.5174C9.71948 10.1587 10.1772 9.69719 10.5303 9.16244C10.7856 8.77573 11.2742 8.57528 11.6992 8.75987V8.75987Z" fill="currentColor"/>
+          </svg>
+        </span>
+      </template>
+      <template v-else>
+        <span :class="['marks-button__icon', 'marks-button__icon--spin']" :style="{ width: iconSize + 'px', height: iconSize + 'px' }">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13" fill="none" :width="iconSize" :height="iconSize" aria-hidden="true">
+            <path d="M11.6992 8.75987C12.1243 8.94447 12.3237 9.44233 12.086 9.84011C11.5923 10.6661 10.9195 11.3754 10.1132 11.9134C9.07336 12.6072 7.85557 12.9867 6.60564 13.0063C5.35571 13.0259 4.12661 12.6849 3.06548 12.024C2.00436 11.3632 1.15618 10.4105 0.622483 9.28009C0.0887886 8.14965 -0.107802 6.88936 0.0562472 5.65008C0.220296 4.41081 0.738033 3.24508 1.54747 2.29244C2.35691 1.3398 3.42376 0.640638 4.62028 0.278644C5.54802 -0.0020326 6.52324 -0.0707829 7.47476 0.0729221C7.93298 0.142126 8.19065 0.61249 8.06306 1.058V1.058C7.93548 1.5035 7.47026 1.75334 7.0094 1.70476C6.37212 1.63759 5.72495 1.69773 5.10624 1.88492C4.21847 2.1535 3.42691 2.67226 2.82634 3.37907C2.22577 4.08589 1.84163 4.95082 1.71991 5.87031C1.59819 6.7898 1.74405 7.72489 2.14003 8.56363C2.53601 9.40237 3.16533 10.1092 3.95264 10.5995C4.73995 11.0899 5.6519 11.3429 6.5793 11.3283C7.50669 11.3138 8.41025 11.0322 9.18178 10.5174C9.71948 10.1587 10.1772 9.69719 10.5303 9.16244C10.7856 8.77573 11.2742 8.57528 11.6992 8.75987V8.75987Z" fill="currentColor"/>
+          </svg>
+        </span>
+      </template>
     </template>
     <template v-else>
       <component
@@ -51,11 +69,8 @@
 </template>
 
 <script>
-import { PhCircleNotch } from '@phosphor-icons/vue';
-
 export default {
   name: 'marksButtonSecondary',
-  components: { PhCircleNotch },
   props: {
     size: {
       type: String,
@@ -85,6 +100,11 @@ export default {
     loading: {
       type: Boolean,
       default: false
+    },
+    loadingIconPosition: {
+      type: String,
+      default: 'only',
+      validator: (value) => ['left', 'right', 'only'].includes(value)
     }
   },
   emits: ['click'],
