@@ -2,7 +2,7 @@
   Figma Node ID: 13-9075
   Component: Button Line
   Sizes: small, medium, large
-  States: default, hover, clicked, disabled
+  States: default, hover, clicked, disabled, loading
   Variations: with text, icon-only, with left/right icons
 -->
 <template>
@@ -12,39 +12,53 @@
       'marks-button--line',
       `marks-button--${size}`,
       {
-        'marks-button--icon-only': iconOnly,
-        'marks-button--disabled': disabled
+        'marks-button--icon-only': iconOnly || loading,
+        'marks-button--disabled': disabled,
+        'marks-button--loading': loading
       }
     ]"
-    :disabled="disabled"
+    :disabled="disabled || loading"
     @click="handleClick"
     type="button"
   >
-    <component
-      v-if="leftIcon"
-      :is="leftIcon"
-      :class="['marks-button__icon', 'marks-button__icon--left']"
-      :size="iconSize"
-      :weight="iconWeight"
-      color="currentColor"
-    />
-    <span v-if="!iconOnly" class="marks-button__text">
-      <slot>{{ text }}</slot>
-    </span>
-    <component
-      v-if="rightIcon"
-      :is="rightIcon"
-      :class="['marks-button__icon', 'marks-button__icon--right']"
-      :size="iconSize"
-      :weight="iconWeight"
-      color="currentColor"
-    />
+    <template v-if="loading">
+      <PhCircleNotch
+        :class="['marks-button__icon', 'marks-button__icon--spin']"
+        :size="iconSize"
+        :weight="iconWeight"
+        color="currentColor"
+      />
+    </template>
+    <template v-else>
+      <component
+        v-if="leftIcon"
+        :is="leftIcon"
+        :class="['marks-button__icon', 'marks-button__icon--left']"
+        :size="iconSize"
+        :weight="iconWeight"
+        color="currentColor"
+      />
+      <span v-if="!iconOnly" class="marks-button__text">
+        <slot>{{ text }}</slot>
+      </span>
+      <component
+        v-if="rightIcon"
+        :is="rightIcon"
+        :class="['marks-button__icon', 'marks-button__icon--right']"
+        :size="iconSize"
+        :weight="iconWeight"
+        color="currentColor"
+      />
+    </template>
   </button>
 </template>
 
 <script>
+import { PhCircleNotch } from '@phosphor-icons/vue';
+
 export default {
   name: 'marksButtonLine',
+  components: { PhCircleNotch },
   props: {
     size: {
       type: String,
@@ -70,6 +84,10 @@ export default {
     disabled: {
       type: Boolean,
       default: false
+    },
+    loading: {
+      type: Boolean,
+      default: false
     }
   },
   emits: ['click'],
@@ -88,7 +106,7 @@ export default {
   },
   methods: {
     handleClick(event) {
-      if (!this.disabled) {
+      if (!this.disabled && !this.loading) {
         this.$emit('click', event);
       }
     }
@@ -127,6 +145,13 @@ export default {
     &:active:not(.marks-button--disabled) {
       background: var(--marks-color-gray-150);
       box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05) inset;
+    }
+
+    &.marks-button--loading {
+      background: var(--marks-color-gray-150);
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05) inset;
+      cursor: not-allowed;
+      pointer-events: none;
     }
   }
 
@@ -188,6 +213,15 @@ export default {
     align-items: center;
     justify-content: center;
     color: inherit;
+
+    &--spin {
+      animation: marks-button-spin 0.8s linear infinite;
+    }
   }
+}
+
+@keyframes marks-button-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 </style>

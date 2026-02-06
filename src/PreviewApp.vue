@@ -1175,7 +1175,7 @@
       <!-- Button Component Section -->
       <section v-show="activeSection === 'button'" id="button" class="preview-section">
         <h1>Button</h1>
-        <p>Button components with 4 types (Primary, Secondary, Line, Ghost), 3 sizes (small, medium, large), and 4 states (default, hover, clicked, disabled).</p>
+        <p>Button components with 4 types (Primary, Secondary, Line, Ghost), 3 sizes (small, medium, large), and 5 states (default, hover, clicked, disabled, loading).</p>
         <p><strong>Figma Node ID:</strong> 13-9075</p>
 
         <h2>Button Primary</h2>
@@ -1197,6 +1197,12 @@
             <div class="component-label">Icon Only</div>
             <div class="toggle-container">
               <ButtonPrimary size="small" :icon-only="true" :left-icon="PhArrowLeft" />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Loading</div>
+            <div class="toggle-container">
+              <ButtonPrimary size="small" text="Primary Button" :loading="true" />
             </div>
           </div>
         </div>
@@ -1221,6 +1227,12 @@
               <ButtonPrimary size="medium" :icon-only="true" :left-icon="PhArrowLeft" />
             </div>
           </div>
+          <div class="component-card">
+            <div class="component-label">Loading</div>
+            <div class="toggle-container">
+              <ButtonPrimary size="medium" text="Primary Button" :loading="true" />
+            </div>
+          </div>
         </div>
 
         <h3>Size: Large</h3>
@@ -1241,6 +1253,12 @@
             <div class="component-label">Icon Only</div>
             <div class="toggle-container">
               <ButtonPrimary size="large" :icon-only="true" :left-icon="PhArrowLeft" />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Loading</div>
+            <div class="toggle-container">
+              <ButtonPrimary size="large" text="Primary Button" :loading="true" />
             </div>
           </div>
         </div>
@@ -1266,6 +1284,12 @@
               <ButtonSecondary size="small" :icon-only="true" :left-icon="PhArrowLeft" />
             </div>
           </div>
+          <div class="component-card">
+            <div class="component-label">Loading</div>
+            <div class="toggle-container">
+              <ButtonSecondary size="small" text="Secondary Button" :loading="true" />
+            </div>
+          </div>
         </div>
 
         <h3>Size: Medium</h3>
@@ -1288,6 +1312,12 @@
               <ButtonSecondary size="medium" :icon-only="true" :left-icon="PhArrowLeft" />
             </div>
           </div>
+          <div class="component-card">
+            <div class="component-label">Loading</div>
+            <div class="toggle-container">
+              <ButtonSecondary size="medium" text="Secondary Button" :loading="true" />
+            </div>
+          </div>
         </div>
 
         <h3>Size: Large</h3>
@@ -1308,6 +1338,12 @@
             <div class="component-label">Icon Only</div>
             <div class="toggle-container">
               <ButtonSecondary size="large" :icon-only="true" :left-icon="PhArrowLeft" />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Loading</div>
+            <div class="toggle-container">
+              <ButtonSecondary size="large" text="Secondary Button" :loading="true" />
             </div>
           </div>
         </div>
@@ -1333,6 +1369,12 @@
               <ButtonLine size="small" :icon-only="true" :left-icon="PhArrowLeft" />
             </div>
           </div>
+          <div class="component-card">
+            <div class="component-label">Loading</div>
+            <div class="toggle-container">
+              <ButtonLine size="small" text="Secondary Button" :loading="true" />
+            </div>
+          </div>
         </div>
 
         <h3>Size: Medium</h3>
@@ -1355,6 +1397,12 @@
               <ButtonLine size="medium" :icon-only="true" :left-icon="PhArrowLeft" />
             </div>
           </div>
+          <div class="component-card">
+            <div class="component-label">Loading</div>
+            <div class="toggle-container">
+              <ButtonLine size="medium" text="Secondary Button" :loading="true" />
+            </div>
+          </div>
         </div>
 
         <h3>Size: Large</h3>
@@ -1375,6 +1423,12 @@
             <div class="component-label">Icon Only</div>
             <div class="toggle-container">
               <ButtonLine size="large" :icon-only="true" :left-icon="PhArrowLeft" />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Loading</div>
+            <div class="toggle-container">
+              <ButtonLine size="large" text="Secondary Button" :loading="true" />
             </div>
           </div>
         </div>
@@ -1400,6 +1454,12 @@
               <ButtonGhost size="small" :icon-only="true" :left-icon="PhArrowLeft" />
             </div>
           </div>
+          <div class="component-card">
+            <div class="component-label">Loading</div>
+            <div class="toggle-container">
+              <ButtonGhost size="small" text="Secondary Button" :loading="true" />
+            </div>
+          </div>
         </div>
 
         <h3>Size: Medium</h3>
@@ -1422,6 +1482,12 @@
               <ButtonGhost size="medium" :icon-only="true" :left-icon="PhArrowLeft" />
             </div>
           </div>
+          <div class="component-card">
+            <div class="component-label">Loading</div>
+            <div class="toggle-container">
+              <ButtonGhost size="medium" text="Secondary Button" :loading="true" />
+            </div>
+          </div>
         </div>
 
         <h3>Size: Large</h3>
@@ -1442,6 +1508,12 @@
             <div class="component-label">Icon Only</div>
             <div class="toggle-container">
               <ButtonGhost size="large" :icon-only="true" :left-icon="PhArrowLeft" />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Loading</div>
+            <div class="toggle-container">
+              <ButtonGhost size="large" text="Secondary Button" :loading="true" />
             </div>
           </div>
         </div>

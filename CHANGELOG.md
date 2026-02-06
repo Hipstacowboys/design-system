@@ -16,6 +16,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - 
 
+## [1.3.0] - 2026-02-06
+
+### Added
+- Button loading state for Primary, Secondary, Line, and Ghost: new `loading` prop shows a spinning PhCircleNotch, uses clicked-state styling, and makes the button non-clickable (all sizes: small, medium, large)
+
+### Changed
+- 
+
+### Fixed
+-
+
+
 ## [1.2.5] - 2026-02-04
 
 ### Added
@@ -284,7 +296,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Responsive design patterns
 - Accessibility features (semantic HTML, ARIA attributes)
 
-[Unreleased]: https://github.com/Hipstacowboys/design-system/compare/v1.2.5...HEAD
+[Unreleased]: https://github.com/Hipstacowboys/design-system/compare/v1.3.0...HEAD
+[1.3.0]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.3.0
 [1.2.5]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.2.5
 [1.2.4]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.2.4
 [1.2.3]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.2.3
