@@ -294,6 +294,10 @@ export default {
 
   .marks-input-field--medium & {
     @include marks-typography-paragraph-md-one-line;
+    line-height: 18px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
   }
 
   &::placeholder {

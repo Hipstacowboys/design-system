@@ -201,6 +201,8 @@ export default {
     padding: 16px 24px;
     border-radius: var(--marks-radius-12);
     gap: var(--marks-spacing-12);
+    line-height: 1.5;
+    box-sizing: border-box;
     @include marks-typography-button-md;
 
     &.marks-button--icon-only {

@@ -258,9 +258,13 @@ export default {
   }
 
   &--medium {
-    padding: 16px 20px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 20px;
     padding-right: 40px;
     border-radius: var(--marks-radius-12);
+    line-height: 1.5;
+    box-sizing: border-box;
     @include marks-typography-button-md;
 
     &.marks-select--has-left-icon {
@@ -385,6 +389,7 @@ export default {
   max-height: 300px;
   overflow-y: auto;
   box-sizing: border-box;
+  min-width: 200px;
 }
 
 .marks-select-dropdown__option {

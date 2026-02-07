@@ -16,13 +16,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - 
 
-## [1.3.2] - 2026-02-07
+## [1.3.3] - 2026-02-07
 
 ### Added
 - 
 
 ### Changed
 - 
+
+### Fixed
+-
+
+
+## [1.3.2] - 2026-02-07
+
+### Added
+- 
+
+### Changed
+- InputField (medium): Added `line-height: 18px` and `appearance: none` to inner input (`.marks-input-field__input`) to prevent height inconsistencies and ensure consistent 18px line-height
+- Select (medium): Added `line-height: 1.5`, `box-sizing: border-box`, and changed padding to `padding-top/bottom: 14px` (from 16px) to align with medium Button height and account for 2px border. Select addon padding remains `0` when used in InputField
+- Select dropdown: Added `min-width: 200px` to dropdown panel for better usability
+- Button (medium): Added `line-height: 1.5` and `box-sizing: border-box` to `.marks-button--medium` across all button types (Primary, Secondary, Line, Ghost) to ensure consistent heights with Select and InputField
 
 ### Fixed
 -
@@ -320,7 +335,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Responsive design patterns
 - Accessibility features (semantic HTML, ARIA attributes)
 
-[Unreleased]: https://github.com/Hipstacowboys/design-system/compare/v1.3.2...HEAD
+[Unreleased]: https://github.com/Hipstacowboys/design-system/compare/v1.3.3...HEAD
+[1.3.3]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.3.3
 [1.3.2]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.3.2
 [1.3.1]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.3.1
 [1.3.0]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.3.0
