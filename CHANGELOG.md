@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - 
 
-## [1.3.1] - 2026-02-06
+## [1.3.2] - 2026-02-07
 
 ### Added
 - 
@@ -25,13 +25,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 
 
 ### Fixed
-- ButtonPrimary loading spinner: in “text + left” and “text + right” variants, the loader now spins around its center (animation applied to the SVG with fixed dimensions and clipped wrapper so the rotating path does not affect layout)
+-
+
+
+## [1.3.1] - 2026-02-06
+
+### Added
+- 
+
+### Changed
+- Button loading spinner refactored from SVG-based to CSS-based ring loader across all button types (Primary, Secondary, Line, Ghost). The new implementation uses pure CSS with 4 animated divs creating a spinning ring effect that rotates around its center without oscillation. Loader dimensions scale automatically based on button size (small: 12px ring, medium/large: 16px ring) and uses `currentColor` for theme consistency
+
+### Fixed
+- Fixed button loading spinner to spin around its center without oscillation by replacing SVG-based approach with CSS ring loader
 
 
 ## [1.3.0] - 2026-02-06
 
 ### Added
-- Button loading state for Primary, Secondary, Line, and Ghost: new `loading` prop shows a spinning loader (inline SVG from assets/img/loader.svg), uses clicked-state styling, and makes the button non-clickable (all sizes: small, medium, large). New `loadingIconPosition` prop (`'left' | 'right' | 'only'`) for: text + left spinner, text + right spinner, or spinner only. Loader uses `fill="currentColor"` so it matches the button’s text/icon color
+- Button loading state for Primary, Secondary, Line, and Ghost: new `loading` prop shows a spinning loader, uses clicked-state styling, and makes the button non-clickable (all sizes: small, medium, large). New `loadingIconPosition` prop (`'left' | 'right' | 'only'`) for: text + left spinner, text + right spinner, or spinner only. Loader uses `currentColor` so it matches the button's text/icon color
 
 ### Changed
 - 
@@ -308,7 +320,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Responsive design patterns
 - Accessibility features (semantic HTML, ARIA attributes)
 
-[Unreleased]: https://github.com/Hipstacowboys/design-system/compare/v1.3.1...HEAD
+[Unreleased]: https://github.com/Hipstacowboys/design-system/compare/v1.3.2...HEAD
+[1.3.2]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.3.2
 [1.3.1]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.3.1
 [1.3.0]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.3.0
 [1.2.5]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.2.5
