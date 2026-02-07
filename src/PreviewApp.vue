@@ -3189,8 +3189,12 @@
           <Calendar
             variant="month"
             :days="calendarDays"
+            v-model="selectedCalendarDay"
             @day-click="handleCalendarDayClick"
           />
+          <div class="component-status" style="margin-top: var(--marks-spacing-16);">
+            Selected day: {{ selectedCalendarDay ? `Day ${selectedCalendarDay.dayNumber}` : 'None' }}
+          </div>
         </div>
       </section>
 
@@ -3588,6 +3592,7 @@ export default {
         { dayNumber: 3, price: '99.00', currency: 'CZK', isNextMonth: true }
       ],
       selectedDate: null,
+      selectedCalendarDay: null,
       tableSelectedRows: [],
       tableColumns: [
         { id: 'name', label: 'Column heading', type: 'bold', sortable: true },

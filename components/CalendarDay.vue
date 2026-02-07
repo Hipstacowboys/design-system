@@ -149,9 +149,9 @@ export default {
     border-color: var(--marks-color-black);
   }
 
-  // Active state
+  // Active state - should override hover
   &--active {
-    background-color: var(--marks-color-primary-light);
+    background-color: var(--marks-color-primary-light) !important;
     
     &.marks-calendar-day--month {
       border-color: var(--marks-color-primary-solid);
@@ -159,6 +159,11 @@ export default {
     
     &.marks-calendar-day--year {
       border-color: var(--marks-color-black);
+    }
+
+    // Active state should remain visible even when hovering
+    &.marks-calendar-day--hover {
+      background-color: var(--marks-color-primary-light) !important;
     }
   }
 
@@ -176,10 +181,15 @@ export default {
     color: var(--marks-color-gray-300);
   }
 
-  // Booked state
+  // Booked state - but active should override booked
   &--booked {
     background-color: var(--marks-color-white);
     border-color: var(--marks-color-gray-200);
+  }
+
+  // Active state should override booked state
+  &--active.marks-calendar-day--booked {
+    background-color: var(--marks-color-primary-light) !important;
   }
 }
 

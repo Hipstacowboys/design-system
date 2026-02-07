@@ -380,6 +380,16 @@ export default {
     border-radius: 0 !important;
   }
 
+  // Clicked state (mouse pressed down) - same as hover
+  &:active {
+    z-index: 2;
+    border-top: 1px solid var(--marks-color-black) !important;
+    border-right: 1px solid var(--marks-color-black) !important;
+    border-bottom: 1px solid var(--marks-color-black) !important;
+    border-left: 1px solid var(--marks-color-black) !important;
+    border-radius: 0 !important;
+  }
+
   // Last week first day - bottom-left radius
   &--last-week-first-day {
     border-bottom-left-radius: var(--marks-radius-12);
@@ -412,6 +422,15 @@ export default {
   }
 
   &--last-week-last-day:hover {
+    border-bottom-right-radius: var(--marks-radius-12) !important;
+  }
+
+  // Clicked state - preserve border radius for last week corners
+  &--last-week-first-day:active {
+    border-bottom-left-radius: var(--marks-radius-12) !important;
+  }
+
+  &--last-week-last-day:active {
     border-bottom-right-radius: var(--marks-radius-12) !important;
   }
 
@@ -537,12 +556,29 @@ export default {
       border-left-color: var(--marks-color-white) !important;
     }
 
+    // Clicked state (mouse pressed down) - white borders in dark mode
+    &:active {
+      border-top-color: var(--marks-color-white) !important;
+      border-right-color: var(--marks-color-white) !important;
+      border-bottom-color: var(--marks-color-white) !important;
+      border-left-color: var(--marks-color-white) !important;
+    }
+
     // Hover state - preserve border radius for last week corners in dark mode
     &--last-week-first-day:hover {
       border-bottom-left-radius: var(--marks-radius-12) !important;
     }
 
     &--last-week-last-day:hover {
+      border-bottom-right-radius: var(--marks-radius-12) !important;
+    }
+
+    // Clicked state - preserve border radius for last week corners in dark mode
+    &--last-week-first-day:active {
+      border-bottom-left-radius: var(--marks-radius-12) !important;
+    }
+
+    &--last-week-last-day:active {
       border-bottom-right-radius: var(--marks-radius-12) !important;
     }
   }
