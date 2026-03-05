@@ -56,6 +56,9 @@
       </template>
     </template>
     <template v-else>
+      <span v-if="leadingText" class="marks-button__leading">
+        {{ leadingText }}
+      </span>
       <component
         v-if="leftIcon"
         :is="leftIcon"
@@ -85,6 +88,10 @@ export default {
       type: String,
       default: 'medium',
       validator: (value) => ['small', 'medium', 'large'].includes(value)
+    },
+    leadingText: {
+      type: String,
+      default: ''
     },
     text: {
       type: String,
@@ -234,6 +241,10 @@ export default {
   }
 
   &__text {
+    white-space: nowrap;
+  }
+
+  &__leading {
     white-space: nowrap;
   }
 

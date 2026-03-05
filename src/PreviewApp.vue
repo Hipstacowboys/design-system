@@ -1259,6 +1259,21 @@
           </div>
         </div>
 
+        <h3>Special Variant</h3>
+        <div class="component-grid">
+          <div class="component-card">
+            <div class="component-label">Leading text + right icon</div>
+            <div class="toggle-container">
+              <ButtonPrimary
+                size="medium"
+                leading-text="128.99 USD"
+                text="Primary Button"
+                :right-icon="PhArrowRight"
+              />
+            </div>
+          </div>
+        </div>
+
         <h3>Size: Large</h3>
         <div class="component-grid">
           <div class="component-card">
