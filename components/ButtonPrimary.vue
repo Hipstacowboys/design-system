@@ -245,7 +245,11 @@ export default {
   }
 
   &__leading {
+    display: flex;
+    align-items: center;
     white-space: nowrap;
+    margin-right: auto;
+    padding-right: var(--marks-spacing-12);
   }
 
   &__icon {
