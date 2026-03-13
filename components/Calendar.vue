@@ -279,87 +279,6 @@ export default {
     border-radius: 0 !important;
   }
 
-  // Corner border radius - using :deep() to target CalendarDay
-  &--first-week-first-day {
-    border-top-left-radius: var(--marks-radius-16);
-
-    :deep(.marks-calendar-day--no-border),
-    :deep(.marks-calendar-day--no-border.marks-calendar-day--hover),
-    :deep(.marks-calendar-day--no-border.marks-calendar-day--active),
-    :deep(.marks-calendar-day--no-border.marks-calendar-day--not-active),
-    :deep(.marks-calendar-day--no-border.marks-calendar-day--not-available) {
-      border-top-left-radius: var(--marks-radius-16);
-    }
-
-    &:hover {
-      border-top-left-radius: var(--marks-radius-16) !important;
-    }
-
-    &:active {
-      border-top-left-radius: var(--marks-radius-16) !important;
-    }
-  }
-
-  &--first-week-last-day {
-    border-top-right-radius: var(--marks-radius-16);
-
-    :deep(.marks-calendar-day--no-border),
-    :deep(.marks-calendar-day--no-border.marks-calendar-day--hover),
-    :deep(.marks-calendar-day--no-border.marks-calendar-day--active),
-    :deep(.marks-calendar-day--no-border.marks-calendar-day--not-active),
-    :deep(.marks-calendar-day--no-border.marks-calendar-day--not-available) {
-      border-top-right-radius: var(--marks-radius-16);
-    }
-
-    &:hover {
-      border-top-right-radius: var(--marks-radius-16) !important;
-    }
-
-    &:active {
-      border-top-right-radius: var(--marks-radius-16) !important;
-    }
-  }
-
-  &--last-week-first-day {
-    border-bottom-left-radius: var(--marks-radius-16);
-
-    :deep(.marks-calendar-day--no-border),
-    :deep(.marks-calendar-day--no-border.marks-calendar-day--hover),
-    :deep(.marks-calendar-day--no-border.marks-calendar-day--active),
-    :deep(.marks-calendar-day--no-border.marks-calendar-day--not-active),
-    :deep(.marks-calendar-day--no-border.marks-calendar-day--not-available) {
-      border-bottom-left-radius: var(--marks-radius-16);
-    }
-
-    &:hover {
-      border-bottom-left-radius: var(--marks-radius-16) !important;
-    }
-
-    &:active {
-      border-bottom-left-radius: var(--marks-radius-16) !important;
-    }
-  }
-
-  &--last-week-last-day {
-    border-bottom-right-radius: var(--marks-radius-16);
-
-    :deep(.marks-calendar-day--no-border),
-    :deep(.marks-calendar-day--no-border.marks-calendar-day--hover),
-    :deep(.marks-calendar-day--no-border.marks-calendar-day--active),
-    :deep(.marks-calendar-day--no-border.marks-calendar-day--not-active),
-    :deep(.marks-calendar-day--no-border.marks-calendar-day--not-available) {
-      border-bottom-right-radius: var(--marks-radius-16);
-    }
-
-    &:hover {
-      border-bottom-right-radius: var(--marks-radius-16) !important;
-    }
-
-    &:active {
-      border-bottom-right-radius: var(--marks-radius-16) !important;
-    }
-  }
-
   // Active state - ensure border and background are visible
   // This should match CalendarDatepicker's approach
   &--active {
@@ -379,6 +298,55 @@ export default {
       background-color: var(--marks-color-primary-light) !important;
     }
   }
+
+  // Rounded corner support for non-full-width calendar (kept for future use)
+  // &--first-week-first-day {
+  //   border-top-left-radius: var(--marks-radius-16);
+  //
+  //   :deep(.marks-calendar-day--no-border),
+  //   :deep(.marks-calendar-day--no-border.marks-calendar-day--hover),
+  //   :deep(.marks-calendar-day--no-border.marks-calendar-day--active),
+  //   :deep(.marks-calendar-day--no-border.marks-calendar-day--not-active),
+  //   :deep(.marks-calendar-day--no-border.marks-calendar-day--not-available) {
+  //     border-top-left-radius: var(--marks-radius-16);
+  //   }
+  // }
+  //
+  // &--first-week-last-day {
+  //   border-top-right-radius: var(--marks-radius-16);
+  //
+  //   :deep(.marks-calendar-day--no-border),
+  //   :deep(.marks-calendar-day--no-border.marks-calendar-day--hover),
+  //   :deep(.marks-calendar-day--no-border.marks-calendar-day--active),
+  //   :deep(.marks-calendar-day--no-border.marks-calendar-day--not-active),
+  //   :deep(.marks-calendar-day--no-border.marks-calendar-day--not-available) {
+  //     border-top-right-radius: var(--marks-radius-16);
+  //   }
+  // }
+  //
+  // &--last-week-first-day {
+  //   border-bottom-left-radius: var(--marks-radius-16);
+  //
+  //   :deep(.marks-calendar-day--no-border),
+  //   :deep(.marks-calendar-day--no-border.marks-calendar-day--hover),
+  //   :deep(.marks-calendar-day--no-border.marks-calendar-day--active),
+  //   :deep(.marks-calendar-day--no-border.marks-calendar-day--not-active),
+  //   :deep(.marks-calendar-day--no-border.marks-calendar-day--not-available) {
+  //     border-bottom-left-radius: var(--marks-radius-16);
+  //   }
+  // }
+  //
+  // &--last-week-last-day {
+  //   border-bottom-right-radius: var(--marks-radius-16);
+  //
+  //   :deep(.marks-calendar-day--no-border),
+  //   :deep(.marks-calendar-day--no-border.marks-calendar-day--hover),
+  //   :deep(.marks-calendar-day--no-border.marks-calendar-day--active),
+  //   :deep(.marks-calendar-day--no-border.marks-calendar-day--not-active),
+  //   :deep(.marks-calendar-day--no-border.marks-calendar-day--not-available) {
+  //     border-bottom-right-radius: var(--marks-radius-16);
+  //   }
+  // }
 }
 
 </style>
@@ -478,23 +446,6 @@ export default {
       border-left-color: var(--marks-color-white) !important;
     }
 
-    // Hover state - preserve border radius for corners in dark mode
-    &--first-week-first-day:hover {
-      border-top-left-radius: var(--marks-radius-16) !important;
-    }
-
-    &--first-week-last-day:hover {
-      border-top-right-radius: var(--marks-radius-16) !important;
-    }
-
-    &--last-week-first-day:hover {
-      border-bottom-left-radius: var(--marks-radius-16) !important;
-    }
-
-    &--last-week-last-day:hover {
-      border-bottom-right-radius: var(--marks-radius-16) !important;
-    }
-
     // Clicked state (mouse pressed down) - white borders in dark mode
     &:active {
       border-top-color: var(--marks-color-white) !important;
@@ -503,22 +454,18 @@ export default {
       border-left-color: var(--marks-color-white) !important;
     }
 
-    // Clicked state - preserve border radius for corners in dark mode
-    &--first-week-first-day:active {
-      border-top-left-radius: var(--marks-radius-16) !important;
-    }
+    // Rounded corner support for non-full-width calendar in dark mode (kept for future use)
+    // &--first-week-first-day:hover,
+    // &--first-week-last-day:hover,
+    // &--last-week-first-day:hover,
+    // &--last-week-last-day:hover,
+    // &--first-week-first-day:active,
+    // &--first-week-last-day:active,
+    // &--last-week-first-day:active,
+    // &--last-week-last-day:active {
+    //   border-radius: var(--marks-radius-16) !important;
+    // }
 
-    &--first-week-last-day:active {
-      border-top-right-radius: var(--marks-radius-16) !important;
-    }
-
-    &--last-week-first-day:active {
-      border-bottom-left-radius: var(--marks-radius-16) !important;
-    }
-
-    &--last-week-last-day:active {
-      border-bottom-right-radius: var(--marks-radius-16) !important;
-    }
   }
 }
 </style>

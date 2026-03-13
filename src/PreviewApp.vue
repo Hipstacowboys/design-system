@@ -41,6 +41,8 @@
         <li><a href="#booking-in-calendar" class="nav-link" :class="{ active: activeSection === 'booking-in-calendar' }" @click.prevent="setSection('booking-in-calendar')">Booking in Calendar</a></li>
         <li><a href="#calendar" class="nav-link" :class="{ active: activeSection === 'calendar' }" @click.prevent="setSection('calendar')">Calendar</a></li>
         <li><a href="#calendar-datepicker" class="nav-link" :class="{ active: activeSection === 'calendar-datepicker' }" @click.prevent="setSection('calendar-datepicker')">Calendar Datepicker</a></li>
+        <li><a href="#time-slot" class="nav-link" :class="{ active: activeSection === 'time-slot' }" @click.prevent="setSection('time-slot')">Time Slot</a></li>
+        <li><a href="#time-slot-big" class="nav-link" :class="{ active: activeSection === 'time-slot-big' }" @click.prevent="setSection('time-slot-big')">Time Slot Big</a></li>
         <li><a href="#table" class="nav-link" :class="{ active: activeSection === 'table' }" @click.prevent="setSection('table')">Table</a></li>
       </ul>
     </nav>
@@ -3227,6 +3229,140 @@
           />
           <div class="component-status" style="margin-top: var(--marks-spacing-16);">
             Selected date: {{ selectedDate ? selectedDate.toLocaleDateString() : 'None' }}
+          </div>
+        </div>
+      </section>
+
+      <!-- Time Slot Section -->
+      <section v-show="activeSection === 'time-slot'" id="time-slot" class="preview-section">
+        <h1>Time Slot</h1>
+        <p>Time slot pill used inside the calendar day to represent individual bookings or empty slots.</p>
+        <p><strong>Statuses:</strong> Confirmed, Empty, Past, Pending. Each has default, hover, clicked, and disabled states.</p>
+
+        <h2>Statuses</h2>
+        <div class="component-grid">
+          <div class="component-card">
+            <div class="component-label">Confirmed</div>
+            <div class="toggle-container">
+              <TimeSlot time="12:00" label="Maria D." status="confirmed" />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Pending</div>
+            <div class="toggle-container">
+              <TimeSlot time="12:00" label="David D." status="pending" />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Empty</div>
+            <div class="toggle-container">
+              <TimeSlot time="13:00" status="empty" />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Past</div>
+            <div class="toggle-container">
+              <TimeSlot time="11:00" label="Sebastian" status="past" />
+            </div>
+          </div>
+        </div>
+
+        <h2>Disabled</h2>
+        <div class="component-grid">
+          <div class="component-card">
+            <div class="component-label">Disabled (Confirmed)</div>
+            <div class="toggle-container">
+              <TimeSlot time="12:00" label="Maria D." status="confirmed" :disabled="true" />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Disabled (Empty)</div>
+            <div class="toggle-container">
+              <TimeSlot time="13:00" status="empty" :disabled="true" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Time Slot Big Section -->
+      <section v-show="activeSection === 'time-slot-big'" id="time-slot-big" class="preview-section">
+        <h1>Time Slot Big</h1>
+        <p>Vertical time slot card used inside a week calendar column, showing guest, time range, price, and an optional note.</p>
+        <p><strong>Statuses:</strong> Confirmed, Empty, Past, Pending. Mirrors small Time Slot states.</p>
+
+        <h2>Statuses</h2>
+        <div class="component-grid">
+          <div class="component-card">
+            <div class="component-label">Confirmed</div>
+            <div class="toggle-container" style="width: 124px; height: 169px;">
+              <TimeSlotBig
+                name="Maria Dedova"
+                time-range="11:00 - 12:00"
+                price="1900 CZK"
+                note="This is note which will be shown only when it fits."
+                status="confirmed"
+              />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Pending</div>
+            <div class="toggle-container" style="width: 124px; height: 169px;">
+              <TimeSlotBig
+                name="Maria Dedova"
+                time-range="11:00 - 12:00"
+                price="1900 CZK"
+                note="This is note which will be shown only when it fits."
+                status="pending"
+              />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Empty</div>
+            <div class="toggle-container" style="width: 124px; height: 169px;">
+              <TimeSlotBig
+                time-range="11:00 - 12:00"
+                status="empty"
+              />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Past</div>
+            <div class="toggle-container" style="width: 124px; height: 169px;">
+              <TimeSlotBig
+                name="Maria Dedova"
+                time-range="11:00 - 12:00"
+                price="1900 CZK"
+                note="This is note which will be shown only when it fits."
+                status="past"
+              />
+            </div>
+          </div>
+        </div>
+
+        <h2>Disabled</h2>
+        <div class="component-grid">
+          <div class="component-card">
+            <div class="component-label">Disabled (Confirmed)</div>
+            <div class="toggle-container" style="width: 124px; height: 169px;">
+              <TimeSlotBig
+                name="Maria Dedova"
+                time-range="11:00 - 12:00"
+                price="1900 CZK"
+                note="This is note which will be shown only when it fits."
+                status="confirmed"
+                :disabled="true"
+              />
+            </div>
+          </div>
+          <div class="component-card">
+            <div class="component-label">Disabled (Empty)</div>
+            <div class="toggle-container" style="width: 124px; height: 169px;">
+              <TimeSlotBig
+                time-range="11:00 - 12:00"
+                status="empty"
+                :disabled="true"
+              />
+            </div>
           </div>
         </div>
       </section>

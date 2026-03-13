@@ -45,6 +45,8 @@ import BookingInCalendar from '../components/BookingInCalendar.vue';
 import Calendar from '../components/Calendar.vue';
 import CalendarDatepicker from '../components/CalendarDatepicker.vue';
 import Table from '../components/Table.vue';
+import TimeSlot from '../components/TimeSlot.vue';
+import TimeSlotBig from '../components/TimeSlotBig.vue';
 import PreviewApp from './PreviewApp.vue';
 
 const app = createApp(PreviewApp);
@@ -95,5 +97,7 @@ app.component('BookingInCalendar', BookingInCalendar);
 app.component('Calendar', Calendar);
 app.component('CalendarDatepicker', CalendarDatepicker);
 app.component('Table', Table);
+app.component('TimeSlot', TimeSlot);
+app.component('TimeSlotBig', TimeSlotBig);
 
 app.mount('#app');

@@ -45,6 +45,7 @@ Complete guide for working with and maintaining the design system.
 - **CHANGELOG.md** - Version history and changes
 - **docs/instructions.md** (this file) - Development guidelines
 - **docs/reuse-guide.md** - How to use the design system in other projects
+ - **docs/release-and-deploy.md** - Release & deployment workflow for everyday use
 
 ## Working with Components
 

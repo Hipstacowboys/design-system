@@ -1,6 +1,6 @@
 {
   "name": "@hipstacowboys/design-system",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Vue + SCSS design system built from Figma design system file",
   "main": "index.js",
   "module": "index.js",
