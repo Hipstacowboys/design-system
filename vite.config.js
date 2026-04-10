@@ -18,7 +18,9 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'preview-vue.html'),
         buttonDoc: resolve(__dirname, 'documentation/button.html'),
-        toggleDoc: resolve(__dirname, 'documentation/toggle.html')
+        toggleDoc: resolve(__dirname, 'documentation/toggle.html'),
+        checkboxDoc: resolve(__dirname, 'documentation/checkbox.html'),
+        inputDoc: resolve(__dirname, 'documentation/input.html')
       }
     }
   }

@@ -20,6 +20,8 @@
           <ul class="nav__list">
             <li class="nav__item"><a href="/documentation/button.html" class="nav__link is-active">Button</a></li>
             <li class="nav__item"><a href="/documentation/toggle.html" class="nav__link">Toggle</a></li>
+            <li class="nav__item"><a href="/documentation/checkbox.html" class="nav__link">Checkbox</a></li>
+            <li class="nav__item"><a href="/documentation/input.html" class="nav__link">Input</a></li>
           </ul>
         </section>
       </div>
