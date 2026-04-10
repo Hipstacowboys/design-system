@@ -77,9 +77,9 @@
 <li><strong>Figma Node ID</strong>: 13&#8211;9075</li>
 <li><strong>Description</strong>: Primary button with black background</li>
 <li><strong>Sizes</strong>: small, medium, large</li>
-<li><strong>States</strong>: default, hover, clicked, disabled, loading</li>
-<li><strong>Variations</strong>: with text, icon-only, with left/right icons, with leading text and right icon</li>
-<li><strong>Props</strong>: <code>size</code> (String), <code>text</code> (String), <code>leadingText</code> (String), <code>disabled</code> (Boolean), <code>iconOnly</code> (Boolean), <code>leftIcon</code>, <code>rightIcon</code>, <code>loading</code> (Boolean), <code>loadingIconPosition</code> (String)</li>
+<li><strong>States</strong>: default, hover, clicked, disabled</li>
+<li><strong>Variations</strong>: with text, icon-only, with left/right icons</li>
+<li><strong>Props</strong>: <code>size</code> (String), <code>text</code> (String), <code>disabled</code> (Boolean), <code>iconOnly</code> (Boolean), <code>leftIcon</code>, <code>rightIcon</code></li>
 </ul>
 
 <h3 id="buttonsecondary">Button Secondary</h3>
@@ -735,7 +735,7 @@
 <ul>
 <li><strong>File</strong>: <code>Calendar.vue</code></li>
 <li><strong>Figma Node ID</strong>: 82&#8211;20079</li>
-<li><strong>Description</strong>: Full-width month (and year) view calendar component built from CalendarDay components. Displays a full month calendar grid.</li>
+<li><strong>Description</strong>: Month view calendar component built from CalendarDay components. Displays a full month calendar grid.</li>
 <li><strong>Variants</strong>: month, year</li>
 <li><strong>Props</strong>:</li>
 <li> <code>variant</code> (String, default: &#8216;month&#8217;) - Calendar variant: &#8216;month&#8217; or &#8216;year&#8217;</li>
@@ -788,26 +788,6 @@
 </code></pre>
 
 <h3 id="bookingincalendar">Booking in Calendar</h3>
-
-<h3 id="timeslot">Time Slot</h3>
-
-<ul>
-<li><strong>File</strong>: <code>TimeSlot.vue</code></li>
-<li><strong>Description</strong>: Small pill timeslot used inside the calendar day for a single booking or empty slot.</li>
-<li><strong>Statuses</strong>: confirmed, empty, past, pending</li>
-<li><strong>States</strong>: default, hover, clicked, disabled</li>
-<li><strong>Props</strong>: <code>time</code> (String, required) – Time label (e.g. "12:00"), <code>label</code> (String, optional) – Guest/note label, <code>status</code> (String, default: 'empty'), <code>disabled</code> (Boolean, default: false)</li>
-</ul>
-
-<h3 id="timeslotbig">Time Slot Big</h3>
-
-<ul>
-<li><strong>File</strong>: <code>TimeSlotBig.vue</code></li>
-<li><strong>Description</strong>: Vertical timeslot card for week calendar view showing guest name, time range, price, and optional note.</li>
-<li><strong>Statuses</strong>: confirmed, empty, past, pending</li>
-<li><strong>States</strong>: default, hover, clicked, disabled</li>
-<li><strong>Props</strong>: <code>name</code> (String, optional), <code>timeRange</code> (String, required), <code>price</code> (String, optional), <code>note</code> (String, optional), <code>status</code> (String, default: 'empty'), <code>disabled</code> (Boolean, default: false)</li>
-</ul>
 
 <ul>
 <li><strong>File</strong>: <code>BookingInCalendar.vue</code></li>

@@ -16,6 +16,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - 
 
+## [1.5.2] - 2026-04-10
+
+### Added
+- Component documentation site in `/documentation/` folder with three-column layout (component nav, content, code aside)
+- Button deep-dive documentation page (`documentation/button.html`) with all 9 standard sections: Purpose, Anatomy & sizing (with spacing/padding visualization using semantic tokens), Variants & all states (4 states × 7 variant configs per button type), Behavior rules, Content rules, Accessibility, Examples & anti-patterns, API/Props, Theming & dark mode
+- Toggle + ToggleWithLabel documentation page (`documentation/toggle.html`) following the same 9-section structure with live interactive demos, anatomy diagrams, state tables, and dark mode preview
+- Code snippet aside with three tabs (Vue, HTML, SCSS) and syntax highlighting on all documentation pages
+- Dark mode live preview on documentation pages using manual `--marks-color-*` token overrides with `#000000` background
+- Forced hover/clicked state visualization in variant tables via non-scoped CSS overrides
+- Documentation creation instructions (`docs/documentation-instructions.md`) for building new component pages
+- Left nav component switcher shared across all documentation pages
+
+### Changed
+- Moved button documentation from `docs/button.html` to `documentation/button.html`
+- Vite config updated with multi-page entries for both documentation pages
+
+### Fixed
+-
+
+
 ## [1.5.1] - 2026-03-13
 
 ### Added
@@ -383,7 +403,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Responsive design patterns
 - Accessibility features (semantic HTML, ARIA attributes)
 
-[Unreleased]: https://github.com/Hipstacowboys/design-system/compare/v1.5.1...HEAD
+[Unreleased]: https://github.com/Hipstacowboys/design-system/compare/v1.5.2...HEAD
+[1.5.2]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.5.2
 [1.5.1]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.5.1
 [1.5.0]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.5.0
 [1.4.0]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.4.0

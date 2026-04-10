@@ -12,5 +12,14 @@ export default defineConfig({
     alias: {
       '@': resolve(__dirname, './')
     }
+  },
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'preview-vue.html'),
+        buttonDoc: resolve(__dirname, 'documentation/button.html'),
+        toggleDoc: resolve(__dirname, 'documentation/toggle.html')
+      }
+    }
   }
 })

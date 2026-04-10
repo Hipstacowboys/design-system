@@ -45,7 +45,48 @@ Complete guide for working with and maintaining the design system.
 - **CHANGELOG.md** - Version history and changes
 - **docs/instructions.md** (this file) - Development guidelines
 - **docs/reuse-guide.md** - How to use the design system in other projects
- - **docs/release-and-deploy.md** - Release & deployment workflow for everyday use
+- **docs/release-and-deploy.md** - Release & deployment workflow for everyday use
+- **docs/documentation-instructions.md** - How to create new component documentation pages
+- **documentation/** - Component documentation site (served by Vite)
+
+## Component Documentation Site
+
+The `/documentation/` folder contains the interactive component documentation site — detailed deep-dive pages for each component with live demos, anatomy visualizations, variant/state grids, and code snippets.
+
+### Structure
+
+```
+documentation/
+  button.html              ← HTML entry point (Vite serves this)
+  toggle.html              ← HTML entry point
+src/docs/
+  button-doc.js            ← Vue entry (imports + registers components)
+  ButtonDocPage.vue         ← Full documentation page (Vue SFC)
+  toggle-doc.js
+  ToggleDocPage.vue
+```
+
+### Creating new pages
+
+Follow `docs/documentation-instructions.md` for the full step-by-step process. Each page requires:
+
+1. HTML entry in `documentation/{component}.html`
+2. JS entry in `src/docs/{component}-doc.js`
+3. Vue SFC in `src/docs/{ComponentName}DocPage.vue` with all 9 required sections
+4. Vite config entry in `vite.config.js`
+5. Left nav link added to **all** existing documentation pages
+
+### 9 required sections per page
+
+1. Purpose & when to use
+2. Anatomy & sizing (with spacing/padding visualization)
+3. Variants & all states (state × variant grid)
+4. Behavior rules
+5. Content rules
+6. Accessibility
+7. Examples & anti-patterns
+8. API / Props
+9. Theming & dark mode
 
 ## Working with Components
 
@@ -95,7 +136,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../tokens/_variables';
+@use '../tokens/variables' as *;
 
 .marks-component-name {
   @include marks-typography-paragraph-md-multiline;
@@ -186,7 +227,7 @@ Colors support light/dark mode automatically when theme is set on root element.
 }
 ```
 
-Available: `gutter-0`, `gutter-4`, `gutter-8`, `gutter-12`, `gutter-16`, `gutter-20`, `gutter-24`, `gutter-28`, `gutter-32`, `gutter-36`, `gutter-40`, `gutter-56`, `gutter-72`, `gutter-80`
+Available: `--marks-spacing-0`, `--marks-spacing-4`, `--marks-spacing-8`, `--marks-spacing-12`, `--marks-spacing-16`, `--marks-spacing-20`, `--marks-spacing-24`, `--marks-spacing-28`, `--marks-spacing-32`, `--marks-spacing-36`, `--marks-spacing-40`, `--marks-spacing-56`, `--marks-spacing-72`, `--marks-spacing-80`
 
 ### Border Radius
 

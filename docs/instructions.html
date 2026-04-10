@@ -83,7 +83,52 @@
 <li><strong>CHANGELOG.md</strong> - Version history and changes</li>
 <li><strong>docs/instructions.md</strong> (this file) - Development guidelines</li>
 <li><strong>docs/reuse-guide.md</strong> - How to use the design system in other projects</li>
+<li><strong>docs/release-and-deploy.md</strong> - Release &amp; deployment workflow for everyday use</li>
+<li><strong>docs/documentation-instructions.md</strong> - How to create new component documentation pages</li>
+<li><strong>documentation/</strong> - Component documentation site (served by Vite)</li>
 </ul>
+
+<h2 id="componentdocumentationsite">Component Documentation Site</h2>
+
+<p>The <code>/documentation/</code> folder contains the interactive component documentation site — detailed deep-dive pages for each component with live demos, anatomy visualizations, variant/state grids, and code snippets.</p>
+
+<h3 id="structure">Structure</h3>
+
+<pre><code>documentation/
+  button.html              ← HTML entry point (Vite serves this)
+  toggle.html              ← HTML entry point
+src/docs/
+  button-doc.js            ← Vue entry (imports + registers components)
+  ButtonDocPage.vue         ← Full documentation page (Vue SFC)
+  toggle-doc.js
+  ToggleDocPage.vue
+</code></pre>
+
+<h3 id="creatingnewpages">Creating new pages</h3>
+
+<p>Follow <code>docs/documentation-instructions.md</code> for the full step-by-step process. Each page requires:</p>
+
+<ol>
+<li>HTML entry in <code>documentation/{component}.html</code></li>
+<li>JS entry in <code>src/docs/{component}-doc.js</code></li>
+<li>Vue SFC in <code>src/docs/{ComponentName}DocPage.vue</code> with all 9 required sections</li>
+<li>Vite config entry in <code>vite.config.js</code></li>
+<li>Left nav link added to <strong>all</strong> existing documentation pages</li>
+</ol>
+
+<h3 id="9requiredsectionsperpage">9 required sections per page</h3>
+
+<ol>
+<li>Purpose &amp; when to use</li>
+<li>Anatomy &amp; sizing (with spacing/padding visualization)</li>
+<li>Variants &amp; all states (state × variant grid)</li>
+<li>Behavior rules</li>
+<li>Content rules</li>
+<li>Accessibility</li>
+<li>Examples &amp; anti-patterns</li>
+<li>API / Props</li>
+<li>Theming &amp; dark mode</li>
+</ol>
 
 <h2 id="workingwithcomponents">Working with Components</h2>
 
@@ -134,7 +179,7 @@ export default {
 &lt;/script&gt;
 
 &lt;style lang=&quot;scss&quot; scoped&gt;
-@import '../tokens/_variables';
+@use '../tokens/variables' as *;
 
 .marks-component-name {
   @include marks-typography-paragraph-md-multiline;
@@ -233,7 +278,7 @@ export default {
 }
 </code></pre>
 
-<p>Available: <code>gutter-0</code>, <code>gutter-4</code>, <code>gutter-8</code>, <code>gutter-12</code>, <code>gutter-16</code>, <code>gutter-20</code>, <code>gutter-24</code>, <code>gutter-28</code>, <code>gutter-32</code>, <code>gutter-36</code>, <code>gutter-40</code>, <code>gutter-56</code>, <code>gutter-72</code>, <code>gutter-80</code></p>
+<p>Available: <code>--marks-spacing-0</code>, <code>--marks-spacing-4</code>, <code>--marks-spacing-8</code>, <code>--marks-spacing-12</code>, <code>--marks-spacing-16</code>, <code>--marks-spacing-20</code>, <code>--marks-spacing-24</code>, <code>--marks-spacing-28</code>, <code>--marks-spacing-32</code>, <code>--marks-spacing-36</code>, <code>--marks-spacing-40</code>, <code>--marks-spacing-56</code>, <code>--marks-spacing-72</code>, <code>--marks-spacing-80</code></p>
 
 <h3 id="borderradius">Border Radius</h3>
 

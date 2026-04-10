@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="documentationpagecreationinstructions">Documentation Page Creation Instructions</h1>
+
+<p>Instructions for creating component documentation pages for the Ventrata Design System. Follow this exactly when building new pages.</p>
+
+<hr />
+
+<h2 id="folderstructure">Folder structure</h2>
+
+<p>Documentation pages live in <code>/documentation/</code> (not <code>/docs/</code> — that folder is for project documents).</p>
+
+<pre><code>documentation/
+  button.html              ← HTML entry point (Vite serves this)
+src/docs/
+  button-doc.js            ← Vue entry point (imports + registers components)
+  ButtonDocPage.vue         ← The actual documentation page (Vue SFC)
+</code></pre>
+
+<p>Each component page requires <strong>three files</strong>:</p>
+
+<h3 id="1.htmlentry—documentationcomponent.html">1. HTML entry — <code>documentation/{component}.html</code></h3>
+
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;{Component} — Ventrata Design System&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;../design-system.css&quot;&gt;
+  &lt;script type=&quot;module&quot; src=&quot;../src/docs/{component}-doc.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3 id="2.jsentry—srcdocscomponent-doc.js">2. JS entry — <code>src/docs/{component}-doc.js</code></h3>
+
+<pre><code class="javascript">import { createApp } from 'vue';
+import {ComponentName}DocPage from './{ComponentName}DocPage.vue';
+
+// Import every Vue component that appears in the documentation
+import ButtonPrimary from '../../components/ButtonPrimary.vue';
+// ... all needed components
+
+const app = createApp({ComponentName}DocPage);
+
+// Register them globally so the template can use them
+app.component('ButtonPrimary', ButtonPrimary);
+// ... all needed components
+
+app.mount('#app');
+</code></pre>
+
+<h3 id="3.vuesfc—srcdocscomponentnamedocpage.vue">3. Vue SFC — <code>src/docs/{ComponentName}DocPage.vue</code></h3>
+
+<p>This is where all documentation content lives. See the full structure below.</p>
+
+<h3 id="4.registerinvite—vite.config.js">4. Register in Vite — <code>vite.config.js</code></h3>
+
+<p>Add the new HTML entry to <code>build.rollupOptions.input</code>:</p>
+
+<pre><code class="javascript">build: {
+  rollupOptions: {
+    input: {
+      main: resolve(__dirname, 'preview-vue.html'),
+      buttonDoc: resolve(__dirname, 'documentation/button.html'),
+      newComponentDoc: resolve(__dirname, 'documentation/{component}.html')
+    }
+  }
+}
+</code></pre>
+
+<hr />
+
+<h2 id="pagelayoutthree-column">Page layout (three-column)</h2>
+
+<p>Every doc page uses the same three-column layout from <code>docs/reference-main.css</code>:</p>
+
+<pre><code>┌──────────────────────────────────────────────────────┐
+│  header (.header)                                    │
+├────────────┬───────────────────────┬─────────────────┤
+│  left nav  │  main content        │  right aside    │
+│            │  (.layout__content)  │  (.layout__aside)│
+│  Component │                      │  Code snippets  │
+│  switcher  │  9 sections          │  3 tabs:        │
+│  (links to │  (see below)         │  Vue / HTML /   │
+│  all comp  │                      │  SCSS           │
+│  pages)    │                      │                 │
+└────────────┴───────────────────────┴─────────────────┘
+</code></pre>
+
+<h3 id="leftnav—componentswitcher">Left nav — component switcher</h3>
+
+<p>The left nav is for <strong>switching between component pages</strong>, NOT for on-page section anchors. Each link navigates to a different documentation page. The currently viewed component gets <code>is-active</code>.</p>
+
+<pre><code class="html">&lt;nav class=&quot;layout__nav&quot;&gt;
+  &lt;div class=&quot;nav&quot;&gt;
+    &lt;section class=&quot;nav__section&quot;&gt;
+      &lt;span class=&quot;nav__section-title&quot;&gt;Components&lt;/span&gt;
+      &lt;ul class=&quot;nav__list&quot;&gt;
+        &lt;li class=&quot;nav__item&quot;&gt;&lt;a href=&quot;/documentation/button.html&quot; class=&quot;nav__link is-active&quot;&gt;Button&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;nav__item&quot;&gt;&lt;a href=&quot;/documentation/input.html&quot; class=&quot;nav__link&quot;&gt;Input&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;nav__item&quot;&gt;&lt;a href=&quot;/documentation/select.html&quot; class=&quot;nav__link&quot;&gt;Select&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;nav__item&quot;&gt;&lt;a href=&quot;/documentation/checkbox.html&quot; class=&quot;nav__link&quot;&gt;Checkbox&lt;/a&gt;&lt;/li&gt;
+        &lt;!-- ... all documented components --&gt;
+      &lt;/ul&gt;
+    &lt;/section&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+</code></pre>
+
+<p>When adding a new component page, add its link to the left nav of <strong>every</strong> existing documentation page so all pages share the same navigation.</p>
+
+<hr />
+
+<h2 id="the9requiredsections">The 9 required sections</h2>
+
+<p>Every component documentation page MUST have these 9 sections in this order. Content must be sourced from the actual Vue component files, not invented.</p>
+
+<h3 id="1.purposewhentousepurpose">1. Purpose &amp; when to use (<code>#purpose</code>)</h3>
+
+<ul>
+<li>When to use each variant</li>
+<li>When NOT to use</li>
+<li>Sourced from the component&#8217;s actual use cases</li>
+</ul>
+
+<h3 id="2.anatomysizinganatomy">2. Anatomy &amp; sizing (<code>#anatomy</code>)</h3>
+
+<ul>
+<li><strong>Structural slots</strong> — render the real component showing slot layout (icon positions, text, leading text, etc.)</li>
+<li><strong>Spacing &amp; padding visualization</strong> — for each size (small/medium/large):</li>
+<li> Render the actual component inside a <code>.btn-anatomy__frame</code></li>
+<li> Overlay pink padding areas (<code>.btn-anatomy__pad</code>)</li>
+<li> Overlay dashed blue content box outline (<code>.btn-anatomy__outline</code>)</li>
+<li> Red measurement badges (<code>.btn-anatomy__badge</code>) showing <strong>pixel numbers only</strong></li>
+<li> Below each visualization: a table with columns <code>Property / Token / Value</code></li>
+<li> Token column uses semantic token names like <code>--marks-spacing-16</code></li>
+<li> Value column shows resolved pixel values</li>
+<li><strong>Live sizes</strong> — all variants × all sizes rendered side by side</li>
+</ul>
+
+<h3 id="3.variantsallstatesvariants">3. Variants &amp; all states (<code>#variants</code>)</h3>
+
+<ul>
+<li>One table per component type (e.g., Primary, Secondary, Line, Ghost)</li>
+<li><strong>Columns</strong> = variant configurations: Default (no icons), Icon left, Icon right, Loading only, Loading left, Loading right, Icon only</li>
+<li><strong>Rows</strong> = states: Default, Hover, Clicked, Disabled</li>
+<li>Hover and Clicked states are forced via CSS wrapper classes (<code>force-hover</code>, <code>force-active</code>) in a non-scoped <code>&lt;style&gt;</code> block</li>
+<li>Force-state CSS must match the actual <code>:hover</code> and <code>:active</code> styles from each component&#8217;s scoped SCSS</li>
+</ul>
+
+<h3 id="4.behaviorrulesbehavior">4. Behavior rules (<code>#behavior</code>)</h3>
+
+<ul>
+<li>Click handling</li>
+<li>Loading state behavior</li>
+<li>Disabled state behavior</li>
+<li>Focus behavior</li>
+<li>Live demo (e.g., loading toggle)</li>
+</ul>
+
+<h3 id="5.contentrulescontent">5. Content rules (<code>#content</code>)</h3>
+
+<ul>
+<li>Label text guidelines</li>
+<li>Casing rules</li>
+<li>Character length limits</li>
+<li>Icon usage rules</li>
+</ul>
+
+<h3 id="6.accessibilityaccessibility">6. Accessibility (<code>#accessibility</code>)</h3>
+
+<ul>
+<li>Keyboard navigation</li>
+<li>ARIA attributes</li>
+<li>Contrast requirements</li>
+<li>Touch target sizes</li>
+</ul>
+
+<h3 id="7.examplesanti-patternsexamples">7. Examples &amp; anti-patterns (<code>#examples</code>)</h3>
+
+<ul>
+<li>Real-world usage examples with live components</li>
+<li>Anti-patterns with visual &#8220;Don&#8217;t&#8221; indicators</li>
+</ul>
+
+<h3 id="8.apipropsapi">8. API / Props (<code>#api</code>)</h3>
+
+<ul>
+<li>Full props table: <code>Name / Type / Default / Description</code></li>
+<li>Use <code>.props-table</code> CSS class</li>
+<li>Events table</li>
+<li>Slots table</li>
+</ul>
+
+<h3 id="9.themingdarkmodetheming">9. Theming &amp; dark mode (<code>#theming</code>)</h3>
+
+<ul>
+<li>Light mode preview with live components</li>
+<li>Dark mode preview with live components</li>
+<li>Dark mode uses the <code>.dark-preview</code> class pattern (see below)</li>
+</ul>
+
+<hr />
+
+<h2 id="darkmodepreview">Dark mode preview</h2>
+
+<p>Dark mode is NOT done with <code>data-theme=&quot;dark&quot;</code>. It is done by <strong>manually overriding all <code>--marks-color-*</code> CSS custom properties</strong> on the container element. This matches the pattern used in <code>comparison.html</code> / <code>ComparisonApp.vue</code>.</p>
+
+<p>Use a scoped style class:</p>
+
+<pre><code class="css">.dark-preview {
+  background: #000000;
+  border-color: #6F6F6F;
+
+  --marks-color-primary-solid: #0E5842;
+  --marks-color-primary-light: #032F22;
+  --marks-color-red-100: #FFE4E9;
+  --marks-color-red-200: #FD3860;
+  --marks-color-red-300: #97001E;
+  --marks-color-blue-100: #D7E7FF;
+  --marks-color-blue-200: #2576F7;
+  --marks-color-blue-300: #050D3A;
+  --marks-color-green-100: #C0F3E4;
+  --marks-color-green-200: #0FAF80;
+  --marks-color-green-300: #0E5842;
+  --marks-color-orange-100: #FFEBD2;
+  --marks-color-orange-200: #FF8C00;
+  --marks-color-orange-300: #854900;
+  --marks-color-gray-100: #2A2A2A;
+  --marks-color-gray-150: #505050;
+  --marks-color-gray-200: #6F6F6F;
+  --marks-color-gray-300: #8D8D8D;
+  --marks-color-gray-350: #D1D1D1;
+  --marks-color-gray-400: #ECECEC;
+  --marks-color-gray-500: #FAFAFA;
+  --marks-color-white: #000000;
+  --marks-color-black: #FFFFFF;
+}
+</code></pre>
+
+<p>The dark preview background MUST be <code>#000000</code> (pure black).</p>
+
+<hr />
+
+<h2 id="force-statecssforhoverclickedpreviews">Force-state CSS for hover/clicked previews</h2>
+
+<p>Since Vue components use scoped <code>:hover</code> and <code>:active</code> pseudo-classes, we can&#8217;t trigger them from the parent. Instead, wrap components in a div with a force class and add non-scoped styles that override the component&#8217;s internal styles.</p>
+
+<p>Add these in a <strong>non-scoped</strong> <code>&lt;style&gt;</code> block (not <code>&lt;style scoped&gt;</code>):</p>
+
+<pre><code class="css">/* Force hover state */
+.force-hover .marks-{component}--{variant} {
+  /* copy exact :hover styles from the component's SCSS */
+}
+
+/* Force active/clicked state */
+.force-active .marks-{component}--{variant} {
+  /* copy exact :active styles from the component's SCSS */
+}
+</code></pre>
+
+<p>Use <code>!important</code> to override scoped styles.</p>
+
+<hr />
+
+<h2 id="rightaside—codesnippets">Right aside — code snippets</h2>
+
+<p>Three tabs: <strong>Vue</strong>, <strong>HTML</strong>, <strong>SCSS</strong></p>
+
+<h3 id="syntaxhighlighting">Syntax highlighting</h3>
+
+<p>Use the token classes defined in <code>reference-main.css</code>:</p>
+
+<table>
+<colgroup>
+<col />
+<col />
+<col />
+</colgroup>
+
+<thead>
+<tr>
+	<th> Class </th>
+	<th> Color </th>
+	<th> Use for </th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td> <code>.token-comment</code> </td>
+	<td> Gray italic </td>
+	<td> <code>// comments</code>, <code>&lt;!-- comments --&gt;</code> </td>
+</tr>
+<tr>
+	<td> <code>.token-keyword</code> </td>
+	<td> Teal </td>
+	<td> <code>import</code>, <code>export</code>, <code>from</code>, <code>@use</code>, <code>@include</code>, <code>var</code> </td>
+</tr>
+<tr>
+	<td> <code>.token-string</code> </td>
+	<td> Pink </td>
+	<td> <code>&quot;string values&quot;</code>, <code>'paths'</code> </td>
+</tr>
+<tr>
+	<td> <code>.token-number</code> </td>
+	<td> Orange </td>
+	<td> <code>1px</code>, <code>2px</code>, pixel values </td>
+</tr>
+<tr>
+	<td> <code>.token-tag</code> </td>
+	<td> Light blue </td>
+	<td> <code>&lt;ComponentName&gt;</code>, <code>&lt;div&gt;</code>, <code>&lt;button&gt;</code>, component names </td>
+</tr>
+<tr>
+	<td> <code>.token-attr</code> </td>
+	<td> Gold </td>
+	<td> <code>size=</code>, <code>text=</code>, <code>class=</code>, CSS property names </td>
+</tr>
+</tbody>
+</table>
+
+<p>Wrap each token in a <code>&lt;span&gt;</code> inside <code>&lt;pre&gt;</code>:</p>
+
+<pre><code class="html">&lt;pre&gt;&lt;span class=&quot;token-keyword&quot;&gt;import&lt;/span&gt; { &lt;span class=&quot;token-tag&quot;&gt;PhArrowRight&lt;/span&gt; } &lt;span class=&quot;token-keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token-string&quot;&gt;'@phosphor-icons/vue'&lt;/span&gt;&lt;/pre&gt;
+</code></pre>
+
+<h3 id="vuetabcontent">Vue tab content</h3>
+
+<ul>
+<li>How to import icons</li>
+<li>How to register icons in <code>data()</code> for reactivity</li>
+<li>Basic usage of all variants</li>
+<li>Loading state examples</li>
+<li>Icon-only with <code>aria-label</code></li>
+<li>Any component-specific features (e.g., <code>leading-text</code> for Primary)</li>
+</ul>
+
+<h3 id="htmltabcontent">HTML tab content</h3>
+
+<ul>
+<li>Rendered DOM output showing BEM class structure</li>
+<li>Examples for: default, icon-only, disabled, loading</li>
+<li>BEM class reference comment listing all blocks, variants, sizes, states, elements</li>
+</ul>
+
+<h3 id="scsstabcontent">SCSS tab content</h3>
+
+<ul>
+<li>Token import statement</li>
+<li>Color tokens per variant</li>
+<li>Spacing tokens per size (padding, radius, gap, typography mixin)</li>
+<li>State overrides (disabled, focus-visible)</li>
+<li>Component-specific token mappings</li>
+</ul>
+
+<hr />
+
+<h2 id="designtokensreference">Design tokens reference</h2>
+
+<h3 id="spacing—tokens_spacing.scss">Spacing — <code>tokens/_spacing.scss</code></h3>
+
+<pre><code>--marks-spacing-0 through --marks-spacing-80
+</code></pre>
+
+<h3 id="radius—tokens_spacing.scss">Radius — <code>tokens/_spacing.scss</code></h3>
+
+<pre><code>--marks-radius-0, --marks-radius-8, --marks-radius-12, --marks-radius-16, --marks-radius-24, --marks-radius-full
+</code></pre>
+
+<h3 id="colors—tokenscolors-light.scsstokenscolors-dark.scss">Colors — <code>tokens/colors-light.scss</code>, <code>tokens/colors-dark.scss</code></h3>
+
+<pre><code>--marks-color-primary-solid, --marks-color-primary-light
+--marks-color-black, --marks-color-white
+--marks-color-gray-100 through --marks-color-gray-500
+--marks-color-red-100/200/300
+--marks-color-blue-100/200/300
+--marks-color-green-100/200/300
+--marks-color-orange-100/200/300
+</code></pre>
+
+<h3 id="typography—tokens_typography-mixins.scss">Typography — <code>tokens/_typography-mixins.scss</code></h3>
+
+<p>Button-specific mixins: <code>marks-typography-button-sm</code>, <code>marks-typography-button-md</code>, <code>marks-typography-button-lg</code></p>
+
+<hr />
+
+<h2 id="phosphoricons">Phosphor icons</h2>
+
+<ul>
+<li>Package: <code>@phosphor-icons/vue</code></li>
+<li>Weight rule: <strong>bold</strong> at ≤ 19px (small size), <strong>regular</strong> at ≥ 20px (medium &amp; large)</li>
+<li>Icons must be imported and added to <code>data()</code> for Vue reactivity when passed as props</li>
+<li>Components handle weight automatically via <code>iconWeight</code> computed prop</li>
+</ul>
+
+<hr />
+
+<h2 id="cssclassesusedindocumentation">CSS classes used in documentation</h2>
+
+<p>All layout and documentation-specific styles come from <code>docs/reference-main.css</code>. Import it in a non-scoped <code>&lt;style&gt;</code> block:</p>
+
+<pre><code class="css">&lt;style&gt;
+@import '../../docs/reference-main.css';
+&lt;/style&gt;
+</code></pre>
+
+<p>Key classes:</p>
+
+<table>
+<colgroup>
+<col />
+<col />
+</colgroup>
+
+<thead>
+<tr>
+	<th> Class </th>
+	<th> Purpose </th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td> <code>.header</code>, <code>.header__logo</code>, <code>.header__nav</code> </td>
+	<td> Top bar </td>
+</tr>
+<tr>
+	<td> <code>.layout</code>, <code>.layout__nav</code>, <code>.layout__content</code>, <code>.layout__aside</code> </td>
+	<td> Three-column grid </td>
+</tr>
+<tr>
+	<td> <code>.nav</code>, <code>.nav__section</code>, <code>.nav__link</code> </td>
+	<td> Left nav (component switcher, not contextual) </td>
+</tr>
+<tr>
+	<td> <code>.content</code>, <code>.content__eyebrow</code>, <code>.content__lead</code> </td>
+	<td> Main content area </td>
+</tr>
+<tr>
+	<td> <code>.comp-section-h2</code>, <code>.comp-section-desc</code> </td>
+	<td> Section headings </td>
+</tr>
+<tr>
+	<td> <code>.comp-demo</code>, <code>.comp-demo__group</code>, <code>.comp-demo__row</code> </td>
+	<td> Demo containers </td>
+</tr>
+<tr>
+	<td> <code>.variant-table</code>, <code>.variant-section</code> </td>
+	<td> State/variant tables </td>
+</tr>
+<tr>
+	<td> <code>.state-chip</code>, <code>.state-chip--{state}</code> </td>
+	<td> State label badges </td>
+</tr>
+<tr>
+	<td> <code>.props-table</code>, <code>.props-row__meta</code> </td>
+	<td> API props tables </td>
+</tr>
+<tr>
+	<td> <code>.callout</code>, <code>.callout--info</code>, <code>.callout--warning</code> </td>
+	<td> Info/warning boxes </td>
+</tr>
+<tr>
+	<td> <code>.aside__block--code</code>, <code>.code-tabs</code>, <code>.code-pane</code> </td>
+	<td> Code aside </td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h2 id="step-by-stepchecklistforanewcomponentpage">Step-by-step checklist for a new component page</h2>
+
+<ol>
+<li><p><strong>Read the component</strong> — Open every Vue SFC for the component. Extract: props, computed properties, events, slots, SCSS styles, hover/active/disabled/loading styles, BEM class names, token usage.</p></li>
+<li><p><strong>Create three files</strong> — <code>documentation/{component}.html</code>, <code>src/docs/{component}-doc.js</code>, <code>src/docs/{ComponentName}DocPage.vue</code></p></li>
+<li><p><strong>Register in Vite</strong> — Add the HTML entry to <code>vite.config.js</code> <code>build.rollupOptions.input</code></p></li>
+<li><p><strong>Update left nav on ALL pages</strong> — Add the new component link to the left nav of every existing documentation page, and include all existing component links in the new page</p></li>
+<li><p><strong>Build all 9 sections</strong> — Follow the order and content guidelines above. Every piece of content must reflect the real component, not generic filler.</p></li>
+<li><p><strong>Build anatomy visualization</strong> — Use <code>sizeSpecs</code> data with pixel values AND semantic token names. Badges show numbers, tables show tokens.</p></li>
+<li><p><strong>Build variant × state grid</strong> — Read the component&#8217;s <code>:hover</code> and <code>:active</code> SCSS, create matching force-state CSS in non-scoped style block.</p></li>
+<li><p><strong>Build code aside</strong> — Three tabs (Vue/HTML/SCSS) with proper syntax highlighting using token span classes.</p></li>
+<li><p><strong>Add dark mode preview</strong> — Use the <code>.dark-preview</code> class pattern with full token overrides, <code>#000000</code> background.</p></li>
+<li><p><strong>Test</strong> — Run <code>npx vite</code> and verify the page loads at <code>http://localhost:3000/documentation/{component}.html</code></p></li>
+</ol>
+
+<hr />
+
+<h2 id="referencefiles">Reference files</h2>
+
+<ul>
+<li><strong>Layout &amp; style reference</strong>: <code>docs/reference-button.html</code> (layout only, not content)</li>
+<li><strong>Documentation CSS</strong>: <code>docs/reference-main.css</code></li>
+<li><strong>Dark mode pattern</strong>: <code>comparison.html</code> + <code>src/ComparisonApp.vue</code></li>
+<li><strong>Button page (template)</strong>: <code>src/docs/ButtonDocPage.vue</code></li>
+<li><strong>Token files</strong>: <code>tokens/_spacing.scss</code>, <code>tokens/_variables.scss</code>, <code>tokens/colors-light.scss</code>, <code>tokens/colors-dark.scss</code>, <code>tokens/_typography-tokens.scss</code>, <code>tokens/_typography-mixins.scss</code></li>
+</ul>
+
+</body>
+</html>
+
