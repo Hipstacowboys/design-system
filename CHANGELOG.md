@@ -16,6 +16,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - 
 
+## [1.5.3] - 2026-04-10
+
+### Added
+- 
+
+### Changed
+- 
+
+### Fixed
+-
+
+
 ## [1.5.2] - 2026-04-10
 
 ### Added
@@ -403,7 +415,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Responsive design patterns
 - Accessibility features (semantic HTML, ARIA attributes)
 
-[Unreleased]: https://github.com/Hipstacowboys/design-system/compare/v1.5.2...HEAD
+[Unreleased]: https://github.com/Hipstacowboys/design-system/compare/v1.5.3...HEAD
+[1.5.3]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.5.3
 [1.5.2]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.5.2
 [1.5.1]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.5.1
 [1.5.0]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.5.0
