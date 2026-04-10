@@ -20,7 +20,11 @@ export default defineConfig({
         buttonDoc: resolve(__dirname, 'documentation/button.html'),
         toggleDoc: resolve(__dirname, 'documentation/toggle.html'),
         checkboxDoc: resolve(__dirname, 'documentation/checkbox.html'),
-        inputDoc: resolve(__dirname, 'documentation/input.html')
+        inputDoc: resolve(__dirname, 'documentation/input.html'),
+        selectDoc: resolve(__dirname, 'documentation/select.html'),
+        radioDoc: resolve(__dirname, 'documentation/radio.html'),
+        textareaDoc: resolve(__dirname, 'documentation/textarea.html'),
+        tabsDoc: resolve(__dirname, 'documentation/tabs.html')
       }
     }
   }

@@ -1,0 +1,7 @@
+import { createApp } from 'vue';
+import Select from '../../components/Select.vue';
+import SelectDocPage from './SelectDocPage.vue';
+
+const app = createApp(SelectDocPage);
+app.component('Select', Select);
+app.mount('#app');

@@ -22,6 +22,10 @@
             <li class="nav__item"><a href="/documentation/toggle.html" class="nav__link">Toggle</a></li>
             <li class="nav__item"><a href="/documentation/checkbox.html" class="nav__link">Checkbox</a></li>
             <li class="nav__item"><a href="/documentation/input.html" class="nav__link">Input</a></li>
+            <li class="nav__item"><a href="/documentation/select.html" class="nav__link">Select</a></li>
+            <li class="nav__item"><a href="/documentation/radio.html" class="nav__link">Radio</a></li>
+            <li class="nav__item"><a href="/documentation/textarea.html" class="nav__link">Textarea</a></li>
+            <li class="nav__item"><a href="/documentation/tabs.html" class="nav__link">Tabs</a></li>
           </ul>
         </section>
       </div>
