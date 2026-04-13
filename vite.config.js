@@ -24,7 +24,27 @@ export default defineConfig({
         selectDoc: resolve(__dirname, 'documentation/select.html'),
         radioDoc: resolve(__dirname, 'documentation/radio.html'),
         textareaDoc: resolve(__dirname, 'documentation/textarea.html'),
-        tabsDoc: resolve(__dirname, 'documentation/tabs.html')
+        tabsDoc: resolve(__dirname, 'documentation/tabs.html'),
+        alertDoc: resolve(__dirname, 'documentation/alert.html'),
+        statusDoc: resolve(__dirname, 'documentation/status.html'),
+        notificationBadgeDoc: resolve(__dirname, 'documentation/notification-badge.html'),
+        tooltipDoc: resolve(__dirname, 'documentation/tooltip.html'),
+        dropdownDoc: resolve(__dirname, 'documentation/dropdown.html'),
+        emptyStateDoc: resolve(__dirname, 'documentation/empty-state.html'),
+        notificationMessageDoc: resolve(__dirname, 'documentation/notification-message.html'),
+        notificationDialogDoc: resolve(__dirname, 'documentation/notification-dialog.html'),
+        breadcrumbsDoc: resolve(__dirname, 'documentation/breadcrumbs.html'),
+        navbarSideDoc: resolve(__dirname, 'documentation/navbar-side.html'),
+        switchDoc: resolve(__dirname, 'documentation/switch.html'),
+        horizontalSwitchDoc: resolve(__dirname, 'documentation/horizontal-switch.html'),
+        tableDoc: resolve(__dirname, 'documentation/table.html'),
+        widgetDoc: resolve(__dirname, 'documentation/widget.html'),
+        cardWithCounterDoc: resolve(__dirname, 'documentation/card-with-counter.html'),
+        introductionDoc: resolve(__dirname, 'documentation/introduction.html'),
+        gettingStartedDoc: resolve(__dirname, 'documentation/getting-started.html'),
+        designTokensDoc: resolve(__dirname, 'documentation/design-tokens.html'),
+        iconsDoc: resolve(__dirname, 'documentation/icons.html'),
+        themingDoc: resolve(__dirname, 'documentation/theming.html')
       }
     }
   }

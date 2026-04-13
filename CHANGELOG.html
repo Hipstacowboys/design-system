@@ -17,6 +17,33 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 <h3 id="added">Added</h3>
 
 <ul>
+<li>Foundation documentation pages under <code>/documentation/</code>: Introduction, Getting Started, Design Tokens, Icons, and Theming (mirroring README-style setup and token reference)</li>
+<li>Shared <code>DocHeader.vue</code> and <code>DocNav.vue</code> in <code>src/docs/</code> so every documentation page uses one consistent header and left navigation (Foundations + Components) driven by an <code>activePage</code> slug</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+<li>Documentation site navigation is maintained in <code>DocNav.vue</code> / <code>DocHeader.vue</code> instead of duplicated markup in each <code>*DocPage.vue</code></li>
+</ul>
+
+<h3 id="removed">Removed</h3>
+
+<ul>
+<li>Contributing documentation page (<code>documentation/contributing.html</code>, <code>src/docs/contributing-doc.js</code>, <code>ContributingDocPage.vue</code>) and its Vite build entry</li>
+</ul>
+
+<h3 id="fixed">Fixed</h3>
+
+<ul>
+<li></li>
+</ul>
+
+<h2 id="1.5.3-2026-04-10"><a href="https://github.com/Hipstacowboys/design-system/releases/tag/v1.5.3">1.5.3</a> - 2026&#8211;04&#8211;10</h2>
+
+<h3 id="added">Added</h3>
+
+<ul>
 <li></li>
 </ul>
 
@@ -28,9 +55,33 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 
 <h3 id="fixed">Fixed</h3>
 
+<p>-</p>
+
+<h2 id="1.5.2-2026-04-10"><a href="https://github.com/Hipstacowboys/design-system/releases/tag/v1.5.2">1.5.2</a> - 2026&#8211;04&#8211;10</h2>
+
+<h3 id="added">Added</h3>
+
 <ul>
-<li></li>
+<li>Component documentation site in <code>/documentation/</code> folder with three-column layout (component nav, content, code aside)</li>
+<li>Button deep-dive documentation page (<code>documentation/button.html</code>) with all 9 standard sections: Purpose, Anatomy &amp; sizing (with spacing/padding visualization using semantic tokens), Variants &amp; all states (4 states × 7 variant configs per button type), Behavior rules, Content rules, Accessibility, Examples &amp; anti-patterns, API/Props, Theming &amp; dark mode</li>
+<li>Toggle + ToggleWithLabel documentation page (<code>documentation/toggle.html</code>) following the same 9-section structure with live interactive demos, anatomy diagrams, state tables, and dark mode preview</li>
+<li>Code snippet aside with three tabs (Vue, HTML, SCSS) and syntax highlighting on all documentation pages</li>
+<li>Dark mode live preview on documentation pages using manual <code>--marks-color-*</code> token overrides with <code>#000000</code> background</li>
+<li>Forced hover/clicked state visualization in variant tables via non-scoped CSS overrides</li>
+<li>Documentation creation instructions (<code>docs/documentation-instructions.md</code>) for building new component pages</li>
+<li>Left nav component switcher shared across all documentation pages</li>
 </ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+<li>Moved button documentation from <code>docs/button.html</code> to <code>documentation/button.html</code></li>
+<li>Vite config updated with multi-page entries for both documentation pages</li>
+</ul>
+
+<h3 id="fixed">Fixed</h3>
+
+<p>-</p>
 
 <h2 id="1.5.1-2026-03-13"><a href="https://github.com/Hipstacowboys/design-system/releases/tag/v1.5.1">1.5.1</a> - 2026&#8211;03&#8211;13</h2>
 

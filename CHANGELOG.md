@@ -16,6 +16,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - 
 
+## [1.5.4] - 2026-04-13
+
+### Added
+- Foundation documentation pages under `/documentation/`: Introduction, Getting Started, Design Tokens, Icons, and Theming (mirroring README-style setup and token reference)
+- Shared `DocHeader.vue` and `DocNav.vue` in `src/docs/` so every documentation page uses one consistent header and left navigation (Foundations + Components) driven by an `activePage` slug
+
+### Changed
+- Documentation site navigation is maintained in `DocNav.vue` / `DocHeader.vue` instead of duplicated markup in each `*DocPage.vue`
+
+### Removed
+- Contributing documentation page (`documentation/contributing.html`, `src/docs/contributing-doc.js`, `ContributingDocPage.vue`) and its Vite build entry
+
+### Fixed
+-
+
+
 ## [1.5.3] - 2026-04-10
 
 ### Added
@@ -415,7 +431,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Responsive design patterns
 - Accessibility features (semantic HTML, ARIA attributes)
 
-[Unreleased]: https://github.com/Hipstacowboys/design-system/compare/v1.5.3...HEAD
+[Unreleased]: https://github.com/Hipstacowboys/design-system/compare/v1.5.4...HEAD
+[1.5.4]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.5.4
 [1.5.3]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.5.3
 [1.5.2]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.5.2
 [1.5.1]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.5.1

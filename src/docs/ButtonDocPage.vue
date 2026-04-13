@@ -1,35 +1,10 @@
 <template>
-  <header class="header">
-    <a href="/" class="header__logo">
-      <span class="header__logo-mark">M</span>
-      Design System
-    </a>
-    <nav class="header__nav">
-      <a href="/" class="header__nav-link">Foundations</a>
-      <a href="/documentation/button.html" class="header__nav-link is-active">Components</a>
-    </nav>
-  </header>
+  <DocHeader active-page="button" />
 
   <div class="layout">
 
-    <!-- ─── Left nav — component switcher ─── -->
-    <nav class="layout__nav">
-      <div class="nav">
-        <section class="nav__section">
-          <span class="nav__section-title">Components</span>
-          <ul class="nav__list">
-            <li class="nav__item"><a href="/documentation/button.html" class="nav__link is-active">Button</a></li>
-            <li class="nav__item"><a href="/documentation/toggle.html" class="nav__link">Toggle</a></li>
-            <li class="nav__item"><a href="/documentation/checkbox.html" class="nav__link">Checkbox</a></li>
-            <li class="nav__item"><a href="/documentation/input.html" class="nav__link">Input</a></li>
-            <li class="nav__item"><a href="/documentation/select.html" class="nav__link">Select</a></li>
-            <li class="nav__item"><a href="/documentation/radio.html" class="nav__link">Radio</a></li>
-            <li class="nav__item"><a href="/documentation/textarea.html" class="nav__link">Textarea</a></li>
-            <li class="nav__item"><a href="/documentation/tabs.html" class="nav__link">Tabs</a></li>
-          </ul>
-        </section>
-      </div>
-    </nav>
+    <!-- ─── Left nav ─── -->
+    <DocNav active-page="button" />
 
     <!-- ─── Main content ─── -->
     <main class="layout__content">
@@ -780,9 +755,12 @@
 
 <script>
 import { PhPlus, PhArrowRight, PhArrowLeft, PhPencilSimple, PhTrash, PhCopy } from '@phosphor-icons/vue'
+import DocHeader from './DocHeader.vue';
+import DocNav from './DocNav.vue';
 
 export default {
   name: 'ButtonDocPage',
+  components: { DocHeader, DocNav },
   data() {
     return {
       PhPlus,
