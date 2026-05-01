@@ -1,6 +1,6 @@
 // Design System Styles
 // Main stylesheet with marks- prefix for all design system classes
-// Compiled through Codekit to design-system.css
+// Compiled with npm run build:css to design-system.css
 
 @use 'tokens/variables' as *;
 

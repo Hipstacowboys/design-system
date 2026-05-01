@@ -13,7 +13,7 @@
         <span class="content__eyebrow">Foundations</span>
         <h1>Theming</h1>
         <p class="content__lead">
-          The Ventrata Design System ships two themes &mdash; <strong>light</strong> (default)
+          The Marks Design System ships two themes &mdash; <strong>light</strong> (default)
           and <strong>dark</strong> &mdash; implemented entirely through CSS custom properties.
           Components reference token names, never raw hex values, so switching themes
           requires zero component-level changes.

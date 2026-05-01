@@ -1,24 +1,19 @@
 <template>
   <header class="header">
-    <a href="/" class="header__logo">
+    <a href="/documentation/introduction.html" class="header__logo">
       <span class="header__logo-mark">M</span>
       Design System
     </a>
-    <nav class="header__nav">
+    <nav class="header__nav" aria-label="Site sections">
       <a href="/documentation/introduction.html"
-         :class="['header__nav-link', { 'is-active': isFoundation }]">Foundations</a>
-      <a href="/documentation/button.html"
-         :class="['header__nav-link', { 'is-active': !isFoundation }]">Components</a>
+         :class="['header__nav-link', { 'is-active': activeSection === 'documentation' }]">Documentation</a>
+      <a href="/comparison.html"
+         :class="['header__nav-link', { 'is-active': activeSection === 'comparison' }]">Comparison</a>
     </nav>
   </header>
 </template>
 
 <script>
-const foundationSlugs = [
-  'introduction', 'getting-started', 'design-tokens',
-  'icons', 'theming'
-];
-
 export default {
   name: 'DocHeader',
   props: {
@@ -28,8 +23,8 @@ export default {
     }
   },
   computed: {
-    isFoundation() {
-      return foundationSlugs.includes(this.activePage);
+    activeSection() {
+      return this.activePage === 'comparison' ? 'comparison' : 'documentation';
     }
   }
 };

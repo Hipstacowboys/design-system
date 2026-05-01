@@ -8,14 +8,12 @@ dist/
 preview-vue.html
 preview.scss
 design-system.scss
-design-system.css
 
 # Source files (not needed in package)
 src/
 
 # Build config
 vite.config.js
-config.codekit3
 
 # Git
 .git/

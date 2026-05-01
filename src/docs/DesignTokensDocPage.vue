@@ -571,10 +571,10 @@
         <h3>Importing the token stylesheet</h3>
         <div class="code-example">
 <pre><span class="token-comment">/* In your main SCSS entry point */</span>
-<span class="token-keyword">@use</span> <span class="token-string">'@aspect/marks-design-system/tokens/variables'</span>;
+<span class="token-keyword">@use</span> <span class="token-string">'@hipstacowboys/design-system/tokens/variables'</span>;
 
 <span class="token-comment">/* Or import the compiled CSS */</span>
-<span class="token-keyword">@import</span> <span class="token-string">'@aspect/marks-design-system/design-system.css'</span>;</pre>
+<span class="token-keyword">@import</span> <span class="token-string">'@hipstacowboys/design-system/design-system.css'</span>;</pre>
         </div>
 
         <h3>Theming override example</h3>

@@ -13,7 +13,7 @@
         <span class="content__eyebrow">Foundations</span>
         <h1>Getting Started</h1>
         <p class="content__lead">
-          Install the Ventrata Design System, import design tokens and Vue
+          Install the Marks Design System, import design tokens and Vue
           components, and render your first component in under five minutes.
         </p>
 
@@ -259,10 +259,10 @@ app.mount(<span class="token-string">'#app'</span>);</pre>
 
         <h3>SCSS compilation</h3>
         <p>
-          Token and component SCSS is compiled with <strong>CodeKit</strong>.
-          Open the project in CodeKit — it will detect the
-          <code>config.codekit3</code> file and compile all
-          <code>.scss</code> into <code>design-system.css</code>.
+          Token and component SCSS is compiled with the npm script
+          <code>npm run build:css</code>. It outputs
+          <code>design-system.css</code> and <code>preview.css</code> from
+          the source SCSS files in the project root.
         </p>
 
         <h3>Vite dev server</h3>
@@ -333,7 +333,7 @@ app.mount(<span class="token-string">'#app'</span>);</pre>
         </table>
 
         <p>
-          See the <a href="/CHANGELOG.html">Changelog</a> for a full version
+          See the <a href="/CHANGELOG.md">Changelog</a> for a full version
           history of changes.
         </p>
 

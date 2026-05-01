@@ -4,15 +4,18 @@ Vue + SCSS design system built from Figma design system file.
 
 ## Setup
 
-### Compiling Styles with Codekit
+### Compiling Styles
 
-The design system uses **Codekit** to compile SCSS files:
+The design system uses the npm `build:css` script to compile SCSS files:
 
-1. Open Codekit
-2. Add these files as source files:
+1. Install dependencies with `npm install`
+2. Run:
+   ```bash
+   npm run build:css
+   ```
+3. The script compiles:
    - `design-system.scss` → output: `design-system.css`
    - `preview.scss` → output: `preview.css`
-3. Codekit will watch and compile automatically
 
 ### Vue Components with Vite
 
@@ -106,8 +109,8 @@ See [docs/reuse-guide.md](./docs/reuse-guide.md) for complete instructions.
 
 - **[COMPONENTS.md](./COMPONENTS.md)** - Complete component reference with props, events, and usage examples
 - **[CHANGELOG.md](./CHANGELOG.md)** - Version history and changes
-- **[docs/instructions.md](./docs/instructions.md)** - Development guidelines and best practices
 - **[docs/reuse-guide.md](./docs/reuse-guide.md)** - How to use in other projects
+- **[docs/release-and-deploy.md](./docs/release-and-deploy.md)** - Release and deployment workflow
 
 ## Versioning
 

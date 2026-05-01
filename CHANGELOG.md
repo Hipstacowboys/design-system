@@ -16,6 +16,35 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - 
 
+## [1.5.5] - 2026-05-01
+
+### Added
+- Documentation header now switches between the documentation site and the comparison page.
+- Comparison page title links now point to the related component documentation pages.
+- The comparison page is included in the Vite multi-page production build.
+- Root `.gitignore` for local dependencies, generated output, OS files, environment files, and local build artifacts.
+
+### Changed
+- Reworked introduction content to describe the Marks Design System as public-facing documentation, removing internal build pipeline and technology stack details.
+- Replaced remaining Ventrata references with Marks Design System branding across documentation.
+- Updated the comparison page content examples to use realistic copy instead of placeholder text.
+- Moved SCSS compilation to `npm run build:css` and removed the CodeKit-based public workflow.
+- Published package contents now include `design-system.css` for documented CSS imports.
+
+### Fixed
+- Design system logo in the top navigation now links to `/documentation/introduction.html`.
+- Comparison page header spacing now clears the fixed top navigation.
+- Dark comparison titles now use a higher-contrast color.
+- Design token documentation now references the correct `@hipstacowboys/design-system` package name.
+
+### Removed
+- Removed the inaccessible "Common icons used" section from the Icons documentation.
+- Removed tracked `node_modules`, generated `dist` output, `.DS_Store` files, duplicate generated HTML docs, `stdout` artifacts, CodeKit config, minified Vite config, and the unused `interface-design` submodule entry from version control.
+
+### Security
+- Updated npm dependency lockfile with `npm audit fix`; `npm audit --audit-level=moderate` reports zero vulnerabilities.
+
+
 ## [1.5.4] - 2026-04-13
 
 ### Added
@@ -431,7 +460,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Responsive design patterns
 - Accessibility features (semantic HTML, ARIA attributes)
 
-[Unreleased]: https://github.com/Hipstacowboys/design-system/compare/v1.5.4...HEAD
+[Unreleased]: https://github.com/Hipstacowboys/design-system/compare/v1.5.5...HEAD
+[1.5.5]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.5.5
 [1.5.4]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.5.4
 [1.5.3]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.5.3
 [1.5.2]: https://github.com/Hipstacowboys/design-system/releases/tag/v1.5.2

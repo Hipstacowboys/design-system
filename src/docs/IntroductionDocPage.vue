@@ -13,24 +13,23 @@
         <span class="content__eyebrow">Foundations</span>
         <h1>Introduction</h1>
         <p class="content__lead">
-          The Ventrata Design System is a Vue + SCSS component library driven by Figma.
-          It provides a shared language of design tokens, reusable components, and
-          clear conventions so every interface across the Ventrata platform stays
-          consistent, accessible, and fast to build.
+          The Marks Design System is a public component library for building consistent,
+          accessible product interfaces. It provides documented design tokens, reusable
+          components, and clear usage guidance without exposing private implementation
+          details.
         </p>
 
-        <!-- ─── 1. What is Ventrata Design System ─── -->
-        <h2 id="what-is" class="comp-section-h2">What is the Ventrata Design System?</h2>
+        <!-- ─── 1. What is Marks Design System ─── -->
+        <h2 id="what-is" class="comp-section-h2">What is the Marks Design System?</h2>
         <p class="comp-section-desc">
-          A single source of truth for UI across all Ventrata products &mdash; from the admin dashboard
-          to the booking checkout and kiosk terminals.
+          A shared UI foundation for products, integrations, and customer-facing booking
+          experiences that need to look and behave consistently.
         </p>
 
         <p>
-          The design system bridges the gap between design and engineering. Designers work in Figma
-          using a structured set of variables, typography styles, and component specs. Engineers consume
-          those decisions as SCSS tokens and Vue components, ensuring pixel-level fidelity without
-          manual translation.
+          Use these docs to understand when to use each component, which props are available,
+          how states and accessibility are handled, and how to keep interfaces aligned with
+          the design language.
         </p>
 
         <div class="intro-card-row">
@@ -38,22 +37,22 @@
             <div class="intro-card__icon">
               <svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48Zm0,144H32V64H224V192ZM48,136a8,8,0,0,1,8-8H200a8,8,0,0,1,0,16H56A8,8,0,0,1,48,136Zm0-32a8,8,0,0,1,8-8h72a8,8,0,0,1,0,16H56A8,8,0,0,1,48,104Z"/></svg>
             </div>
-            <strong>Vue 3 Components</strong>
-            <span>Data-driven, reusable UI blocks with props, emits, and v-model support.</span>
+            <strong>Reusable components</strong>
+            <span>Ready-made UI blocks with documented props, states, and behavior rules.</span>
           </div>
           <div class="intro-card">
             <div class="intro-card__icon">
               <svg viewBox="0 0 256 256" fill="currentColor"><path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H48V48H208V208ZM72,96V80a8,8,0,0,1,16,0V96a8,8,0,0,1-16,0Zm48,0V80a8,8,0,0,1,16,0V96a8,8,0,0,1-16,0Zm48,0V80a8,8,0,0,1,16,0V96a8,8,0,0,1-16,0ZM72,144V128a8,8,0,0,1,16,0v16a8,8,0,0,1-16,0Zm48,0V128a8,8,0,0,1,16,0v16a8,8,0,0,1-16,0Zm48,0V128a8,8,0,0,1,16,0v16a8,8,0,0,1-16,0Z"/></svg>
             </div>
-            <strong>SCSS Design Tokens</strong>
-            <span>Colors, spacing, typography, and radii exported from Figma as CSS custom properties.</span>
+            <strong>Design tokens</strong>
+            <span>Shared colors, spacing, typography, and radius values for consistent interfaces.</span>
           </div>
           <div class="intro-card">
             <div class="intro-card__icon">
               <svg viewBox="0 0 256 256" fill="currentColor"><path d="M232,116a12,12,0,0,1-12,12H196v24a12,12,0,0,1-24,0V128H148v24a12,12,0,0,1-24,0V128H100v24a12,12,0,0,1-24,0V128H36a12,12,0,0,1,0-24H76V80H36a12,12,0,0,1,0-24H76V32a12,12,0,0,1,24,0V56h24V32a12,12,0,0,1,24,0V56h24V32a12,12,0,0,1,24,0V56h24a12,12,0,0,1,0,24H196v24h24A12,12,0,0,1,232,116ZM220,176H36a12,12,0,0,0,0,24H220a12,12,0,0,0,0-24ZM172,80H100v24h72Z"/></svg>
             </div>
-            <strong>Figma-Driven</strong>
-            <span>Every token and component traces back to the Figma source file &mdash; design is always in sync.</span>
+            <strong>Public guidance</strong>
+            <span>Usage rules, accessibility notes, and examples written for people using the system.</span>
           </div>
         </div>
 
@@ -70,9 +69,9 @@
             Engineers never invent values; they consume what designers define.</span>
           </li>
           <li>
-            <strong>Variables from JSON only</strong>
-            <span>Design tokens are exported from Figma as JSON and compiled into SCSS variables and CSS custom
-            properties. Hand-editing token values is not permitted.</span>
+            <strong>Use tokens, not one-off values</strong>
+            <span>Apply documented color, spacing, typography, and radius tokens instead of inventing local
+            values for each screen.</span>
           </li>
           <li>
             <strong>Typography via mixins</strong>
@@ -81,10 +80,9 @@
             declarations in component SCSS are not allowed.</span>
           </li>
           <li>
-            <strong>One variation = one component</strong>
-            <span>Each visual variation of a component is its own Vue single-file component.
-            A button with an icon-only layout is <code>IconButton</code>, not
-            <code>Button</code> with a prop that hides text.</span>
+            <strong>Follow the shipped component API</strong>
+            <span>Use the documented variant components and props. For example, icon-only buttons use
+            the button component's <code>icon-only</code> API with an accessible label.</span>
           </li>
           <li>
             <strong>Reusable with the <code>marks-</code> prefix</strong>
@@ -100,118 +98,20 @@
           </li>
         </ol>
 
-        <!-- ─── 3. Architecture ─── -->
-        <h2 id="architecture" class="comp-section-h2">Architecture</h2>
+        <!-- ─── 3. Public Usage ─── -->
+        <h2 id="public-use" class="comp-section-h2">Made for public use</h2>
         <p class="comp-section-desc">
-          How files are organized, how SCSS compiles, and how Vue components are served.
+          These docs are written for teams and partners using the design system, not for
+          repository or build maintenance.
         </p>
 
-        <h3>File structure</h3>
-        <div class="file-tree">
-          <pre>design-system/
-├── components/          <span class="file-tree__comment"># SCSS source for each component</span>
-│   ├── button.scss
-│   ├── toggle.scss
-│   └── …
-├── tokens/              <span class="file-tree__comment"># JSON → SCSS variables &amp; CSS custom props</span>
-│   ├── variables.scss
-│   └── colors.json
-├── src/
-│   ├── components/      <span class="file-tree__comment"># Vue single-file components</span>
-│   │   ├── Button.vue
-│   │   ├── Toggle.vue
-│   │   └── …
-│   └── docs/            <span class="file-tree__comment"># Documentation pages (this page!)</span>
-│       ├── IntroductionDocPage.vue
-│       └── …
-├── documentation/       <span class="file-tree__comment"># Built HTML doc pages</span>
-├── dist/                <span class="file-tree__comment"># Compiled CSS &amp; JS output</span>
-└── package.json</pre>
-        </div>
+        <ul>
+          <li>Documentation focuses on component purpose, anatomy, behavior, accessibility, examples, and API.</li>
+          <li>Tooling, build steps, and repository maintenance details are intentionally left out.</li>
+          <li>Guidance should be safe to share publicly and useful without private project context.</li>
+        </ul>
 
-        <h3>Build pipeline</h3>
-        <div class="pipeline">
-          <div class="pipeline__step">
-            <span class="pipeline__label">Figma</span>
-            <span class="pipeline__desc">Design tokens &amp; component specs</span>
-          </div>
-          <div class="pipeline__arrow">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </div>
-          <div class="pipeline__step">
-            <span class="pipeline__label">JSON</span>
-            <span class="pipeline__desc">Exported variables</span>
-          </div>
-          <div class="pipeline__arrow">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </div>
-          <div class="pipeline__step">
-            <span class="pipeline__label">Codekit</span>
-            <span class="pipeline__desc">SCSS compilation</span>
-          </div>
-          <div class="pipeline__arrow">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </div>
-          <div class="pipeline__step">
-            <span class="pipeline__label">Vite</span>
-            <span class="pipeline__desc">Vue dev server &amp; build</span>
-          </div>
-        </div>
-
-        <p>
-          <strong>Codekit</strong> watches SCSS files and compiles them into a single CSS bundle that
-          includes all design tokens and component styles.
-          <strong>Vite</strong> serves the Vue components for the documentation site and handles
-          hot-module replacement during development.
-        </p>
-
-        <!-- ─── 4. Technology Stack ─── -->
-        <h2 id="tech-stack" class="comp-section-h2">Technology Stack</h2>
-        <p class="comp-section-desc">The tools and libraries powering the design system.</p>
-
-        <table class="props-table">
-          <thead>
-            <tr>
-              <th>Technology</th>
-              <th>Role</th>
-              <th>Notes</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="props-row__meta">
-              <td><strong>Vue 3</strong></td>
-              <td>Component framework</td>
-              <td>Options API with SFCs</td>
-            </tr>
-            <tr class="props-row__meta">
-              <td><strong>SCSS</strong></td>
-              <td>Styling &amp; tokens</td>
-              <td>BEM naming, compiled by Codekit</td>
-            </tr>
-            <tr class="props-row__meta">
-              <td><strong>Vite</strong></td>
-              <td>Dev server &amp; bundler</td>
-              <td>Serves doc pages with HMR</td>
-            </tr>
-            <tr class="props-row__meta">
-              <td><strong>Codekit</strong></td>
-              <td>SCSS compiler</td>
-              <td>Watches &amp; compiles to CSS</td>
-            </tr>
-            <tr class="props-row__meta">
-              <td><strong>Phosphor Icons</strong></td>
-              <td>Icon library</td>
-              <td>Bold &le;19 px, Regular &ge;20 px</td>
-            </tr>
-            <tr class="props-row__meta">
-              <td><strong>npm (GitHub Packages)</strong></td>
-              <td>Distribution</td>
-              <td>Published via GitHub registry</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <!-- ─── 5. Component Anatomy ─── -->
+        <!-- ─── 4. Component Anatomy ─── -->
         <h2 id="anatomy" class="comp-section-h2">Component Anatomy</h2>
         <p class="comp-section-desc">
           How every component in the system is structured.
@@ -294,13 +194,6 @@
             <strong>Theming</strong>
             <span>Light/dark mode, token overrides, and brand customization.</span>
           </a>
-          <a href="/documentation/contributing.html" class="link-card">
-            <div class="link-card__icon">
-              <svg viewBox="0 0 256 256" fill="currentColor"><path d="M144,24H64A16,16,0,0,0,48,40V216a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V88ZM160,51.31,180.69,72H160ZM192,216H64V40h80V80a8,8,0,0,0,8,8h40V216Zm-40-64a8,8,0,0,1-8,8H112a8,8,0,0,1,0-16h32A8,8,0,0,1,152,152Zm0-32a8,8,0,0,1-8,8H112a8,8,0,0,1,0-16h32A8,8,0,0,1,152,120Z"/></svg>
-            </div>
-            <strong>Contributing</strong>
-            <span>How to add components, update tokens, and submit changes.</span>
-          </a>
           <a href="/documentation/button.html" class="link-card">
             <div class="link-card__icon">
               <svg viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm45.66-93.66a8,8,0,0,1,0,11.32l-32,32a8,8,0,0,1-11.32-11.32L154.34,128,130.34,101.66a8,8,0,0,1,11.32-11.32ZM96,128a8,8,0,0,1,0-16h16a8,8,0,0,1,0,16Z"/></svg>
@@ -338,7 +231,7 @@
 
             <div class="ref-panel__section">
               <span class="ref-panel__label">Tokens</span>
-              <span class="ref-panel__value">Figma JSON &rarr; CSS custom properties</span>
+              <span class="ref-panel__value">Colors, spacing, type, radius</span>
             </div>
 
             <div class="ref-panel__section">
@@ -346,19 +239,13 @@
               <span class="ref-panel__value">Phosphor &mdash; Bold &le;19px, Regular &ge;20px</span>
             </div>
 
-            <div class="ref-panel__section">
-              <span class="ref-panel__label">Build</span>
-              <span class="ref-panel__value">Codekit (SCSS) + Vite (Vue)</span>
-            </div>
-
             <div class="ref-panel__divider"></div>
 
             <h4 class="ref-panel__title">On This Page</h4>
             <ul class="ref-panel__toc">
-              <li><a href="#what-is" class="ref-panel__toc-link" @click.prevent="scrollTo('what-is')">What is VDS?</a></li>
+              <li><a href="#what-is" class="ref-panel__toc-link" @click.prevent="scrollTo('what-is')">What is the design system?</a></li>
               <li><a href="#principles" class="ref-panel__toc-link" @click.prevent="scrollTo('principles')">Core Principles</a></li>
-              <li><a href="#architecture" class="ref-panel__toc-link" @click.prevent="scrollTo('architecture')">Architecture</a></li>
-              <li><a href="#tech-stack" class="ref-panel__toc-link" @click.prevent="scrollTo('tech-stack')">Technology Stack</a></li>
+              <li><a href="#public-use" class="ref-panel__toc-link" @click.prevent="scrollTo('public-use')">Made for public use</a></li>
               <li><a href="#anatomy" class="ref-panel__toc-link" @click.prevent="scrollTo('anatomy')">Component Anatomy</a></li>
               <li><a href="#quick-links" class="ref-panel__toc-link" @click.prevent="scrollTo('quick-links')">Quick Links</a></li>
             </ul>
@@ -368,7 +255,6 @@
             <h4 class="ref-panel__title">Resources</h4>
             <ul class="ref-panel__links">
               <li><a href="https://github.com/hipstacowboys/design-system" class="ref-panel__ext-link" target="_blank" rel="noopener">GitHub Repository</a></li>
-              <li><a href="https://www.npmjs.com/package/@ventrata/design-system" class="ref-panel__ext-link" target="_blank" rel="noopener">npm Package</a></li>
             </ul>
           </div>
 
@@ -499,55 +385,6 @@ export default {
 .file-tree__comment {
   color: var(--color-code-comment);
   font-style: italic;
-}
-
-/* ─── Build pipeline ─── */
-.pipeline {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-6);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  margin-bottom: var(--space-6);
-  overflow-x: auto;
-}
-
-.pipeline__step {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-1);
-  min-width: 80px;
-  flex: 1;
-  text-align: center;
-  padding: var(--space-3) var(--space-2);
-  background: var(--color-surface-raised);
-  border-radius: var(--radius-md);
-}
-
-.pipeline__label {
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text-primary);
-}
-
-.pipeline__desc {
-  font-size: var(--font-size-xs);
-  color: var(--color-text-muted);
-}
-
-.pipeline__arrow {
-  flex-shrink: 0;
-  width: 20px;
-  height: 20px;
-  color: var(--color-text-disabled);
-}
-
-.pipeline__arrow svg {
-  width: 100%;
-  height: 100%;
 }
 
 /* ─── Link grid ─── */

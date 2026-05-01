@@ -1,6 +1,6 @@
 {
   "name": "@hipstacowboys/design-system",
-  "version": "1.5.4",
+  "version": "1.5.5",
   "description": "Vue + SCSS design system built from Figma design system file",
   "main": "index.js",
   "module": "index.js",
@@ -9,6 +9,7 @@
     "components",
     "tokens",
     "index.js",
+    "design-system.css",
     "README.md",
     "COMPONENTS.md",
     "CHANGELOG.md",
@@ -24,7 +25,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build:css": "sass --no-source-map design-system.scss design-system.css && sass --no-source-map preview.scss preview.css",
+    "build": "npm run build:css && vite build",
     "release:patch": "node scripts/release.js patch && git push --follow-tags",
     "release:minor": "node scripts/release.js minor && git push --follow-tags",
     "release:major": "node scripts/release.js major && git push --follow-tags"

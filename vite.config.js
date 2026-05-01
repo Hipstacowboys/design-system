@@ -17,6 +17,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'preview-vue.html'),
+        comparison: resolve(__dirname, 'comparison.html'),
         buttonDoc: resolve(__dirname, 'documentation/button.html'),
         toggleDoc: resolve(__dirname, 'documentation/toggle.html'),
         checkboxDoc: resolve(__dirname, 'documentation/checkbox.html'),

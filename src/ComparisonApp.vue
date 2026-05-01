@@ -1,4 +1,6 @@
 <template>
+  <DocHeader active-page="comparison" />
+
   <div class="comparison-page">
     <div class="comparison-header">
       <h1>Light / Dark Mode Comparison</h1>
@@ -13,7 +15,14 @@
           :key="`light-${item.id}`"
           class="comparison-item"
         >
-          <h3 class="comparison-title">{{ item.title }}</h3>
+          <h3 class="comparison-title">
+            <a
+              v-if="item.docPath"
+              class="comparison-title__link"
+              :href="item.docPath"
+            >{{ item.title }}</a>
+            <span v-else>{{ item.title }}</span>
+          </h3>
           <div class="comparison-component" :style="item.wrapperStyle || { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-24)', width: '100%' }">
             <div v-if="item.innerStyle" :style="item.innerStyle">
               <template v-if="item.isGroup && (item.id === 'radio' || item.id === 'radio-with-label')">
@@ -89,7 +98,14 @@
           :key="`dark-${item.id}`"
           class="comparison-item"
         >
-          <h3 class="comparison-title">{{ item.title }}</h3>
+          <h3 class="comparison-title">
+            <a
+              v-if="item.docPath"
+              class="comparison-title__link"
+              :href="item.docPath"
+            >{{ item.title }}</a>
+            <span v-else>{{ item.title }}</span>
+          </h3>
           <div class="comparison-component" :style="item.wrapperStyle ? { ...item.wrapperStyle, justifyContent: 'flex-start' } : { display: 'flex', justifyContent: 'flex-start', padding: 'var(--marks-spacing-24)', width: '100%' }">
             <div v-if="item.innerStyle" :style="item.innerStyle">
               <template v-if="item.isGroup && (item.id === 'radio' || item.id === 'radio-with-label')">
@@ -209,10 +225,12 @@ import Tooltip from '../components/Tooltip.vue';
 import WeekPricingDay from '../components/WeekPricingDay.vue';
 import Widget from '../components/Widget.vue';
 import { PhBed, PhCalendar, PhHouse, PhBookOpen, PhAppWindow, PhGear, PhChatCircle, PhSignOut } from '@phosphor-icons/vue';
+import DocHeader from './docs/DocHeader.vue';
 
 export default {
   name: 'ComparisonApp',
   components: {
+    DocHeader,
     ButtonPrimary,
     ButtonSecondary,
     ButtonLine,
@@ -285,12 +303,12 @@ export default {
         { id: 'status', label: 'Column heading', type: 'status', sortable: true }
       ],
       tableRows: [
-        { name: 'Bold text column', col2: 'https://very-long-url-example.com/path/to/resource/with/many/segments/that-will-definitely-overflow', status: { type: 'success', label: 'Available' } },
-        { name: 'Bold text column', col2: 'https://another-example-domain.com/api/v1/users/12345/orders/67890/details/items', status: { type: 'success', label: 'Available' } },
-        { name: 'Bold text column', col2: 'Regular text column', status: { type: 'success', label: 'Available' } },
-        { name: 'Bold text column', col2: 'Regular text column', status: { type: 'success', label: 'Available' } },
-        { name: 'Bold text column', col2: 'Regular text column', status: { type: 'success', label: 'Available' } },
-        { name: 'Bold text column', col2: 'Regular text column', status: { type: 'success', label: 'Available' } }
+        { name: 'Hanusova Chalupa', col2: 'https://booking.example.com/properties/hanusova-chalupa/calendar/import-source-airbnb', status: { type: 'success', label: 'Available' } },
+        { name: 'Mountain Cabin', col2: 'https://booking.example.com/properties/mountain-cabin/rates/summer-season-2026', status: { type: 'success', label: 'Available' } },
+        { name: 'Lake House', col2: 'Whole place', status: { type: 'success', label: 'Available' } },
+        { name: 'City Apartment', col2: 'Private room', status: { type: 'success', label: 'Available' } },
+        { name: 'Garden Studio', col2: 'Instant booking enabled', status: { type: 'success', label: 'Available' } },
+        { name: 'Old Town Loft', col2: 'Manual approval required', status: { type: 'success', label: 'Available' } }
       ],
       calendarDays: [
         { dayNumber: 29, price: '99.00', currency: 'CZK', isPreviousMonth: true },
@@ -314,7 +332,7 @@ export default {
           type: 'default',
           startDayIndex: 17,
           spanDays: 4,
-          customerName: 'Jeremy Clarcson',
+          customerName: 'Jeremy Clark',
           pax: '8 pax',
           source: 'AIRBNB',
           price: '5 000 CZK',
@@ -334,7 +352,7 @@ export default {
           type: 'start',
           startDayIndex: 25,
           spanDays: 3,
-          customerName: 'Jeremy Clarcson',
+          customerName: 'Jeremy Clark',
           pax: '8 pax',
           statusBadgeText: 'J',
           statusBadgeColor: '#fd3860',
@@ -404,17 +422,17 @@ export default {
         {
           value: 'whole-place',
           title: 'Whole place',
-          description: 'Lorem ipsum dolor sit amet, consectetur.'
+          description: 'Guests book the entire property.'
         },
         {
           value: 'private-room',
           title: 'Private room',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+          description: 'Guests book a private room in a shared property.'
         },
         {
           value: 'shared-room',
           title: 'Shared room',
-          description: 'Lorem ipsum dolor sit amet, consectetur.',
+          description: 'Guests book a shared room or dormitory.',
           disabled: true
         }
       ],
@@ -433,17 +451,17 @@ export default {
       notificationFilter: 'all',
       notificationMessages: [
         {
-          title: 'Cute Turtle is generated',
+          title: 'Booking request received',
           timestamp: '1h ago',
-          mainText: 'Matte texture - UI8 Style',
-          description: 'Prompt: Create 3D character dancing',
+          mainText: 'Hanusova Chalupa',
+          description: 'Guest requested 3 nights in July.',
           new: true
         },
         {
-          title: 'Cute Turtle is generated',
+          title: 'Payment reminder sent',
           timestamp: '2h ago',
-          mainText: 'Matte texture - UI8 Style',
-          description: 'Prompt: Create 3D character dancing',
+          mainText: 'Reservation #1042',
+          description: 'Deposit reminder was sent to the guest.',
           new: true,
           actions: {
             primary: { text: 'Primary Button' },
@@ -451,17 +469,17 @@ export default {
           }
         },
         {
-          title: 'Cute Turtle is generated',
+          title: 'Booking confirmed',
           timestamp: '3h ago',
-          mainText: 'Matte texture - UI8 Style',
-          description: 'Prompt: Create 3D character dancing',
+          mainText: 'Weekend stay',
+          description: 'Guest confirmation was received.',
           new: false
         },
         {
-          title: 'Cute Turtle is generated',
+          title: 'Calendar synced',
           timestamp: '4h ago',
-          mainText: 'Matte texture - UI8 Style',
-          description: 'Prompt: Create 3D character dancing',
+          mainText: 'Airbnb import',
+          description: 'Availability was updated from the channel.',
           new: false
         }
       ]
@@ -473,6 +491,7 @@ export default {
         {
           id: 'button-primary',
           title: 'Button Primary',
+          docPath: '/documentation/button.html',
           component: ButtonPrimary,
           props: { size: 'medium', text: 'Click Me' },
           onClick: () => this.handleButtonClick('Primary')
@@ -480,6 +499,7 @@ export default {
         {
           id: 'button-secondary',
           title: 'Button Secondary',
+          docPath: '/documentation/button.html',
           component: ButtonSecondary,
           props: { size: 'medium', text: 'Click Me' },
           onClick: () => this.handleButtonClick('Secondary')
@@ -487,6 +507,7 @@ export default {
         {
           id: 'button-line',
           title: 'Button Line',
+          docPath: '/documentation/button.html',
           component: ButtonLine,
           props: { size: 'medium', text: 'Click Me' },
           onClick: () => this.handleButtonClick('Line')
@@ -494,6 +515,7 @@ export default {
         {
           id: 'button-ghost',
           title: 'Button Ghost',
+          docPath: '/documentation/button.html',
           component: ButtonGhost,
           props: { size: 'medium', text: 'Click Me' },
           onClick: () => this.handleButtonClick('Ghost')
@@ -501,6 +523,7 @@ export default {
         {
           id: 'select',
           title: 'Select',
+          docPath: '/documentation/select.html',
           component: Select,
           props: { size: 'medium', options: this.selectOptions, placeholder: 'Select an option...' },
           modelValue: this.interactiveSelect,
@@ -511,6 +534,7 @@ export default {
         {
           id: 'input',
           title: 'Input',
+          docPath: '/documentation/input.html',
           component: Input,
           props: { size: 'medium', placeholder: 'Placeholder' },
           modelValue: this.inputValueMedium,
@@ -521,6 +545,7 @@ export default {
         {
           id: 'textarea',
           title: 'Textarea',
+          docPath: '/documentation/textarea.html',
           component: Textarea,
           props: { placeholder: 'Placeholder' },
           modelValue: this.textareaValue,
@@ -531,6 +556,7 @@ export default {
         {
           id: 'toggle',
           title: 'Toggle',
+          docPath: '/documentation/toggle.html',
           component: Toggle,
           modelValue: this.interactiveToggle,
           onUpdate: (val) => { this.interactiveToggle = val; }
@@ -538,6 +564,7 @@ export default {
         {
           id: 'toggle-with-label',
           title: 'Toggle With Label',
+          docPath: '/documentation/toggle.html',
           component: ToggleWithLabel,
           props: { title: 'Enable notifications' },
           modelValue: this.interactiveToggleWithLabel,
@@ -546,6 +573,7 @@ export default {
         {
           id: 'checkbox',
           title: 'Checkbox',
+          docPath: '/documentation/checkbox.html',
           component: Checkbox,
           modelValue: this.interactiveCheckbox,
           onUpdate: (val) => { this.interactiveCheckbox = val; }
@@ -553,6 +581,7 @@ export default {
         {
           id: 'checkbox-with-label',
           title: 'Checkbox With Label',
+          docPath: '/documentation/checkbox.html',
           component: CheckboxWithLabel,
           props: { title: 'Accept terms and conditions' },
           modelValue: this.interactiveCheckboxWithLabel,
@@ -561,6 +590,7 @@ export default {
         {
           id: 'radio',
           title: 'Radio',
+          docPath: '/documentation/radio.html',
           component: Radio,
           props: { value: 'option1', name: 'radio-group-1' },
           modelValue: this.interactiveRadio,
@@ -577,6 +607,7 @@ export default {
         {
           id: 'radio-with-label',
           title: 'Radio With Label',
+          docPath: '/documentation/radio.html',
           component: RadioWithLabel,
           props: { title: 'Option 1', value: 'option1', name: 'radio-group-2' },
           modelValue: this.interactiveRadioWithLabel,
@@ -593,26 +624,30 @@ export default {
         {
           id: 'status',
           title: 'Status',
+          docPath: '/documentation/status.html',
           component: Status,
           props: { type: 'success', label: 'Available' }
         },
         {
           id: 'alert',
           title: 'Alert',
+          docPath: '/documentation/alert.html',
           component: Alert,
-          props: { type: 'info', title: 'Booking successfuly saved', description: 'This is multilne context. This is multilne context. This is multilne context.', closable: true },
+          props: { type: 'info', title: 'Booking successfully saved', description: 'This message can include supporting context across multiple lines.', closable: true },
           wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-24)', width: '100%' },
           innerStyle: { width: '418px' }
         },
         {
           id: 'notification-badge',
           title: 'Notification Badge',
+          docPath: '/documentation/notification-badge.html',
           component: NotificationBadge,
           props: { count: 5 }
         },
         {
           id: 'empty-state',
           title: 'Empty State',
+          docPath: '/documentation/empty-state.html',
           component: EmptyState,
           props: { title: 'No bookings yet', message: 'When you receive bookings, they will appear here.' },
           wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-24)', width: '100%' }
@@ -620,6 +655,7 @@ export default {
         {
           id: 'table',
           title: 'Table',
+          docPath: '/documentation/table.html',
           component: Table,
           props: {
             headerTitle: 'Headline',
@@ -635,8 +671,9 @@ export default {
         {
           id: 'big-switch',
           title: 'Big Switch',
+          docPath: '/documentation/switch.html',
           component: BigSwitch,
-          props: { value: 'whole-place', title: 'Whole place', description: 'Lorem ipsum dolor sit amet, consectetur.' },
+          props: { value: 'whole-place', title: 'Whole place', description: 'Guests book the entire property.' },
           modelValue: this.bigSwitchValue,
           onUpdate: (val) => { this.bigSwitchValue = val; },
           wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-24)', width: '100%' },
@@ -645,6 +682,7 @@ export default {
         {
           id: 'small-switch',
           title: 'Small Switch',
+          docPath: '/documentation/switch.html',
           component: SmallSwitch,
           props: { options: this.smallSwitchOptions },
           modelValue: this.smallSwitchValue,
@@ -655,12 +693,14 @@ export default {
         {
           id: 'breadcrumbs',
           title: 'Breadcrumbs',
+          docPath: '/documentation/breadcrumbs.html',
           component: Breadcrumbs,
           props: { items: this.breadcrumbItems }
         },
         {
           id: 'tabs-simple',
           title: 'Tabs Simple',
+          docPath: '/documentation/tabs.html',
           component: TabsSimple,
           props: { tabs: this.tabsOptions },
           modelValue: this.activeTab,
@@ -671,6 +711,7 @@ export default {
         {
           id: 'tabs',
           title: 'Tabs',
+          docPath: '/documentation/tabs.html',
           component: Tabs,
           props: { tabs: this.tabsOptions },
           modelValue: this.activeTab,
@@ -681,6 +722,7 @@ export default {
         {
           id: 'notification-dialog',
           title: 'Notification Dialog',
+          docPath: '/documentation/notification-dialog.html',
           component: NotificationDialog,
           props: { messages: this.notificationMessages },
           modelValue: this.notificationFilter,
@@ -691,6 +733,7 @@ export default {
         {
           id: 'horizontal-switch',
           title: 'Horizontal Switch',
+          docPath: '/documentation/horizontal-switch.html',
           component: HorizontalSwitch,
           props: { options: this.horizontalSwitchOptions },
           modelValue: this.horizontalSwitchValue,
@@ -699,8 +742,9 @@ export default {
         {
           id: 'card-with-counter',
           title: 'Card With Counter',
+          docPath: '/documentation/card-with-counter.html',
           component: CardWithCounter,
-          props: { icon: PhBed, title: 'Double bed', description: 'Lorem ipsum dolor sit' },
+          props: { icon: PhBed, title: 'Double bed', description: 'Sleeps 2 guests' },
           modelValue: this.cardWithCounterValue,
           onUpdate: (val) => { this.cardWithCounterValue = val; },
           wrapperStyle: { display: 'flex', justifyContent: 'flex-end', padding: 'var(--marks-spacing-24)', width: '100%' },
@@ -719,7 +763,7 @@ export default {
           title: 'Booking',
           component: Booking,
           props: {
-            customerName: 'Jeremy Clarcson',
+            customerName: 'Jeremy Clark',
             peopleCount: '8 people',
             startDateShort: 'Čer 28',
             endDateShort: 'Čer 28',
@@ -745,7 +789,7 @@ export default {
           props: {
             variant: 'month',
             type: 'default',
-            customerName: 'Jeremy Clarcson',
+            customerName: 'Jeremy Clark',
             pax: '8 pax',
             source: 'AIRBNB',
             price: '5 000 CZK',
@@ -795,6 +839,7 @@ export default {
         {
           id: 'widget',
           title: 'Widget',
+          docPath: '/documentation/widget.html',
           component: Widget,
           props: {
             widgetName: 'My first widget',
@@ -812,6 +857,7 @@ export default {
         {
           id: 'navbar-side',
           title: 'Navbar Side',
+          docPath: '/documentation/navbar-side.html',
           component: NavbarSide,
           props: {
             sections: this.navbarSections,
@@ -826,6 +872,7 @@ export default {
         {
           id: 'tooltip',
           title: 'Tooltip',
+          docPath: '/documentation/tooltip.html',
           component: Tooltip,
           props: { 
             upperLeft: 'Marta Kaufmann',
@@ -847,6 +894,10 @@ export default {
 };
 </script>
 
+<style>
+@import '../docs/reference-main.css';
+</style>
+
 <style lang="scss" scoped>
 @use '../tokens/variables' as *;
 
@@ -860,7 +911,7 @@ export default {
 .comparison-header {
   background: var(--marks-color-white);
   border-bottom: 1px solid var(--marks-color-gray-200);
-  padding: var(--marks-spacing-40);
+  padding: calc(var(--header-height, 56px) + 50px) var(--marks-spacing-40) var(--marks-spacing-40);
   
   h1 {
     font-size: 32px;
@@ -983,12 +1034,29 @@ export default {
   z-index: 1;
 }
 
+.comparison-title__link {
+  color: inherit;
+  text-decoration: none;
+  text-underline-offset: 3px;
+
+  &:hover,
+  &:focus-visible {
+    text-decoration: underline;
+  }
+
+  &:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
 .comparison-column--light .comparison-title {
   left: var(--marks-spacing-24);
 }
 
 .comparison-column--dark .comparison-title {
   right: var(--marks-spacing-24);
-  color: var(--marks-color-gray-200);
+  color: var(--marks-color-gray-350);
 }
 </style>

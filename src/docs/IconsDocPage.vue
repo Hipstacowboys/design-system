@@ -13,7 +13,7 @@
         <span class="content__eyebrow">Foundations</span>
         <h1>Icons</h1>
         <p class="content__lead">
-          The Ventrata Design System uses
+          The Marks Design System uses
           <a href="https://phosphoricons.com" target="_blank" rel="noopener">Phosphor Icons</a>
           via the <code>@phosphor-icons/vue</code> package. Phosphor provides 7,000+
           open-source icons in six weights, giving us a consistent, flexible icon
@@ -252,45 +252,7 @@ app.<span class="token-attr">component</span>(<span class="token-string">'PhHous
           </span>
         </div>
 
-        <!-- ─── 6. Common icons used ─── -->
-        <h2 id="common-icons" class="comp-section-h2">Common icons used</h2>
-        <p class="comp-section-desc">
-          These icons appear frequently across the design system components. Import them from
-          <code>@phosphor-icons/vue</code> by their PascalCase name.
-        </p>
-
-        <div class="icon-grid">
-          <div class="icon-grid__item" v-for="icon in commonIcons" :key="icon.name">
-            <div class="icon-grid__preview">
-              <svg class="icon-grid__svg" viewBox="0 0 256 256" v-html="icon.path"></svg>
-            </div>
-            <span class="icon-grid__name" v-text="icon.name"></span>
-            <span class="icon-grid__usage" v-text="icon.usage"></span>
-          </div>
-        </div>
-
-        <h3>Import example</h3>
-        <div class="code-inline">
-<pre><span class="token-keyword">import</span> {
-  PhCheck,
-  PhX,
-  PhWarningCircle,
-  PhInfo,
-  PhCheckCircle,
-  PhCaretRight,
-  PhCaretDown,
-  PhMagnifyingGlass,
-  PhArrowRight,
-  PhDotsThreeVertical,
-  PhPlus,
-  PhTrash,
-  PhPencilSimple,
-  PhEye,
-  PhEyeSlash,
-} <span class="token-keyword">from</span> <span class="token-string">'@phosphor-icons/vue'</span></pre>
-        </div>
-
-        <!-- ─── 7. Sizing guidelines ─── -->
+        <!-- ─── 6. Sizing guidelines ─── -->
         <h2 id="sizing" class="comp-section-h2">Sizing guidelines</h2>
         <p class="comp-section-desc">
           Use consistent icon sizes within component families. The table below shows standard sizing across the design system.
@@ -542,23 +504,6 @@ export default {
         { id: 'import', label: 'Import' },
         { id: 'usage', label: 'Usage' },
         { id: 'props', label: 'Props' }
-      ],
-      commonIcons: [
-        { name: 'PhCheck', usage: 'Confirmations, success', path: '<path d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"/>' },
-        { name: 'PhX', usage: 'Close, dismiss, remove', path: '<path d="M208.49,191.51a12,12,0,0,1-17,17L128,145,64.49,208.49a12,12,0,0,1-17-17L111,128,47.51,64.49a12,12,0,0,1,17-17L128,111l63.51-63.52a12,12,0,0,1,17,17L145,128Z"/>' },
-        { name: 'PhWarningCircle', usage: 'Warnings, validation', path: '<path d="M128,20A108,108,0,1,0,236,128,108.12,108.12,0,0,0,128,20Zm0,192a84,84,0,1,1,84-84A84.09,84.09,0,0,1,128,212Zm-12-80V80a12,12,0,0,1,24,0v52a12,12,0,0,1-24,0Zm28,40a16,16,0,1,1-16-16A16,16,0,0,1,144,172Z"/>' },
-        { name: 'PhInfo', usage: 'Informational callouts', path: '<path d="M128,20A108,108,0,1,0,236,128,108.12,108.12,0,0,0,128,20Zm0,192a84,84,0,1,1,84-84A84.09,84.09,0,0,1,128,212Zm-12-80V176a12,12,0,0,1-24,0V120a12,12,0,0,1,24,0ZM140,84a16,16,0,1,1-16-16A16,16,0,0,1,140,84Z"/>' },
-        { name: 'PhCheckCircle', usage: 'Success states', path: '<path d="M128,20A108,108,0,1,0,236,128,108.12,108.12,0,0,0,128,20Zm0,192a84,84,0,1,1,84-84A84.09,84.09,0,0,1,128,212Zm49.52-109.49-56,56a12,12,0,0,1-17,0l-24-24a12,12,0,1,1,17-17L113,133l47.51-47.52a12,12,0,0,1,17,17Z"/>' },
-        { name: 'PhCaretRight', usage: 'Navigation, expand', path: '<path d="M184.49,136.49l-80,80a12,12,0,0,1-17-17L159,128,87.51,56.49a12,12,0,1,1,17-17l80,80A12,12,0,0,1,184.49,136.49Z"/>' },
-        { name: 'PhCaretDown', usage: 'Dropdowns, collapse', path: '<path d="M216.49,104.49l-80,80a12,12,0,0,1-17,0l-80-80a12,12,0,0,1,17-17L128,159l71.51-71.52a12,12,0,0,1,17,17Z"/>' },
-        { name: 'PhMagnifyingGlass', usage: 'Search fields', path: '<path d="M232.49,215.51,185,168a92.12,92.12,0,1,0-17,17l47.53,47.54a12,12,0,0,0,17-17ZM44,112a68,68,0,1,1,68,68A68.07,68.07,0,0,1,44,112Z"/>' },
-        { name: 'PhArrowRight', usage: 'CTAs, next steps', path: '<path d="M204.49,136.49l-72,72a12,12,0,0,1-17-17L171,136H48a12,12,0,0,1,0-24H171L115.51,56.49a12,12,0,0,1,17-17l72,72A12,12,0,0,1,204.49,136.49Z"/>' },
-        { name: 'PhDotsThreeVertical', usage: 'More actions menu', path: '<path d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128ZM128,76a12,12,0,1,0-12-12A12,12,0,0,0,128,76Zm0,104a12,12,0,1,0,12,12A12,12,0,0,0,128,180Z"/>' },
-        { name: 'PhPlus', usage: 'Add, create new', path: '<path d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"/>' },
-        { name: 'PhTrash', usage: 'Delete actions', path: '<path d="M216,48H180V36A28,28,0,0,0,152,8H104A28,28,0,0,0,76,36V48H40a12,12,0,0,0,0,24h4V208a20,20,0,0,0,20,20H192a20,20,0,0,0,20-20V72h4a12,12,0,0,0,0-24ZM100,36a4,4,0,0,1,4-4h48a4,4,0,0,1,4,4V48H100ZM188,204H68V72H188ZM116,104v64a12,12,0,0,1-24,0V104a12,12,0,0,1,24,0Zm48,0v64a12,12,0,0,1-24,0V104a12,12,0,0,1,24,0Z"/>' },
-        { name: 'PhPencilSimple', usage: 'Edit actions', path: '<path d="M224.49,76.2,179.8,31.51a12,12,0,0,0-17,0L36.69,157.63A11.9,11.9,0,0,0,33.2,166L20.27,221.57a12,12,0,0,0,14.16,14.16L90,222.8a11.9,11.9,0,0,0,8.39-3.49L224.49,93.18a12,12,0,0,0,0-17ZM85,208.49,48.69,198.1,57.51,207.31,45.9,171l31-31,40,40ZM187,97,147,57l24.29-24.29,40,40Z"/>' },
-        { name: 'PhEye', usage: 'Show, visibility on', path: '<path d="M251.77,124.76C246.47,117.4,207.79,68,128,68S9.53,117.4,4.23,124.76a12,12,0,0,0,0,6.5C9.53,138.62,48.21,188,128,188s118.47-49.4,123.77-56.76a12,12,0,0,0,0-6.5ZM128,164a36,36,0,1,1,36-36A36,36,0,0,1,128,164Z"/>' },
-        { name: 'PhEyeSlash', usage: 'Hide, visibility off', path: '<path d="M56.88,31.93A12,12,0,1,0,39.12,48.07l16,17.65C25.59,86,10.5,111.83,4.23,124.76a12.08,12.08,0,0,0,0,6.5C9.53,138.62,48.21,188,128,188a136,136,0,0,0,51.87-10.3l19.25,21.17A12,12,0,0,0,216,204a12.06,12.06,0,0,0,8.88-3.93,12,12,0,0,0-.76-16.94ZM128,164a36,36,0,0,1-29.24-57L158,172.29A35.76,35.76,0,0,1,128,164Zm123.77-32.76C246.47,138.62,207.79,188,128,188v0c-9.79,0-18.93-.77-27.48-2.09L128,164h0a36,36,0,0,0,32.6-49.12l28.13,30.95c13.93-10.6,25.19-23,32.28-31.28Z"/>' },
       ]
     }
   },
@@ -626,54 +571,6 @@ export default {
 
 .icon-demo--regular {
   font-weight: 400;
-}
-
-/* ─── Icon grid ─── */
-.icon-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 16px;
-  margin: 16px 0 32px;
-}
-
-.icon-grid__item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  padding: 16px 8px;
-  background: var(--marks-color-gray-400, #FAFAFA);
-  border: 1px solid var(--marks-color-gray-350, #ECECEC);
-  border-radius: 8px;
-  text-align: center;
-}
-
-.icon-grid__preview {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-}
-
-.icon-grid__svg {
-  width: 28px;
-  height: 28px;
-  fill: var(--marks-color-gray-500, #1a1a1a);
-}
-
-.icon-grid__name {
-  font-family: 'SF Mono', 'Fira Code', monospace;
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--marks-color-gray-500, #1a1a1a);
-  word-break: break-all;
-}
-
-.icon-grid__usage {
-  font-size: 11px;
-  color: var(--marks-color-gray-300, #8D8D8D);
-  line-height: 1.3;
 }
 
 /* ─── Variant table alignment ─── */
