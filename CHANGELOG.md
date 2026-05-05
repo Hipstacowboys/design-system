@@ -26,7 +26,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Reworked introduction content to describe the Marks Design System as public-facing documentation, removing internal build pipeline and technology stack details.
-- Replaced remaining Ventrata references with Marks Design System branding across documentation.
 - Updated the comparison page content examples to use realistic copy instead of placeholder text.
 - Moved SCSS compilation to `npm run build:css` and removed the CodeKit-based public workflow.
 - Published package contents now include `design-system.css` for documented CSS imports.
